@@ -1,0 +1,8 @@
+<colors>
+    <color name = "background">#E5E5E5</color>
+    <color name = "primary">#9378FF</color>
+    <color name = "onBackground">#120E21</color>
+    <color name = "secondary">#99879D</color>
+    <color name = "fillColor">#99879D</color>
+    <color name = "hintColor">#848484</color>
+</colors>

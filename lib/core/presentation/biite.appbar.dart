@@ -1,8 +1,8 @@
-import 'package:biite/core/presentation/byte.adaptive.dart';
+import 'package:biite/core/presentation/biite.adaptive.dart';
 import 'package:flutter/material.dart';
 
-class ByteAdaptiveAppbar extends ByteAdaptive implements PreferredSizeWidget {
-  const ByteAdaptiveAppbar({super.key});
+class BiiteAdaptiveAppbar extends BiiteAdaptive implements PreferredSizeWidget {
+  const BiiteAdaptiveAppbar({super.key});
 
   @override
   Widget buildAndroid() {

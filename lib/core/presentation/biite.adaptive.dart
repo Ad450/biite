@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 
-abstract class ByteAdaptive extends StatelessWidget {
-  const ByteAdaptive({super.key});
+abstract class BiiteAdaptive extends StatelessWidget {
+  const BiiteAdaptive({super.key});
 
   Widget buildAndroid();
   Widget buildIOS();

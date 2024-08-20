@@ -1,6 +1,6 @@
-import 'package:biite/features/startup/startup.view.dart';
+import 'package:biite/biite.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const StartupView());
+  runApp(const Biite());
 }

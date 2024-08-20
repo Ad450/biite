@@ -1,9 +1,10 @@
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/gen/fonts.gen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  ThemeData get lightTheme => ThemeData(
+  ThemeData get materialLightTheme => ThemeData(
         colorScheme: const ColorScheme(
           primary: ColorName.primary,
           brightness: Brightness.light,
@@ -52,12 +53,13 @@ class AppTheme {
             fontFamily: FontFamily.publicSans,
             fontSize: 16,
             color: ColorName.secondary,
-            fontWeight: FontWeight.normal,
+            // fontWeight: FontWeight.normal,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             backgroundColor: const MaterialStatePropertyAll<Color>(ColorName.primary),
+            foregroundColor: const MaterialStatePropertyAll<Color>(ColorName.background),
             textStyle: const MaterialStatePropertyAll<TextStyle>(
               TextStyle(
                 fontSize: 18,
@@ -66,12 +68,15 @@ class AppTheme {
               ),
             ),
             side: const MaterialStatePropertyAll(
-              BorderSide(style: BorderStyle.solid),
+              BorderSide(style: BorderStyle.none),
             ),
             shape: MaterialStatePropertyAll(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(60),
               ),
+            ),
+            minimumSize: const MaterialStatePropertyAll<Size>(
+              Size.fromHeight(54),
             ),
           ),
         ),
@@ -86,5 +91,33 @@ class AppTheme {
           ),
         ),
       );
-  ThemeData get darkTheme => ThemeData();
+  ThemeData get materialDarkTheme => ThemeData();
+
+  CupertinoThemeData get cupertinoLightTheme => const CupertinoThemeData(
+        primaryColor: ColorName.primary,
+        brightness: Brightness.light,
+        primaryContrastingColor: ColorName.onBackground,
+        barBackgroundColor: ColorName.background,
+        scaffoldBackgroundColor: ColorName.onBackground,
+        textTheme: CupertinoTextThemeData(
+          textStyle: TextStyle(
+            fontFamily: FontFamily.publicSans,
+            fontSize: 16,
+            color: ColorName.secondary,
+            fontWeight: FontWeight.normal,
+          ),
+          navTitleTextStyle: TextStyle(
+            fontFamily: FontFamily.redHatDisplay,
+            fontSize: 39,
+            color: ColorName.onBackground,
+            fontWeight: FontWeight.w500,
+          ),
+          navLargeTitleTextStyle: TextStyle(
+            fontFamily: FontFamily.redHatDisplay,
+            fontSize: 96,
+            color: ColorName.onBackground,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      );
 }

@@ -19,25 +19,62 @@ class $AssetsImagesGen {
   /// File path: assets/images/dollar.png
   AssetGenImage get dollar => const AssetGenImage('assets/images/dollar.png');
 
+  /// File path: assets/images/dollar_bubbles.png
+  AssetGenImage get dollarBubbles =>
+      const AssetGenImage('assets/images/dollar_bubbles.png');
+
   /// File path: assets/images/earth.png
   AssetGenImage get earth => const AssetGenImage('assets/images/earth.png');
+
+  /// File path: assets/images/earth_bubbles.png
+  AssetGenImage get earthBubbles =>
+      const AssetGenImage('assets/images/earth_bubbles.png');
 
   /// File path: assets/images/faded_dollar.png
   AssetGenImage get fadedDollar =>
       const AssetGenImage('assets/images/faded_dollar.png');
 
+  /// File path: assets/images/login_bubbles.png
+  AssetGenImage get loginBubbles =>
+      const AssetGenImage('assets/images/login_bubbles.png');
+
   /// File path: assets/images/love.png
   AssetGenImage get love => const AssetGenImage('assets/images/love.png');
 
+  /// File path: assets/images/love_bubbles.png
+  AssetGenImage get loveBubbles =>
+      const AssetGenImage('assets/images/love_bubbles.png');
+
   /// File path: assets/images/phone.png
   AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');
+
+  /// File path: assets/images/phone_bubbles.png
+  AssetGenImage get phoneBubbles =>
+      const AssetGenImage('assets/images/phone_bubbles.png');
+
+  /// File path: assets/images/plus1_bubbles.png
+  AssetGenImage get plus1Bubbles =>
+      const AssetGenImage('assets/images/plus1_bubbles.png');
 
   /// File path: assets/images/plus_1.png
   AssetGenImage get plus1 => const AssetGenImage('assets/images/plus_1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [bubble1, dollar, earth, fadedDollar, love, phone, plus1];
+  List<AssetGenImage> get values => [
+        bubble1,
+        dollar,
+        dollarBubbles,
+        earth,
+        earthBubbles,
+        fadedDollar,
+        loginBubbles,
+        love,
+        loveBubbles,
+        phone,
+        phoneBubbles,
+        plus1Bubbles,
+        plus1
+      ];
 }
 
 class Assets {

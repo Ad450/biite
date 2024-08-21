@@ -5,4 +5,5 @@
     <color name = "secondary">#99879D</color>
     <color name = "fillColor">#99879D</color>
     <color name = "hintColor">#848484</color>
+    <color name = "onboardingBackground">#FAF9FE</color>
 </colors>

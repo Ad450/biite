@@ -1,24 +1,10 @@
+import 'package:biite/features/onboarding/widgets/onboarding.widget.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-final _assets = [
-  Assets.images.earth.path,
-  Assets.images.dollar.path,
-  Assets.images.phone.path,
-  Assets.images.plus1.path,
-  Assets.images.love.path,
-];
-
-final _descriptionText = [
-  "Find projects from companies everywhere in the word",
-  "Make money while working on awesome projects",
-  "Chat with others freelancers and develop your network",
-  "Work hard and level up!",
-  "Enjoy your progress!",
-];
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -38,72 +24,65 @@ class _OnboardingViewState extends State<OnboardingView> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: _controller,
-      itemCount: 5,
-      onPageChanged: (value) {
-        setState(() {
-          currentIndex = value;
-        });
-      },
-      itemBuilder: (context, index) => _OnboardingViewWidget(
-        descriptionText: _descriptionText[currentIndex],
-        image: _assets[currentIndex],
-      ),
-    );
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
-}
-
-class _OnboardingViewWidget extends StatelessWidget {
-  const _OnboardingViewWidget({
-    required this.descriptionText,
-    required this.image,
-    super.key,
-  });
-
-  final String descriptionText;
-  final String image;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Scaffold(
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(Assets.images.bubble1.path),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 66),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 48.h),
-              Text(
-                biite,
-                style: theme.textTheme.titleMedium,
-              ),
-              SizedBox(height: 91.h),
-              SizedBox(height: 370.h, width: 370.w, child: Image.asset(image)),
-              SizedBox(height: 91.h),
-              Text(
-                descriptionText,
-                style: theme.textTheme.bodyLarge?.copyWith(
-                  fontSize: 18,
-                  color: ColorName.onBackground,
-                  fontWeight: FontWeight.normal,
-                ),
-                textAlign: TextAlign.center,
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+    return Stack(children: [
+      PageView(
+          controller: _controller,
+          onPageChanged: (value) {
+            setState(() {
+              currentIndex = value;
+            });
+          },
+          children: <OnboardingWidget>[
+            OnboardingWidget(
+              descriptionText: onboardingFindProjects,
+              image: Assets.images.earth.path,
+              backgroundImage: Assets.images.earthBubbles.path,
+            ),
+            OnboardingWidget(
+              descriptionText: onboardingMakeMoney,
+              image: Assets.images.dollar.path,
+              backgroundImage: Assets.images.dollarBubbles.path,
+            ),
+            OnboardingWidget(
+              descriptionText: onboardingChatWithOthers,
+              image: Assets.images.phone.path,
+              backgroundImage: Assets.images.phoneBubbles.path,
+            ),
+            OnboardingWidget(
+              descriptionText: onboardingWorkHard,
+              image: Assets.images.plus1.path,
+              backgroundImage: Assets.images.plus1Bubbles.path,
+            ),
+            OnboardingWidget(
+              descriptionText: onboardingEnjoy,
+              image: Assets.images.love.path,
+              backgroundImage: Assets.images.loveBubbles.path,
+            ),
+          ]),
+      Positioned(
+        bottom: 72.h,
+        left: 161.w,
+        child: SmoothPageIndicator(
+            controller: _controller, // PageController
+            count: 5,
+            effect: const JumpingDotEffect(
+              dotHeight: 7,
+              dotWidth: 7,
+              activeDotColor: ColorName.primary,
+            ), // your preferred effect
+            onDotClicked: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            }),
+      )
+    ]);
   }
 }

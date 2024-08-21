@@ -25,6 +25,9 @@ class ColorName {
   /// Color: #120E21
   static const Color onBackground = Color(0xFF120E21);
 
+  /// Color: #FAF9FE
+  static const Color onboardingBackground = Color(0xFFFAF9FE);
+
   /// Color: #9378FF
   static const Color primary = Color(0xFF9378FF);
 

@@ -34,6 +34,14 @@ class $AssetsImagesGen {
   AssetGenImage get fadedDollar =>
       const AssetGenImage('assets/images/faded_dollar.png');
 
+  /// File path: assets/images/home_icon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/images/home_icon.png');
+
+  /// File path: assets/images/home_icon_inactive.png
+  AssetGenImage get homeIconInactive =>
+      const AssetGenImage('assets/images/home_icon_inactive.png');
+
   /// File path: assets/images/login_bubbles.png
   AssetGenImage get loginBubbles =>
       const AssetGenImage('assets/images/login_bubbles.png');
@@ -44,6 +52,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/love_bubbles.png
   AssetGenImage get loveBubbles =>
       const AssetGenImage('assets/images/love_bubbles.png');
+
+  /// File path: assets/images/message_active.png
+  AssetGenImage get messageActive =>
+      const AssetGenImage('assets/images/message_active.png');
+
+  /// File path: assets/images/message_icon.png
+  AssetGenImage get messageIcon =>
+      const AssetGenImage('assets/images/message_icon.png');
 
   /// File path: assets/images/phone.png
   AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');
@@ -59,6 +75,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/plus_1.png
   AssetGenImage get plus1 => const AssetGenImage('assets/images/plus_1.png');
 
+  /// File path: assets/images/profile_active.png
+  AssetGenImage get profileActive =>
+      const AssetGenImage('assets/images/profile_active.png');
+
+  /// File path: assets/images/profile_icon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/images/profile_icon.png');
+
+  /// File path: assets/images/search_active.png
+  AssetGenImage get searchActive =>
+      const AssetGenImage('assets/images/search_active.png');
+
+  /// File path: assets/images/search_icon.png
+  AssetGenImage get searchIcon =>
+      const AssetGenImage('assets/images/search_icon.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         bubble1,
@@ -67,13 +99,21 @@ class $AssetsImagesGen {
         earth,
         earthBubbles,
         fadedDollar,
+        homeIcon,
+        homeIconInactive,
         loginBubbles,
         love,
         loveBubbles,
+        messageActive,
+        messageIcon,
         phone,
         phoneBubbles,
         plus1Bubbles,
-        plus1
+        plus1,
+        profileActive,
+        profileIcon,
+        searchActive,
+        searchIcon
       ];
 }
 

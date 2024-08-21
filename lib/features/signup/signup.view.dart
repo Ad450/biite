@@ -6,6 +6,7 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
@@ -45,7 +46,7 @@ class SignupView extends StatelessWidget {
                 SizedBox(height: 24.h),
                 BiiteFormField(controller: TextEditingController(), hintText: password),
                 SizedBox(height: 102.h),
-                BiiteTextButton(onPressed: () {}, text: signup),
+                BiiteTextButton(onPressed: () => context.go("/home"), text: signup),
                 SizedBox(height: 40.h),
                 const BiiteAuthText(text: login)
               ],

@@ -1,6 +1,7 @@
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteAuthText extends StatelessWidget {
   const BiiteAuthText({required this.text, super.key});
@@ -15,7 +16,7 @@ class BiiteAuthText extends StatelessWidget {
         TextSpan(
           text: haveAccount,
           style: theme.textTheme.bodyLarge?.copyWith(
-            fontSize: 18,
+            fontSize: 17.sp,
             color: ColorName.onBackground,
             fontWeight: FontWeight.normal,
           ),
@@ -24,7 +25,7 @@ class BiiteAuthText extends StatelessWidget {
           text: text,
           style: theme.textTheme.bodyLarge?.copyWith(
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 17.sp,
           ),
         ),
       ],

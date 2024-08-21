@@ -28,16 +28,19 @@ class OnboardingWidget extends StatelessWidget {
             style: theme.textTheme.titleMedium,
           ),
           SizedBox(height: 91.h),
-          SizedBox(height: 370.h, width: 370.w, child: Image.asset(image, fit: BoxFit.cover)),
+          SizedBox(height: 370.h, width: 370.w, child: Image.asset(image, fit: BoxFit.scaleDown)),
           SizedBox(height: 91.h),
-          Text(
-            descriptionText,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              fontSize: 18,
-              color: ColorName.onBackground,
-              fontWeight: FontWeight.normal,
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              descriptionText,
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+                color: ColorName.onBackground,
+                fontWeight: FontWeight.normal,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           )
         ],
       ),

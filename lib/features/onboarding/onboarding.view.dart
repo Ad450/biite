@@ -96,7 +96,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               _controller.animateToPage(index, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
             },
           ),
-          SizedBox(height: 72.h),
+          SizedBox(height: 30.h),
         ]),
       ),
     );

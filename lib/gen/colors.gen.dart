@@ -33,4 +33,7 @@ class ColorName {
 
   /// Color: #99879D
   static const Color secondary = Color(0xFF99879D);
+
+  /// Color: #E2DBFF
+  static const Color textfield = Color(0xFFE2DBFF);
 }

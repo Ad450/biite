@@ -1,6 +1,6 @@
+import 'package:biite/core/presentation/biite.auth.text.dart';
 import 'package:biite/core/presentation/biite.button.dart';
 import 'package:biite/gen/assets.gen.dart';
-import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,27 +41,7 @@ class StartupView extends StatelessWidget {
                 text: discoverText,
               ),
               SizedBox(height: 37.h),
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "You have an account? ",
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        fontSize: 18,
-                        color: ColorName.onBackground,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Log-in",
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              const BiiteAuthText(text: login),
             ],
           ),
         ));

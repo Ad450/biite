@@ -80,14 +80,19 @@ class AppTheme {
             ),
           ),
         ),
-        inputDecorationTheme: const InputDecorationTheme(
+        inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: ColorName.fillColor,
-          hintStyle: TextStyle(
+          fillColor: ColorName.textfield,
+          // contentPadding: const EdgeInsets.symmetric(vertical: 40),
+          hintStyle: const TextStyle(
             color: ColorName.hintColor,
             fontWeight: FontWeight.normal,
             fontFamily: FontFamily.publicSans,
             fontSize: 16,
+          ),
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+            borderRadius: BorderRadius.circular(7),
           ),
         ),
       );

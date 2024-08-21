@@ -13,3 +13,6 @@ const firstName = "First name";
 const lastName = "Last name";
 const email = "Email";
 const password = "Password";
+const feed = "Feed";
+const resume = "Resume";
+const totalGains = "TOTAL GAINS";

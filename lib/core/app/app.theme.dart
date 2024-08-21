@@ -126,3 +126,7 @@ class AppTheme {
         ),
       );
 }
+
+extension AppThemeExtension on BuildContext {
+  ThemeData get appTheme => AppTheme().materialLightTheme;
+}

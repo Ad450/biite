@@ -6,6 +6,7 @@
     <color name = "fillColor">#99879D</color>
     <color name = "hintColor">#848484</color>
     <color name = "onboardingBackground">#FAF9FE</color>
-     <color name = "textfield">#E2DBFF</color>
+    <color name = "textfield">#E2DBFF</color>
+    <color name = "primaryAccent">#D8CEFF</color>
 
 </colors>

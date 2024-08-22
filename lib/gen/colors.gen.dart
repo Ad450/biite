@@ -31,6 +31,9 @@ class ColorName {
   /// Color: #9378FF
   static const Color primary = Color(0xFF9378FF);
 
+  /// Color: #D8CEFF
+  static const Color primaryAccent = Color(0xFFD8CEFF);
+
   /// Color: #99879D
   static const Color secondary = Color(0xFF99879D);
 

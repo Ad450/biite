@@ -16,3 +16,5 @@ const password = "Password";
 const feed = "Feed";
 const resume = "Resume";
 const totalGains = "TOTAL GAINS";
+const viewAll = "View all";
+const activeProjects = "Active projects";

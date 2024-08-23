@@ -14,52 +14,54 @@ class FeedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorName.background,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 56.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              feed,
-              style: context.appTheme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(height: 8.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              resume,
-              style: context.appTheme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 56.h),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                feed,
+                style: context.appTheme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-          ),
-          SizedBox(height: 8.h),
-          const GainsWidget(),
-          SizedBox(height: 26.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  activeProjects,
-                  style: context.appTheme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),
+            SizedBox(height: 8.h),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                resume,
+                style: context.appTheme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
                 ),
-                BiiteViewAll(onTap: () {})
-              ],
+              ),
             ),
-          ),
-          SizedBox(height: 16.h),
-          const ProjectWidget(owner: "Francisco Fisher", projectName: "Wireframes", status: "Active"),
-          SizedBox(height: 16.h),
-          const ProjectWidget(owner: "Amel Fisher", projectName: "Wireframes", status: "Pending")
-        ],
+            SizedBox(height: 8.h),
+            const GainsWidget(),
+            SizedBox(height: 26.h),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    activeProjects,
+                    style: context.appTheme.textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                  BiiteViewAll(onTap: () {})
+                ],
+              ),
+            ),
+            SizedBox(height: 16.h),
+            const ProjectWidget(owner: "Francisco Fisher", projectName: "Wireframes", status: "Active"),
+            SizedBox(height: 16.h),
+            const ProjectWidget(owner: "Amel Fisher", projectName: "Wireframes", status: "Pending")
+          ],
+        ),
       ),
     );
   }

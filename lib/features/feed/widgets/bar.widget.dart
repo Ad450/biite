@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BarWidget extends StatefulWidget {
   const BarWidget({required this.gain, required this.color, super.key});

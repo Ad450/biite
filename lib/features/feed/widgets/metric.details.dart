@@ -1,6 +1,6 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/biite.back.dart';
-import 'package:biite/features/feed/widgets/feed.detail.tile.dart';
+import 'package:biite/features/feed/widgets/metric.tile.dart';
 import 'package:biite/features/feed/widgets/total.gains.expanded.dart';
 import 'package:biite/features/feed/widgets/total.projects.expanded.dart';
 import 'package:biite/features/feed/widgets/total.request.expanded.dart';
@@ -10,8 +10,8 @@ import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FeedDetailsView extends StatelessWidget {
-  const FeedDetailsView({super.key});
+class MetricDetail extends StatelessWidget {
+  const MetricDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +42,22 @@ class FeedDetailsView extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16.h),
-                    const FeedDetailTile(
+                    const MetricTile(
                       titleMetricScore: "27 k",
                       expandedWidget: TotalGainsExpanded(),
                       name: totalGainsDetail,
                     ),
-                    const FeedDetailTile(
+                    const MetricTile(
                       titleMetricScore: "80",
                       expandedWidget: TotalProjectsExpanded(),
                       name: totalProjects,
                     ),
-                    const FeedDetailTile(
+                    const MetricTile(
                       titleMetricScore: "120",
                       expandedWidget: TotalRequestExpanded(),
                       name: totalRequests,
                     ),
-                    const FeedDetailTile(
+                    const MetricTile(
                       titleMetricScore: "64",
                       expandedWidget: TotalReviewsExpanded(),
                       name: totalReviews,

@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/avatar.png
+  AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
+
   /// File path: assets/images/bubble_1.png
   AssetGenImage get bubble1 =>
       const AssetGenImage('assets/images/bubble_1.png');
@@ -93,6 +96,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        avatar,
         bubble1,
         dollar,
         dollarBubbles,

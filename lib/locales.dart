@@ -24,3 +24,8 @@ const totalGainsDetail = "Total gains";
 const totalProjects = "Total projects";
 const totalRequests = "Total requests";
 const totalReviews = "Total reviews";
+const youAreInCharge = "You are in charge of this project";
+const dummyProjectDescription = """
+I need a designer for my new website.The project is just at the beginning and I need wireframes before I start coding the website. I only want wireframes and I don’t want prototype or UI design.
+ """;
+const sendYourWork = "Send your work";

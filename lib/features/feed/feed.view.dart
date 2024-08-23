@@ -59,7 +59,7 @@ class FeedView extends StatelessWidget {
             SizedBox(height: 16.h),
             const ProjectWidget(owner: "Francisco Fisher", projectName: "Wireframes", status: "Active"),
             SizedBox(height: 16.h),
-            const ProjectWidget(owner: "Amel Fisher", projectName: "Wireframes", status: "Pending")
+            const ProjectWidget(owner: "Amel Fisher", projectName: "Do web scraping", status: "Pending")
           ],
         ),
       ),

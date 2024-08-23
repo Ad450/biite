@@ -3,8 +3,8 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FeedDetailTile extends StatefulWidget {
-  const FeedDetailTile({
+class MetricTile extends StatefulWidget {
+  const MetricTile({
     required this.expandedWidget,
     required this.titleMetricScore,
     required this.name,
@@ -16,10 +16,10 @@ class FeedDetailTile extends StatefulWidget {
   final String name;
 
   @override
-  State<FeedDetailTile> createState() => _FeedDetailTileState();
+  State<MetricTile> createState() => _MetricTileState();
 }
 
-class _FeedDetailTileState extends State<FeedDetailTile> {
+class _MetricTileState extends State<MetricTile> {
   bool isExpanded = false;
 
   @override
@@ -33,7 +33,7 @@ class _FeedDetailTileState extends State<FeedDetailTile> {
       child: AnimatedContainer(
         height: isExpanded ? 312.h : 86.h,
         width: double.infinity,
-        curve: Curves.linear,
+        curve: Curves.fastOutSlowIn,
         duration: const Duration(milliseconds: 500),
         decoration: const BoxDecoration(
           color: ColorName.onboardingBackground,

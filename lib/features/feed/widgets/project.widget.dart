@@ -1,4 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/features/feed/widgets/project.detail.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

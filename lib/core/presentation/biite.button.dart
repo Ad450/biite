@@ -1,8 +1,6 @@
-import 'package:biite/core/presentation/biite.adaptive.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BiiteTextButton extends BiiteAdaptive {
+class BiiteTextButton extends StatelessWidget {
   const BiiteTextButton({
     super.key,
     required this.onPressed,
@@ -19,21 +17,10 @@ class BiiteTextButton extends BiiteAdaptive {
   final ButtonStyle? buttonStyle;
 
   @override
-  Widget buildAndroid() {
+  Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: buttonStyle,
-      child: Text(
-        text,
-        style: style,
-      ),
-    );
-  }
-
-  @override
-  Widget buildIOS() {
-    return CupertinoButton(
-      onPressed: onPressed,
       child: Text(
         text,
         style: style,

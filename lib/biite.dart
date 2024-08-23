@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:biite/core/app/app.router.dart';
 import 'package:biite/core/app/app.theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,21 +10,13 @@ class Biite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isAndroid
-        ? ScreenUtilInit(
-            designSize: designSize,
-            child: MaterialApp.router(
-              routerConfig: router,
-              theme: AppTheme().materialLightTheme,
-              title: "biite",
-            ),
-          )
-        : ScreenUtilInit(
-            designSize: designSize,
-            child: CupertinoApp.router(
-              routerConfig: router,
-              theme: AppTheme().cupertinoLightTheme,
-            ),
-          );
+    return ScreenUtilInit(
+      designSize: designSize,
+      child: MaterialApp.router(
+        routerConfig: router,
+        theme: AppTheme().materialLightTheme,
+        title: "biite",
+      ),
+    );
   }
 }

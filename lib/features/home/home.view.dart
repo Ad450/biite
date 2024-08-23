@@ -16,10 +16,24 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
 
+  Map<int, GlobalKey<NavigatorState>> navigatorKeys = {
+    0: GlobalKey<NavigatorState>(),
+    1: GlobalKey<NavigatorState>(),
+    2: GlobalKey<NavigatorState>(),
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: const [FeedView(), SearchView(), MessageView(), ProfileView()][currentIndex],
+      // body: Navigator(
+      //   key: navigatorKeys[currentIndex],
+      //   onGenerateRoute: (RouteSettings settings) {
+      //     return MaterialPageRoute(
+      //       builder: (_) => const [FeedView(), SearchView(), MessageView(), ProfileView()][currentIndex],
+      //     );
+      //   },
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,

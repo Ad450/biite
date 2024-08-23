@@ -1,7 +1,11 @@
+import 'package:biite/features/feed/feed.view.dart';
 import 'package:biite/features/feed/widgets/metric.details.dart';
 import 'package:biite/features/feed/widgets/project.detail.dart';
 import 'package:biite/features/home/home.view.dart';
+import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/onboarding/onboarding.view.dart';
+import 'package:biite/features/profile/profile.view.dart';
+import 'package:biite/features/search/search.view.dart';
 import 'package:biite/features/startup/startup.view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

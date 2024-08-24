@@ -37,6 +37,10 @@ class $AssetsImagesGen {
   AssetGenImage get fadedDollar =>
       const AssetGenImage('assets/images/faded_dollar.png');
 
+  /// File path: assets/images/filterIcon.png
+  AssetGenImage get filterIcon =>
+      const AssetGenImage('assets/images/filterIcon.png');
+
   /// File path: assets/images/home_icon.png
   AssetGenImage get homeIcon =>
       const AssetGenImage('assets/images/home_icon.png');
@@ -103,6 +107,7 @@ class $AssetsImagesGen {
         earth,
         earthBubbles,
         fadedDollar,
+        filterIcon,
         homeIcon,
         homeIconInactive,
         loginBubbles,

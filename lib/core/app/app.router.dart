@@ -7,6 +7,7 @@ import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/onboarding/onboarding.view.dart';
 import 'package:biite/features/profile/profile.view.dart';
 import 'package:biite/features/search/search.view.dart';
+import 'package:biite/features/search/widget/search.project.detail.dart';
 import 'package:biite/features/startup/startup.view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,5 +20,6 @@ final router = GoRouter(
     GoRoute(path: "/feed-details", builder: (context, state) => const MetricDetail()),
     GoRoute(path: "/project-detail", builder: (context, state) => const ProjectDetail()),
     GoRoute(path: "/sendYourWork", builder: (context, state) => const SendYourWork()),
+    GoRoute(path: "/searchProjectDetail", builder: (context, state) => const SearchProjectDetail()),
   ],
 );

@@ -1,5 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/features/search/widget/project.card.dart';
+import 'package:biite/features/search/widget/search.project.dart';
 import 'package:biite/features/search/widget/search.textfield.dart';
 import 'package:biite/features/search/widget/search.filters.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -45,8 +45,8 @@ class SearchView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  ProjectCard(),
-                  ProjectCard(),
+                  SearchProject(),
+                  SearchProject(),
                 ],
               ),
             ),

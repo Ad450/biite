@@ -9,5 +9,6 @@
     <color name = "textfield">#E2DBFF</color>
     <color name = "primaryAccent">#D8CEFF</color>
     <color name = "searchbBorder">#F2F2F2</color>
+     <color name = "searchCard">#EFEDF0</color>
 
 </colors>

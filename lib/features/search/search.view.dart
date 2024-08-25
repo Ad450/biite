@@ -1,6 +1,7 @@
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/features/search/widget/project.card.dart';
 import 'package:biite/features/search/widget/search.textfield.dart';
-import 'package:biite/features/search/widget/search_filters.dart';
+import 'package:biite/features/search/widget/search.filters.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
@@ -16,23 +17,41 @@ class SearchView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(height: 56.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              search,
-              style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 56.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  search,
+                  style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(height: 24.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: SearchTextfield(
+                  controller: TextEditingController(),
+                ),
+              ),
+              SizedBox(height: 32.h),
+              const SearchFilters(),
+              SizedBox(height: 32.h),
+            ],
+          ),
+          const Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ProjectCard(),
+                  ProjectCard(),
+                ],
+              ),
             ),
           ),
-          SizedBox(height: 24.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: SearchTextfield(
-              controller: TextEditingController(),
-            ),
-          ),
-          SizedBox(height: 32.h),
-          const SearchFilters()
+          SizedBox(height: 16.h),
         ],
       ),
     );

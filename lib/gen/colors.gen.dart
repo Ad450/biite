@@ -34,6 +34,9 @@ class ColorName {
   /// Color: #D8CEFF
   static const Color primaryAccent = Color(0xFFD8CEFF);
 
+  /// Color: #EFEDF0
+  static const Color searchCard = Color(0xFFEFEDF0);
+
   /// Color: #F2F2F2
   static const Color searchbBorder = Color(0xFFF2F2F2);
 

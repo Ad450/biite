@@ -1,6 +1,7 @@
 import 'package:biite/features/feed/feed.view.dart';
 import 'package:biite/features/feed/widgets/metric.details.dart';
 import 'package:biite/features/feed/widgets/project.detail.dart';
+import 'package:biite/features/feed/widgets/send.your.work.dart';
 import 'package:biite/features/home/home.view.dart';
 import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/onboarding/onboarding.view.dart';
@@ -17,5 +18,6 @@ final router = GoRouter(
     GoRoute(path: "/home", builder: (context, state) => const HomeView()),
     GoRoute(path: "/feed-details", builder: (context, state) => const MetricDetail()),
     GoRoute(path: "/project-detail", builder: (context, state) => const ProjectDetail()),
+    GoRoute(path: "/sendYourWork", builder: (context, state) => const SendYourWork()),
   ],
 );

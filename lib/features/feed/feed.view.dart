@@ -13,7 +13,7 @@ class FeedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.background,
+      backgroundColor: ColorName.onboardingBackground,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,6 +56,7 @@ class FeedView extends StatelessWidget {
                 ],
               ),
             ),
+            // show first 5 latest projects
             SizedBox(height: 16.h),
             const ProjectWidget(owner: "Francisco Fisher", projectName: "Wireframes", status: "Active"),
             SizedBox(height: 16.h),

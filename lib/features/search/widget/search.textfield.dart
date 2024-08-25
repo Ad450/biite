@@ -1,5 +1,6 @@
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
+import 'package:biite/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,14 +13,16 @@ class SearchTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 3,
-      shadowColor: ColorName.background,
+      shadowColor: ColorName.onboardingBackground,
+      borderRadius: BorderRadius.circular(8),
       child: SizedBox(
         height: 45.h,
         width: double.infinity,
         child: TextField(
           controller: controller,
+          style: const TextStyle(color: ColorName.text, fontSize: 16, fontFamily: FontFamily.publicSans),
           decoration: InputDecoration(
-            fillColor: ColorName.onboardingBackground,
+            fillColor: ColorName.white,
             filled: true,
             suffixIcon: Image.asset(Assets.images.searchIcon.path),
             border: OutlineInputBorder(

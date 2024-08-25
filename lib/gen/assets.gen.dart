@@ -19,6 +19,10 @@ class $AssetsImagesGen {
   AssetGenImage get bubble1 =>
       const AssetGenImage('assets/images/bubble_1.png');
 
+  /// File path: assets/images/cancelIcon.png
+  AssetGenImage get cancelIcon =>
+      const AssetGenImage('assets/images/cancelIcon.png');
+
   /// File path: assets/images/dollar.png
   AssetGenImage get dollar => const AssetGenImage('assets/images/dollar.png');
 
@@ -98,10 +102,15 @@ class $AssetsImagesGen {
   AssetGenImage get searchIcon =>
       const AssetGenImage('assets/images/search_icon.png');
 
+  /// File path: assets/images/uploadIcon.png
+  AssetGenImage get uploadIcon =>
+      const AssetGenImage('assets/images/uploadIcon.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         avatar,
         bubble1,
+        cancelIcon,
         dollar,
         dollarBubbles,
         earth,
@@ -122,7 +131,8 @@ class $AssetsImagesGen {
         profileActive,
         profileIcon,
         searchActive,
-        searchIcon
+        searchIcon,
+        uploadIcon
       ];
 }
 

@@ -22,6 +22,9 @@ class ColorName {
   /// Color: #848484
   static const Color hintColor = Color(0xFF848484);
 
+  /// Color: #F2F2F2
+  static const Color multiline = Color(0xFFF2F2F2);
+
   /// Color: #120E21
   static const Color onBackground = Color(0xFF120E21);
 
@@ -43,6 +46,12 @@ class ColorName {
   /// Color: #99879D
   static const Color secondary = Color(0xFF99879D);
 
+  /// Color: #595959
+  static const Color text = Color(0xFF595959);
+
   /// Color: #E2DBFF
   static const Color textfield = Color(0xFFE2DBFF);
+
+  /// Color: #FFFFFF
+  static const Color white = Color(0xFFFFFFFF);
 }

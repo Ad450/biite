@@ -16,7 +16,7 @@ class MetricDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.background,
+      backgroundColor: ColorName.onboardingBackground,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

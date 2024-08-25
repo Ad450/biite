@@ -26,7 +26,7 @@ class ProjectWidget extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: 102.h,
-          decoration: const BoxDecoration(color: ColorName.onboardingBackground),
+          decoration: const BoxDecoration(color: ColorName.white),
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Column(

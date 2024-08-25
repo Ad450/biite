@@ -36,7 +36,7 @@ class _MetricTileState extends State<MetricTile> {
         curve: Curves.fastOutSlowIn,
         duration: const Duration(milliseconds: 500),
         decoration: const BoxDecoration(
-          color: ColorName.onboardingBackground,
+          color: ColorName.white,
           border: Border(
             top: BorderSide(color: ColorName.fillColor, width: 0.5),
             bottom: BorderSide(color: ColorName.fillColor, width: 0.5),

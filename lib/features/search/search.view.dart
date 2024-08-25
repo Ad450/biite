@@ -13,7 +13,7 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.background,
+      backgroundColor: ColorName.onboardingBackground,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

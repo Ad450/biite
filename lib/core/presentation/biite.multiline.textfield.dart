@@ -2,12 +2,13 @@ import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteMultilineTextfield extends StatelessWidget {
-  const BiiteMultilineTextfield({required this.controller, super.key});
+  const BiiteMultilineTextfield({required this.controller, this.minLines, this.maxLines, super.key});
 
   final TextEditingController controller;
+  final int? minLines;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,8 @@ class BiiteMultilineTextfield extends StatelessWidget {
       // height: 160.h,
       child: TextField(
         controller: controller,
-        maxLines: 7,
-        minLines: 5,
+        maxLines: maxLines ?? 7,
+        minLines: minLines ?? 5,
         keyboardType: TextInputType.multiline,
         // expands: true,
         style: context.appTheme.textTheme.bodySmall?.copyWith(

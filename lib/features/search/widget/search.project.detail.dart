@@ -6,6 +6,7 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class SearchProjectDetail extends StatelessWidget {
   const SearchProjectDetail({super.key});
@@ -44,7 +45,7 @@ class SearchProjectDetail extends StatelessWidget {
             SizedBox(height: 112.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 56.w),
-              child: BiiteTextButton(onPressed: () {}, text: "Make a proposition"),
+              child: BiiteTextButton(onPressed: () => context.push("/makeProposition"), text: "Make a proposition"),
             )
           ],
         ),

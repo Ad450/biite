@@ -72,8 +72,16 @@ class $AssetsImagesGen {
   AssetGenImage get messageIcon =>
       const AssetGenImage('assets/images/message_icon.png');
 
+  /// File path: assets/images/moreIcon.png
+  AssetGenImage get moreIcon =>
+      const AssetGenImage('assets/images/moreIcon.png');
+
   /// File path: assets/images/phone.png
   AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');
+
+  /// File path: assets/images/phoneIcon.png
+  AssetGenImage get phoneIcon =>
+      const AssetGenImage('assets/images/phoneIcon.png');
 
   /// File path: assets/images/phone_bubbles.png
   AssetGenImage get phoneBubbles =>
@@ -124,7 +132,9 @@ class $AssetsImagesGen {
         loveBubbles,
         messageActive,
         messageIcon,
+        moreIcon,
         phone,
+        phoneIcon,
         phoneBubbles,
         plus1Bubbles,
         plus1,

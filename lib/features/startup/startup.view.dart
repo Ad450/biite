@@ -1,6 +1,7 @@
 import 'package:biite/core/presentation/biite.auth.text.dart';
 import 'package:biite/core/presentation/biite.button.dart';
 import 'package:biite/gen/assets.gen.dart';
+import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,7 @@ class StartupView extends StatelessWidget {
             image: AssetImage(Assets.images.bubble1.path),
             fit: BoxFit.cover,
           ),
+          color: ColorName.onboardingBackground,
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 66.w),

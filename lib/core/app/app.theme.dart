@@ -84,6 +84,7 @@ class AppTheme {
           filled: true,
           fillColor: ColorName.textfield,
           // contentPadding: const EdgeInsets.symmetric(vertical: 40),
+
           hintStyle: const TextStyle(
             color: ColorName.hintColor,
             fontWeight: FontWeight.normal,

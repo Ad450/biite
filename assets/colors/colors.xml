@@ -13,4 +13,6 @@
     <color name = "multiline">#F2F2F2</color>
     <color name = "white">#FFFFFF</color>
     <color name = "text">#595959</color>
+    <color name = "ownerChat">#CABDFD</color>
+    
 </colors>

@@ -31,6 +31,9 @@ class ColorName {
   /// Color: #FAF9FE
   static const Color onboardingBackground = Color(0xFFFAF9FE);
 
+  /// Color: #CABDFD
+  static const Color ownerChat = Color(0xFFCABDFD);
+
   /// Color: #9378FF
   static const Color primary = Color(0xFF9378FF);
 

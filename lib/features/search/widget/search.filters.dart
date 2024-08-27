@@ -36,7 +36,7 @@ class _SearchFiltersState extends State<SearchFilters> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
         children: <Widget>[
           GestureDetector(

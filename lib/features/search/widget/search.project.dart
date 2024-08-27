@@ -14,7 +14,7 @@ class SearchProject extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.push("/searchProjectDetail"),
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16),
+        margin: EdgeInsets.symmetric(vertical: 16.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
         ),

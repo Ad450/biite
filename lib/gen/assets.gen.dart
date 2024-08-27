@@ -94,6 +94,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/plus_1.png
   AssetGenImage get plus1 => const AssetGenImage('assets/images/plus_1.png');
 
+  /// File path: assets/images/portfolio.png
+  AssetGenImage get portfolio =>
+      const AssetGenImage('assets/images/portfolio.png');
+
   /// File path: assets/images/profile_active.png
   AssetGenImage get profileActive =>
       const AssetGenImage('assets/images/profile_active.png');
@@ -138,6 +142,7 @@ class $AssetsImagesGen {
         phoneBubbles,
         plus1Bubbles,
         plus1,
+        portfolio,
         profileActive,
         profileIcon,
         searchActive,

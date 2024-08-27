@@ -5,9 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteViewAll extends StatelessWidget {
-  const BiiteViewAll({required this.onTap, super.key});
+  const BiiteViewAll({
+    required this.onTap,
+    this.borderRadius,
+    super.key,
+  });
 
   final VoidCallback onTap;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +21,9 @@ class BiiteViewAll extends StatelessWidget {
       child: Container(
         height: 34.h,
         width: 83.w,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: ColorName.primaryAccent,
+          borderRadius: BorderRadius.circular(borderRadius ?? 0),
         ),
         child: Center(
           child: Text(

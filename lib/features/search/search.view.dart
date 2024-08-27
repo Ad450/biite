@@ -14,45 +14,42 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 56.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 56.h),
+                Text(
                   search,
                   style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
                 ),
-              ),
-              SizedBox(height: 24.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: SearchTextfield(
+                SizedBox(height: 24.h),
+                SearchTextfield(
                   controller: TextEditingController(),
                 ),
-              ),
-              SizedBox(height: 32.h),
-              const SearchFilters(),
-              SizedBox(height: 32.h),
-            ],
-          ),
-          const Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SearchProject(),
-                  SearchProject(),
-                ],
+                SizedBox(height: 32.h),
+                const SearchFilters(),
+                SizedBox(height: 32.h),
+              ],
+            ),
+            const Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SearchProject(),
+                    SearchProject(),
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 16.h),
-        ],
+            SizedBox(height: 16.h),
+          ],
+        ),
       ),
     );
   }

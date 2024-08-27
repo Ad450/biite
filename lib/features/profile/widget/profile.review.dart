@@ -5,6 +5,7 @@ import 'package:biite/features/profile/widget/profile.rating.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileReview extends StatelessWidget {
   const ProfileReview({super.key});
@@ -72,7 +73,7 @@ class ProfileReview extends StatelessWidget {
             SizedBox(height: 4.h),
             const ProfileRating(),
             SizedBox(height: 16.h),
-            BiiteViewAll(onTap: () {}, borderRadius: 4),
+            BiiteViewAll(onTap: () => context.push("/reviewDetail"), borderRadius: 4),
           ],
         )
       ],

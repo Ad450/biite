@@ -4,6 +4,7 @@ import 'package:biite/features/feed/widgets/send.your.work.dart';
 import 'package:biite/features/home/home.view.dart';
 import 'package:biite/features/message/widget/message.detail.dart';
 import 'package:biite/features/onboarding/onboarding.view.dart';
+import 'package:biite/features/profile/widget/all.reviews.dart';
 import 'package:biite/features/search/widget/make.proposition.dart';
 import 'package:biite/features/search/widget/search.project.detail.dart';
 import 'package:biite/features/startup/startup.view.dart';
@@ -21,5 +22,6 @@ final router = GoRouter(
     GoRoute(path: "/searchProjectDetail", builder: (context, state) => const SearchProjectDetail()),
     GoRoute(path: "/makeProposition", builder: (context, state) => const MakeProposition()),
     GoRoute(path: "/messageDetail", builder: (context, state) => const MessageDetail()),
+    GoRoute(path: "/reviewDetail", builder: (context, state) => const AllReviews()),
   ],
 );

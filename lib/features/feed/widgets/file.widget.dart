@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FileWidget extends StatelessWidget {
-  const FileWidget({super.key});
+  const FileWidget({required this.filename, super.key});
+  final String filename;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class FileWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              "file name",
+              filename,
               style: context.appTheme.textTheme.bodySmall?.copyWith(
                 fontSize: 16,
                 color: ColorName.text,

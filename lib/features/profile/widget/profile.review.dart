@@ -1,4 +1,3 @@
-import 'package:biite/biite.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/biite.view.all.dart';
 import 'package:biite/features/profile/widget/profile.rating.dart';

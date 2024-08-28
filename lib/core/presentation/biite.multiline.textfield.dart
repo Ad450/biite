@@ -4,11 +4,18 @@ import 'package:biite/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 class BiiteMultilineTextfield extends StatelessWidget {
-  const BiiteMultilineTextfield({required this.controller, this.minLines, this.maxLines, super.key});
+  const BiiteMultilineTextfield({
+    required this.controller,
+    this.minLines,
+    this.maxLines,
+    this.hintText,
+    super.key,
+  });
 
   final TextEditingController controller;
   final int? minLines;
   final int? maxLines;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +37,7 @@ class BiiteMultilineTextfield extends StatelessWidget {
           filled: true,
           fillColor: ColorName.multiline,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17),
-          hintText: "Message",
+          hintText: hintText ?? "Message",
           hintStyle: const TextStyle(
             color: ColorName.text,
             fontSize: 16,

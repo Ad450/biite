@@ -48,7 +48,9 @@ class SignupView extends StatelessWidget {
                 SizedBox(height: 102.h),
                 BiiteTextButton(onPressed: () => context.go("/home"), text: signup),
                 SizedBox(height: 40.h),
-                const BiiteAuthText(text: login)
+                BiiteAuthText(text: login, onTap: () {} // emit change to login ,
+                    // TODO: have an auth view which changes based on the emitted state
+                    )
               ],
             ),
           ),

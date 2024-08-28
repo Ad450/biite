@@ -1,11 +1,14 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UploadFile extends StatelessWidget {
-  const UploadFile({super.key});
+  const UploadFile({required this.onTap, super.key});
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class UploadFile extends StatelessWidget {
                 fontWeight: FontWeight.normal,
               ),
             ),
-            Image.asset(Assets.images.uploadIcon.path),
+            GestureDetector(onTap: onTap, child: Image.asset(Assets.images.uploadIcon.path)),
           ],
         ),
       ),

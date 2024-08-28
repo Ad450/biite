@@ -1,5 +1,6 @@
 import 'package:biite/core/presentation/biite.auth.text.dart';
 import 'package:biite/core/presentation/biite.button.dart';
+import 'package:biite/features/signup/login.view.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
@@ -43,7 +44,7 @@ class StartupView extends StatelessWidget {
                 text: discoverText,
               ),
               SizedBox(height: 37.h),
-              const BiiteAuthText(text: login),
+              BiiteAuthText(text: login, onTap: () => context.go("/login")),
             ],
           ),
         ));

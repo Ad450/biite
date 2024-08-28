@@ -37,10 +37,10 @@ class SendYourWork extends StatelessWidget {
               SizedBox(height: 16.h),
               BiiteMultilineTextfield(controller: TextEditingController()),
               SizedBox(height: 24.h),
-              const UploadFile(),
+              UploadFile(onTap: () {}),
               SizedBox(height: 24.h),
               // show file if chosen
-              const FileWidget(),
+              const FileWidget(filename: "filename"),
               SizedBox(height: 69.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 56.w),

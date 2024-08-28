@@ -1,3 +1,4 @@
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:biite/features/dashboard/dashboard.view.dart';
 import 'package:biite/features/feed/feed.view.dart';
 import 'package:biite/features/message/message.view.dart';
@@ -16,6 +17,24 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(_interceptLeavingNonFeedScreen);
+  }
+
+  bool _interceptLeavingNonFeedScreen(bool stopDefaultButtonEvent, RouteInfo info) {
+    if (stopDefaultButtonEvent) return true;
+    if (currentIndex != 0) {
+      setState(() {
+        currentIndex = 0;
+      });
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

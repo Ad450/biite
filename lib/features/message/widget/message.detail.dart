@@ -123,26 +123,3 @@ class _Chat extends StatelessWidget {
     );
   }
 }
-
-// Text(
-//                   "Seen",
-//                   style: context.appTheme.textTheme.bodySmall
-//                       ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.onBackground),
-//                 ),
-//  icon :Icon( Icons.check_circle,color: isRead ? ColorName.primary : ColorName.onBackground,
-//                 size: 10,),),
-                
-//                 onPressed (){},
-//                 label: "",
-
-
-// TextButton.icon(
-//               icon: Icon(
-//                 Icons.check_circle,
-//                 color: isRead ? ColorName.primary : ColorName.onBackground,
-//                 size: 10,
-//               ),
-//               onPressed: () {},
-//               label: const Text("Seen"),
-//               style: ButtonStyle(padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(EdgeInsets.zero)),
-//             ),

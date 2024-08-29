@@ -26,25 +26,8 @@ class MessageDetail extends StatelessWidget {
                         // chat messages here
                         20,
                         (i) => Align(
-                          alignment: i % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                            decoration: BoxDecoration(
-                              color: i % 2 == 0 ? ColorName.primary : ColorName.ownerChat,
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            width: 200.w,
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text(
-                                dummyProjectDescription,
-                                maxLines: i % 2 == 0 ? 3 : 8,
-                                style: context.appTheme.textTheme.bodySmall
-                                    ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.white),
-                              ),
-                            ),
-                          ),
-                        ),
+                            alignment: i % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+                            child: _Chat(index: i, isRead: i % 2 == 0)),
                       ),
                     ],
                   ),
@@ -90,3 +73,76 @@ class MessageDetail extends StatelessWidget {
     );
   }
 }
+
+class _Chat extends StatelessWidget {
+  const _Chat({required this.index, required this.isRead, super.key});
+
+  final int index;
+  final bool isRead;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.h),
+      margin: const EdgeInsets.symmetric(vertical: 24),
+      child: Column(
+        children: [
+          Align(
+            alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+            child: Container(
+              decoration: BoxDecoration(
+                color: index % 2 == 0 ? ColorName.primary : ColorName.ownerChat,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              width: 200.w,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  dummyProjectDescription,
+                  maxLines: index % 2 == 0 ? 3 : 8,
+                  style: context.appTheme.textTheme.bodySmall
+                      ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.white),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+            child: SizedBox(
+              height: 16.h,
+              width: 78.w,
+              child: Text(
+                "Read 12:45 √",
+                style: context.appTheme.textTheme.bodySmall
+                    ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.fillColor),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+// Text(
+//                   "Seen",
+//                   style: context.appTheme.textTheme.bodySmall
+//                       ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.onBackground),
+//                 ),
+//  icon :Icon( Icons.check_circle,color: isRead ? ColorName.primary : ColorName.onBackground,
+//                 size: 10,),),
+                
+//                 onPressed (){},
+//                 label: "",
+
+
+// TextButton.icon(
+//               icon: Icon(
+//                 Icons.check_circle,
+//                 color: isRead ? ColorName.primary : ColorName.onBackground,
+//                 size: 10,
+//               ),
+//               onPressed: () {},
+//               label: const Text("Seen"),
+//               style: ButtonStyle(padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(EdgeInsets.zero)),
+//             ),

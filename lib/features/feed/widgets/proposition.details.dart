@@ -3,15 +3,13 @@ import 'package:biite/core/presentation/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/biite.back.dart';
 import 'package:biite/core/presentation/biite.button.dart';
 import 'package:biite/core/presentation/biite.chip.dart';
-import 'package:biite/features/feed/widgets/in.charge.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
-class ProjectDetail extends StatelessWidget {
-  const ProjectDetail({super.key});
+class PropositionDetails extends StatelessWidget {
+  const PropositionDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,6 @@ class ProjectDetail extends StatelessWidget {
               child: BiiteBack(),
             ),
             SizedBox(height: 32.h),
-            const InCharge(deadline: "28/03/2023"),
             SizedBox(height: 32.h),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -36,7 +33,7 @@ class ProjectDetail extends StatelessWidget {
                   const BiiteAvatarWithText(name: "Emmanuel Adjei"),
                   SizedBox(height: 24.h),
                   Text(
-                    "Posted 8 days ago",
+                    "Sent 8 days ago",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   Text(
@@ -52,25 +49,18 @@ class ProjectDetail extends StatelessWidget {
                     ),
                     textAlign: TextAlign.justify,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const BiiteChip(text: "WIREFRAME"),
-                      Text(
-                        "\$ 600",
-                        style: context.appTheme.textTheme.bodySmall?.copyWith(
-                          fontSize: 16,
-                          color: ColorName.primary,
-                        ),
-                      ),
-                    ],
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    direction: Axis.horizontal,
+                    children: ["WIREFRAME", "UI/UX"].map((e) => BiiteChip(text: e)).toList(),
                   ),
                   SizedBox(height: 97.h),
                   Align(
                     alignment: Alignment.center,
                     child: SizedBox(
                       width: 263.w,
-                      child: BiiteTextButton(onPressed: () => context.push("/sendYourWork"), text: sendYourWork),
+                      child: BiiteTextButton(onPressed: () {}, text: "Accept"),
                     ),
                   ),
                 ],

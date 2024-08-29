@@ -4,15 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteAvatarWithText extends StatelessWidget {
-  const BiiteAvatarWithText({required this.name, super.key});
+  const BiiteAvatarWithText({required this.name, this.fontSize, this.radius, super.key});
   final String name;
-
+  final double? radius;
+  final double? fontSize;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
         CircleAvatar(
-          radius: 24,
+          radius: radius ?? 24,
           // use caching mechanism here
           child: Image.asset(Assets.images.avatar.path, fit: BoxFit.cover),
         ),
@@ -20,7 +21,7 @@ class BiiteAvatarWithText extends StatelessWidget {
         Text(
           name,
           style: context.appTheme.textTheme.titleMedium?.copyWith(
-            fontSize: 25,
+            fontSize: fontSize ?? 25,
             fontWeight: FontWeight.bold,
           ),
         )

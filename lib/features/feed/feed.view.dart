@@ -1,7 +1,10 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/biite.view.all.dart';
+import 'package:biite/features/feed/widgets/active.projects.dart';
+import 'package:biite/features/feed/widgets/created.projects.dart';
 import 'package:biite/features/feed/widgets/gains.widget.dart';
 import 'package:biite/features/feed/widgets/project.widget.dart';
+import 'package:biite/features/feed/widgets/feed.propositions.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
@@ -40,27 +43,15 @@ class FeedView extends StatelessWidget {
             SizedBox(height: 8.h),
             const GainsWidget(),
             SizedBox(height: 26.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    activeProjects,
-                    style: context.appTheme.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  BiiteViewAll(onTap: () {})
-                ],
-              ),
-            ),
-            // show first 5 latest projects
-            SizedBox(height: 16.h),
-            const ProjectWidget(owner: "Francisco Fisher", projectName: "Wireframes", status: "Active"),
-            SizedBox(height: 16.h),
-            const ProjectWidget(owner: "Amel Fisher", projectName: "Do web scraping", status: "Pending")
+            // active projects
+            const ActiveProjects(),
+            SizedBox(height: 26.h),
+            // created projects
+            const CreatedProjects(),
+            SizedBox(height: 26.h),
+            const FeedPropositions()
+
+            // propositions
           ],
         ),
       ),

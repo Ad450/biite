@@ -5,7 +5,7 @@ import 'package:biite/core/presentation/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/biite.back.dart';
 import 'package:biite/core/presentation/biite.button.dart';
 import 'package:biite/core/presentation/biite.multiline.textfield.dart';
-import 'package:biite/features/dashboard/widget/price.textfield.dart';
+import 'package:biite/core/presentation/biite.textfield.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/upload.file.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -43,7 +43,6 @@ class _DashboardViewState extends State<DashboardView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const BiiteBack(),
               SizedBox(height: 40.h),
               Expanded(
                 child: SingleChildScrollView(
@@ -80,7 +79,7 @@ class _DashboardViewState extends State<DashboardView> {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      PriceTextfield(controller: TextEditingController()),
+                      BiiteTextfield(controller: TextEditingController()),
                       SizedBox(height: 69.h),
 
                       Padding(

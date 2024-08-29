@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FileWidget extends StatelessWidget {
-  const FileWidget({required this.filename, super.key});
+  const FileWidget({required this.filename, this.image, super.key});
   final String filename;
+  final Widget? image;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class FileWidget extends StatelessWidget {
       child: Container(
         height: 56.h,
         width: double.infinity,
+        margin: const EdgeInsets.only(bottom: 8),
         padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: ColorName.onboardingBackground,
@@ -34,7 +36,7 @@ class FileWidget extends StatelessWidget {
                 fontWeight: FontWeight.normal,
               ),
             ),
-            Image.asset(Assets.images.cancelIcon.path),
+            image ?? Image.asset(Assets.images.cancelIcon.path),
           ],
         ),
       ),

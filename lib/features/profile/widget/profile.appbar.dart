@@ -1,6 +1,7 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileAppbar extends StatelessWidget {
   const ProfileAppbar({super.key});
@@ -15,7 +16,7 @@ class ProfileAppbar extends StatelessWidget {
           style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () => context.push("/editProfile"),
           icon: const Icon(
             Icons.mode_edit_outline_outlined,
             color: ColorName.onBackground,

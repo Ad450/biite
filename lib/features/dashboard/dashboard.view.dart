@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/biite.avatar.with.text.dart';
-import 'package:biite/core/presentation/biite.back.dart';
 import 'package:biite/core/presentation/biite.button.dart';
 import 'package:biite/core/presentation/biite.multiline.textfield.dart';
 import 'package:biite/core/presentation/biite.textfield.dart';
@@ -22,12 +21,21 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
-  List<File> files = [];
+  Set<File> files = {};
 
   void _pickFiles() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
     if (result != null) {
-      files.addAll(result.paths.map((path) => File(path!)).toList());
+      for (var e in result.files) {
+        String newPath = e.path!.toLowerCase();
+        bool fileExists = files.any((element) => element.path.toLowerCase().split("-")[1] == newPath.split("-")[1]);
+
+        if (!fileExists) {
+          files.add(File(e.path!));
+        }
+      }
+
+      setState(() {});
     } else {
       return;
     }
@@ -67,7 +75,13 @@ class _DashboardViewState extends State<DashboardView> {
                       UploadFile(onTap: _pickFiles),
                       SizedBox(height: 24.h),
                       // show file if chosen
-                      ...files.map((e) => FileWidget(filename: e.path)),
+                      ...files.map((e) => FileWidget(
+                            filename: e.path.split("/").last,
+                            onClose: () {
+                              files.removeWhere((element) => e.path == element.path);
+                              setState(() {});
+                            },
+                          )),
                       // const FileWidget(),
                       SizedBox(height: 16.h),
                       Text(

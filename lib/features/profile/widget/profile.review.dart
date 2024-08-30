@@ -72,7 +72,7 @@ class ProfileReview extends StatelessWidget {
             SizedBox(height: 4.h),
             const ProfileRating(),
             SizedBox(height: 16.h),
-            BiiteViewAll(onTap: () => context.push("/reviewDetail"), borderRadius: 4),
+            BiiteViewAll(onTap: () => context.push("/reviewDetail")),
           ],
         )
       ],

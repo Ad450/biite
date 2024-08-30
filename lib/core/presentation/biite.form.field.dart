@@ -1,3 +1,4 @@
+import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,11 @@ class BiiteFormField extends StatelessWidget {
       child: TextField(
         controller: controller,
         textAlignVertical: TextAlignVertical.center,
+        style: context.appTheme.textTheme.bodySmall?.copyWith(
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: ColorName.onBackground,
+        ),
         decoration: InputDecoration(
           filled: true,
           fillColor: ColorName.textfield,

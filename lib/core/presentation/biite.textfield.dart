@@ -26,6 +26,9 @@ class BiiteTextfield extends StatelessWidget {
       maxLines: maxLines ?? 1,
       minLines: minLines ?? 1,
       keyboardType: inputType ?? TextInputType.number,
+      onTapOutside: (PointerDownEvent event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       // expands: true,
       style: context.appTheme.textTheme.bodySmall?.copyWith(
         fontSize: 16,

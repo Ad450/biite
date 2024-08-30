@@ -20,6 +20,9 @@ class SearchTextfield extends StatelessWidget {
         width: double.infinity,
         child: TextField(
           controller: controller,
+          onTapOutside: (PointerDownEvent event) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           style: const TextStyle(color: ColorName.text, fontSize: 16, fontFamily: FontFamily.publicSans),
           decoration: InputDecoration(
             fillColor: ColorName.white,

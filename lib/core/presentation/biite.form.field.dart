@@ -22,6 +22,9 @@ class BiiteFormField extends StatelessWidget {
           fontWeight: FontWeight.normal,
           color: ColorName.onBackground,
         ),
+        onTapOutside: (PointerDownEvent event) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         decoration: InputDecoration(
           filled: true,
           fillColor: ColorName.textfield,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/features/message/widget/message.detail.appbar.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -40,34 +42,7 @@ class MessageDetail extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-            color: ColorName.white,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // textBaseline: TextBaseline.alphabetic,
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: TextEditingController(),
-                    minLines: 1,
-                    maxLines: 5,
-                    style: context.appTheme.textTheme.bodySmall?.copyWith(
-                      fontSize: 13,
-                      fontWeight: FontWeight.normal,
-                      color: ColorName.onBackground,
-                    ),
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.all(8),
-                      isDense: true,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 24.w),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.send))
-              ],
-            ),
-          ),
+          const _ChatTextField()
         ],
       ),
     );
@@ -118,6 +93,48 @@ class _Chat extends StatelessWidget {
               ),
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class _ChatTextField extends StatelessWidget {
+  const _ChatTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: Platform.isAndroid
+          ? EdgeInsets.symmetric(horizontal: 16.h)
+          : EdgeInsets.only(
+              left: 16.h, right: 16, top: 10, bottom: 40), // TODO: adjust bottom space when keyboard tapped
+      color: ColorName.white,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        // textBaseline: TextBaseline.alphabetic,
+        children: [
+          Expanded(
+            child: TextField(
+              controller: TextEditingController(),
+              minLines: 1,
+              maxLines: 5,
+              onTapOutside: (PointerDownEvent event) {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              style: context.appTheme.textTheme.bodySmall?.copyWith(
+                fontSize: 13,
+                fontWeight: FontWeight.normal,
+                color: ColorName.onBackground,
+              ),
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.all(8),
+                isDense: true,
+              ),
+            ),
+          ),
+          SizedBox(width: 24.w),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.send))
         ],
       ),
     );

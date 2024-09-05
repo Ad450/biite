@@ -1,6 +1,5 @@
 import 'package:biite/core/presentation/biite.auth.text.dart';
 import 'package:biite/core/presentation/biite.button.dart';
-import 'package:biite/features/signup/login.view.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';

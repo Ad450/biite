@@ -1,9 +1,7 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.view.all.dart';
 import 'package:biite/features/feed/widgets/active.projects.dart';
 import 'package:biite/features/feed/widgets/created.projects.dart';
 import 'package:biite/features/feed/widgets/gains.widget.dart';
-import 'package:biite/features/feed/widgets/project.widget.dart';
 import 'package:biite/features/feed/widgets/feed.propositions.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';

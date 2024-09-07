@@ -1,0 +1,1 @@
+const kBidCollection = "Bids";

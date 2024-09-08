@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
-  Future<Either<UIError, VoidType>> createBid(BidModel bid);
+  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId);
 }
 
 class BidRepositoryImpl implements BidRepository {
@@ -30,9 +30,18 @@ class BidRepositoryImpl implements BidRepository {
   }
 
   @override
-  Future<Either<UIError, VoidType>> createBid(BidModel bid) async {
+  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId) async {
     try {
-      await _firestore.collection(kBidCollection).add(bid.toJson());
+      final query = _firestore.collection(kProjectCollection).doc(projectId).collection(kBidCollection);
+
+      final updateQuery = query.doc(bid.id);
+      final doc = await updateQuery.get();
+      if (doc.exists) {
+        updateQuery.update(bid.toJson());
+      } else {
+        query.add(bid.toJson());
+      }
+
       return const Right(VoidType());
     } catch (e) {
       return Left(UIError(e.toString()));

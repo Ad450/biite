@@ -26,6 +26,7 @@ mixin _$BidModel {
   String get status => throw _privateConstructorUsedError;
   double get rate => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +45,8 @@ abstract class $BidModelCopyWith<$Res> {
       DateTime createdAt,
       String status,
       double rate,
-      List<String> tags});
+      List<String> tags,
+      String userId});
 }
 
 /// @nodoc
@@ -66,6 +68,7 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
     Object? status = null,
     Object? rate = null,
     Object? tags = null,
+    Object? userId = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -92,6 +95,10 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -110,7 +117,8 @@ abstract class _$$BidModelImplCopyWith<$Res>
       DateTime createdAt,
       String status,
       double rate,
-      List<String> tags});
+      List<String> tags,
+      String userId});
 }
 
 /// @nodoc
@@ -130,6 +138,7 @@ class __$$BidModelImplCopyWithImpl<$Res>
     Object? status = null,
     Object? rate = null,
     Object? tags = null,
+    Object? userId = null,
   }) {
     return _then(_$BidModelImpl(
       id: freezed == id
@@ -156,6 +165,10 @@ class __$$BidModelImplCopyWithImpl<$Res>
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -169,7 +182,8 @@ class _$BidModelImpl implements _BidModel {
       required this.createdAt,
       required this.status,
       required this.rate,
-      required final List<String> tags})
+      required final List<String> tags,
+      required this.userId})
       : _tags = tags;
 
   factory _$BidModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -194,8 +208,11 @@ class _$BidModelImpl implements _BidModel {
   }
 
   @override
+  final String userId;
+
+  @override
   String toString() {
-    return 'BidModel(id: $id, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags)';
+    return 'BidModel(id: $id, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, userId: $userId)';
   }
 
   @override
@@ -210,13 +227,14 @@ class _$BidModelImpl implements _BidModel {
                 other.createdAt == createdAt) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.rate, rate) || other.rate == rate) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, description, createdAt,
-      status, rate, const DeepCollectionEquality().hash(_tags));
+      status, rate, const DeepCollectionEquality().hash(_tags), userId);
 
   @JsonKey(ignore: true)
   @override
@@ -239,7 +257,8 @@ abstract class _BidModel implements BidModel {
       required final DateTime createdAt,
       required final String status,
       required final double rate,
-      required final List<String> tags}) = _$BidModelImpl;
+      required final List<String> tags,
+      required final String userId}) = _$BidModelImpl;
 
   factory _BidModel.fromJson(Map<String, dynamic> json) =
       _$BidModelImpl.fromJson;
@@ -256,6 +275,8 @@ abstract class _BidModel implements BidModel {
   double get rate;
   @override
   List<String> get tags;
+  @override
+  String get userId;
   @override
   @JsonKey(ignore: true)
   _$$BidModelImplCopyWith<_$BidModelImpl> get copyWith =>

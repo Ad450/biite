@@ -14,6 +14,7 @@ _$BidModelImpl _$$BidModelImplFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String,
       rate: (json['rate'] as num).toDouble(),
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
+      userId: json['userId'] as String,
     );
 
 Map<String, dynamic> _$$BidModelImplToJson(_$BidModelImpl instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$BidModelImplToJson(_$BidModelImpl instance) =>
       'status': instance.status,
       'rate': instance.rate,
       'tags': instance.tags,
+      'userId': instance.userId,
     };

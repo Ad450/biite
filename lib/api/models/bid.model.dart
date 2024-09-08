@@ -12,6 +12,7 @@ abstract class BidModel with _$BidModel {
     required String status,
     required double rate,
     required List<String> tags,
+    required String userId,
   }) = _BidModel;
 
   factory BidModel.fromJson(Map json) => _$BidModelFromJson(

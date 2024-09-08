@@ -20,11 +20,12 @@ RoomModel _$RoomModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RoomModel {
-  String get id => throw _privateConstructorUsedError;
-  List<String> get participants => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
+  String get peerId => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   String get peerName => throw _privateConstructorUsedError;
-  String get latestMessageText => throw _privateConstructorUsedError;
+  String? get latestMessageText => throw _privateConstructorUsedError;
   String? get peerProfilePic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,11 +40,12 @@ abstract class $RoomModelCopyWith<$Res> {
       _$RoomModelCopyWithImpl<$Res, RoomModel>;
   @useResult
   $Res call(
-      {String id,
-      List<String> participants,
-      DateTime createdAt,
+      {String? id,
+      String ownerId,
+      String peerId,
+      DateTime? createdAt,
       String peerName,
-      String latestMessageText,
+      String? latestMessageText,
       String? peerProfilePic});
 }
 
@@ -60,34 +62,39 @@ class _$RoomModelCopyWithImpl<$Res, $Val extends RoomModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? participants = null,
-    Object? createdAt = null,
+    Object? id = freezed,
+    Object? ownerId = null,
+    Object? peerId = null,
+    Object? createdAt = freezed,
     Object? peerName = null,
-    Object? latestMessageText = null,
+    Object? latestMessageText = freezed,
     Object? peerProfilePic = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
-      participants: null == participants
-          ? _value.participants
-          : participants // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
+      peerId: null == peerId
+          ? _value.peerId
+          : peerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       peerName: null == peerName
           ? _value.peerName
           : peerName // ignore: cast_nullable_to_non_nullable
               as String,
-      latestMessageText: null == latestMessageText
+      latestMessageText: freezed == latestMessageText
           ? _value.latestMessageText
           : latestMessageText // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       peerProfilePic: freezed == peerProfilePic
           ? _value.peerProfilePic
           : peerProfilePic // ignore: cast_nullable_to_non_nullable
@@ -105,11 +112,12 @@ abstract class _$$RoomModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      List<String> participants,
-      DateTime createdAt,
+      {String? id,
+      String ownerId,
+      String peerId,
+      DateTime? createdAt,
       String peerName,
-      String latestMessageText,
+      String? latestMessageText,
       String? peerProfilePic});
 }
 
@@ -124,34 +132,39 @@ class __$$RoomModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? participants = null,
-    Object? createdAt = null,
+    Object? id = freezed,
+    Object? ownerId = null,
+    Object? peerId = null,
+    Object? createdAt = freezed,
     Object? peerName = null,
-    Object? latestMessageText = null,
+    Object? latestMessageText = freezed,
     Object? peerProfilePic = freezed,
   }) {
     return _then(_$RoomModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
-      participants: null == participants
-          ? _value._participants
-          : participants // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
+      peerId: null == peerId
+          ? _value.peerId
+          : peerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       peerName: null == peerName
           ? _value.peerName
           : peerName // ignore: cast_nullable_to_non_nullable
               as String,
-      latestMessageText: null == latestMessageText
+      latestMessageText: freezed == latestMessageText
           ? _value.latestMessageText
           : latestMessageText // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       peerProfilePic: freezed == peerProfilePic
           ? _value.peerProfilePic
           : peerProfilePic // ignore: cast_nullable_to_non_nullable
@@ -164,39 +177,35 @@ class __$$RoomModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RoomModelImpl implements _RoomModel {
   _$RoomModelImpl(
-      {required this.id,
-      required final List<String> participants,
-      required this.createdAt,
+      {this.id,
+      required this.ownerId,
+      required this.peerId,
+      this.createdAt,
       required this.peerName,
-      required this.latestMessageText,
-      this.peerProfilePic})
-      : _participants = participants;
+      this.latestMessageText,
+      this.peerProfilePic});
 
   factory _$RoomModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoomModelImplFromJson(json);
 
   @override
-  final String id;
-  final List<String> _participants;
+  final String? id;
   @override
-  List<String> get participants {
-    if (_participants is EqualUnmodifiableListView) return _participants;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_participants);
-  }
-
+  final String ownerId;
   @override
-  final DateTime createdAt;
+  final String peerId;
+  @override
+  final DateTime? createdAt;
   @override
   final String peerName;
   @override
-  final String latestMessageText;
+  final String? latestMessageText;
   @override
   final String? peerProfilePic;
 
   @override
   String toString() {
-    return 'RoomModel(id: $id, participants: $participants, createdAt: $createdAt, peerName: $peerName, latestMessageText: $latestMessageText, peerProfilePic: $peerProfilePic)';
+    return 'RoomModel(id: $id, ownerId: $ownerId, peerId: $peerId, createdAt: $createdAt, peerName: $peerName, latestMessageText: $latestMessageText, peerProfilePic: $peerProfilePic)';
   }
 
   @override
@@ -205,8 +214,8 @@ class _$RoomModelImpl implements _RoomModel {
         (other.runtimeType == runtimeType &&
             other is _$RoomModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality()
-                .equals(other._participants, _participants) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.peerId, peerId) || other.peerId == peerId) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.peerName, peerName) ||
@@ -219,14 +228,8 @@ class _$RoomModelImpl implements _RoomModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      const DeepCollectionEquality().hash(_participants),
-      createdAt,
-      peerName,
-      latestMessageText,
-      peerProfilePic);
+  int get hashCode => Object.hash(runtimeType, id, ownerId, peerId, createdAt,
+      peerName, latestMessageText, peerProfilePic);
 
   @JsonKey(ignore: true)
   @override
@@ -244,26 +247,29 @@ class _$RoomModelImpl implements _RoomModel {
 
 abstract class _RoomModel implements RoomModel {
   factory _RoomModel(
-      {required final String id,
-      required final List<String> participants,
-      required final DateTime createdAt,
+      {final String? id,
+      required final String ownerId,
+      required final String peerId,
+      final DateTime? createdAt,
       required final String peerName,
-      required final String latestMessageText,
+      final String? latestMessageText,
       final String? peerProfilePic}) = _$RoomModelImpl;
 
   factory _RoomModel.fromJson(Map<String, dynamic> json) =
       _$RoomModelImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  List<String> get participants;
+  String get ownerId;
   @override
-  DateTime get createdAt;
+  String get peerId;
+  @override
+  DateTime? get createdAt;
   @override
   String get peerName;
   @override
-  String get latestMessageText;
+  String? get latestMessageText;
   @override
   String? get peerProfilePic;
   @override

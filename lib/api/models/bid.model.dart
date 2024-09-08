@@ -6,7 +6,7 @@ part 'bid.model.g.dart';
 @freezed
 abstract class BidModel with _$BidModel {
   factory BidModel({
-    required String id,
+    String? id,
     required String description,
     required DateTime createdAt,
     required String status,

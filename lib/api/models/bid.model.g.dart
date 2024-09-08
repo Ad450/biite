@@ -8,7 +8,7 @@ part of 'bid.model.dart';
 
 _$BidModelImpl _$$BidModelImplFromJson(Map<String, dynamic> json) =>
     _$BidModelImpl(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       description: json['description'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       status: json['status'] as String,

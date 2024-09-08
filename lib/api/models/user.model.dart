@@ -6,11 +6,12 @@ part 'user.model.g.dart';
 @freezed
 abstract class UserModel with _$UserModel {
   factory UserModel({
-    required String id,
+    String? id,
     required String firstName,
     required DateTime lastName,
     required String email,
     required double password,
+    String? profilePic,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map json) => _$UserModelFromJson(

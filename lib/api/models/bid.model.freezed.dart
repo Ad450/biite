@@ -20,7 +20,7 @@ BidModel _$BidModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BidModel {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $BidModelCopyWith<$Res> {
       _$BidModelCopyWithImpl<$Res, BidModel>;
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String description,
       DateTime createdAt,
       String status,
@@ -60,7 +60,7 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? description = null,
     Object? createdAt = null,
     Object? status = null,
@@ -68,10 +68,10 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
     Object? tags = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -105,7 +105,7 @@ abstract class _$$BidModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String description,
       DateTime createdAt,
       String status,
@@ -124,7 +124,7 @@ class __$$BidModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? description = null,
     Object? createdAt = null,
     Object? status = null,
@@ -132,10 +132,10 @@ class __$$BidModelImplCopyWithImpl<$Res>
     Object? tags = null,
   }) {
     return _then(_$BidModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ class __$$BidModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BidModelImpl implements _BidModel {
   _$BidModelImpl(
-      {required this.id,
+      {this.id,
       required this.description,
       required this.createdAt,
       required this.status,
@@ -176,7 +176,7 @@ class _$BidModelImpl implements _BidModel {
       _$$BidModelImplFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String description;
   @override
@@ -234,7 +234,7 @@ class _$BidModelImpl implements _BidModel {
 
 abstract class _BidModel implements BidModel {
   factory _BidModel(
-      {required final String id,
+      {final String? id,
       required final String description,
       required final DateTime createdAt,
       required final String status,
@@ -245,7 +245,7 @@ abstract class _BidModel implements BidModel {
       _$BidModelImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get description;
   @override

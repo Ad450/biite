@@ -6,8 +6,8 @@ part 'message.model.g.dart';
 @freezed
 abstract class MessageModel with _$MessageModel {
   factory MessageModel({
-    required String id,
-    required String roomId,
+    String? id,
+    required String ownerId,
     required String text,
     required DateTime createdAt,
     required String status,

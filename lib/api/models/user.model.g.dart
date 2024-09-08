@@ -8,11 +8,12 @@ part of 'user.model.dart';
 
 _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
     _$UserModelImpl(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       firstName: json['firstName'] as String,
       lastName: DateTime.parse(json['lastName'] as String),
       email: json['email'] as String,
       password: (json['password'] as num).toDouble(),
+      profilePic: json['profilePic'] as String?,
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'lastName': instance.lastName.toIso8601String(),
       'email': instance.email,
       'password': instance.password,
+      'profilePic': instance.profilePic,
     };

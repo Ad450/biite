@@ -8,8 +8,8 @@ part of 'message.model.dart';
 
 _$MessageModelImpl _$$MessageModelImplFromJson(Map<String, dynamic> json) =>
     _$MessageModelImpl(
-      id: json['id'] as String,
-      roomId: json['roomId'] as String,
+      id: json['id'] as String?,
+      ownerId: json['ownerId'] as String,
       text: json['text'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       status: json['status'] as String,
@@ -18,7 +18,7 @@ _$MessageModelImpl _$$MessageModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$MessageModelImplToJson(_$MessageModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'roomId': instance.roomId,
+      'ownerId': instance.ownerId,
       'text': instance.text,
       'createdAt': instance.createdAt.toIso8601String(),
       'status': instance.status,

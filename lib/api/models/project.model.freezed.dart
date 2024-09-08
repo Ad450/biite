@@ -20,7 +20,7 @@ ProjectModel _$ProjectModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProjectModel {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -28,6 +28,8 @@ mixin _$ProjectModel {
   double get rate => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   List<String> get files => throw _privateConstructorUsedError;
+  List<BidModel> get bids => throw _privateConstructorUsedError;
+  String? get assignedTo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,14 +44,16 @@ abstract class $ProjectModelCopyWith<$Res> {
       _$ProjectModelCopyWithImpl<$Res, ProjectModel>;
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String title,
       String description,
       DateTime createdAt,
       String status,
       double rate,
       List<String> tags,
-      List<String> files});
+      List<String> files,
+      List<BidModel> bids,
+      String? assignedTo});
 }
 
 /// @nodoc
@@ -65,7 +69,7 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
     Object? description = null,
     Object? createdAt = null,
@@ -73,12 +77,14 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
+    Object? bids = null,
+    Object? assignedTo = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -107,6 +113,14 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
           ? _value.files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      bids: null == bids
+          ? _value.bids
+          : bids // ignore: cast_nullable_to_non_nullable
+              as List<BidModel>,
+      assignedTo: freezed == assignedTo
+          ? _value.assignedTo
+          : assignedTo // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -120,14 +134,16 @@ abstract class _$$ProjectModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String title,
       String description,
       DateTime createdAt,
       String status,
       double rate,
       List<String> tags,
-      List<String> files});
+      List<String> files,
+      List<BidModel> bids,
+      String? assignedTo});
 }
 
 /// @nodoc
@@ -141,7 +157,7 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
     Object? description = null,
     Object? createdAt = null,
@@ -149,12 +165,14 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
+    Object? bids = null,
+    Object? assignedTo = freezed,
   }) {
     return _then(_$ProjectModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -183,6 +201,14 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      bids: null == bids
+          ? _value._bids
+          : bids // ignore: cast_nullable_to_non_nullable
+              as List<BidModel>,
+      assignedTo: freezed == assignedTo
+          ? _value.assignedTo
+          : assignedTo // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -191,22 +217,25 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProjectModelImpl implements _ProjectModel {
   _$ProjectModelImpl(
-      {required this.id,
+      {this.id,
       required this.title,
       required this.description,
       required this.createdAt,
       required this.status,
       required this.rate,
       required final List<String> tags,
-      required final List<String> files})
+      required final List<String> files,
+      required final List<BidModel> bids,
+      this.assignedTo})
       : _tags = tags,
-        _files = files;
+        _files = files,
+        _bids = bids;
 
   factory _$ProjectModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProjectModelImplFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String title;
   @override
@@ -233,9 +262,20 @@ class _$ProjectModelImpl implements _ProjectModel {
     return EqualUnmodifiableListView(_files);
   }
 
+  final List<BidModel> _bids;
+  @override
+  List<BidModel> get bids {
+    if (_bids is EqualUnmodifiableListView) return _bids;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bids);
+  }
+
+  @override
+  final String? assignedTo;
+
   @override
   String toString() {
-    return 'ProjectModel(id: $id, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files)';
+    return 'ProjectModel(id: $id, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files, bids: $bids, assignedTo: $assignedTo)';
   }
 
   @override
@@ -252,7 +292,10 @@ class _$ProjectModelImpl implements _ProjectModel {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.rate, rate) || other.rate == rate) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other._files, _files));
+            const DeepCollectionEquality().equals(other._files, _files) &&
+            const DeepCollectionEquality().equals(other._bids, _bids) &&
+            (identical(other.assignedTo, assignedTo) ||
+                other.assignedTo == assignedTo));
   }
 
   @JsonKey(ignore: true)
@@ -266,7 +309,9 @@ class _$ProjectModelImpl implements _ProjectModel {
       status,
       rate,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(_files));
+      const DeepCollectionEquality().hash(_files),
+      const DeepCollectionEquality().hash(_bids),
+      assignedTo);
 
   @JsonKey(ignore: true)
   @override
@@ -284,20 +329,22 @@ class _$ProjectModelImpl implements _ProjectModel {
 
 abstract class _ProjectModel implements ProjectModel {
   factory _ProjectModel(
-      {required final String id,
+      {final String? id,
       required final String title,
       required final String description,
       required final DateTime createdAt,
       required final String status,
       required final double rate,
       required final List<String> tags,
-      required final List<String> files}) = _$ProjectModelImpl;
+      required final List<String> files,
+      required final List<BidModel> bids,
+      final String? assignedTo}) = _$ProjectModelImpl;
 
   factory _ProjectModel.fromJson(Map<String, dynamic> json) =
       _$ProjectModelImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get title;
   @override
@@ -312,6 +359,10 @@ abstract class _ProjectModel implements ProjectModel {
   List<String> get tags;
   @override
   List<String> get files;
+  @override
+  List<BidModel> get bids;
+  @override
+  String? get assignedTo;
   @override
   @JsonKey(ignore: true)
   _$$ProjectModelImplCopyWith<_$ProjectModelImpl> get copyWith =>

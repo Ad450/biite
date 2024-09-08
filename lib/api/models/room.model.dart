@@ -6,11 +6,12 @@ part 'room.model.g.dart';
 @freezed
 abstract class RoomModel with _$RoomModel {
   factory RoomModel({
-    required String id,
-    required List<String> participants,
-    required DateTime createdAt,
+    String? id,
+    required String ownerId,
+    required String peerId,
+    DateTime? createdAt,
     required String peerName,
-    required String latestMessageText,
+    String? latestMessageText,
     String? peerProfilePic,
   }) = _RoomModel;
 

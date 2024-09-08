@@ -20,11 +20,12 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   DateTime get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   double get password => throw _privateConstructorUsedError;
+  String? get profilePic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +39,12 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String firstName,
       DateTime lastName,
       String email,
-      double password});
+      double password,
+      String? profilePic});
 }
 
 /// @nodoc
@@ -58,17 +60,18 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
     Object? password = null,
+    Object? profilePic = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -85,6 +88,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as double,
+      profilePic: freezed == profilePic
+          ? _value.profilePic
+          : profilePic // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -98,11 +105,12 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String firstName,
       DateTime lastName,
       String email,
-      double password});
+      double password,
+      String? profilePic});
 }
 
 /// @nodoc
@@ -116,17 +124,18 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
     Object? password = null,
+    Object? profilePic = freezed,
   }) {
     return _then(_$UserModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -143,6 +152,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as double,
+      profilePic: freezed == profilePic
+          ? _value.profilePic
+          : profilePic // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -151,17 +164,18 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   _$UserModelImpl(
-      {required this.id,
+      {this.id,
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.password});
+      required this.password,
+      this.profilePic});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String firstName;
   @override
@@ -170,10 +184,12 @@ class _$UserModelImpl implements _UserModel {
   final String email;
   @override
   final double password;
+  @override
+  final String? profilePic;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, email: $email, password: $password)';
+    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, email: $email, password: $password, profilePic: $profilePic)';
   }
 
   @override
@@ -188,13 +204,15 @@ class _$UserModelImpl implements _UserModel {
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.profilePic, profilePic) ||
+                other.profilePic == profilePic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, email, password);
+  int get hashCode => Object.hash(
+      runtimeType, id, firstName, lastName, email, password, profilePic);
 
   @JsonKey(ignore: true)
   @override
@@ -212,17 +230,18 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   factory _UserModel(
-      {required final String id,
+      {final String? id,
       required final String firstName,
       required final DateTime lastName,
       required final String email,
-      required final double password}) = _$UserModelImpl;
+      required final double password,
+      final String? profilePic}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get firstName;
   @override
@@ -231,6 +250,8 @@ abstract class _UserModel implements UserModel {
   String get email;
   @override
   double get password;
+  @override
+  String? get profilePic;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>

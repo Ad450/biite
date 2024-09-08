@@ -8,7 +8,7 @@ part of 'project.model.dart';
 
 _$ProjectModelImpl _$$ProjectModelImplFromJson(Map<String, dynamic> json) =>
     _$ProjectModelImpl(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       title: json['title'] as String,
       description: json['description'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
@@ -16,6 +16,10 @@ _$ProjectModelImpl _$$ProjectModelImplFromJson(Map<String, dynamic> json) =>
       rate: (json['rate'] as num).toDouble(),
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>).map((e) => e as String).toList(),
+      bids: (json['bids'] as List<dynamic>)
+          .map((e) => BidModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assignedTo: json['assignedTo'] as String?,
     );
 
 Map<String, dynamic> _$$ProjectModelImplToJson(_$ProjectModelImpl instance) =>
@@ -28,4 +32,6 @@ Map<String, dynamic> _$$ProjectModelImplToJson(_$ProjectModelImpl instance) =>
       'rate': instance.rate,
       'tags': instance.tags,
       'files': instance.files,
+      'bids': instance.bids,
+      'assignedTo': instance.assignedTo,
     };

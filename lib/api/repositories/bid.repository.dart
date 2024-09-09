@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
   Future<Either<UIError, VoidType>> createBid(BidModel bid);
+  Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
 }
 
 @Injectable(as: BidRepositoryImpl)
@@ -43,6 +44,31 @@ class BidRepositoryImpl implements BidRepository {
       } else {
         query.add(bid.toJson());
       }
+
+      return const Right(VoidType());
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId) async {
+    try {
+      final bidQuery = _firestore.collection(kBidCollection).doc(bidId);
+      final bid = await bidQuery.get();
+      final projectQuery = _firestore.collection(kProjectCollection).doc(projectId);
+      final project = await projectQuery.get();
+
+      if (!bid.exists) {
+        throw Exception("Bid not found");
+      }
+
+      if (!project.exists) {
+        throw Exception("project not found");
+      }
+
+      await bidQuery.update({"status": "accepted"});
+      await projectQuery.update({"status": "active"});
 
       return const Right(VoidType());
     } catch (e) {

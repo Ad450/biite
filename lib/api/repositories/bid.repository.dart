@@ -3,12 +3,14 @@ import 'package:biite/api/models/bid.model.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
-  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId);
+  Future<Either<UIError, VoidType>> createBid(BidModel bid);
 }
 
+@Injectable(as: BidRepositoryImpl)
 class BidRepositoryImpl implements BidRepository {
   BidRepositoryImpl(this._firestore);
 
@@ -30,9 +32,9 @@ class BidRepositoryImpl implements BidRepository {
   }
 
   @override
-  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId) async {
+  Future<Either<UIError, VoidType>> createBid(BidModel bid) async {
     try {
-      final query = _firestore.collection(kProjectCollection).doc(projectId).collection(kBidCollection);
+      final query = _firestore.collection(kBidCollection);
 
       final updateQuery = query.doc(bid.id);
       final doc = await updateQuery.get();

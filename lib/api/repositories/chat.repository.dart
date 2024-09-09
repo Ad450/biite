@@ -3,12 +3,14 @@ import 'package:biite/api/models/room.model.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class ChatRepository {
   Future<Either<UIError, List<RoomModel>>> fetchChats(String id);
   Future<Either<UIError, VoidType>> createChat({required ownerId, required peerId});
 }
 
+@Injectable(as: ChatRepositoryImpl)
 class ChatRepositoryImpl implements ChatRepository {
   ChatRepositoryImpl(this._firestore);
 
@@ -32,19 +34,16 @@ class ChatRepositoryImpl implements ChatRepository {
   @override
   Future<Either<UIError, VoidType>> createChat({required ownerId, required peerId}) async {
     try {
-      final activeProjects = await _firestore
-          .collection(kProjectCollection)
-          .where(
-            "status",
-            isEqualTo: "ACTIVE".toLowerCase(),
-          )
+      final doc = await _firestore
+          .collection(kChatCollection)
+          .where("ownerId", isEqualTo: ownerId)
+          .where("peerId", isEqualTo: peerId)
           .get();
-      final ids = activeProjects.docs.map((e) => e.id).toList();
-      String? chatExists = ids.where((e) => e == ownerId).first;
 
-      if (chatExists.isEmpty) {
-        throw Exception("cant create chat a non active project");
+      if (doc.docs.first.exists) {
+        return const Right(VoidType());
       }
+
       final peerInfo = await _firestore.collection(kUserCollection).doc(peerId).get();
 
       await _firestore.collection(kChatCollection).add(
@@ -60,10 +59,3 @@ class ChatRepositoryImpl implements ChatRepository {
     }
   }
 }
-
-    // required String ownerId,
-    // required String peerId,
-    // DateTime? createdAt,
-    // required String peerName,
-    // String? latestMessageText,
-    // String? peerProfilePic,

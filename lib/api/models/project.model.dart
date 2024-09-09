@@ -8,6 +8,8 @@ part 'project.model.g.dart';
 abstract class ProjectModel with _$ProjectModel {
   factory ProjectModel({
     String? id,
+    required String ownerId,
+    String? assignedTo,
     required String title,
     required String description,
     required DateTime createdAt,
@@ -16,7 +18,6 @@ abstract class ProjectModel with _$ProjectModel {
     required List<String> tags,
     required List<String> files,
     required List<BidModel> bids,
-    String? assignedTo,
   }) = _ProjectModel;
 
   factory ProjectModel.fromJson(Map json) => _$ProjectModelFromJson(

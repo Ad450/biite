@@ -3,6 +3,7 @@ import 'package:biite/api/models/project.model.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class ProjectRepository {
   Future<Either<UIError, List<ProjectModel>>> fetchProjects();
@@ -10,6 +11,7 @@ abstract class ProjectRepository {
   Future<Either<UIError, VoidType>> createProject(ProjectModel project);
 }
 
+@Injectable(as: ProjectRepostoryImpl)
 class ProjectRepostoryImpl implements ProjectRepository {
   ProjectRepostoryImpl(this._firestore);
 

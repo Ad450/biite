@@ -7,12 +7,13 @@ part 'bid.model.g.dart';
 abstract class BidModel with _$BidModel {
   factory BidModel({
     String? id,
+    required String projectId,
+    required String ownerId,
     required String description,
     required DateTime createdAt,
     required String status,
     required double rate,
     required List<String> tags,
-    required String userId,
   }) = _BidModel;
 
   factory BidModel.fromJson(Map json) => _$BidModelFromJson(

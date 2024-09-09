@@ -7,7 +7,7 @@ part 'message.model.g.dart';
 abstract class MessageModel with _$MessageModel {
   factory MessageModel({
     String? id,
-    required String ownerId,
+    required String roomId,
     required String text,
     required DateTime createdAt,
     required String status,

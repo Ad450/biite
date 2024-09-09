@@ -15,43 +15,50 @@ class FeedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 56.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                feed,
-                style: context.appTheme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-              ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 56.h),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              feed,
+              style: context.appTheme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                resume,
-                style: context.appTheme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
-              ),
-            ),
-            SizedBox(height: 8.h),
-            const GainsWidget(),
-            SizedBox(height: 26.h),
-            // active projects
-            const ActiveProjects(),
-            SizedBox(height: 26.h),
-            // created projects
-            const CreatedProjects(),
-            SizedBox(height: 26.h),
-            const FeedPropositions()
+          ),
+          Flexible(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Text(
+                      resume,
+                      style: context.appTheme.textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  const GainsWidget(),
+                  SizedBox(height: 26.h),
+                  // active projects
+                  const ActiveProjects(),
+                  SizedBox(height: 26.h),
+                  // created projects
+                  const CreatedProjects(),
+                  SizedBox(height: 26.h),
+                  const FeedPropositions()
 
-            // propositions
-          ],
-        ),
+                  // propositions
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

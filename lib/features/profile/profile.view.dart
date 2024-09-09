@@ -18,52 +18,59 @@ class ProfileView extends StatelessWidget {
       backgroundColor: ColorName.onboardingBackground,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(height: 56.h),
-              const ProfileAppbar(),
-              SizedBox(height: 24.h),
-              const ProfileAvatar(),
-              SizedBox(height: 24.h),
-              Text(
-                "Description",
-                style: context.appTheme.textTheme.titleMedium?.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 56.h),
+            const ProfileAppbar(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(height: 24.h),
+                    const ProfileAvatar(),
+                    SizedBox(height: 24.h),
+                    Text(
+                      "Description",
+                      style: context.appTheme.textTheme.titleMedium?.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      dummyProjectDescription,
+                      style: context.appTheme.textTheme.bodySmall?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: ColorName.fillColor,
+                      ),
+                    ),
+                    SizedBox(height: 32.h),
+                    const ProfileReview(),
+                    SizedBox(height: 32.h),
+                    Text(
+                      "Portfolio",
+                      style: context.appTheme.textTheme.titleMedium?.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Wrap(
+                      runAlignment: WrapAlignment.start,
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: List.generate(
+                        10,
+                        (index) => Portfolio(image: Assets.images.portfolio.path),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(height: 12.h),
-              Text(
-                dummyProjectDescription,
-                style: context.appTheme.textTheme.bodySmall?.copyWith(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                  color: ColorName.fillColor,
-                ),
-              ),
-              SizedBox(height: 32.h),
-              const ProfileReview(),
-              SizedBox(height: 32.h),
-              Text(
-                "Portfolio",
-                style: context.appTheme.textTheme.titleMedium?.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Wrap(
-                runAlignment: WrapAlignment.start,
-                spacing: 10,
-                runSpacing: 10,
-                children: List.generate(
-                  10,
-                  (index) => Portfolio(image: Assets.images.portfolio.path),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -21,9 +21,9 @@ class ActiveProjectDetail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true),
             ),
             SizedBox(height: 32.h),
             const InCharge(deadline: "28/03/2023"),

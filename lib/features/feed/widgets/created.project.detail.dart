@@ -2,7 +2,6 @@ import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/biite.back.dart';
 import 'package:biite/core/presentation/biite.chip.dart';
-import 'package:biite/core/presentation/biite.view.all.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -22,9 +21,9 @@ class CreatedProjectDetail extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: BiiteBack(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: BiiteBack(onMessagePressed: () {}, showMessage: true),
               ),
               SizedBox(height: 32.h),
               Container(

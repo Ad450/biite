@@ -41,6 +41,13 @@ class FeedState with _$FeedState {
     required String? message,
   }) = _FeedStateFetchBids;
 
+  const factory FeedState.createProject({
+    required List<ProjectModel>? activeProjects,
+    required List<ProjectModel>? createdProjects,
+    required List<BidModel>? bids,
+    required String? message,
+  }) = _FeedStateCreateProject;
+
   const factory FeedState.error({
     required List<ProjectModel>? activeProjects,
     required List<ProjectModel>? createdProjects,

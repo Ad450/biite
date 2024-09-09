@@ -30,7 +30,6 @@ mixin _$ProjectModel {
   double get rate => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   List<String> get files => throw _privateConstructorUsedError;
-  List<BidModel> get bids => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,8 +53,7 @@ abstract class $ProjectModelCopyWith<$Res> {
       String status,
       double rate,
       List<String> tags,
-      List<String> files,
-      List<BidModel> bids});
+      List<String> files});
 }
 
 /// @nodoc
@@ -81,7 +79,6 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
-    Object? bids = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -124,10 +121,6 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
           ? _value.files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      bids: null == bids
-          ? _value.bids
-          : bids // ignore: cast_nullable_to_non_nullable
-              as List<BidModel>,
     ) as $Val);
   }
 }
@@ -150,8 +143,7 @@ abstract class _$$ProjectModelImplCopyWith<$Res>
       String status,
       double rate,
       List<String> tags,
-      List<String> files,
-      List<BidModel> bids});
+      List<String> files});
 }
 
 /// @nodoc
@@ -175,7 +167,6 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
-    Object? bids = null,
   }) {
     return _then(_$ProjectModelImpl(
       id: freezed == id
@@ -218,10 +209,6 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      bids: null == bids
-          ? _value._bids
-          : bids // ignore: cast_nullable_to_non_nullable
-              as List<BidModel>,
     ));
   }
 }
@@ -239,11 +226,9 @@ class _$ProjectModelImpl implements _ProjectModel {
       required this.status,
       required this.rate,
       required final List<String> tags,
-      required final List<String> files,
-      required final List<BidModel> bids})
+      required final List<String> files})
       : _tags = tags,
-        _files = files,
-        _bids = bids;
+        _files = files;
 
   factory _$ProjectModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProjectModelImplFromJson(json);
@@ -280,17 +265,9 @@ class _$ProjectModelImpl implements _ProjectModel {
     return EqualUnmodifiableListView(_files);
   }
 
-  final List<BidModel> _bids;
-  @override
-  List<BidModel> get bids {
-    if (_bids is EqualUnmodifiableListView) return _bids;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bids);
-  }
-
   @override
   String toString() {
-    return 'ProjectModel(id: $id, ownerId: $ownerId, assignedTo: $assignedTo, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files, bids: $bids)';
+    return 'ProjectModel(id: $id, ownerId: $ownerId, assignedTo: $assignedTo, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files)';
   }
 
   @override
@@ -310,8 +287,7 @@ class _$ProjectModelImpl implements _ProjectModel {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.rate, rate) || other.rate == rate) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            const DeepCollectionEquality().equals(other._bids, _bids));
+            const DeepCollectionEquality().equals(other._files, _files));
   }
 
   @JsonKey(ignore: true)
@@ -327,8 +303,7 @@ class _$ProjectModelImpl implements _ProjectModel {
       status,
       rate,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(_files),
-      const DeepCollectionEquality().hash(_bids));
+      const DeepCollectionEquality().hash(_files));
 
   @JsonKey(ignore: true)
   @override
@@ -355,8 +330,7 @@ abstract class _ProjectModel implements ProjectModel {
       required final String status,
       required final double rate,
       required final List<String> tags,
-      required final List<String> files,
-      required final List<BidModel> bids}) = _$ProjectModelImpl;
+      required final List<String> files}) = _$ProjectModelImpl;
 
   factory _ProjectModel.fromJson(Map<String, dynamic> json) =
       _$ProjectModelImpl.fromJson;
@@ -381,8 +355,6 @@ abstract class _ProjectModel implements ProjectModel {
   List<String> get tags;
   @override
   List<String> get files;
-  @override
-  List<BidModel> get bids;
   @override
   @JsonKey(ignore: true)
   _$$ProjectModelImplCopyWith<_$ProjectModelImpl> get copyWith =>

@@ -4,7 +4,7 @@ abstract class UserRepository {
   Future<String?> getUserId();
 }
 
-@Injectable(as: UserRepositoryImpl)
+@LazySingleton(as: UserRepository)
 class UserRepositoryImpl implements UserRepository {
   @override
   Future<String?> getUserId() {

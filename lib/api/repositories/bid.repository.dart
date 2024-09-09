@@ -11,7 +11,7 @@ abstract class BidRepository {
   Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
 }
 
-@Injectable(as: BidRepositoryImpl)
+@LazySingleton(as: BidRepository)
 class BidRepositoryImpl implements BidRepository {
   BidRepositoryImpl(this._firestore);
 

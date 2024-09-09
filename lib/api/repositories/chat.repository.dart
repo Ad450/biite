@@ -10,7 +10,7 @@ abstract class ChatRepository {
   Future<Either<UIError, VoidType>> createChat({required ownerId, required peerId});
 }
 
-@Injectable(as: ChatRepositoryImpl)
+@LazySingleton(as: ChatRepository)
 class ChatRepositoryImpl implements ChatRepository {
   ChatRepositoryImpl(this._firestore);
 

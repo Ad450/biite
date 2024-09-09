@@ -11,7 +11,7 @@ abstract class ProjectRepository {
   Future<Either<UIError, VoidType>> createProject(ProjectModel project);
 }
 
-@Injectable(as: ProjectRepostoryImpl)
+@LazySingleton(as: ProjectRepository)
 class ProjectRepostoryImpl implements ProjectRepository {
   ProjectRepostoryImpl(this._firestore);
 

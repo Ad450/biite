@@ -1,5 +1,6 @@
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/bid.model.dart';
+import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -7,15 +8,16 @@ import 'package:injectable/injectable.dart';
 
 abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
-  Future<Either<UIError, VoidType>> createBid(BidModel bid);
+  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId);
   Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
 }
 
 @LazySingleton(as: BidRepository)
 class BidRepositoryImpl implements BidRepository {
-  BidRepositoryImpl(this._firestore);
+  BidRepositoryImpl(this._firestore, this._hiveStore);
 
   final FirebaseFirestore _firestore;
+  final HiveStore _hiveStore;
 
   @override
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId) async {
@@ -33,8 +35,22 @@ class BidRepositoryImpl implements BidRepository {
   }
 
   @override
-  Future<Either<UIError, VoidType>> createBid(BidModel bid) async {
+  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId) async {
     try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      final projectDoc = await _firestore.collection(kProjectCollection).doc(projectId).get();
+
+      if (!projectDoc.exists) {
+        throw Exception("project not found");
+      }
+      if (projectDoc.data()?["ownerId"] == id) {
+        throw Exception("Can not bid on your own projects");
+      }
+
       final query = _firestore.collection(kBidCollection);
 
       final updateQuery = query.doc(bid.id);

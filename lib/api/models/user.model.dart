@@ -7,10 +7,9 @@ part 'user.model.g.dart';
 abstract class UserModel with _$UserModel {
   factory UserModel({
     String? id,
-    required String firstName,
-    required DateTime lastName,
+    required String name,
     required String email,
-    required double password,
+    required String uid,
     String? profilePic,
   }) = _UserModel;
 

@@ -1,5 +1,5 @@
 import 'package:biite/features/onboarding/widgets/onboarding.widget.dart';
-import 'package:biite/features/signup/signup.view.dart';
+import 'package:biite/features/auth/signup.view.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';

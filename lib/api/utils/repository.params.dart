@@ -2,15 +2,13 @@
 ///
 /// Signup parameter
 class SignupParam {
-  String firstName;
-  String lastName;
+  String name;
   String email;
   String password;
 
   SignupParam({
     required this.email,
-    required this.firstName,
-    required this.lastName,
+    required this.name,
     required this.password,
   });
 }

@@ -21,10 +21,9 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String? get id => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  DateTime get lastName => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  double get password => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
   String? get profilePic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,12 +38,7 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String? id,
-      String firstName,
-      DateTime lastName,
-      String email,
-      double password,
-      String? profilePic});
+      {String? id, String name, String email, String uid, String? profilePic});
 }
 
 /// @nodoc
@@ -61,10 +55,9 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @override
   $Res call({
     Object? id = freezed,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
     Object? email = null,
-    Object? password = null,
+    Object? uid = null,
     Object? profilePic = freezed,
   }) {
     return _then(_value.copyWith(
@@ -72,22 +65,18 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as double,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       profilePic: freezed == profilePic
           ? _value.profilePic
           : profilePic // ignore: cast_nullable_to_non_nullable
@@ -105,12 +94,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
-      String firstName,
-      DateTime lastName,
-      String email,
-      double password,
-      String? profilePic});
+      {String? id, String name, String email, String uid, String? profilePic});
 }
 
 /// @nodoc
@@ -125,10 +109,9 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
     Object? email = null,
-    Object? password = null,
+    Object? uid = null,
     Object? profilePic = freezed,
   }) {
     return _then(_$UserModelImpl(
@@ -136,22 +119,18 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as double,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       profilePic: freezed == profilePic
           ? _value.profilePic
           : profilePic // ignore: cast_nullable_to_non_nullable
@@ -165,10 +144,9 @@ class __$$UserModelImplCopyWithImpl<$Res>
 class _$UserModelImpl implements _UserModel {
   _$UserModelImpl(
       {this.id,
-      required this.firstName,
-      required this.lastName,
+      required this.name,
       required this.email,
-      required this.password,
+      required this.uid,
       this.profilePic});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -177,19 +155,17 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String? id;
   @override
-  final String firstName;
-  @override
-  final DateTime lastName;
+  final String name;
   @override
   final String email;
   @override
-  final double password;
+  final String uid;
   @override
   final String? profilePic;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, email: $email, password: $password, profilePic: $profilePic)';
+    return 'UserModel(id: $id, name: $name, email: $email, uid: $uid, profilePic: $profilePic)';
   }
 
   @override
@@ -198,21 +174,17 @@ class _$UserModelImpl implements _UserModel {
         (other.runtimeType == runtimeType &&
             other is _$UserModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, firstName, lastName, email, password, profilePic);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, email, uid, profilePic);
 
   @JsonKey(ignore: true)
   @override
@@ -231,10 +203,9 @@ class _$UserModelImpl implements _UserModel {
 abstract class _UserModel implements UserModel {
   factory _UserModel(
       {final String? id,
-      required final String firstName,
-      required final DateTime lastName,
+      required final String name,
       required final String email,
-      required final double password,
+      required final String uid,
       final String? profilePic}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
@@ -243,13 +214,11 @@ abstract class _UserModel implements UserModel {
   @override
   String? get id;
   @override
-  String get firstName;
-  @override
-  DateTime get lastName;
+  String get name;
   @override
   String get email;
   @override
-  double get password;
+  String get uid;
   @override
   String? get profilePic;
   @override

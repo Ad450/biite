@@ -17,11 +17,12 @@ abstract class AuthRepository {
 
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl(this._firebaseAuth, this._hiveStore, this._firebaseFirestore);
+  AuthRepositoryImpl(this._hiveStore, this._firestore, this._firebaseAuth);
 
+  final FirebaseFirestore _firestore;
   final FirebaseAuth _firebaseAuth;
+
   final HiveStore _hiveStore;
-  final FirebaseFirestore _firebaseFirestore;
 
   @override
   Future<Either<UIError, VoidType>> signin(SigninParam signin) async {
@@ -33,8 +34,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
       if (credential.user != null) {
         // add user
-        final query =
-            await _firebaseFirestore.collection(kUserCollection).where("uid", isEqualTo: credential.user!.uid).get();
+        final query = await _firestore.collection(kUserCollection).where("uid", isEqualTo: credential.user!.uid).get();
 
         if (!query.docs.first.exists) {
           throw Exception("user document not found");
@@ -82,7 +82,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   Future<void> _addUser(String name, String email, String uid) async {
     final user = UserModel(name: name, email: email, uid: uid);
-    final doc = await _firebaseFirestore.collection(kUserCollection).add(user.toJson());
+    final doc = await _firestore.collection(kUserCollection).add(user.toJson());
     await _hiveStore.saveItem(doc.id, "id", key: "id");
   }
 

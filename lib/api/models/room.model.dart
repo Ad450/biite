@@ -13,6 +13,7 @@ abstract class RoomModel with _$RoomModel {
     required String peerName,
     String? latestMessageText,
     String? peerProfilePic,
+    int? unreadMessageCount,
   }) = _RoomModel;
 
   factory RoomModel.fromJson(Map json) => _$RoomModelFromJson(Map.castFrom<dynamic, dynamic, String, dynamic>(json));

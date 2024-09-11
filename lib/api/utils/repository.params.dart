@@ -1,3 +1,5 @@
+import 'package:biite/api/models/message.model.dart';
+
 ///These objects are used as parameters for some repository methods
 ///
 /// Signup parameter
@@ -35,5 +37,39 @@ class CreateProjectParam {
     required this.rate,
     required this.tags,
     required this.title,
+  });
+}
+
+// message return type
+class MessageReturnType {
+  final List<MessageModel> ownerMessages;
+  final List<MessageModel> peerMessages;
+
+  MessageReturnType({required this.ownerMessages, required this.peerMessages});
+}
+
+class MessageParam {
+  final String text;
+  final String roomId;
+
+  MessageParam({required this.roomId, required this.text});
+}
+
+// create bid param
+class CreateBidParam {
+  final String projectId;
+  final String bidId;
+  final List<String> tags;
+  final String ownerId;
+  final String description;
+  final double rate;
+
+  CreateBidParam({
+    required this.bidId,
+    required this.projectId,
+    required this.ownerId,
+    required this.description,
+    required this.rate,
+    required this.tags,
   });
 }

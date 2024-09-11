@@ -63,6 +63,18 @@ mixin _$FeedState {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +116,18 @@ mixin _$FeedState {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -155,6 +179,18 @@ mixin _$FeedState {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) =>
@@ -169,6 +205,8 @@ mixin _$FeedState {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -181,6 +219,8 @@ mixin _$FeedState {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +233,8 @@ mixin _$FeedState {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -428,6 +470,18 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return initial(activeProjects, createdProjects, bids, message);
@@ -472,6 +526,18 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -526,6 +592,18 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -546,6 +624,8 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return initial(this);
@@ -561,6 +641,8 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return initial?.call(this);
@@ -576,6 +658,8 @@ class _$FeedStateInitialImpl implements _FeedStateInitial {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -781,6 +865,18 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return loading(activeProjects, createdProjects, bids, message);
@@ -825,6 +921,18 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -879,6 +987,18 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -899,6 +1019,8 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return loading(this);
@@ -914,6 +1036,8 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return loading?.call(this);
@@ -929,6 +1053,8 @@ class _$FeedStateLoadingImpl implements _FeedStateLoading {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1138,6 +1264,18 @@ class _$FeedStateFetchActiveProjectsImpl
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return fetchActiveProjects(activeProjects, createdProjects, bids, message);
@@ -1182,6 +1320,18 @@ class _$FeedStateFetchActiveProjectsImpl
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -1237,6 +1387,18 @@ class _$FeedStateFetchActiveProjectsImpl
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -1258,6 +1420,8 @@ class _$FeedStateFetchActiveProjectsImpl
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return fetchActiveProjects(this);
@@ -1273,6 +1437,8 @@ class _$FeedStateFetchActiveProjectsImpl
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return fetchActiveProjects?.call(this);
@@ -1288,6 +1454,8 @@ class _$FeedStateFetchActiveProjectsImpl
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1498,6 +1666,18 @@ class _$FeedStateFetchCreatedProjectsImpl
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return fetchCreatedProjects(activeProjects, createdProjects, bids, message);
@@ -1542,6 +1722,18 @@ class _$FeedStateFetchCreatedProjectsImpl
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -1597,6 +1789,18 @@ class _$FeedStateFetchCreatedProjectsImpl
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -1618,6 +1822,8 @@ class _$FeedStateFetchCreatedProjectsImpl
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return fetchCreatedProjects(this);
@@ -1633,6 +1839,8 @@ class _$FeedStateFetchCreatedProjectsImpl
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return fetchCreatedProjects?.call(this);
@@ -1648,6 +1856,8 @@ class _$FeedStateFetchCreatedProjectsImpl
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1854,6 +2064,18 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return fetchBids(activeProjects, createdProjects, bids, message);
@@ -1898,6 +2120,18 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -1952,6 +2186,18 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -1972,6 +2218,8 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return fetchBids(this);
@@ -1987,6 +2235,8 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return fetchBids?.call(this);
@@ -2002,6 +2252,8 @@ class _$FeedStateFetchBidsImpl implements _FeedStateFetchBids {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -2209,6 +2461,18 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return createProject(activeProjects, createdProjects, bids, message);
@@ -2253,6 +2517,18 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -2307,6 +2583,18 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -2327,6 +2615,8 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return createProject(this);
@@ -2342,6 +2632,8 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return createProject?.call(this);
@@ -2357,6 +2649,8 @@ class _$FeedStateCreateProjectImpl implements _FeedStateCreateProject {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {
@@ -2386,6 +2680,796 @@ abstract class _FeedStateCreateProject implements FeedState {
   @JsonKey(ignore: true)
   _$$FeedStateCreateProjectImplCopyWith<_$FeedStateCreateProjectImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FeedStateCreateBidImplCopyWith<$Res>
+    implements $FeedStateCopyWith<$Res> {
+  factory _$$FeedStateCreateBidImplCopyWith(_$FeedStateCreateBidImpl value,
+          $Res Function(_$FeedStateCreateBidImpl) then) =
+      __$$FeedStateCreateBidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<ProjectModel>? activeProjects,
+      List<ProjectModel>? createdProjects,
+      List<BidModel>? bids,
+      String? message});
+}
+
+/// @nodoc
+class __$$FeedStateCreateBidImplCopyWithImpl<$Res>
+    extends _$FeedStateCopyWithImpl<$Res, _$FeedStateCreateBidImpl>
+    implements _$$FeedStateCreateBidImplCopyWith<$Res> {
+  __$$FeedStateCreateBidImplCopyWithImpl(_$FeedStateCreateBidImpl _value,
+      $Res Function(_$FeedStateCreateBidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activeProjects = freezed,
+    Object? createdProjects = freezed,
+    Object? bids = freezed,
+    Object? message = freezed,
+  }) {
+    return _then(_$FeedStateCreateBidImpl(
+      activeProjects: freezed == activeProjects
+          ? _value._activeProjects
+          : activeProjects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>?,
+      createdProjects: freezed == createdProjects
+          ? _value._createdProjects
+          : createdProjects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>?,
+      bids: freezed == bids
+          ? _value._bids
+          : bids // ignore: cast_nullable_to_non_nullable
+              as List<BidModel>?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FeedStateCreateBidImpl implements _FeedStateCreateBid {
+  const _$FeedStateCreateBidImpl(
+      {required final List<ProjectModel>? activeProjects,
+      required final List<ProjectModel>? createdProjects,
+      required final List<BidModel>? bids,
+      required this.message})
+      : _activeProjects = activeProjects,
+        _createdProjects = createdProjects,
+        _bids = bids;
+
+  final List<ProjectModel>? _activeProjects;
+  @override
+  List<ProjectModel>? get activeProjects {
+    final value = _activeProjects;
+    if (value == null) return null;
+    if (_activeProjects is EqualUnmodifiableListView) return _activeProjects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<ProjectModel>? _createdProjects;
+  @override
+  List<ProjectModel>? get createdProjects {
+    final value = _createdProjects;
+    if (value == null) return null;
+    if (_createdProjects is EqualUnmodifiableListView) return _createdProjects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<BidModel>? _bids;
+  @override
+  List<BidModel>? get bids {
+    final value = _bids;
+    if (value == null) return null;
+    if (_bids is EqualUnmodifiableListView) return _bids;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'FeedState.createBid(activeProjects: $activeProjects, createdProjects: $createdProjects, bids: $bids, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FeedStateCreateBidImpl &&
+            const DeepCollectionEquality()
+                .equals(other._activeProjects, _activeProjects) &&
+            const DeepCollectionEquality()
+                .equals(other._createdProjects, _createdProjects) &&
+            const DeepCollectionEquality().equals(other._bids, _bids) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_activeProjects),
+      const DeepCollectionEquality().hash(_createdProjects),
+      const DeepCollectionEquality().hash(_bids),
+      message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FeedStateCreateBidImplCopyWith<_$FeedStateCreateBidImpl> get copyWith =>
+      __$$FeedStateCreateBidImplCopyWithImpl<_$FeedStateCreateBidImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        initial,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        loading,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchActiveProjects,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchCreatedProjects,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchBids,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        createProject,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        error,
+  }) {
+    return createBid(activeProjects, createdProjects, bids, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        initial,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        loading,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchActiveProjects,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchCreatedProjects,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchBids,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        error,
+  }) {
+    return createBid?.call(activeProjects, createdProjects, bids, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        initial,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        loading,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchActiveProjects,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchCreatedProjects,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchBids,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createProject,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (createBid != null) {
+      return createBid(activeProjects, createdProjects, bids, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FeedStateInitial value) initial,
+    required TResult Function(_FeedStateLoading value) loading,
+    required TResult Function(_FeedStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_FeedStateFetchCreatedProjects value)
+        fetchCreatedProjects,
+    required TResult Function(_FeedStateFetchBids value) fetchBids,
+    required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
+    required TResult Function(_FeedStateError value) error,
+  }) {
+    return createBid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FeedStateInitial value)? initial,
+    TResult? Function(_FeedStateLoading value)? loading,
+    TResult? Function(_FeedStateFetchActiveProjects value)? fetchActiveProjects,
+    TResult? Function(_FeedStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult? Function(_FeedStateFetchBids value)? fetchBids,
+    TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
+    TResult? Function(_FeedStateError value)? error,
+  }) {
+    return createBid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FeedStateInitial value)? initial,
+    TResult Function(_FeedStateLoading value)? loading,
+    TResult Function(_FeedStateFetchActiveProjects value)? fetchActiveProjects,
+    TResult Function(_FeedStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult Function(_FeedStateFetchBids value)? fetchBids,
+    TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
+    TResult Function(_FeedStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (createBid != null) {
+      return createBid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FeedStateCreateBid implements FeedState {
+  const factory _FeedStateCreateBid(
+      {required final List<ProjectModel>? activeProjects,
+      required final List<ProjectModel>? createdProjects,
+      required final List<BidModel>? bids,
+      required final String? message}) = _$FeedStateCreateBidImpl;
+
+  @override
+  List<ProjectModel>? get activeProjects;
+  @override
+  List<ProjectModel>? get createdProjects;
+  @override
+  List<BidModel>? get bids;
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$FeedStateCreateBidImplCopyWith<_$FeedStateCreateBidImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FeedStateAcceptBidImplCopyWith<$Res>
+    implements $FeedStateCopyWith<$Res> {
+  factory _$$FeedStateAcceptBidImplCopyWith(_$FeedStateAcceptBidImpl value,
+          $Res Function(_$FeedStateAcceptBidImpl) then) =
+      __$$FeedStateAcceptBidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<ProjectModel>? activeProjects,
+      List<ProjectModel>? createdProjects,
+      List<BidModel>? bids,
+      String? message});
+}
+
+/// @nodoc
+class __$$FeedStateAcceptBidImplCopyWithImpl<$Res>
+    extends _$FeedStateCopyWithImpl<$Res, _$FeedStateAcceptBidImpl>
+    implements _$$FeedStateAcceptBidImplCopyWith<$Res> {
+  __$$FeedStateAcceptBidImplCopyWithImpl(_$FeedStateAcceptBidImpl _value,
+      $Res Function(_$FeedStateAcceptBidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activeProjects = freezed,
+    Object? createdProjects = freezed,
+    Object? bids = freezed,
+    Object? message = freezed,
+  }) {
+    return _then(_$FeedStateAcceptBidImpl(
+      activeProjects: freezed == activeProjects
+          ? _value._activeProjects
+          : activeProjects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>?,
+      createdProjects: freezed == createdProjects
+          ? _value._createdProjects
+          : createdProjects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>?,
+      bids: freezed == bids
+          ? _value._bids
+          : bids // ignore: cast_nullable_to_non_nullable
+              as List<BidModel>?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FeedStateAcceptBidImpl implements _FeedStateAcceptBid {
+  const _$FeedStateAcceptBidImpl(
+      {required final List<ProjectModel>? activeProjects,
+      required final List<ProjectModel>? createdProjects,
+      required final List<BidModel>? bids,
+      required this.message})
+      : _activeProjects = activeProjects,
+        _createdProjects = createdProjects,
+        _bids = bids;
+
+  final List<ProjectModel>? _activeProjects;
+  @override
+  List<ProjectModel>? get activeProjects {
+    final value = _activeProjects;
+    if (value == null) return null;
+    if (_activeProjects is EqualUnmodifiableListView) return _activeProjects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<ProjectModel>? _createdProjects;
+  @override
+  List<ProjectModel>? get createdProjects {
+    final value = _createdProjects;
+    if (value == null) return null;
+    if (_createdProjects is EqualUnmodifiableListView) return _createdProjects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<BidModel>? _bids;
+  @override
+  List<BidModel>? get bids {
+    final value = _bids;
+    if (value == null) return null;
+    if (_bids is EqualUnmodifiableListView) return _bids;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'FeedState.acceptBid(activeProjects: $activeProjects, createdProjects: $createdProjects, bids: $bids, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FeedStateAcceptBidImpl &&
+            const DeepCollectionEquality()
+                .equals(other._activeProjects, _activeProjects) &&
+            const DeepCollectionEquality()
+                .equals(other._createdProjects, _createdProjects) &&
+            const DeepCollectionEquality().equals(other._bids, _bids) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_activeProjects),
+      const DeepCollectionEquality().hash(_createdProjects),
+      const DeepCollectionEquality().hash(_bids),
+      message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FeedStateAcceptBidImplCopyWith<_$FeedStateAcceptBidImpl> get copyWith =>
+      __$$FeedStateAcceptBidImplCopyWithImpl<_$FeedStateAcceptBidImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        initial,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        loading,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchActiveProjects,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchCreatedProjects,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        fetchBids,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        createProject,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        error,
+  }) {
+    return acceptBid(activeProjects, createdProjects, bids, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        initial,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        loading,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchActiveProjects,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchCreatedProjects,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchBids,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        error,
+  }) {
+    return acceptBid?.call(activeProjects, createdProjects, bids, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        initial,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        loading,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchActiveProjects,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchCreatedProjects,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        fetchBids,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createProject,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (acceptBid != null) {
+      return acceptBid(activeProjects, createdProjects, bids, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FeedStateInitial value) initial,
+    required TResult Function(_FeedStateLoading value) loading,
+    required TResult Function(_FeedStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_FeedStateFetchCreatedProjects value)
+        fetchCreatedProjects,
+    required TResult Function(_FeedStateFetchBids value) fetchBids,
+    required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
+    required TResult Function(_FeedStateError value) error,
+  }) {
+    return acceptBid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FeedStateInitial value)? initial,
+    TResult? Function(_FeedStateLoading value)? loading,
+    TResult? Function(_FeedStateFetchActiveProjects value)? fetchActiveProjects,
+    TResult? Function(_FeedStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult? Function(_FeedStateFetchBids value)? fetchBids,
+    TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
+    TResult? Function(_FeedStateError value)? error,
+  }) {
+    return acceptBid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FeedStateInitial value)? initial,
+    TResult Function(_FeedStateLoading value)? loading,
+    TResult Function(_FeedStateFetchActiveProjects value)? fetchActiveProjects,
+    TResult Function(_FeedStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult Function(_FeedStateFetchBids value)? fetchBids,
+    TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
+    TResult Function(_FeedStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (acceptBid != null) {
+      return acceptBid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FeedStateAcceptBid implements FeedState {
+  const factory _FeedStateAcceptBid(
+      {required final List<ProjectModel>? activeProjects,
+      required final List<ProjectModel>? createdProjects,
+      required final List<BidModel>? bids,
+      required final String? message}) = _$FeedStateAcceptBidImpl;
+
+  @override
+  List<ProjectModel>? get activeProjects;
+  @override
+  List<ProjectModel>? get createdProjects;
+  @override
+  List<BidModel>? get bids;
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$FeedStateAcceptBidImplCopyWith<_$FeedStateAcceptBidImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2562,6 +3646,18 @@ class _$FeedStateErrorImpl implements _FeedStateError {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)
+        createBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
+        acceptBid,
+    required TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)
         error,
   }) {
     return error(activeProjects, createdProjects, bids, message);
@@ -2606,6 +3702,18 @@ class _$FeedStateErrorImpl implements _FeedStateError {
             List<BidModel>? bids,
             String? message)?
         createProject,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        createBid,
+    TResult? Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
     TResult? Function(
             List<ProjectModel>? activeProjects,
             List<ProjectModel>? createdProjects,
@@ -2660,6 +3768,18 @@ class _$FeedStateErrorImpl implements _FeedStateError {
             List<ProjectModel>? createdProjects,
             List<BidModel>? bids,
             String? message)?
+        createBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
+        acceptBid,
+    TResult Function(
+            List<ProjectModel>? activeProjects,
+            List<ProjectModel>? createdProjects,
+            List<BidModel>? bids,
+            String? message)?
         error,
     required TResult orElse(),
   }) {
@@ -2680,6 +3800,8 @@ class _$FeedStateErrorImpl implements _FeedStateError {
         fetchCreatedProjects,
     required TResult Function(_FeedStateFetchBids value) fetchBids,
     required TResult Function(_FeedStateCreateProject value) createProject,
+    required TResult Function(_FeedStateCreateBid value) createBid,
+    required TResult Function(_FeedStateAcceptBid value) acceptBid,
     required TResult Function(_FeedStateError value) error,
   }) {
     return error(this);
@@ -2695,6 +3817,8 @@ class _$FeedStateErrorImpl implements _FeedStateError {
         fetchCreatedProjects,
     TResult? Function(_FeedStateFetchBids value)? fetchBids,
     TResult? Function(_FeedStateCreateProject value)? createProject,
+    TResult? Function(_FeedStateCreateBid value)? createBid,
+    TResult? Function(_FeedStateAcceptBid value)? acceptBid,
     TResult? Function(_FeedStateError value)? error,
   }) {
     return error?.call(this);
@@ -2710,6 +3834,8 @@ class _$FeedStateErrorImpl implements _FeedStateError {
         fetchCreatedProjects,
     TResult Function(_FeedStateFetchBids value)? fetchBids,
     TResult Function(_FeedStateCreateProject value)? createProject,
+    TResult Function(_FeedStateCreateBid value)? createBid,
+    TResult Function(_FeedStateAcceptBid value)? acceptBid,
     TResult Function(_FeedStateError value)? error,
     required TResult orElse(),
   }) {

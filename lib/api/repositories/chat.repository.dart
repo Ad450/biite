@@ -1,5 +1,6 @@
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/room.model.dart';
+import 'package:biite/api/repositories/message.repository.dart';
 import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,10 +14,11 @@ abstract class ChatRepository {
 
 @LazySingleton(as: ChatRepository)
 class ChatRepositoryImpl implements ChatRepository {
-  ChatRepositoryImpl(this._firestore, this._hiveStore);
+  ChatRepositoryImpl(this._firestore, this._hiveStore, this._messageRepository);
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;
+  final MessageRepository _messageRepository;
 
   @override
   Future<Either<UIError, List<RoomModel>>> fetchChats() async {
@@ -25,13 +27,22 @@ class ChatRepositoryImpl implements ChatRepository {
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
+
       final query = await _firestore.collection(kChatCollection).where("ownerId", isEqualTo: id).get();
 
-      final chats = query.docs.map((e) {
+      final chats = await Future.wait(query.docs.map((e) async {
         var room = RoomModel.fromJson(e.data());
-        room = room.copyWith(id: e.id);
-        return room;
-      }).toList();
+        final lastMessage = await _messageRepository.getLastMessage(e.id);
+
+        final unreadCount = await _messageRepository.getCountOfUnreadMessages(e.id);
+
+        return room.copyWith(
+          id: e.id,
+          latestMessageText: lastMessage.text,
+          unreadMessageCount: unreadCount,
+        );
+      }).toList());
+
       return Right(chats);
     } catch (e) {
       return Left(UIError(e.toString()));

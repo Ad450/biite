@@ -1,6 +1,7 @@
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/bid.model.dart';
 import 'package:biite/api/storage/hive.storage.dart';
+import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -8,7 +9,7 @@ import 'package:injectable/injectable.dart';
 
 abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
-  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId);
+  Future<Either<UIError, VoidType>> createBid(CreateBidParam param);
   Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
 }
 
@@ -35,14 +36,14 @@ class BidRepositoryImpl implements BidRepository {
   }
 
   @override
-  Future<Either<UIError, VoidType>> createBid(BidModel bid, String projectId) async {
+  Future<Either<UIError, VoidType>> createBid(CreateBidParam param) async {
     try {
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
 
-      final projectDoc = await _firestore.collection(kProjectCollection).doc(projectId).get();
+      final projectDoc = await _firestore.collection(kProjectCollection).doc(param.projectId).get();
 
       if (!projectDoc.exists) {
         throw Exception("project not found");
@@ -53,7 +54,17 @@ class BidRepositoryImpl implements BidRepository {
 
       final query = _firestore.collection(kBidCollection);
 
-      final updateQuery = query.doc(bid.id);
+      final bid = BidModel(
+        projectId: param.projectId,
+        ownerId: param.ownerId,
+        description: param.description,
+        createdAt: DateTime.now(),
+        status: "pending",
+        rate: param.rate,
+        tags: param.tags,
+      );
+
+      final updateQuery = query.doc(param.bidId);
       final doc = await updateQuery.get();
       if (doc.exists) {
         updateQuery.update(bid.toJson());
@@ -81,6 +92,15 @@ class BidRepositoryImpl implements BidRepository {
 
       if (!project.exists) {
         throw Exception("project not found");
+      }
+
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      if (project["ownerId"] != id) {
+        throw Exception("must be owner of project to accept bids");
       }
 
       await bidQuery.update({"status": "accepted"});

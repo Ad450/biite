@@ -48,6 +48,20 @@ class FeedState with _$FeedState {
     required String? message,
   }) = _FeedStateCreateProject;
 
+  const factory FeedState.createBid({
+    required List<ProjectModel>? activeProjects,
+    required List<ProjectModel>? createdProjects,
+    required List<BidModel>? bids,
+    required String? message,
+  }) = _FeedStateCreateBid;
+
+  const factory FeedState.acceptBid({
+    required List<ProjectModel>? activeProjects,
+    required List<ProjectModel>? createdProjects,
+    required List<BidModel>? bids,
+    required String? message,
+  }) = _FeedStateAcceptBid;
+
   const factory FeedState.error({
     required List<ProjectModel>? activeProjects,
     required List<ProjectModel>? createdProjects,

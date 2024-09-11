@@ -17,6 +17,7 @@ _$RoomModelImpl _$$RoomModelImplFromJson(Map<String, dynamic> json) =>
       peerName: json['peerName'] as String,
       latestMessageText: json['latestMessageText'] as String?,
       peerProfilePic: json['peerProfilePic'] as String?,
+      unreadMessageCount: (json['unreadMessageCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$RoomModelImplToJson(_$RoomModelImpl instance) =>
@@ -28,4 +29,5 @@ Map<String, dynamic> _$$RoomModelImplToJson(_$RoomModelImpl instance) =>
       'peerName': instance.peerName,
       'latestMessageText': instance.latestMessageText,
       'peerProfilePic': instance.peerProfilePic,
+      'unreadMessageCount': instance.unreadMessageCount,
     };

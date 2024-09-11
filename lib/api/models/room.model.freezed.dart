@@ -27,6 +27,7 @@ mixin _$RoomModel {
   String get peerName => throw _privateConstructorUsedError;
   String? get latestMessageText => throw _privateConstructorUsedError;
   String? get peerProfilePic => throw _privateConstructorUsedError;
+  int? get unreadMessageCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +47,8 @@ abstract class $RoomModelCopyWith<$Res> {
       DateTime? createdAt,
       String peerName,
       String? latestMessageText,
-      String? peerProfilePic});
+      String? peerProfilePic,
+      int? unreadMessageCount});
 }
 
 /// @nodoc
@@ -69,6 +71,7 @@ class _$RoomModelCopyWithImpl<$Res, $Val extends RoomModel>
     Object? peerName = null,
     Object? latestMessageText = freezed,
     Object? peerProfilePic = freezed,
+    Object? unreadMessageCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -99,6 +102,10 @@ class _$RoomModelCopyWithImpl<$Res, $Val extends RoomModel>
           ? _value.peerProfilePic
           : peerProfilePic // ignore: cast_nullable_to_non_nullable
               as String?,
+      unreadMessageCount: freezed == unreadMessageCount
+          ? _value.unreadMessageCount
+          : unreadMessageCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -118,7 +125,8 @@ abstract class _$$RoomModelImplCopyWith<$Res>
       DateTime? createdAt,
       String peerName,
       String? latestMessageText,
-      String? peerProfilePic});
+      String? peerProfilePic,
+      int? unreadMessageCount});
 }
 
 /// @nodoc
@@ -139,6 +147,7 @@ class __$$RoomModelImplCopyWithImpl<$Res>
     Object? peerName = null,
     Object? latestMessageText = freezed,
     Object? peerProfilePic = freezed,
+    Object? unreadMessageCount = freezed,
   }) {
     return _then(_$RoomModelImpl(
       id: freezed == id
@@ -169,6 +178,10 @@ class __$$RoomModelImplCopyWithImpl<$Res>
           ? _value.peerProfilePic
           : peerProfilePic // ignore: cast_nullable_to_non_nullable
               as String?,
+      unreadMessageCount: freezed == unreadMessageCount
+          ? _value.unreadMessageCount
+          : unreadMessageCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -183,7 +196,8 @@ class _$RoomModelImpl implements _RoomModel {
       this.createdAt,
       required this.peerName,
       this.latestMessageText,
-      this.peerProfilePic});
+      this.peerProfilePic,
+      this.unreadMessageCount});
 
   factory _$RoomModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoomModelImplFromJson(json);
@@ -202,10 +216,12 @@ class _$RoomModelImpl implements _RoomModel {
   final String? latestMessageText;
   @override
   final String? peerProfilePic;
+  @override
+  final int? unreadMessageCount;
 
   @override
   String toString() {
-    return 'RoomModel(id: $id, ownerId: $ownerId, peerId: $peerId, createdAt: $createdAt, peerName: $peerName, latestMessageText: $latestMessageText, peerProfilePic: $peerProfilePic)';
+    return 'RoomModel(id: $id, ownerId: $ownerId, peerId: $peerId, createdAt: $createdAt, peerName: $peerName, latestMessageText: $latestMessageText, peerProfilePic: $peerProfilePic, unreadMessageCount: $unreadMessageCount)';
   }
 
   @override
@@ -223,13 +239,15 @@ class _$RoomModelImpl implements _RoomModel {
             (identical(other.latestMessageText, latestMessageText) ||
                 other.latestMessageText == latestMessageText) &&
             (identical(other.peerProfilePic, peerProfilePic) ||
-                other.peerProfilePic == peerProfilePic));
+                other.peerProfilePic == peerProfilePic) &&
+            (identical(other.unreadMessageCount, unreadMessageCount) ||
+                other.unreadMessageCount == unreadMessageCount));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, ownerId, peerId, createdAt,
-      peerName, latestMessageText, peerProfilePic);
+      peerName, latestMessageText, peerProfilePic, unreadMessageCount);
 
   @JsonKey(ignore: true)
   @override
@@ -253,7 +271,8 @@ abstract class _RoomModel implements RoomModel {
       final DateTime? createdAt,
       required final String peerName,
       final String? latestMessageText,
-      final String? peerProfilePic}) = _$RoomModelImpl;
+      final String? peerProfilePic,
+      final int? unreadMessageCount}) = _$RoomModelImpl;
 
   factory _RoomModel.fromJson(Map<String, dynamic> json) =
       _$RoomModelImpl.fromJson;
@@ -272,6 +291,8 @@ abstract class _RoomModel implements RoomModel {
   String? get latestMessageText;
   @override
   String? get peerProfilePic;
+  @override
+  int? get unreadMessageCount;
   @override
   @JsonKey(ignore: true)
   _$$RoomModelImplCopyWith<_$RoomModelImpl> get copyWith =>

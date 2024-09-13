@@ -1,10 +1,10 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.auth.text.dart';
-import 'package:biite/core/presentation/biite.button.dart';
-import 'package:biite/core/presentation/biite.form.field.dart';
+import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
+import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/features/auth/widgets/auth.email.field.dart';
+import 'package:biite/features/auth/widgets/auth.password.field.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -36,9 +36,9 @@ class Login extends StatelessWidget {
                 style: context.appTheme.textTheme.titleMedium,
               ),
               SizedBox(height: 32.h),
-              BiiteFormField(controller: TextEditingController(), hintText: firstName),
+              const AuthEmailField(),
               SizedBox(height: 24.h),
-              BiiteFormField(controller: TextEditingController(), hintText: lastName),
+              const AuthPasswordField(),
               SizedBox(height: 24.h),
               BiiteTextButton(onPressed: () => context.go("/home"), text: "Login"),
               SizedBox(height: 24.h),

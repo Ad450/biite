@@ -1,4 +1,4 @@
-import 'package:biite/core/presentation/biite.adaptive.dart';
+import 'package:biite/core/presentation/widgets/biite.adaptive.dart';
 import 'package:flutter/material.dart';
 
 class BiiteAdaptiveAppbar extends BiiteAdaptive implements PreferredSizeWidget {

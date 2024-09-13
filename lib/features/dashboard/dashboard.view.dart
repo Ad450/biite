@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.avatar.with.text.dart';
-import 'package:biite/core/presentation/biite.button.dart';
-import 'package:biite/core/presentation/biite.multiline.textfield.dart';
-import 'package:biite/core/presentation/biite.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
+import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/core/presentation/widgets/biite.multiline.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.textfield.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/upload.file.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -93,7 +93,7 @@ class _DashboardViewState extends State<DashboardView> {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      BiiteTextfield(controller: TextEditingController()),
+                      BiiteTextfield(controller: TextEditingController(), onChanged: (text) {}),
                       SizedBox(height: 69.h),
 
                       Padding(

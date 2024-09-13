@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 class BiiteTextfield extends StatelessWidget {
   const BiiteTextfield({
     required this.controller,
+    required this.onChanged,
     this.minLines,
     this.maxLines,
     this.hintText,
     this.inputType,
+    this.errorText,
     super.key,
   });
 
@@ -18,11 +20,14 @@ class BiiteTextfield extends StatelessWidget {
   final int? maxLines;
   final String? hintText;
   final TextInputType? inputType;
+  final String? errorText;
+  final Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      onChanged: onChanged,
       maxLines: maxLines ?? 1,
       minLines: minLines ?? 1,
       keyboardType: inputType ?? TextInputType.number,
@@ -50,6 +55,11 @@ class BiiteTextfield extends StatelessWidget {
         border: OutlineInputBorder(
           borderSide: const BorderSide(width: 0, style: BorderStyle.none),
           borderRadius: BorderRadius.circular(7),
+        ),
+        errorText: errorText,
+        errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(
+          fontSize: 12,
+          color: ColorName.primaryAccent,
         ),
       ),
     );

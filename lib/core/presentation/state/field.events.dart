@@ -1,0 +1,29 @@
+/// These are all the different textfield events that are sent
+/// to their respective [FieldBloc]
+abstract class FieldEvent {}
+
+class EmailFieldEvent extends FieldEvent {
+  final String? email;
+  EmailFieldEvent(this.email);
+}
+
+class PasswordFieldEvent extends FieldEvent {
+  final String? password;
+  PasswordFieldEvent(this.password);
+}
+
+class ConfirmPasswordFieldEvent extends FieldEvent {
+  final String? password;
+  ConfirmPasswordFieldEvent(this.password);
+}
+
+class NameFieldEvent extends FieldEvent {
+  final String? name;
+  NameFieldEvent(this.name);
+}
+
+class RateFieldEvent extends FieldEvent {}
+
+class DescriptionFieldEvent extends FieldEvent {}
+
+class TitleFieldEvent extends FieldEvent {}

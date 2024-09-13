@@ -1,6 +1,9 @@
-import 'package:biite/core/presentation/biite.auth.text.dart';
-import 'package:biite/core/presentation/biite.button.dart';
-import 'package:biite/core/presentation/biite.form.field.dart';
+import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
+import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/features/auth/widgets/auth.confirm.password.field.dart';
+import 'package:biite/features/auth/widgets/auth.email.field.dart';
+import 'package:biite/features/auth/widgets/auth.name.field.dart';
+import 'package:biite/features/auth/widgets/auth.password.field.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
@@ -38,13 +41,13 @@ class SignupView extends StatelessWidget {
                   style: theme.textTheme.titleMedium,
                 ),
                 SizedBox(height: 32.h),
-                BiiteFormField(controller: TextEditingController(), hintText: firstName),
+                const AuthNameField(),
                 SizedBox(height: 24.h),
-                BiiteFormField(controller: TextEditingController(), hintText: lastName),
+                const AuthEmailField(),
                 SizedBox(height: 24.h),
-                BiiteFormField(controller: TextEditingController(), hintText: email),
+                const AuthPasswordField(),
                 SizedBox(height: 24.h),
-                BiiteFormField(controller: TextEditingController(), hintText: password),
+                const AuthConfirmPasswordField(),
                 SizedBox(height: 102.h),
                 BiiteTextButton(onPressed: () => context.go("/home"), text: signup),
                 SizedBox(height: 40.h),

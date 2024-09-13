@@ -1,0 +1,41 @@
+import 'package:biite/core/presentation/state/base.formfield.bloc.dart';
+import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
+import 'package:biite/core/presentation/state/email.field.bloc.dart';
+import 'package:biite/core/presentation/state/form.field.events.dart';
+import 'package:biite/core/presentation/state/form.field.state.dart';
+import 'package:biite/core/presentation/state/name.field.bloc.dart';
+import 'package:biite/core/presentation/state/password.field.bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
+
+@LazySingleton()
+class SignupFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
+  SignupFormBloc(
+    this.emailFieldBloc,
+    this.passwordFieldBloc,
+    this.confirmPasswordFieldBloc,
+    this.nameFieldBloc,
+  ) : super(const SigninFormFieldState.initial(isValid: false, message: null));
+
+  final EmailFieldBloc emailFieldBloc;
+  final PasswordFieldBloc passwordFieldBloc;
+  final ConfirmPasswordFieldBloc confirmPasswordFieldBloc;
+  final NameFieldBloc nameFieldBloc;
+
+  @override
+  void isValid(FormFieldEvent event, Emitter<SigninFormFieldState> emit) {
+    if (emailFieldBloc.state.isValid) {
+      emit(SigninFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+    }
+    if (passwordFieldBloc.state.isValid) {
+      emit(SigninFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+    }
+    if (confirmPasswordFieldBloc.state.isValid) {
+      emit(SigninFormFieldState.invalid(isValid: false, message: confirmPasswordFieldBloc.state.message));
+    }
+    if (nameFieldBloc.state.isValid) {
+      emit(SigninFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
+    }
+    emit(const SigninFormFieldState.valid(isValid: true, message: null));
+  }
+}

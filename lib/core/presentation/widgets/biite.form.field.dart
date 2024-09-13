@@ -5,17 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteFormField extends StatelessWidget {
-  const BiiteFormField({required this.controller, this.hintText, super.key});
+  const BiiteFormField({
+    required this.controller,
+    required this.onChanged,
+    this.hintText,
+    this.errorText,
+    this.inputType,
+    super.key,
+  });
 
   final TextEditingController controller;
   final String? hintText;
+  final Function(String) onChanged;
+  final TextInputType? inputType;
+  final String? errorText;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 52.h,
       width: double.infinity,
       child: TextField(
+        keyboardType: inputType,
         controller: controller,
+        onChanged: onChanged,
         textAlignVertical: TextAlignVertical.center,
         style: context.appTheme.textTheme.bodySmall?.copyWith(
           fontSize: 16,
@@ -41,6 +54,8 @@ class BiiteFormField extends StatelessWidget {
             borderSide: const BorderSide(width: 0, style: BorderStyle.none),
             borderRadius: BorderRadius.circular(7),
           ),
+          errorText: errorText,
+          errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(color: ColorName.secondary),
         ),
       ),
     );

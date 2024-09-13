@@ -1,7 +1,7 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.back.dart';
-import 'package:biite/core/presentation/biite.button.dart';
-import 'package:biite/core/presentation/biite.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.back.dart';
+import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/core/presentation/widgets/biite.textfield.dart';
 import 'package:biite/features/profile/widget/edit.profile.avatar.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
@@ -84,6 +84,7 @@ class _EditProfileState extends State<EditProfile> {
                         controller: TextEditingController(),
                         hintText: "First name",
                         inputType: TextInputType.text,
+                        onChanged: (text) {},
                       ),
                       Text(
                         "lastname",
@@ -98,6 +99,7 @@ class _EditProfileState extends State<EditProfile> {
                         controller: TextEditingController(),
                         hintText: "Last name",
                         inputType: TextInputType.text,
+                        onChanged: (text) {},
                       ),
                       Text(
                         "password",
@@ -112,6 +114,7 @@ class _EditProfileState extends State<EditProfile> {
                         controller: TextEditingController(),
                         hintText: "Password",
                         inputType: TextInputType.text,
+                        onChanged: (text) {},
                       ),
                       SizedBox(height: 69.h),
                       Padding(

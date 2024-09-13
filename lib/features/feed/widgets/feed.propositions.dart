@@ -1,6 +1,6 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.avatar.with.text.dart';
-import 'package:biite/core/presentation/biite.view.all.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
+import 'package:biite/core/presentation/widgets/biite.view.all.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';

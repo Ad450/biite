@@ -1,5 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.view.all.dart';
+import 'package:biite/core/presentation/widgets/biite.view.all.dart';
 import 'package:biite/features/feed/widgets/project.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,4 +1,4 @@
-import 'package:biite/core/presentation/biite.avatar.with.text.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/features/search/widget/search.project.card.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';

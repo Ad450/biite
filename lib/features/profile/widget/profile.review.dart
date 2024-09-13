@@ -1,5 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.view.all.dart';
+import 'package:biite/core/presentation/widgets/biite.view.all.dart';
 import 'package:biite/features/profile/widget/profile.rating.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';

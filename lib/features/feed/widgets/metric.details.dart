@@ -1,5 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.back.dart';
+import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/features/feed/widgets/metric.tile.dart';
 import 'package:biite/features/feed/widgets/total.gains.expanded.dart';
 import 'package:biite/features/feed/widgets/total.projects.expanded.dart';

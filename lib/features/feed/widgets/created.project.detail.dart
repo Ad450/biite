@@ -1,7 +1,7 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.avatar.with.text.dart';
-import 'package:biite/core/presentation/biite.back.dart';
-import 'package:biite/core/presentation/biite.chip.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
+import 'package:biite/core/presentation/widgets/biite.back.dart';
+import 'package:biite/core/presentation/widgets/biite.chip.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';

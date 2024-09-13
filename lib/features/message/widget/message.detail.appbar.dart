@@ -1,5 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/presentation/biite.back.dart';
+import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';

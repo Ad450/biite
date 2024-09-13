@@ -2,7 +2,7 @@ import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/state/email.field.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
-import 'package:biite/core/presentation/widgets/biite.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.form.field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,12 +11,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AuthEmailField extends StatelessWidget {
   const AuthEmailField({super.key});
 
-  Widget _buildField(String? errorText, {required Function(String) onChanged}) {
-    return BiiteTextfield(
-      controller: TextEditingController(),
-      inputType: TextInputType.name,
+  Widget _buildField(String? errorText,
+      {required Function(String) onChanged, required TextEditingController controller}) {
+    return BiiteFormField(
+      controller: controller,
+      inputType: TextInputType.emailAddress,
       errorText: errorText,
-      hintText: "FullName",
+      hintText: "Email",
       onChanged: onChanged,
     );
   }
@@ -31,10 +32,12 @@ class AuthEmailField extends StatelessWidget {
         orElse: () => _buildField(
           null,
           onChanged: (text) => bloc.add(EmailFieldEvent(text)),
+          controller: bloc.emailController,
         ),
         invalid: (state) => _buildField(
           state.message,
           onChanged: (text) => bloc.add(EmailFieldEvent(text)),
+          controller: bloc.emailController,
         ),
       ),
     );

@@ -1,14 +1,19 @@
 import 'package:biite/core/presentation/state/base.field.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
 class EmailFieldBloc extends FieldBaseBloc<EmailState> {
-  EmailFieldBloc() : super(const EmailState.initial(data: "", message: null, isValid: false)) {
+  EmailFieldBloc()
+      : emailController = TextEditingController(),
+        super(const EmailState.initial(data: "", message: null, isValid: false)) {
     on<EmailFieldEvent>(isValid);
   }
+
+  final TextEditingController emailController;
 
   final emailRegex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 
@@ -27,5 +32,11 @@ class EmailFieldBloc extends FieldBaseBloc<EmailState> {
 
       emit(EmailState.valid(data: event.email!, message: null, isValid: true));
     }
+  }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    return super.close();
   }
 }

@@ -1,22 +1,26 @@
 import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:biite/core/presentation/state/password.field.bloc.dart';
 import 'package:biite/core/presentation/widgets/biite.form.field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthPasswordField extends StatelessWidget {
   const AuthPasswordField({super.key});
 
-  Widget _buildField(String? errorText, {required Function(String) onChanged}) {
+  Widget _buildField(
+    String? errorText, {
+    required Function(String) onChanged,
+    required TextEditingController controller,
+  }) {
     return BiiteFormField(
-      controller: TextEditingController(),
+      controller: controller,
       inputType: TextInputType.name,
       errorText: errorText,
-      hintText: "Confirm password",
+      hintText: "Password",
       onChanged: onChanged,
     );
   }
@@ -30,10 +34,12 @@ class AuthPasswordField extends StatelessWidget {
         orElse: () => _buildField(
           null,
           onChanged: (text) => bloc.add(PasswordFieldEvent(text)),
+          controller: bloc.passwordController,
         ),
         invalid: (state) => _buildField(
           state.message,
           onChanged: (text) => bloc.add(PasswordFieldEvent(text)),
+          controller: bloc.passwordController,
         ),
       ),
     );

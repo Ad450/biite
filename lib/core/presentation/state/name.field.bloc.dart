@@ -1,14 +1,19 @@
 import 'package:biite/core/presentation/state/base.field.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
 class NameFieldBloc extends FieldBaseBloc<NameState> {
-  NameFieldBloc() : super(const NameState.initial(data: "", message: null, isValid: false)) {
+  NameFieldBloc()
+      : nameController = TextEditingController(),
+        super(const NameState.initial(data: "", message: null, isValid: false)) {
     on<NameFieldEvent>(isValid);
   }
+
+  final TextEditingController nameController;
 
   final nameRegex = RegExp(r'^[A-Za-z ]+$');
 

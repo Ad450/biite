@@ -22,6 +22,7 @@ mixin _$SignupFormFieldState {
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$SignupFormFieldState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,6 +38,7 @@ mixin _$SignupFormFieldState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) =>
@@ -44,6 +47,7 @@ mixin _$SignupFormFieldState {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupFormFieldStateInitial value) initial,
     required TResult Function(_SignupFormFieldStateValid value) valid,
+    required TResult Function(_SignupFormFieldStateLoading value) loading,
     required TResult Function(_SignupFormFieldStateInvalid value) invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +55,7 @@ mixin _$SignupFormFieldState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupFormFieldStateInitial value)? initial,
     TResult? Function(_SignupFormFieldStateValid value)? valid,
+    TResult? Function(_SignupFormFieldStateLoading value)? loading,
     TResult? Function(_SignupFormFieldStateInvalid value)? invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +63,7 @@ mixin _$SignupFormFieldState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupFormFieldStateInitial value)? initial,
     TResult Function(_SignupFormFieldStateValid value)? valid,
+    TResult Function(_SignupFormFieldStateLoading value)? loading,
     TResult Function(_SignupFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) =>
@@ -189,6 +195,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return initial(isValid, message);
@@ -199,6 +206,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return initial?.call(isValid, message);
@@ -209,6 +217,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -223,6 +232,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupFormFieldStateInitial value) initial,
     required TResult Function(_SignupFormFieldStateValid value) valid,
+    required TResult Function(_SignupFormFieldStateLoading value) loading,
     required TResult Function(_SignupFormFieldStateInvalid value) invalid,
   }) {
     return initial(this);
@@ -233,6 +243,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupFormFieldStateInitial value)? initial,
     TResult? Function(_SignupFormFieldStateValid value)? valid,
+    TResult? Function(_SignupFormFieldStateLoading value)? loading,
     TResult? Function(_SignupFormFieldStateInvalid value)? invalid,
   }) {
     return initial?.call(this);
@@ -243,6 +254,7 @@ class _$SignupFormFieldStateInitialImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupFormFieldStateInitial value)? initial,
     TResult Function(_SignupFormFieldStateValid value)? valid,
+    TResult Function(_SignupFormFieldStateLoading value)? loading,
     TResult Function(_SignupFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {
@@ -349,6 +361,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return valid(isValid, message);
@@ -359,6 +372,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return valid?.call(isValid, message);
@@ -369,6 +383,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -383,6 +398,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupFormFieldStateInitial value) initial,
     required TResult Function(_SignupFormFieldStateValid value) valid,
+    required TResult Function(_SignupFormFieldStateLoading value) loading,
     required TResult Function(_SignupFormFieldStateInvalid value) invalid,
   }) {
     return valid(this);
@@ -393,6 +409,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupFormFieldStateInitial value)? initial,
     TResult? Function(_SignupFormFieldStateValid value)? valid,
+    TResult? Function(_SignupFormFieldStateLoading value)? loading,
     TResult? Function(_SignupFormFieldStateInvalid value)? invalid,
   }) {
     return valid?.call(this);
@@ -403,6 +420,7 @@ class _$SignupFormFieldStateValidImpl implements _SignupFormFieldStateValid {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupFormFieldStateInitial value)? initial,
     TResult Function(_SignupFormFieldStateValid value)? valid,
+    TResult Function(_SignupFormFieldStateLoading value)? loading,
     TResult Function(_SignupFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {
@@ -425,6 +443,173 @@ abstract class _SignupFormFieldStateValid implements SignupFormFieldState {
   @override
   @JsonKey(ignore: true)
   _$$SignupFormFieldStateValidImplCopyWith<_$SignupFormFieldStateValidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignupFormFieldStateLoadingImplCopyWith<$Res>
+    implements $SignupFormFieldStateCopyWith<$Res> {
+  factory _$$SignupFormFieldStateLoadingImplCopyWith(
+          _$SignupFormFieldStateLoadingImpl value,
+          $Res Function(_$SignupFormFieldStateLoadingImpl) then) =
+      __$$SignupFormFieldStateLoadingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isValid, String? message});
+}
+
+/// @nodoc
+class __$$SignupFormFieldStateLoadingImplCopyWithImpl<$Res>
+    extends _$SignupFormFieldStateCopyWithImpl<$Res,
+        _$SignupFormFieldStateLoadingImpl>
+    implements _$$SignupFormFieldStateLoadingImplCopyWith<$Res> {
+  __$$SignupFormFieldStateLoadingImplCopyWithImpl(
+      _$SignupFormFieldStateLoadingImpl _value,
+      $Res Function(_$SignupFormFieldStateLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isValid = null,
+    Object? message = freezed,
+  }) {
+    return _then(_$SignupFormFieldStateLoadingImpl(
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignupFormFieldStateLoadingImpl
+    implements _SignupFormFieldStateLoading {
+  const _$SignupFormFieldStateLoadingImpl(
+      {required this.isValid, required this.message});
+
+  @override
+  final bool isValid;
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'SignupFormFieldState.loading(isValid: $isValid, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignupFormFieldStateLoadingImpl &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isValid, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignupFormFieldStateLoadingImplCopyWith<_$SignupFormFieldStateLoadingImpl>
+      get copyWith => __$$SignupFormFieldStateLoadingImplCopyWithImpl<
+          _$SignupFormFieldStateLoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isValid, String? message) initial,
+    required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
+    required TResult Function(bool isValid, String? message) invalid,
+  }) {
+    return loading(isValid, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isValid, String? message)? initial,
+    TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
+    TResult? Function(bool isValid, String? message)? invalid,
+  }) {
+    return loading?.call(isValid, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isValid, String? message)? initial,
+    TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
+    TResult Function(bool isValid, String? message)? invalid,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(isValid, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignupFormFieldStateInitial value) initial,
+    required TResult Function(_SignupFormFieldStateValid value) valid,
+    required TResult Function(_SignupFormFieldStateLoading value) loading,
+    required TResult Function(_SignupFormFieldStateInvalid value) invalid,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignupFormFieldStateInitial value)? initial,
+    TResult? Function(_SignupFormFieldStateValid value)? valid,
+    TResult? Function(_SignupFormFieldStateLoading value)? loading,
+    TResult? Function(_SignupFormFieldStateInvalid value)? invalid,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignupFormFieldStateInitial value)? initial,
+    TResult Function(_SignupFormFieldStateValid value)? valid,
+    TResult Function(_SignupFormFieldStateLoading value)? loading,
+    TResult Function(_SignupFormFieldStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignupFormFieldStateLoading implements SignupFormFieldState {
+  const factory _SignupFormFieldStateLoading(
+      {required final bool isValid,
+      required final String? message}) = _$SignupFormFieldStateLoadingImpl;
+
+  @override
+  bool get isValid;
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$SignupFormFieldStateLoadingImplCopyWith<_$SignupFormFieldStateLoadingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -510,6 +695,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return invalid(isValid, message);
@@ -520,6 +706,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return invalid?.call(isValid, message);
@@ -530,6 +717,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -544,6 +732,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupFormFieldStateInitial value) initial,
     required TResult Function(_SignupFormFieldStateValid value) valid,
+    required TResult Function(_SignupFormFieldStateLoading value) loading,
     required TResult Function(_SignupFormFieldStateInvalid value) invalid,
   }) {
     return invalid(this);
@@ -554,6 +743,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupFormFieldStateInitial value)? initial,
     TResult? Function(_SignupFormFieldStateValid value)? valid,
+    TResult? Function(_SignupFormFieldStateLoading value)? loading,
     TResult? Function(_SignupFormFieldStateInvalid value)? invalid,
   }) {
     return invalid?.call(this);
@@ -564,6 +754,7 @@ class _$SignupFormFieldStateInvalidImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupFormFieldStateInitial value)? initial,
     TResult Function(_SignupFormFieldStateValid value)? valid,
+    TResult Function(_SignupFormFieldStateLoading value)? loading,
     TResult Function(_SignupFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {
@@ -597,6 +788,7 @@ mixin _$SigninFormFieldState {
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -604,6 +796,7 @@ mixin _$SigninFormFieldState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -611,6 +804,7 @@ mixin _$SigninFormFieldState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) =>
@@ -619,6 +813,7 @@ mixin _$SigninFormFieldState {
   TResult map<TResult extends Object?>({
     required TResult Function(_SigninFormFieldStateInitial value) initial,
     required TResult Function(_SigninFormFieldStateValid value) valid,
+    required TResult Function(_SigninFormFieldStateLoading value) loading,
     required TResult Function(_SigninFormFieldStateInvalid value) invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -626,6 +821,7 @@ mixin _$SigninFormFieldState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SigninFormFieldStateInitial value)? initial,
     TResult? Function(_SigninFormFieldStateValid value)? valid,
+    TResult? Function(_SigninFormFieldStateLoading value)? loading,
     TResult? Function(_SigninFormFieldStateInvalid value)? invalid,
   }) =>
       throw _privateConstructorUsedError;
@@ -633,6 +829,7 @@ mixin _$SigninFormFieldState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SigninFormFieldStateInitial value)? initial,
     TResult Function(_SigninFormFieldStateValid value)? valid,
+    TResult Function(_SigninFormFieldStateLoading value)? loading,
     TResult Function(_SigninFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) =>
@@ -764,6 +961,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return initial(isValid, message);
@@ -774,6 +972,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return initial?.call(isValid, message);
@@ -784,6 +983,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -798,6 +998,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_SigninFormFieldStateInitial value) initial,
     required TResult Function(_SigninFormFieldStateValid value) valid,
+    required TResult Function(_SigninFormFieldStateLoading value) loading,
     required TResult Function(_SigninFormFieldStateInvalid value) invalid,
   }) {
     return initial(this);
@@ -808,6 +1009,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SigninFormFieldStateInitial value)? initial,
     TResult? Function(_SigninFormFieldStateValid value)? valid,
+    TResult? Function(_SigninFormFieldStateLoading value)? loading,
     TResult? Function(_SigninFormFieldStateInvalid value)? invalid,
   }) {
     return initial?.call(this);
@@ -818,6 +1020,7 @@ class _$SigninFormFieldStateInitialImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SigninFormFieldStateInitial value)? initial,
     TResult Function(_SigninFormFieldStateValid value)? valid,
+    TResult Function(_SigninFormFieldStateLoading value)? loading,
     TResult Function(_SigninFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {
@@ -924,6 +1127,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return valid(isValid, message);
@@ -934,6 +1138,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return valid?.call(isValid, message);
@@ -944,6 +1149,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -958,6 +1164,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult map<TResult extends Object?>({
     required TResult Function(_SigninFormFieldStateInitial value) initial,
     required TResult Function(_SigninFormFieldStateValid value) valid,
+    required TResult Function(_SigninFormFieldStateLoading value) loading,
     required TResult Function(_SigninFormFieldStateInvalid value) invalid,
   }) {
     return valid(this);
@@ -968,6 +1175,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SigninFormFieldStateInitial value)? initial,
     TResult? Function(_SigninFormFieldStateValid value)? valid,
+    TResult? Function(_SigninFormFieldStateLoading value)? loading,
     TResult? Function(_SigninFormFieldStateInvalid value)? invalid,
   }) {
     return valid?.call(this);
@@ -978,6 +1186,7 @@ class _$SigninFormFieldStateValidImpl implements _SigninFormFieldStateValid {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SigninFormFieldStateInitial value)? initial,
     TResult Function(_SigninFormFieldStateValid value)? valid,
+    TResult Function(_SigninFormFieldStateLoading value)? loading,
     TResult Function(_SigninFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {
@@ -1000,6 +1209,173 @@ abstract class _SigninFormFieldStateValid implements SigninFormFieldState {
   @override
   @JsonKey(ignore: true)
   _$$SigninFormFieldStateValidImplCopyWith<_$SigninFormFieldStateValidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SigninFormFieldStateLoadingImplCopyWith<$Res>
+    implements $SigninFormFieldStateCopyWith<$Res> {
+  factory _$$SigninFormFieldStateLoadingImplCopyWith(
+          _$SigninFormFieldStateLoadingImpl value,
+          $Res Function(_$SigninFormFieldStateLoadingImpl) then) =
+      __$$SigninFormFieldStateLoadingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isValid, String? message});
+}
+
+/// @nodoc
+class __$$SigninFormFieldStateLoadingImplCopyWithImpl<$Res>
+    extends _$SigninFormFieldStateCopyWithImpl<$Res,
+        _$SigninFormFieldStateLoadingImpl>
+    implements _$$SigninFormFieldStateLoadingImplCopyWith<$Res> {
+  __$$SigninFormFieldStateLoadingImplCopyWithImpl(
+      _$SigninFormFieldStateLoadingImpl _value,
+      $Res Function(_$SigninFormFieldStateLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isValid = null,
+    Object? message = freezed,
+  }) {
+    return _then(_$SigninFormFieldStateLoadingImpl(
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SigninFormFieldStateLoadingImpl
+    implements _SigninFormFieldStateLoading {
+  const _$SigninFormFieldStateLoadingImpl(
+      {required this.isValid, required this.message});
+
+  @override
+  final bool isValid;
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'SigninFormFieldState.loading(isValid: $isValid, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SigninFormFieldStateLoadingImpl &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isValid, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SigninFormFieldStateLoadingImplCopyWith<_$SigninFormFieldStateLoadingImpl>
+      get copyWith => __$$SigninFormFieldStateLoadingImplCopyWithImpl<
+          _$SigninFormFieldStateLoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isValid, String? message) initial,
+    required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
+    required TResult Function(bool isValid, String? message) invalid,
+  }) {
+    return loading(isValid, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isValid, String? message)? initial,
+    TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
+    TResult? Function(bool isValid, String? message)? invalid,
+  }) {
+    return loading?.call(isValid, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isValid, String? message)? initial,
+    TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
+    TResult Function(bool isValid, String? message)? invalid,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(isValid, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SigninFormFieldStateInitial value) initial,
+    required TResult Function(_SigninFormFieldStateValid value) valid,
+    required TResult Function(_SigninFormFieldStateLoading value) loading,
+    required TResult Function(_SigninFormFieldStateInvalid value) invalid,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SigninFormFieldStateInitial value)? initial,
+    TResult? Function(_SigninFormFieldStateValid value)? valid,
+    TResult? Function(_SigninFormFieldStateLoading value)? loading,
+    TResult? Function(_SigninFormFieldStateInvalid value)? invalid,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SigninFormFieldStateInitial value)? initial,
+    TResult Function(_SigninFormFieldStateValid value)? valid,
+    TResult Function(_SigninFormFieldStateLoading value)? loading,
+    TResult Function(_SigninFormFieldStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SigninFormFieldStateLoading implements SigninFormFieldState {
+  const factory _SigninFormFieldStateLoading(
+      {required final bool isValid,
+      required final String? message}) = _$SigninFormFieldStateLoadingImpl;
+
+  @override
+  bool get isValid;
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$SigninFormFieldStateLoadingImplCopyWith<_$SigninFormFieldStateLoadingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1085,6 +1461,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult when<TResult extends Object?>({
     required TResult Function(bool isValid, String? message) initial,
     required TResult Function(bool isValid, String? message) valid,
+    required TResult Function(bool isValid, String? message) loading,
     required TResult Function(bool isValid, String? message) invalid,
   }) {
     return invalid(isValid, message);
@@ -1095,6 +1472,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isValid, String? message)? initial,
     TResult? Function(bool isValid, String? message)? valid,
+    TResult? Function(bool isValid, String? message)? loading,
     TResult? Function(bool isValid, String? message)? invalid,
   }) {
     return invalid?.call(isValid, message);
@@ -1105,6 +1483,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isValid, String? message)? initial,
     TResult Function(bool isValid, String? message)? valid,
+    TResult Function(bool isValid, String? message)? loading,
     TResult Function(bool isValid, String? message)? invalid,
     required TResult orElse(),
   }) {
@@ -1119,6 +1498,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_SigninFormFieldStateInitial value) initial,
     required TResult Function(_SigninFormFieldStateValid value) valid,
+    required TResult Function(_SigninFormFieldStateLoading value) loading,
     required TResult Function(_SigninFormFieldStateInvalid value) invalid,
   }) {
     return invalid(this);
@@ -1129,6 +1509,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SigninFormFieldStateInitial value)? initial,
     TResult? Function(_SigninFormFieldStateValid value)? valid,
+    TResult? Function(_SigninFormFieldStateLoading value)? loading,
     TResult? Function(_SigninFormFieldStateInvalid value)? invalid,
   }) {
     return invalid?.call(this);
@@ -1139,6 +1520,7 @@ class _$SigninFormFieldStateInvalidImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SigninFormFieldStateInitial value)? initial,
     TResult Function(_SigninFormFieldStateValid value)? valid,
+    TResult Function(_SigninFormFieldStateLoading value)? loading,
     TResult Function(_SigninFormFieldStateInvalid value)? invalid,
     required TResult orElse(),
   }) {

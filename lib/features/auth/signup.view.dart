@@ -1,13 +1,18 @@
+import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
-import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
+import 'package:biite/features/auth/state/auth.bloc.dart';
+import 'package:biite/features/auth/state/auth.state.dart';
 import 'package:biite/features/auth/widgets/auth.confirm.password.field.dart';
 import 'package:biite/features/auth/widgets/auth.email.field.dart';
 import 'package:biite/features/auth/widgets/auth.name.field.dart';
 import 'package:biite/features/auth/widgets/auth.password.field.dart';
+import 'package:biite/features/auth/widgets/signup.form.button.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,6 +22,7 @@ class SignupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final authBloc = getIt.get<AuthBloc>();
 
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
@@ -49,7 +55,18 @@ class SignupView extends StatelessWidget {
                 SizedBox(height: 24.h),
                 const AuthConfirmPasswordField(),
                 SizedBox(height: 102.h),
-                BiiteTextButton(onPressed: () => context.go("/home"), text: signup),
+                BlocConsumer<AuthBloc, AuthState>(
+                  bloc: authBloc,
+                  listener: (_, state) => state.maybeMap(
+                    orElse: () => null,
+                    signupSuccess: (_) => context.push("/home"),
+                    error: (state) => showToast(state.message!),
+                  ),
+                  builder: (_, state) => state.maybeMap(
+                    orElse: () => const SignupFormButton(),
+                    signupLoading: (_) => const CircularProgressIndicator(),
+                  ),
+                ),
                 SizedBox(height: 40.h),
                 BiiteAuthText(text: login, onTap: () => context.push("/login"))
               ],

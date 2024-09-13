@@ -55,7 +55,10 @@ class BiiteFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(7),
           ),
           errorText: errorText,
-          errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(color: ColorName.secondary),
+          errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(
+            color: Colors.red,
+            fontSize: 12,
+          ),
         ),
       ),
     );

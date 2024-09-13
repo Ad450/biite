@@ -9,13 +9,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class SignupFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
+class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
   SignupFormBloc(
     this.emailFieldBloc,
     this.passwordFieldBloc,
     this.confirmPasswordFieldBloc,
     this.nameFieldBloc,
-  ) : super(const SigninFormFieldState.initial(isValid: false, message: null));
+  ) : super(const SignupFormFieldState.initial(isValid: false, message: null)) {
+    on<SignupFormFieldEvent>(isValid);
+  }
 
   final EmailFieldBloc emailFieldBloc;
   final PasswordFieldBloc passwordFieldBloc;
@@ -23,19 +25,21 @@ class SignupFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
   final NameFieldBloc nameFieldBloc;
 
   @override
-  void isValid(FormFieldEvent event, Emitter<SigninFormFieldState> emit) {
-    if (emailFieldBloc.state.isValid) {
-      emit(SigninFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+  void isValid(FormFieldEvent event, Emitter<SignupFormFieldState> emit) {
+    if (event is SignupFormFieldEvent) {
+      if (emailFieldBloc.state.isValid) {
+        emit(SignupFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+      }
+      if (passwordFieldBloc.state.isValid) {
+        emit(SignupFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+      }
+      if (confirmPasswordFieldBloc.state.isValid) {
+        emit(SignupFormFieldState.invalid(isValid: false, message: confirmPasswordFieldBloc.state.message));
+      }
+      if (nameFieldBloc.state.isValid) {
+        emit(SignupFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
+      }
+      emit(const SignupFormFieldState.valid(isValid: true, message: null));
     }
-    if (passwordFieldBloc.state.isValid) {
-      emit(SigninFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
-    }
-    if (confirmPasswordFieldBloc.state.isValid) {
-      emit(SigninFormFieldState.invalid(isValid: false, message: confirmPasswordFieldBloc.state.message));
-    }
-    if (nameFieldBloc.state.isValid) {
-      emit(SigninFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
-    }
-    emit(const SigninFormFieldState.valid(isValid: true, message: null));
   }
 }

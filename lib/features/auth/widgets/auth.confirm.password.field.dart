@@ -4,15 +4,20 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:biite/core/presentation/widgets/biite.form.field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthConfirmPasswordField extends StatelessWidget {
   const AuthConfirmPasswordField({super.key});
 
-  Widget _buildField(String? errorText, {required Function(String) onChanged}) {
+  Widget _buildField(
+    String? errorText, {
+    required Function(String) onChanged,
+    required TextEditingController controller,
+  }) {
     return BiiteFormField(
-      controller: TextEditingController(),
+      controller: controller,
       inputType: TextInputType.name,
       errorText: errorText,
       hintText: "Confirm password",
@@ -29,10 +34,12 @@ class AuthConfirmPasswordField extends StatelessWidget {
         orElse: () => _buildField(
           null,
           onChanged: (text) => bloc.add(ConfirmPasswordFieldEvent(text)),
+          controller: bloc.confirmPasswordController,
         ),
         invalid: (state) => _buildField(
           state.message,
           onChanged: (text) => bloc.add(ConfirmPasswordFieldEvent(text)),
+          controller: bloc.confirmPasswordController,
         ),
       ),
     );

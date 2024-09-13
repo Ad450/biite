@@ -19,16 +19,16 @@ import '../../api/repositories/bid.repository.dart' as _i19;
 import '../../api/repositories/chat.repository.dart' as _i17;
 import '../../api/repositories/message.repository.dart' as _i14;
 import '../../api/repositories/project.repository.dart' as _i15;
-import '../../api/repositories/user.repository.dart' as _i13;
-import '../../api/storage/cloud.storage.dart' as _i11;
-import '../../api/storage/hive.storage.dart' as _i6;
-import '../../features/auth/state/login.form.bloc.dart' as _i12;
+import '../../api/repositories/user.repository.dart' as _i12;
+import '../../api/storage/cloud.storage.dart' as _i10;
+import '../../api/storage/hive.storage.dart' as _i9;
+import '../../features/auth/state/login.form.bloc.dart' as _i11;
 import '../../features/auth/state/signup.form.dart' as _i18;
 import '../../features/feed/state/feed.bloc.dart' as _i20;
-import '../presentation/state/confirm.password.bloc.dart' as _i10;
-import '../presentation/state/email.field.bloc.dart' as _i7;
-import '../presentation/state/name.field.bloc.dart' as _i9;
-import '../presentation/state/password.field.bloc.dart' as _i8;
+import '../presentation/state/confirm.password.bloc.dart' as _i13;
+import '../presentation/state/email.field.bloc.dart' as _i6;
+import '../presentation/state/name.field.bloc.dart' as _i8;
+import '../presentation/state/password.field.bloc.dart' as _i7;
 import 'biite.di.dart' as _i21;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -47,49 +47,49 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i4.FirebaseStorage>(() => firebaseModule.firebaseStorage);
     gh.lazySingleton<_i5.FirebaseFirestore>(
         () => firebaseModule.firebaseFirestore);
-    gh.lazySingleton<_i6.HiveStore>(() => _i6.HiveStore());
-    gh.lazySingleton<_i7.EmailFieldBloc>(() => _i7.EmailFieldBloc());
-    gh.lazySingleton<_i8.PasswordFieldBloc>(() => _i8.PasswordFieldBloc());
-    gh.lazySingleton<_i9.NameFieldBloc>(() => _i9.NameFieldBloc());
-    gh.lazySingleton<_i10.ConfirmPasswordFieldBloc>(
-        () => _i10.ConfirmPasswordFieldBloc());
-    gh.lazySingleton<_i11.CloudStorage>(() => _i11.CloudStorageImpl(
+    gh.lazySingleton<_i6.EmailFieldBloc>(() => _i6.EmailFieldBloc());
+    gh.lazySingleton<_i7.PasswordFieldBloc>(() => _i7.PasswordFieldBloc());
+    gh.lazySingleton<_i8.NameFieldBloc>(() => _i8.NameFieldBloc());
+    gh.lazySingleton<_i9.HiveStore>(() => _i9.HiveStore());
+    gh.lazySingleton<_i10.CloudStorage>(() => _i10.CloudStorageImpl(
           gh<_i3.FirebaseAuth>(),
           gh<_i4.FirebaseStorage>(),
         ));
-    gh.lazySingleton<_i12.LoginFormBloc>(() => _i12.LoginFormBloc(
-          gh<_i7.EmailFieldBloc>(),
-          gh<_i8.PasswordFieldBloc>(),
+    gh.lazySingleton<_i11.LoginFormBloc>(() => _i11.LoginFormBloc(
+          gh<_i6.EmailFieldBloc>(),
+          gh<_i7.PasswordFieldBloc>(),
         ));
-    gh.lazySingleton<_i13.UserRepository>(() => _i13.UserRepositoryImpl());
+    gh.lazySingleton<_i12.UserRepository>(() => _i12.UserRepositoryImpl());
+    gh.lazySingleton<_i13.ConfirmPasswordFieldBloc>(
+        () => _i13.ConfirmPasswordFieldBloc(gh<_i7.PasswordFieldBloc>()));
     gh.lazySingleton<_i14.MessageRepository>(() => _i14.MessageRepositoryImpl(
           gh<_i5.FirebaseFirestore>(),
-          gh<_i6.HiveStore>(),
+          gh<_i9.HiveStore>(),
         ));
     gh.lazySingleton<_i15.ProjectRepository>(() => _i15.ProjectRepostoryImpl(
           gh<_i5.FirebaseFirestore>(),
-          gh<_i6.HiveStore>(),
-          gh<_i11.CloudStorage>(),
+          gh<_i9.HiveStore>(),
+          gh<_i10.CloudStorage>(),
         ));
     gh.factory<_i16.AuthRepository>(() => _i16.AuthRepositoryImpl(
-          gh<_i6.HiveStore>(),
+          gh<_i9.HiveStore>(),
           gh<_i5.FirebaseFirestore>(),
           gh<_i3.FirebaseAuth>(),
         ));
     gh.lazySingleton<_i17.ChatRepository>(() => _i17.ChatRepositoryImpl(
           gh<_i5.FirebaseFirestore>(),
-          gh<_i6.HiveStore>(),
+          gh<_i9.HiveStore>(),
           gh<_i14.MessageRepository>(),
         ));
     gh.lazySingleton<_i18.SignupFormBloc>(() => _i18.SignupFormBloc(
-          gh<_i7.EmailFieldBloc>(),
-          gh<_i8.PasswordFieldBloc>(),
-          gh<_i10.ConfirmPasswordFieldBloc>(),
-          gh<_i9.NameFieldBloc>(),
+          gh<_i6.EmailFieldBloc>(),
+          gh<_i7.PasswordFieldBloc>(),
+          gh<_i13.ConfirmPasswordFieldBloc>(),
+          gh<_i8.NameFieldBloc>(),
         ));
     gh.lazySingleton<_i19.BidRepository>(() => _i19.BidRepositoryImpl(
           gh<_i5.FirebaseFirestore>(),
-          gh<_i6.HiveStore>(),
+          gh<_i9.HiveStore>(),
         ));
     gh.lazySingleton<_i20.FeedBloc>(() => _i20.FeedBloc(
           gh<_i15.ProjectRepository>(),

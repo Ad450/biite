@@ -16,6 +16,11 @@ class SignupFormFieldState extends FormFieldState with _$SignupFormFieldState {
     required String? message,
   }) = _SignupFormFieldStateValid;
 
+  const factory SignupFormFieldState.loading({
+    required bool isValid,
+    required String? message,
+  }) = _SignupFormFieldStateLoading;
+
   const factory SignupFormFieldState.invalid({
     required bool isValid,
     required String? message,
@@ -33,6 +38,11 @@ class SigninFormFieldState extends FormFieldState with _$SigninFormFieldState {
     required bool isValid,
     required String? message,
   }) = _SigninFormFieldStateValid;
+
+  const factory SigninFormFieldState.loading({
+    required bool isValid,
+    required String? message,
+  }) = _SigninFormFieldStateLoading;
 
   const factory SigninFormFieldState.invalid({
     required bool isValid,

@@ -59,7 +59,7 @@ class SignupView extends StatelessWidget {
                   bloc: authBloc,
                   listener: (_, state) => state.maybeMap(
                     orElse: () => null,
-                    signupSuccess: (_) => context.push("/home"),
+                    signupSuccess: (_) => context.go("/home"),
                     error: (state) => showToast(state.message!),
                   ),
                   builder: (_, state) => state.maybeMap(

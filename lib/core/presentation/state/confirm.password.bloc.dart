@@ -42,4 +42,10 @@ class ConfirmPasswordFieldBloc extends FieldBaseBloc<ConfirmPasswordState> {
       emit(ConfirmPasswordState.valid(data: event.password!, message: null, isValid: true));
     }
   }
+
+  @override
+  Future<void> close() {
+    confirmPasswordController.dispose();
+    return super.close();
+  }
 }

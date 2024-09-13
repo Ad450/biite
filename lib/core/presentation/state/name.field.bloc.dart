@@ -33,4 +33,10 @@ class NameFieldBloc extends FieldBaseBloc<NameState> {
       emit(NameState.valid(data: event.name!, message: null, isValid: true));
     }
   }
+
+  @override
+  Future<void> close() {
+    nameController.dispose();
+    return super.close();
+  }
 }

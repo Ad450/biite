@@ -31,4 +31,10 @@ class PasswordFieldBloc extends FieldBaseBloc<PasswordState> {
       emit(PasswordState.valid(data: event.password!, message: null, isValid: true));
     }
   }
+
+  @override
+  Future<void> close() {
+    passwordController.dispose();
+    return super.close();
+  }
 }

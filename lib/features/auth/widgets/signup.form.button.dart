@@ -5,7 +5,7 @@ import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/auth/state/auth.bloc.dart';
 import 'package:biite/features/auth/state/auth.events.dart';
-import 'package:biite/features/auth/state/signup.form.dart';
+import 'package:biite/features/auth/state/signup.form.bloc.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

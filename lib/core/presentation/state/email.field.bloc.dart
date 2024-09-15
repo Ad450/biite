@@ -3,9 +3,7 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable()
 class EmailFieldBloc extends FieldBaseBloc<EmailState> {
   EmailFieldBloc()
       : emailController = TextEditingController(),
@@ -29,7 +27,6 @@ class EmailFieldBloc extends FieldBaseBloc<EmailState> {
         emit(EmailState.invalid(data: state.data, message: "invalid email", isValid: false));
         return;
       }
-
       emit(EmailState.valid(data: event.email!, message: null, isValid: true));
     }
   }

@@ -3,7 +3,7 @@ import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/features/auth/state/auth.events.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
 import 'package:biite/features/auth/state/login.form.bloc.dart';
-import 'package:biite/features/auth/state/signup.form.dart';
+import 'package:biite/features/auth/state/signup.form.bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

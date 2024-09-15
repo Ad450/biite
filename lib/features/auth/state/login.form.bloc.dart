@@ -9,8 +9,8 @@ import 'package:injectable/injectable.dart';
 @LazySingleton()
 class LoginFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
   LoginFormBloc(
-    this.emailFieldBloc,
-    this.passwordFieldBloc,
+    @Named("login") this.emailFieldBloc,
+    @Named("login") this.passwordFieldBloc,
   ) : super(const SigninFormFieldState.initial(isValid: false, message: null)) {
     on<LoginFormFieldEvent>(isValid);
   }

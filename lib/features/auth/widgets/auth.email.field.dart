@@ -9,7 +9,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthEmailField extends StatelessWidget {
-  const AuthEmailField({super.key});
+  const AuthEmailField({required this.instance, super.key});
+
+  final String instance;
 
   Widget _buildField(String? errorText,
       {required Function(String) onChanged, required TextEditingController controller}) {
@@ -24,7 +26,7 @@ class AuthEmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = getIt.get<EmailFieldBloc>();
+    final bloc = getIt.get<EmailFieldBloc>(instanceName: instance);
 
     return BlocBuilder<EmailFieldBloc, EmailState>(
       bloc: bloc,

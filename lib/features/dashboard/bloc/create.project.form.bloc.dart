@@ -23,9 +23,11 @@ class CreateProjectFormBloc extends FormFieldBaseBloc<CreateProjectFormFieldStat
     if (event is CreateProjectFormFieldEvent) {
       if (!_compensationFieldBloc.state.isValid) {
         emit(CreateProjectFormFieldState.invalid(isValid: false, message: _compensationFieldBloc.state.message));
+        return;
       }
       if (!_descriptionFieldBloc.state.isValid) {
         emit(CreateProjectFormFieldState.invalid(isValid: false, message: _descriptionFieldBloc.state.message));
+        return;
       }
       emit(const CreateProjectFormFieldState.valid(isValid: true, message: null));
     }

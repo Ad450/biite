@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable()
+@LazySingleton()
 class PasswordFieldBloc extends FieldBaseBloc<PasswordState> {
   PasswordFieldBloc()
       : passwordController = TextEditingController(),

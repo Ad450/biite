@@ -51,9 +51,9 @@ class Login extends StatelessWidget {
                   style: context.appTheme.textTheme.titleMedium,
                 ),
                 SizedBox(height: 32.h),
-                const AuthEmailField(),
+                const AuthEmailField(instance: "login"),
                 SizedBox(height: 24.h),
-                const AuthPasswordField(),
+                const AuthPasswordField(instance: "login"),
                 SizedBox(height: 24.h),
                 state.maybeMap(
                   orElse: () => const LoginFormButton(),

@@ -3,13 +3,11 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable()
 class CompensationFieldBloc extends FieldBaseBloc<CompensationState> {
   CompensationFieldBloc()
       : compensationController = TextEditingController(),
-        super(const CompensationState.initial(data: 0.0, message: null, isValid: false)) {
+        super(const CompensationState.initial(data: 0.0, message: "invalid compensation", isValid: false)) {
     on<CompensationFieldEvent>(isValid);
   }
 

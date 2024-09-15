@@ -9,7 +9,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthPasswordField extends StatelessWidget {
-  const AuthPasswordField({super.key});
+  const AuthPasswordField({required this.instance, super.key});
+
+  final String instance;
 
   Widget _buildField(
     String? errorText, {
@@ -27,7 +29,7 @@ class AuthPasswordField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = getIt.get<PasswordFieldBloc>();
+    final bloc = getIt.get<PasswordFieldBloc>(instanceName: instance);
     return BlocBuilder<PasswordFieldBloc, PasswordState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(

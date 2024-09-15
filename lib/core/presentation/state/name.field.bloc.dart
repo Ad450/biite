@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable()
+@LazySingleton()
 class NameFieldBloc extends FieldBaseBloc<NameState> {
   NameFieldBloc()
       : nameController = TextEditingController(),
-        super(const NameState.initial(data: "", message: null, isValid: false)) {
+        super(const NameState.initial(data: "", message: "invalid name", isValid: false)) {
     on<NameFieldEvent>(isValid);
   }
 

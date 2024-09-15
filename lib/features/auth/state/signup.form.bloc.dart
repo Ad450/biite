@@ -11,8 +11,8 @@ import 'package:injectable/injectable.dart';
 @LazySingleton()
 class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
   SignupFormBloc(
-    this.emailFieldBloc,
-    this.passwordFieldBloc,
+    @Named("signup") this.emailFieldBloc,
+    @Named("signup") this.passwordFieldBloc,
     this.confirmPasswordFieldBloc,
     this.nameFieldBloc,
   ) : super(const SignupFormFieldState.initial(isValid: false, message: null)) {
@@ -40,7 +40,7 @@ class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
         return;
       }
       if (!nameFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: "invalid name"));
+        emit(SignupFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
         return;
       }
       emit(const SignupFormFieldState.valid(isValid: true, message: null));

@@ -3,13 +3,11 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable()
 class DescriptionFieldBloc extends FieldBaseBloc<DescriptionState> {
   DescriptionFieldBloc()
       : descriptionController = TextEditingController(),
-        super(const DescriptionState.initial(data: "", message: null, isValid: false)) {
+        super(const DescriptionState.initial(data: "", message: "invalid description", isValid: false)) {
     on<DescriptionFieldEvent>(isValid);
   }
 

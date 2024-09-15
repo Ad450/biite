@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Injectable()
 class ConfirmPasswordFieldBloc extends FieldBaseBloc<ConfirmPasswordState> {
   ConfirmPasswordFieldBloc(this.passwordFieldBloc)
       : confirmPasswordController = TextEditingController(),

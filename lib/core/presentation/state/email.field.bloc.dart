@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Injectable()
 class EmailFieldBloc extends FieldBaseBloc<EmailState> {
   EmailFieldBloc()
       : emailController = TextEditingController(),

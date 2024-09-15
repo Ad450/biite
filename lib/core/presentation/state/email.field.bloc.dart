@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 class EmailFieldBloc extends FieldBaseBloc<EmailState> {
   EmailFieldBloc()
       : emailController = TextEditingController(),
-        super(const EmailState.initial(data: "", message: null, isValid: false)) {
+        super(const EmailState.initial(data: "", message: "invalid email", isValid: false)) {
     on<EmailFieldEvent>(isValid);
   }
 

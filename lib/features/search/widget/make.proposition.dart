@@ -36,6 +36,7 @@ class MakeProposition extends StatelessWidget {
                 controller: TextEditingController(),
                 minLines: 8,
                 maxLines: 11,
+                onChanged: (text) {},
               ),
               SizedBox(height: 149.h),
               Padding(

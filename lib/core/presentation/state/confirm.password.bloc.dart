@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 class ConfirmPasswordFieldBloc extends FieldBaseBloc<ConfirmPasswordState> {
   ConfirmPasswordFieldBloc(this.passwordFieldBloc)
       : confirmPasswordController = TextEditingController(),
-        super(const ConfirmPasswordState.initial(data: "", message: null, isValid: false)) {
+        super(const ConfirmPasswordState.initial(data: "", message: "invalid password", isValid: false)) {
     on<ConfirmPasswordFieldEvent>(isValid);
   }
 

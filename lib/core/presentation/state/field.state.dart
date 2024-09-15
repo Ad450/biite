@@ -85,3 +85,45 @@ class PasswordState with _$PasswordState {
     required bool isValid,
   }) = _PasswordStateInvalid;
 }
+
+@freezed
+class DescriptionState with _$DescriptionState {
+  const factory DescriptionState.initial({
+    required String data,
+    required String? message,
+    required bool isValid,
+  }) = _DescriptionStateInitial;
+
+  const factory DescriptionState.valid({
+    required String data,
+    required String? message,
+    required bool isValid,
+  }) = _DescriptionStateValid;
+
+  const factory DescriptionState.invalid({
+    required String data,
+    required String? message,
+    required bool isValid,
+  }) = _DescriptionStateInvalid;
+}
+
+@freezed
+class CompensationState with _$CompensationState {
+  const factory CompensationState.initial({
+    required double data,
+    required String? message,
+    required bool isValid,
+  }) = _CompensationStateInitial;
+
+  const factory CompensationState.valid({
+    required double data,
+    required String? message,
+    required bool isValid,
+  }) = _CompensationStateValid;
+
+  const factory CompensationState.invalid({
+    required double data,
+    required String? message,
+    required bool isValid,
+  }) = _CompensationStateInvalid;
+}

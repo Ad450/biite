@@ -11,6 +11,7 @@ import 'package:biite/features/auth/widgets/signup.form.button.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,37 +40,40 @@ class SignupView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 120.h),
-                Text(
-                  signup,
-                  style: theme.textTheme.titleMedium,
+            child: BlocConsumer<AuthBloc, AuthState>(
+              bloc: authBloc,
+              listener: (_, state) => state.maybeMap(
+                orElse: () => null,
+                signupSuccess: (_) => context.go("/home"),
+                error: (state) => showToast(state.message!),
+              ),
+              builder: (_, state) => IgnorePointer(
+                ignoring: state.maybeMap(orElse: () => false, signupLoading: (_) => true),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: 120.h),
+                    Text(
+                      signup,
+                      style: theme.textTheme.titleMedium,
+                    ),
+                    SizedBox(height: 32.h),
+                    const AuthNameField(),
+                    SizedBox(height: 24.h),
+                    const AuthEmailField(),
+                    SizedBox(height: 24.h),
+                    const AuthPasswordField(),
+                    SizedBox(height: 24.h),
+                    const AuthConfirmPasswordField(),
+                    SizedBox(height: 102.h),
+                    state.maybeMap(
+                      orElse: () => const SignupFormButton(),
+                      signupLoading: (_) => const CupertinoActivityIndicator(),
+                    ),
+                    SizedBox(height: 40.h),
+                    BiiteAuthText(text: login, onTap: () => context.push("/login"))
+                  ],
                 ),
-                SizedBox(height: 32.h),
-                const AuthNameField(),
-                SizedBox(height: 24.h),
-                const AuthEmailField(),
-                SizedBox(height: 24.h),
-                const AuthPasswordField(),
-                SizedBox(height: 24.h),
-                const AuthConfirmPasswordField(),
-                SizedBox(height: 102.h),
-                BlocConsumer<AuthBloc, AuthState>(
-                  bloc: authBloc,
-                  listener: (_, state) => state.maybeMap(
-                    orElse: () => null,
-                    signupSuccess: (_) => context.go("/home"),
-                    error: (state) => showToast(state.message!),
-                  ),
-                  builder: (_, state) => state.maybeMap(
-                    orElse: () => const SignupFormButton(),
-                    signupLoading: (_) => const CircularProgressIndicator(),
-                  ),
-                ),
-                SizedBox(height: 40.h),
-                BiiteAuthText(text: login, onTap: () => context.push("/login"))
-              ],
+              ),
             ),
           ),
         ),

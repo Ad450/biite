@@ -5,7 +5,9 @@ import 'package:biite/features/auth/state/auth.state.dart';
 import 'package:biite/features/auth/state/login.form.bloc.dart';
 import 'package:biite/features/auth/state/signup.form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class AuthBloc extends Bloc<AuthEvents, AuthState> {
   AuthBloc(this.authRepository, this._loginFormBloc, this._signupFormBloc)
       : super(const AuthState.initial(user: null, message: null)) {

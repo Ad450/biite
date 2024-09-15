@@ -22,8 +22,14 @@ class NameFieldEvent extends FieldEvent {
   NameFieldEvent(this.name);
 }
 
-class RateFieldEvent extends FieldEvent {}
+class CompensationFieldEvent extends FieldEvent {
+  final double? rate;
+  CompensationFieldEvent(this.rate);
+}
 
-class DescriptionFieldEvent extends FieldEvent {}
+class DescriptionFieldEvent extends FieldEvent {
+  final String? description;
+  DescriptionFieldEvent(this.description);
+}
 
 class TitleFieldEvent extends FieldEvent {}

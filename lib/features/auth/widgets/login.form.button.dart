@@ -5,29 +5,32 @@ import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/auth/state/auth.bloc.dart';
 import 'package:biite/features/auth/state/auth.events.dart';
-import 'package:biite/features/auth/state/signup.form.dart';
-import 'package:biite/locales.dart';
+import 'package:biite/features/auth/state/login.form.bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignupFormButton extends StatelessWidget {
-  const SignupFormButton({super.key});
+class LoginFormButton extends StatelessWidget {
+  const LoginFormButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final signupBloc = getIt.get<SignupFormBloc>();
+    final loginBloc = getIt.get<LoginFormBloc>();
     final authBloc = getIt.get<AuthBloc>();
 
-    return BlocListener<SignupFormBloc, SignupFormFieldState>(
-      bloc: signupBloc,
+    return BlocListener<LoginFormBloc, SigninFormFieldState>(
+      bloc: loginBloc,
+      listenWhen: (previous, current) => true,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
-        valid: (state) => authBloc.add(SignupEvent()),
-        invalid: (state) => showToast(state.message!),
+        valid: (state) => authBloc.add(LoginEvent()),
+        invalid: (state) {
+          print("suppose to show toast");
+          showToast(state.message!);
+        },
       ),
       child: BiiteTextButton(
-        onPressed: () => signupBloc.add(SignupFormFieldEvent()),
-        text: signup,
+        onPressed: () => loginBloc.add(LoginFormFieldEvent()),
+        text: "Login",
       ),
     );
   }

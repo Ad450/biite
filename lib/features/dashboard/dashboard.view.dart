@@ -1,48 +1,28 @@
-import 'dart:io';
-
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
-import 'package:biite/core/presentation/widgets/biite.button.dart';
-import 'package:biite/core/presentation/widgets/biite.multiline.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.dialog.dart';
 import 'package:biite/core/presentation/widgets/biite.textfield.dart';
+import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
+import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
+import 'package:biite/features/dashboard/widgets/create.project.form.button.dart';
+import 'package:biite/features/dashboard/widgets/project.description.field.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/upload.file.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DashboardView extends StatefulWidget {
+class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
 
   @override
-  State<DashboardView> createState() => _DashboardViewState();
-}
-
-class _DashboardViewState extends State<DashboardView> {
-  Set<File> files = {};
-
-  void _pickFiles() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
-    if (result != null) {
-      for (var e in result.files) {
-        String newPath = e.path!.toLowerCase();
-        bool fileExists = files.any((element) => element.path.toLowerCase().split("-")[1] == newPath.split("-")[1]);
-
-        if (!fileExists) {
-          files.add(File(e.path!));
-        }
-      }
-
-      setState(() {});
-    } else {
-      return;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final dashboardBloc = getIt<DasboardBloc>();
+
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
       body: SafeArea(
@@ -54,53 +34,66 @@ class _DashboardViewState extends State<DashboardView> {
               SizedBox(height: 40.h),
               Expanded(
                 child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      const BiiteAvatarWithText(name: "Emmanuel Adjei"),
-                      SizedBox(height: 48.h),
-                      Text(
-                        "Create your project",
-                        style: context.appTheme.textTheme.titleSmall?.copyWith(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
+                  child: BlocConsumer<DasboardBloc, DashboardState>(
+                    bloc: dashboardBloc,
+                    listener: (_, state) => state.maybeMap(
+                      orElse: () => null,
+                      projectCreated: (_) => showBiiteDialog(context),
+                    ),
+                    builder: (_, state) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+                        SizedBox(height: 48.h),
+                        Text(
+                          "Create your project",
+                          style: context.appTheme.textTheme.titleSmall?.copyWith(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 16.h),
-                      BiiteMultilineTextfield(
-                        controller: TextEditingController(),
-                        hintText: "Description",
-                      ),
-                      SizedBox(height: 24.h),
-                      UploadFile(onTap: _pickFiles),
-                      SizedBox(height: 24.h),
-                      // show file if chosen
-                      ...files.map((e) => FileWidget(
-                            filename: e.path.split("/").last,
-                            onClose: () {
-                              files.removeWhere((element) => e.path == element.path);
-                              setState(() {});
-                            },
+                        SizedBox(height: 16.h),
+                        const ProjectDescriptionField(),
+                        SizedBox(height: 24.h),
+                        UploadFile(onTap: dashboardBloc.pickFiles),
+                        SizedBox(height: 24.h),
+                        // show file if chosen
+                        state.maybeMap(
+                          orElse: () => const SizedBox(),
+                          fileSelected: (state) => SizedBox(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: state.files
+                                .map((e) => FileWidget(
+                                      filename: e.path.split("/").last,
+                                      onClose: () => dashboardBloc.removeFile(e.path),
+                                    ))
+                                .toList(),
                           )),
-                      // const FileWidget(),
-                      SizedBox(height: 16.h),
-                      Text(
-                        "Compensation (GHS)",
-                        style: context.appTheme.textTheme.bodySmall?.copyWith(
-                          fontSize: 16,
-                          color: ColorName.text,
-                          fontWeight: FontWeight.normal,
                         ),
-                      ),
-                      SizedBox(height: 16.h),
-                      BiiteTextfield(controller: TextEditingController(), onChanged: (text) {}),
-                      SizedBox(height: 69.h),
 
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 56.w),
-                        child: BiiteTextButton(onPressed: () {}, text: "Finish"),
-                      )
-                    ],
+                        SizedBox(height: 16.h),
+                        Text(
+                          "Compensation (GHS)",
+                          style: context.appTheme.textTheme.bodySmall?.copyWith(
+                            fontSize: 16,
+                            color: ColorName.text,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        SizedBox(height: 16.h),
+                        BiiteTextfield(controller: TextEditingController(), onChanged: (text) {}),
+                        SizedBox(height: 69.h),
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 56.w),
+                          child: state.maybeMap(
+                            orElse: () => const CreateProjectFormButton(),
+                            loading: (_) => const CupertinoActivityIndicator(),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

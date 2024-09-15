@@ -4,3 +4,5 @@ abstract class FormFieldEvent {}
 class SignupFormFieldEvent extends FormFieldEvent {}
 
 class LoginFormFieldEvent extends FormFieldEvent {}
+
+class CreateProjectFormFieldEvent extends FormFieldEvent {}

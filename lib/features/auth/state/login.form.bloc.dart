@@ -11,7 +11,11 @@ class LoginFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
   LoginFormBloc(
     this.emailFieldBloc,
     this.passwordFieldBloc,
-  ) : super(const SigninFormFieldState.initial(isValid: false, message: null)) {
+  ) : super(SigninFormFieldState.initial(
+          isValid: false,
+          message: null,
+          time: DateTime.now().millisecondsSinceEpoch,
+        )) {
     on<LoginFormFieldEvent>(isValid);
   }
 
@@ -21,13 +25,23 @@ class LoginFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
   @override
   void isValid(FormFieldEvent event, Emitter<SigninFormFieldState> emit) {
     if (event is LoginFormFieldEvent) {
-      if (emailFieldBloc.state.isValid) {
-        emit(SigninFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+      if (!emailFieldBloc.state.isValid) {
+        emit(SigninFormFieldState.invalid(
+          isValid: false,
+          message: emailFieldBloc.state.message,
+          time: DateTime.now().millisecondsSinceEpoch,
+        ));
+        return;
       }
-      if (passwordFieldBloc.state.isValid) {
-        emit(SigninFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+      if (!passwordFieldBloc.state.isValid) {
+        emit(SigninFormFieldState.invalid(
+          isValid: false,
+          message: passwordFieldBloc.state.message,
+          time: DateTime.now().millisecondsSinceEpoch,
+        ));
+        return;
       }
-      emit(const SigninFormFieldState.valid(isValid: true, message: null));
+      emit(SigninFormFieldState.valid(isValid: true, message: null, time: DateTime.now().millisecondsSinceEpoch));
     }
   }
 }

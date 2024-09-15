@@ -27,17 +27,21 @@ class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
   @override
   void isValid(FormFieldEvent event, Emitter<SignupFormFieldState> emit) {
     if (event is SignupFormFieldEvent) {
-      if (emailFieldBloc.state.isValid) {
+      if (!emailFieldBloc.state.isValid) {
         emit(SignupFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+        return;
       }
-      if (passwordFieldBloc.state.isValid) {
+      if (!passwordFieldBloc.state.isValid) {
         emit(SignupFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+        return;
       }
-      if (confirmPasswordFieldBloc.state.isValid) {
+      if (!confirmPasswordFieldBloc.state.isValid) {
         emit(SignupFormFieldState.invalid(isValid: false, message: confirmPasswordFieldBloc.state.message));
+        return;
       }
-      if (nameFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
+      if (!nameFieldBloc.state.isValid) {
+        emit(SignupFormFieldState.invalid(isValid: false, message: "invalid name"));
+        return;
       }
       emit(const SignupFormFieldState.valid(isValid: true, message: null));
     }

@@ -2,10 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'form.field.state.freezed.dart';
 
-abstract class FormFieldState {}
-
 @freezed
-class SignupFormFieldState extends FormFieldState with _$SignupFormFieldState {
+class SignupFormFieldState with _$SignupFormFieldState {
   const factory SignupFormFieldState.initial({
     required bool isValid,
     required String? message,
@@ -27,25 +25,53 @@ class SignupFormFieldState extends FormFieldState with _$SignupFormFieldState {
   }) = _SignupFormFieldStateInvalid;
 }
 
+/// property [time] ensures uniqueness between state similar state objects
 @freezed
-class SigninFormFieldState extends FormFieldState with _$SigninFormFieldState {
+class SigninFormFieldState with _$SigninFormFieldState {
   const factory SigninFormFieldState.initial({
     required bool isValid,
     required String? message,
+    required int time,
   }) = _SigninFormFieldStateInitial;
 
   const factory SigninFormFieldState.valid({
     required bool isValid,
     required String? message,
+    required int time,
   }) = _SigninFormFieldStateValid;
 
   const factory SigninFormFieldState.loading({
     required bool isValid,
     required String? message,
+    required int time,
   }) = _SigninFormFieldStateLoading;
 
   const factory SigninFormFieldState.invalid({
     required bool isValid,
     required String? message,
+    required int time,
   }) = _SigninFormFieldStateInvalid;
+}
+
+@freezed
+class CreateProjectFormFieldState with _$CreateProjectFormFieldState {
+  const factory CreateProjectFormFieldState.initial({
+    required bool isValid,
+    required String? message,
+  }) = _CreateProjectFormFieldStateInitial;
+
+  const factory CreateProjectFormFieldState.valid({
+    required bool isValid,
+    required String? message,
+  }) = _CreateProjectFormFieldStateValid;
+
+  const factory CreateProjectFormFieldState.loading({
+    required bool isValid,
+    required String? message,
+  }) = _CreateProjectFormFieldStateLoading;
+
+  const factory CreateProjectFormFieldState.invalid({
+    required bool isValid,
+    required String? message,
+  }) = _CreateProjectFormFieldStateInvalid;
 }

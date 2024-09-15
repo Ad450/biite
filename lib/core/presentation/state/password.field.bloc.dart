@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 class PasswordFieldBloc extends FieldBaseBloc<PasswordState> {
   PasswordFieldBloc()
       : passwordController = TextEditingController(),
-        super(const PasswordState.initial(data: "", message: null, isValid: false)) {
+        super(const PasswordState.initial(data: "", message: "invalid password", isValid: false)) {
     on<PasswordFieldEvent>(isValid);
   }
 

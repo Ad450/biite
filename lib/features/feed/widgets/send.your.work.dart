@@ -35,7 +35,10 @@ class SendYourWork extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16.h),
-              BiiteMultilineTextfield(controller: TextEditingController()),
+              BiiteMultilineTextfield(
+                controller: TextEditingController(),
+                onChanged: (text) {},
+              ),
               SizedBox(height: 24.h),
               UploadFile(onTap: () {}),
               SizedBox(height: 24.h),

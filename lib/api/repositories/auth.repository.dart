@@ -82,8 +82,12 @@ class AuthRepositoryImpl implements AuthRepository {
 
   Future<void> _addUser(String name, String email, String uid) async {
     final user = UserModel(name: name, email: email, uid: uid);
-    final doc = await _firestore.collection(kUserCollection).add(user.toJson());
-    await _hiveStore.saveItem(doc.id, "id", key: "id");
+    try {
+      final doc = await _firestore.collection(kUserCollection).add(user.toJson());
+      await _hiveStore.saveItem(doc.id, "id", key: "id");
+    } catch (e) {
+      rethrow;
+    }
   }
 
   @override

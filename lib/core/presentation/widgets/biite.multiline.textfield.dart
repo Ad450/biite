@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 
 class BiiteMultilineTextfield extends StatelessWidget {
   const BiiteMultilineTextfield({
+    required this.onChanged,
     required this.controller,
+    this.errorText,
+    this.inputType,
     this.minLines,
     this.maxLines,
     this.hintText,
@@ -16,6 +19,9 @@ class BiiteMultilineTextfield extends StatelessWidget {
   final int? minLines;
   final int? maxLines;
   final String? hintText;
+  final TextInputType? inputType;
+  final String? errorText;
+  final Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +57,8 @@ class BiiteMultilineTextfield extends StatelessWidget {
             borderSide: const BorderSide(width: 0, style: BorderStyle.none),
             borderRadius: BorderRadius.circular(7),
           ),
+          errorText: errorText,
+          errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12, color: Colors.red),
         ),
       ),
     );

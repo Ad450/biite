@@ -2465,3 +2465,1236 @@ abstract class _PasswordStateInvalid implements PasswordState {
   _$$PasswordStateInvalidImplCopyWith<_$PasswordStateInvalidImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$DescriptionState {
+  String get data => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  bool get isValid => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String data, String? message, bool isValid)
+        initial,
+    required TResult Function(String data, String? message, bool isValid) valid,
+    required TResult Function(String data, String? message, bool isValid)
+        invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String data, String? message, bool isValid)? initial,
+    TResult? Function(String data, String? message, bool isValid)? valid,
+    TResult? Function(String data, String? message, bool isValid)? invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String data, String? message, bool isValid)? initial,
+    TResult Function(String data, String? message, bool isValid)? valid,
+    TResult Function(String data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DescriptionStateInitial value) initial,
+    required TResult Function(_DescriptionStateValid value) valid,
+    required TResult Function(_DescriptionStateInvalid value) invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DescriptionStateInitial value)? initial,
+    TResult? Function(_DescriptionStateValid value)? valid,
+    TResult? Function(_DescriptionStateInvalid value)? invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DescriptionStateInitial value)? initial,
+    TResult Function(_DescriptionStateValid value)? valid,
+    TResult Function(_DescriptionStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DescriptionStateCopyWith<DescriptionState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DescriptionStateCopyWith<$Res> {
+  factory $DescriptionStateCopyWith(
+          DescriptionState value, $Res Function(DescriptionState) then) =
+      _$DescriptionStateCopyWithImpl<$Res, DescriptionState>;
+  @useResult
+  $Res call({String data, String? message, bool isValid});
+}
+
+/// @nodoc
+class _$DescriptionStateCopyWithImpl<$Res, $Val extends DescriptionState>
+    implements $DescriptionStateCopyWith<$Res> {
+  _$DescriptionStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_value.copyWith(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DescriptionStateInitialImplCopyWith<$Res>
+    implements $DescriptionStateCopyWith<$Res> {
+  factory _$$DescriptionStateInitialImplCopyWith(
+          _$DescriptionStateInitialImpl value,
+          $Res Function(_$DescriptionStateInitialImpl) then) =
+      __$$DescriptionStateInitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$DescriptionStateInitialImplCopyWithImpl<$Res>
+    extends _$DescriptionStateCopyWithImpl<$Res, _$DescriptionStateInitialImpl>
+    implements _$$DescriptionStateInitialImplCopyWith<$Res> {
+  __$$DescriptionStateInitialImplCopyWithImpl(
+      _$DescriptionStateInitialImpl _value,
+      $Res Function(_$DescriptionStateInitialImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$DescriptionStateInitialImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DescriptionStateInitialImpl implements _DescriptionStateInitial {
+  const _$DescriptionStateInitialImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final String data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'DescriptionState.initial(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DescriptionStateInitialImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DescriptionStateInitialImplCopyWith<_$DescriptionStateInitialImpl>
+      get copyWith => __$$DescriptionStateInitialImplCopyWithImpl<
+          _$DescriptionStateInitialImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String data, String? message, bool isValid)
+        initial,
+    required TResult Function(String data, String? message, bool isValid) valid,
+    required TResult Function(String data, String? message, bool isValid)
+        invalid,
+  }) {
+    return initial(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String data, String? message, bool isValid)? initial,
+    TResult? Function(String data, String? message, bool isValid)? valid,
+    TResult? Function(String data, String? message, bool isValid)? invalid,
+  }) {
+    return initial?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String data, String? message, bool isValid)? initial,
+    TResult Function(String data, String? message, bool isValid)? valid,
+    TResult Function(String data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DescriptionStateInitial value) initial,
+    required TResult Function(_DescriptionStateValid value) valid,
+    required TResult Function(_DescriptionStateInvalid value) invalid,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DescriptionStateInitial value)? initial,
+    TResult? Function(_DescriptionStateValid value)? valid,
+    TResult? Function(_DescriptionStateInvalid value)? invalid,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DescriptionStateInitial value)? initial,
+    TResult Function(_DescriptionStateValid value)? valid,
+    TResult Function(_DescriptionStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DescriptionStateInitial implements DescriptionState {
+  const factory _DescriptionStateInitial(
+      {required final String data,
+      required final String? message,
+      required final bool isValid}) = _$DescriptionStateInitialImpl;
+
+  @override
+  String get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$DescriptionStateInitialImplCopyWith<_$DescriptionStateInitialImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DescriptionStateValidImplCopyWith<$Res>
+    implements $DescriptionStateCopyWith<$Res> {
+  factory _$$DescriptionStateValidImplCopyWith(
+          _$DescriptionStateValidImpl value,
+          $Res Function(_$DescriptionStateValidImpl) then) =
+      __$$DescriptionStateValidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$DescriptionStateValidImplCopyWithImpl<$Res>
+    extends _$DescriptionStateCopyWithImpl<$Res, _$DescriptionStateValidImpl>
+    implements _$$DescriptionStateValidImplCopyWith<$Res> {
+  __$$DescriptionStateValidImplCopyWithImpl(_$DescriptionStateValidImpl _value,
+      $Res Function(_$DescriptionStateValidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$DescriptionStateValidImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DescriptionStateValidImpl implements _DescriptionStateValid {
+  const _$DescriptionStateValidImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final String data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'DescriptionState.valid(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DescriptionStateValidImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DescriptionStateValidImplCopyWith<_$DescriptionStateValidImpl>
+      get copyWith => __$$DescriptionStateValidImplCopyWithImpl<
+          _$DescriptionStateValidImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String data, String? message, bool isValid)
+        initial,
+    required TResult Function(String data, String? message, bool isValid) valid,
+    required TResult Function(String data, String? message, bool isValid)
+        invalid,
+  }) {
+    return valid(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String data, String? message, bool isValid)? initial,
+    TResult? Function(String data, String? message, bool isValid)? valid,
+    TResult? Function(String data, String? message, bool isValid)? invalid,
+  }) {
+    return valid?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String data, String? message, bool isValid)? initial,
+    TResult Function(String data, String? message, bool isValid)? valid,
+    TResult Function(String data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DescriptionStateInitial value) initial,
+    required TResult Function(_DescriptionStateValid value) valid,
+    required TResult Function(_DescriptionStateInvalid value) invalid,
+  }) {
+    return valid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DescriptionStateInitial value)? initial,
+    TResult? Function(_DescriptionStateValid value)? valid,
+    TResult? Function(_DescriptionStateInvalid value)? invalid,
+  }) {
+    return valid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DescriptionStateInitial value)? initial,
+    TResult Function(_DescriptionStateValid value)? valid,
+    TResult Function(_DescriptionStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DescriptionStateValid implements DescriptionState {
+  const factory _DescriptionStateValid(
+      {required final String data,
+      required final String? message,
+      required final bool isValid}) = _$DescriptionStateValidImpl;
+
+  @override
+  String get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$DescriptionStateValidImplCopyWith<_$DescriptionStateValidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DescriptionStateInvalidImplCopyWith<$Res>
+    implements $DescriptionStateCopyWith<$Res> {
+  factory _$$DescriptionStateInvalidImplCopyWith(
+          _$DescriptionStateInvalidImpl value,
+          $Res Function(_$DescriptionStateInvalidImpl) then) =
+      __$$DescriptionStateInvalidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$DescriptionStateInvalidImplCopyWithImpl<$Res>
+    extends _$DescriptionStateCopyWithImpl<$Res, _$DescriptionStateInvalidImpl>
+    implements _$$DescriptionStateInvalidImplCopyWith<$Res> {
+  __$$DescriptionStateInvalidImplCopyWithImpl(
+      _$DescriptionStateInvalidImpl _value,
+      $Res Function(_$DescriptionStateInvalidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$DescriptionStateInvalidImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DescriptionStateInvalidImpl implements _DescriptionStateInvalid {
+  const _$DescriptionStateInvalidImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final String data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'DescriptionState.invalid(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DescriptionStateInvalidImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DescriptionStateInvalidImplCopyWith<_$DescriptionStateInvalidImpl>
+      get copyWith => __$$DescriptionStateInvalidImplCopyWithImpl<
+          _$DescriptionStateInvalidImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String data, String? message, bool isValid)
+        initial,
+    required TResult Function(String data, String? message, bool isValid) valid,
+    required TResult Function(String data, String? message, bool isValid)
+        invalid,
+  }) {
+    return invalid(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String data, String? message, bool isValid)? initial,
+    TResult? Function(String data, String? message, bool isValid)? valid,
+    TResult? Function(String data, String? message, bool isValid)? invalid,
+  }) {
+    return invalid?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String data, String? message, bool isValid)? initial,
+    TResult Function(String data, String? message, bool isValid)? valid,
+    TResult Function(String data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (invalid != null) {
+      return invalid(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DescriptionStateInitial value) initial,
+    required TResult Function(_DescriptionStateValid value) valid,
+    required TResult Function(_DescriptionStateInvalid value) invalid,
+  }) {
+    return invalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DescriptionStateInitial value)? initial,
+    TResult? Function(_DescriptionStateValid value)? valid,
+    TResult? Function(_DescriptionStateInvalid value)? invalid,
+  }) {
+    return invalid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DescriptionStateInitial value)? initial,
+    TResult Function(_DescriptionStateValid value)? valid,
+    TResult Function(_DescriptionStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (invalid != null) {
+      return invalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DescriptionStateInvalid implements DescriptionState {
+  const factory _DescriptionStateInvalid(
+      {required final String data,
+      required final String? message,
+      required final bool isValid}) = _$DescriptionStateInvalidImpl;
+
+  @override
+  String get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$DescriptionStateInvalidImplCopyWith<_$DescriptionStateInvalidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$CompensationState {
+  double get data => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  bool get isValid => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(double data, String? message, bool isValid)
+        initial,
+    required TResult Function(double data, String? message, bool isValid) valid,
+    required TResult Function(double data, String? message, bool isValid)
+        invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double data, String? message, bool isValid)? initial,
+    TResult? Function(double data, String? message, bool isValid)? valid,
+    TResult? Function(double data, String? message, bool isValid)? invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double data, String? message, bool isValid)? initial,
+    TResult Function(double data, String? message, bool isValid)? valid,
+    TResult Function(double data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CompensationStateInitial value) initial,
+    required TResult Function(_CompensationStateValid value) valid,
+    required TResult Function(_CompensationStateInvalid value) invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CompensationStateInitial value)? initial,
+    TResult? Function(_CompensationStateValid value)? valid,
+    TResult? Function(_CompensationStateInvalid value)? invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CompensationStateInitial value)? initial,
+    TResult Function(_CompensationStateValid value)? valid,
+    TResult Function(_CompensationStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CompensationStateCopyWith<CompensationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CompensationStateCopyWith<$Res> {
+  factory $CompensationStateCopyWith(
+          CompensationState value, $Res Function(CompensationState) then) =
+      _$CompensationStateCopyWithImpl<$Res, CompensationState>;
+  @useResult
+  $Res call({double data, String? message, bool isValid});
+}
+
+/// @nodoc
+class _$CompensationStateCopyWithImpl<$Res, $Val extends CompensationState>
+    implements $CompensationStateCopyWith<$Res> {
+  _$CompensationStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_value.copyWith(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as double,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CompensationStateInitialImplCopyWith<$Res>
+    implements $CompensationStateCopyWith<$Res> {
+  factory _$$CompensationStateInitialImplCopyWith(
+          _$CompensationStateInitialImpl value,
+          $Res Function(_$CompensationStateInitialImpl) then) =
+      __$$CompensationStateInitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$CompensationStateInitialImplCopyWithImpl<$Res>
+    extends _$CompensationStateCopyWithImpl<$Res,
+        _$CompensationStateInitialImpl>
+    implements _$$CompensationStateInitialImplCopyWith<$Res> {
+  __$$CompensationStateInitialImplCopyWithImpl(
+      _$CompensationStateInitialImpl _value,
+      $Res Function(_$CompensationStateInitialImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$CompensationStateInitialImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as double,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CompensationStateInitialImpl implements _CompensationStateInitial {
+  const _$CompensationStateInitialImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final double data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'CompensationState.initial(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompensationStateInitialImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompensationStateInitialImplCopyWith<_$CompensationStateInitialImpl>
+      get copyWith => __$$CompensationStateInitialImplCopyWithImpl<
+          _$CompensationStateInitialImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(double data, String? message, bool isValid)
+        initial,
+    required TResult Function(double data, String? message, bool isValid) valid,
+    required TResult Function(double data, String? message, bool isValid)
+        invalid,
+  }) {
+    return initial(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double data, String? message, bool isValid)? initial,
+    TResult? Function(double data, String? message, bool isValid)? valid,
+    TResult? Function(double data, String? message, bool isValid)? invalid,
+  }) {
+    return initial?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double data, String? message, bool isValid)? initial,
+    TResult Function(double data, String? message, bool isValid)? valid,
+    TResult Function(double data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CompensationStateInitial value) initial,
+    required TResult Function(_CompensationStateValid value) valid,
+    required TResult Function(_CompensationStateInvalid value) invalid,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CompensationStateInitial value)? initial,
+    TResult? Function(_CompensationStateValid value)? valid,
+    TResult? Function(_CompensationStateInvalid value)? invalid,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CompensationStateInitial value)? initial,
+    TResult Function(_CompensationStateValid value)? valid,
+    TResult Function(_CompensationStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompensationStateInitial implements CompensationState {
+  const factory _CompensationStateInitial(
+      {required final double data,
+      required final String? message,
+      required final bool isValid}) = _$CompensationStateInitialImpl;
+
+  @override
+  double get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$CompensationStateInitialImplCopyWith<_$CompensationStateInitialImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CompensationStateValidImplCopyWith<$Res>
+    implements $CompensationStateCopyWith<$Res> {
+  factory _$$CompensationStateValidImplCopyWith(
+          _$CompensationStateValidImpl value,
+          $Res Function(_$CompensationStateValidImpl) then) =
+      __$$CompensationStateValidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$CompensationStateValidImplCopyWithImpl<$Res>
+    extends _$CompensationStateCopyWithImpl<$Res, _$CompensationStateValidImpl>
+    implements _$$CompensationStateValidImplCopyWith<$Res> {
+  __$$CompensationStateValidImplCopyWithImpl(
+      _$CompensationStateValidImpl _value,
+      $Res Function(_$CompensationStateValidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$CompensationStateValidImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as double,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CompensationStateValidImpl implements _CompensationStateValid {
+  const _$CompensationStateValidImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final double data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'CompensationState.valid(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompensationStateValidImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompensationStateValidImplCopyWith<_$CompensationStateValidImpl>
+      get copyWith => __$$CompensationStateValidImplCopyWithImpl<
+          _$CompensationStateValidImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(double data, String? message, bool isValid)
+        initial,
+    required TResult Function(double data, String? message, bool isValid) valid,
+    required TResult Function(double data, String? message, bool isValid)
+        invalid,
+  }) {
+    return valid(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double data, String? message, bool isValid)? initial,
+    TResult? Function(double data, String? message, bool isValid)? valid,
+    TResult? Function(double data, String? message, bool isValid)? invalid,
+  }) {
+    return valid?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double data, String? message, bool isValid)? initial,
+    TResult Function(double data, String? message, bool isValid)? valid,
+    TResult Function(double data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CompensationStateInitial value) initial,
+    required TResult Function(_CompensationStateValid value) valid,
+    required TResult Function(_CompensationStateInvalid value) invalid,
+  }) {
+    return valid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CompensationStateInitial value)? initial,
+    TResult? Function(_CompensationStateValid value)? valid,
+    TResult? Function(_CompensationStateInvalid value)? invalid,
+  }) {
+    return valid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CompensationStateInitial value)? initial,
+    TResult Function(_CompensationStateValid value)? valid,
+    TResult Function(_CompensationStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (valid != null) {
+      return valid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompensationStateValid implements CompensationState {
+  const factory _CompensationStateValid(
+      {required final double data,
+      required final String? message,
+      required final bool isValid}) = _$CompensationStateValidImpl;
+
+  @override
+  double get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$CompensationStateValidImplCopyWith<_$CompensationStateValidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CompensationStateInvalidImplCopyWith<$Res>
+    implements $CompensationStateCopyWith<$Res> {
+  factory _$$CompensationStateInvalidImplCopyWith(
+          _$CompensationStateInvalidImpl value,
+          $Res Function(_$CompensationStateInvalidImpl) then) =
+      __$$CompensationStateInvalidImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double data, String? message, bool isValid});
+}
+
+/// @nodoc
+class __$$CompensationStateInvalidImplCopyWithImpl<$Res>
+    extends _$CompensationStateCopyWithImpl<$Res,
+        _$CompensationStateInvalidImpl>
+    implements _$$CompensationStateInvalidImplCopyWith<$Res> {
+  __$$CompensationStateInvalidImplCopyWithImpl(
+      _$CompensationStateInvalidImpl _value,
+      $Res Function(_$CompensationStateInvalidImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? message = freezed,
+    Object? isValid = null,
+  }) {
+    return _then(_$CompensationStateInvalidImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as double,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CompensationStateInvalidImpl implements _CompensationStateInvalid {
+  const _$CompensationStateInvalidImpl(
+      {required this.data, required this.message, required this.isValid});
+
+  @override
+  final double data;
+  @override
+  final String? message;
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'CompensationState.invalid(data: $data, message: $message, isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompensationStateInvalidImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data, message, isValid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompensationStateInvalidImplCopyWith<_$CompensationStateInvalidImpl>
+      get copyWith => __$$CompensationStateInvalidImplCopyWithImpl<
+          _$CompensationStateInvalidImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(double data, String? message, bool isValid)
+        initial,
+    required TResult Function(double data, String? message, bool isValid) valid,
+    required TResult Function(double data, String? message, bool isValid)
+        invalid,
+  }) {
+    return invalid(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double data, String? message, bool isValid)? initial,
+    TResult? Function(double data, String? message, bool isValid)? valid,
+    TResult? Function(double data, String? message, bool isValid)? invalid,
+  }) {
+    return invalid?.call(data, message, isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double data, String? message, bool isValid)? initial,
+    TResult Function(double data, String? message, bool isValid)? valid,
+    TResult Function(double data, String? message, bool isValid)? invalid,
+    required TResult orElse(),
+  }) {
+    if (invalid != null) {
+      return invalid(data, message, isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CompensationStateInitial value) initial,
+    required TResult Function(_CompensationStateValid value) valid,
+    required TResult Function(_CompensationStateInvalid value) invalid,
+  }) {
+    return invalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CompensationStateInitial value)? initial,
+    TResult? Function(_CompensationStateValid value)? valid,
+    TResult? Function(_CompensationStateInvalid value)? invalid,
+  }) {
+    return invalid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CompensationStateInitial value)? initial,
+    TResult Function(_CompensationStateValid value)? valid,
+    TResult Function(_CompensationStateInvalid value)? invalid,
+    required TResult orElse(),
+  }) {
+    if (invalid != null) {
+      return invalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompensationStateInvalid implements CompensationState {
+  const factory _CompensationStateInvalid(
+      {required final double data,
+      required final String? message,
+      required final bool isValid}) = _$CompensationStateInvalidImpl;
+
+  @override
+  double get data;
+  @override
+  String? get message;
+  @override
+  bool get isValid;
+  @override
+  @JsonKey(ignore: true)
+  _$$CompensationStateInvalidImplCopyWith<_$CompensationStateInvalidImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

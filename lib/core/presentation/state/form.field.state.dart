@@ -25,31 +25,26 @@ class SignupFormFieldState with _$SignupFormFieldState {
   }) = _SignupFormFieldStateInvalid;
 }
 
-/// property [time] ensures uniqueness between state similar state objects
 @freezed
 class SigninFormFieldState with _$SigninFormFieldState {
   const factory SigninFormFieldState.initial({
     required bool isValid,
     required String? message,
-    required int time,
   }) = _SigninFormFieldStateInitial;
 
   const factory SigninFormFieldState.valid({
     required bool isValid,
     required String? message,
-    required int time,
   }) = _SigninFormFieldStateValid;
 
   const factory SigninFormFieldState.loading({
     required bool isValid,
     required String? message,
-    required int time,
   }) = _SigninFormFieldStateLoading;
 
   const factory SigninFormFieldState.invalid({
     required bool isValid,
     required String? message,
-    required int time,
   }) = _SigninFormFieldStateInvalid;
 }
 

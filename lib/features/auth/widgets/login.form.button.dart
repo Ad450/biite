@@ -23,10 +23,7 @@ class LoginFormButton extends StatelessWidget {
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
         valid: (state) => authBloc.add(LoginEvent()),
-        invalid: (state) {
-          print("suppose to show toast");
-          showToast(state.message!);
-        },
+        invalid: (state) => showToast(state.message!),
       ),
       child: BiiteTextButton(
         onPressed: () => loginBloc.add(LoginFormFieldEvent()),

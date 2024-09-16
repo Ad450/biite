@@ -52,7 +52,13 @@ class PropositionDetails extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 8,
                     direction: Axis.horizontal,
-                    children: ["WIREFRAME", "UI/UX"].map((e) => BiiteChip(text: e)).toList(),
+                    children: ["WIREFRAME", "UI/UX"]
+                        .map((e) => BiiteChip(
+                              text: e,
+                              selected: false,
+                              onSelected: (isSelected) {},
+                            ))
+                        .toList(),
                   ),
                   SizedBox(height: 97.h),
                   Align(

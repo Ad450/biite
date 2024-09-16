@@ -41,3 +41,23 @@ class DashboardState with _$DashboardState {
     required String? message,
   }) = _DashboardStateError;
 }
+
+/// [time] property makes state unique
+/// able to escape equality checks
+@freezed
+class TagsState with _$TagsState {
+  const factory TagsState.initial({
+    required List<String> tags,
+    required int time,
+  }) = _TagsStateInitial;
+
+  const factory TagsState.selected({
+    required List<String> tags,
+    required int time,
+  }) = _TagsStateSelected;
+
+  const factory TagsState.unSelected({
+    required List<String> tags,
+    required int time,
+  }) = _TagsStateUnSelected;
+}

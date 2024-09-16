@@ -17,13 +17,11 @@ class CompensationFieldBloc extends FieldBaseBloc<CompensationState> {
   void isValid(FieldEvent event, Emitter<CompensationState> emit) {
     if (event is CompensationFieldEvent) {
       if (event.rate == null) {
-        emit(
-          CompensationState.invalid(data: state.data, message: "compensation cant not be null", isValid: false),
-        );
+        emit(CompensationState.invalid(data: state.data, message: "compensation cant not be null", isValid: false));
         return;
       }
 
-      if (event.rate! > 0.0) {
+      if (event.rate! <= 0) {
         emit(CompensationState.invalid(
           data: state.data,
           message: "compensation not acceptable",

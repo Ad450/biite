@@ -55,7 +55,11 @@ class ActiveProjectDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const BiiteChip(text: "WIREFRAME"),
+                      BiiteChip(
+                        text: "WIREFRAME",
+                        selected: false,
+                        onSelected: (isSelected) {},
+                      ),
                       Text(
                         "\$ 600",
                         style: context.appTheme.textTheme.bodySmall?.copyWith(

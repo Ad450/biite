@@ -10,21 +10,20 @@ abstract class CloudStorage {
 
 @LazySingleton(as: CloudStorage)
 class CloudStorageImpl implements CloudStorage {
-  CloudStorageImpl(this._auth, this._storage);
+  CloudStorageImpl(this._storage);
 
-  final FirebaseAuth _auth;
   final FirebaseStorage _storage;
 
   @override
   Future<String> upload(String filepath) async {
-    final user = _auth.currentUser;
-    final storageRef = _storage.ref();
-    final videoRef = storageRef.child(
-      'photos/${user?.uid}/${DateTime.now().millisecondsSinceEpoch}.${filepath.split('.').last}',
-    );
     try {
-      await videoRef.putFile(File(filepath));
-      final url = await videoRef.getDownloadURL();
+      Reference reference = _storage.ref(filepath);
+
+      UploadTask uploadTask = reference.putFile(File(filepath));
+
+      final storageSnapshot = uploadTask.snapshot;
+
+      final url = await storageSnapshot.ref.getDownloadURL();
       return url;
     } catch (e) {
       rethrow;

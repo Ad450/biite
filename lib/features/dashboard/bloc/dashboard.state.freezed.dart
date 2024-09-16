@@ -1369,3 +1369,589 @@ abstract class _DashboardStateError implements DashboardState {
   _$$DashboardStateErrorImplCopyWith<_$DashboardStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$TagsState {
+  List<String> get tags => throw _privateConstructorUsedError;
+  int get time => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> tags, int time) initial,
+    required TResult Function(List<String> tags, int time) selected,
+    required TResult Function(List<String> tags, int time) unSelected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> tags, int time)? initial,
+    TResult? Function(List<String> tags, int time)? selected,
+    TResult? Function(List<String> tags, int time)? unSelected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> tags, int time)? initial,
+    TResult Function(List<String> tags, int time)? selected,
+    TResult Function(List<String> tags, int time)? unSelected,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TagsStateInitial value) initial,
+    required TResult Function(_TagsStateSelected value) selected,
+    required TResult Function(_TagsStateUnSelected value) unSelected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TagsStateInitial value)? initial,
+    TResult? Function(_TagsStateSelected value)? selected,
+    TResult? Function(_TagsStateUnSelected value)? unSelected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TagsStateInitial value)? initial,
+    TResult Function(_TagsStateSelected value)? selected,
+    TResult Function(_TagsStateUnSelected value)? unSelected,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TagsStateCopyWith<TagsState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TagsStateCopyWith<$Res> {
+  factory $TagsStateCopyWith(TagsState value, $Res Function(TagsState) then) =
+      _$TagsStateCopyWithImpl<$Res, TagsState>;
+  @useResult
+  $Res call({List<String> tags, int time});
+}
+
+/// @nodoc
+class _$TagsStateCopyWithImpl<$Res, $Val extends TagsState>
+    implements $TagsStateCopyWith<$Res> {
+  _$TagsStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+    Object? time = null,
+  }) {
+    return _then(_value.copyWith(
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TagsStateInitialImplCopyWith<$Res>
+    implements $TagsStateCopyWith<$Res> {
+  factory _$$TagsStateInitialImplCopyWith(_$TagsStateInitialImpl value,
+          $Res Function(_$TagsStateInitialImpl) then) =
+      __$$TagsStateInitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> tags, int time});
+}
+
+/// @nodoc
+class __$$TagsStateInitialImplCopyWithImpl<$Res>
+    extends _$TagsStateCopyWithImpl<$Res, _$TagsStateInitialImpl>
+    implements _$$TagsStateInitialImplCopyWith<$Res> {
+  __$$TagsStateInitialImplCopyWithImpl(_$TagsStateInitialImpl _value,
+      $Res Function(_$TagsStateInitialImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+    Object? time = null,
+  }) {
+    return _then(_$TagsStateInitialImpl(
+      tags: null == tags
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TagsStateInitialImpl implements _TagsStateInitial {
+  const _$TagsStateInitialImpl(
+      {required final List<String> tags, required this.time})
+      : _tags = tags;
+
+  final List<String> _tags;
+  @override
+  List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
+  @override
+  final int time;
+
+  @override
+  String toString() {
+    return 'TagsState.initial(tags: $tags, time: $time)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TagsStateInitialImpl &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.time, time) || other.time == time));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_tags), time);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TagsStateInitialImplCopyWith<_$TagsStateInitialImpl> get copyWith =>
+      __$$TagsStateInitialImplCopyWithImpl<_$TagsStateInitialImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> tags, int time) initial,
+    required TResult Function(List<String> tags, int time) selected,
+    required TResult Function(List<String> tags, int time) unSelected,
+  }) {
+    return initial(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> tags, int time)? initial,
+    TResult? Function(List<String> tags, int time)? selected,
+    TResult? Function(List<String> tags, int time)? unSelected,
+  }) {
+    return initial?.call(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> tags, int time)? initial,
+    TResult Function(List<String> tags, int time)? selected,
+    TResult Function(List<String> tags, int time)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(tags, time);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TagsStateInitial value) initial,
+    required TResult Function(_TagsStateSelected value) selected,
+    required TResult Function(_TagsStateUnSelected value) unSelected,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TagsStateInitial value)? initial,
+    TResult? Function(_TagsStateSelected value)? selected,
+    TResult? Function(_TagsStateUnSelected value)? unSelected,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TagsStateInitial value)? initial,
+    TResult Function(_TagsStateSelected value)? selected,
+    TResult Function(_TagsStateUnSelected value)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TagsStateInitial implements TagsState {
+  const factory _TagsStateInitial(
+      {required final List<String> tags,
+      required final int time}) = _$TagsStateInitialImpl;
+
+  @override
+  List<String> get tags;
+  @override
+  int get time;
+  @override
+  @JsonKey(ignore: true)
+  _$$TagsStateInitialImplCopyWith<_$TagsStateInitialImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TagsStateSelectedImplCopyWith<$Res>
+    implements $TagsStateCopyWith<$Res> {
+  factory _$$TagsStateSelectedImplCopyWith(_$TagsStateSelectedImpl value,
+          $Res Function(_$TagsStateSelectedImpl) then) =
+      __$$TagsStateSelectedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> tags, int time});
+}
+
+/// @nodoc
+class __$$TagsStateSelectedImplCopyWithImpl<$Res>
+    extends _$TagsStateCopyWithImpl<$Res, _$TagsStateSelectedImpl>
+    implements _$$TagsStateSelectedImplCopyWith<$Res> {
+  __$$TagsStateSelectedImplCopyWithImpl(_$TagsStateSelectedImpl _value,
+      $Res Function(_$TagsStateSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+    Object? time = null,
+  }) {
+    return _then(_$TagsStateSelectedImpl(
+      tags: null == tags
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TagsStateSelectedImpl implements _TagsStateSelected {
+  const _$TagsStateSelectedImpl(
+      {required final List<String> tags, required this.time})
+      : _tags = tags;
+
+  final List<String> _tags;
+  @override
+  List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
+  @override
+  final int time;
+
+  @override
+  String toString() {
+    return 'TagsState.selected(tags: $tags, time: $time)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TagsStateSelectedImpl &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.time, time) || other.time == time));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_tags), time);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TagsStateSelectedImplCopyWith<_$TagsStateSelectedImpl> get copyWith =>
+      __$$TagsStateSelectedImplCopyWithImpl<_$TagsStateSelectedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> tags, int time) initial,
+    required TResult Function(List<String> tags, int time) selected,
+    required TResult Function(List<String> tags, int time) unSelected,
+  }) {
+    return selected(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> tags, int time)? initial,
+    TResult? Function(List<String> tags, int time)? selected,
+    TResult? Function(List<String> tags, int time)? unSelected,
+  }) {
+    return selected?.call(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> tags, int time)? initial,
+    TResult Function(List<String> tags, int time)? selected,
+    TResult Function(List<String> tags, int time)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected(tags, time);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TagsStateInitial value) initial,
+    required TResult Function(_TagsStateSelected value) selected,
+    required TResult Function(_TagsStateUnSelected value) unSelected,
+  }) {
+    return selected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TagsStateInitial value)? initial,
+    TResult? Function(_TagsStateSelected value)? selected,
+    TResult? Function(_TagsStateUnSelected value)? unSelected,
+  }) {
+    return selected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TagsStateInitial value)? initial,
+    TResult Function(_TagsStateSelected value)? selected,
+    TResult Function(_TagsStateUnSelected value)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TagsStateSelected implements TagsState {
+  const factory _TagsStateSelected(
+      {required final List<String> tags,
+      required final int time}) = _$TagsStateSelectedImpl;
+
+  @override
+  List<String> get tags;
+  @override
+  int get time;
+  @override
+  @JsonKey(ignore: true)
+  _$$TagsStateSelectedImplCopyWith<_$TagsStateSelectedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TagsStateUnSelectedImplCopyWith<$Res>
+    implements $TagsStateCopyWith<$Res> {
+  factory _$$TagsStateUnSelectedImplCopyWith(_$TagsStateUnSelectedImpl value,
+          $Res Function(_$TagsStateUnSelectedImpl) then) =
+      __$$TagsStateUnSelectedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> tags, int time});
+}
+
+/// @nodoc
+class __$$TagsStateUnSelectedImplCopyWithImpl<$Res>
+    extends _$TagsStateCopyWithImpl<$Res, _$TagsStateUnSelectedImpl>
+    implements _$$TagsStateUnSelectedImplCopyWith<$Res> {
+  __$$TagsStateUnSelectedImplCopyWithImpl(_$TagsStateUnSelectedImpl _value,
+      $Res Function(_$TagsStateUnSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+    Object? time = null,
+  }) {
+    return _then(_$TagsStateUnSelectedImpl(
+      tags: null == tags
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TagsStateUnSelectedImpl implements _TagsStateUnSelected {
+  const _$TagsStateUnSelectedImpl(
+      {required final List<String> tags, required this.time})
+      : _tags = tags;
+
+  final List<String> _tags;
+  @override
+  List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
+  @override
+  final int time;
+
+  @override
+  String toString() {
+    return 'TagsState.unSelected(tags: $tags, time: $time)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TagsStateUnSelectedImpl &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.time, time) || other.time == time));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_tags), time);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TagsStateUnSelectedImplCopyWith<_$TagsStateUnSelectedImpl> get copyWith =>
+      __$$TagsStateUnSelectedImplCopyWithImpl<_$TagsStateUnSelectedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> tags, int time) initial,
+    required TResult Function(List<String> tags, int time) selected,
+    required TResult Function(List<String> tags, int time) unSelected,
+  }) {
+    return unSelected(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> tags, int time)? initial,
+    TResult? Function(List<String> tags, int time)? selected,
+    TResult? Function(List<String> tags, int time)? unSelected,
+  }) {
+    return unSelected?.call(tags, time);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> tags, int time)? initial,
+    TResult Function(List<String> tags, int time)? selected,
+    TResult Function(List<String> tags, int time)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (unSelected != null) {
+      return unSelected(tags, time);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TagsStateInitial value) initial,
+    required TResult Function(_TagsStateSelected value) selected,
+    required TResult Function(_TagsStateUnSelected value) unSelected,
+  }) {
+    return unSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TagsStateInitial value)? initial,
+    TResult? Function(_TagsStateSelected value)? selected,
+    TResult? Function(_TagsStateUnSelected value)? unSelected,
+  }) {
+    return unSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TagsStateInitial value)? initial,
+    TResult Function(_TagsStateSelected value)? selected,
+    TResult Function(_TagsStateUnSelected value)? unSelected,
+    required TResult orElse(),
+  }) {
+    if (unSelected != null) {
+      return unSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TagsStateUnSelected implements TagsState {
+  const factory _TagsStateUnSelected(
+      {required final List<String> tags,
+      required final int time}) = _$TagsStateUnSelectedImpl;
+
+  @override
+  List<String> get tags;
+  @override
+  int get time;
+  @override
+  @JsonKey(ignore: true)
+  _$$TagsStateUnSelectedImplCopyWith<_$TagsStateUnSelectedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

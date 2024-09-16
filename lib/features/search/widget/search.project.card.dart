@@ -83,7 +83,13 @@ class SearchProjectCard extends StatelessWidget {
           spacing: 8,
           runSpacing: 8,
           direction: Axis.horizontal,
-          children: tags.map((e) => BiiteChip(text: e)).toList(),
+          children: tags
+              .map((e) => BiiteChip(
+                    text: e,
+                    selected: false,
+                    onSelected: (isSelected) {},
+                  ))
+              .toList(),
         ),
         SizedBox(height: 16.h),
       ],

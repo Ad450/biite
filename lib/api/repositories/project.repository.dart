@@ -95,6 +95,7 @@ class ProjectRepostoryImpl implements ProjectRepository {
       await _firestore.collection(kProjectCollection).add(project.toJson());
       return const Right(VoidType());
     } catch (e) {
+      print(e);
       return Left(UIError(e.toString()));
     }
   }

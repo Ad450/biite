@@ -1,34 +1,41 @@
-import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BiiteChip extends StatelessWidget {
-  const BiiteChip({required this.text, super.key});
+  const BiiteChip({required this.text, required this.onSelected, required this.selected, super.key});
 
+  final Function(bool) onSelected;
   final String text;
+  final bool selected;
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicWidth(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 6.0),
-        // margin: const EdgeInsets.only(left: 8.0),
-        height: 24.h,
-        decoration: BoxDecoration(
-          border: Border.all(color: ColorName.fillColor),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: Center(
-          child: Text(
-            text.toUpperCase(),
-            style: context.appTheme.textTheme.bodySmall?.copyWith(
-              fontSize: 12.8,
-              color: ColorName.fillColor,
-            ),
-          ),
-        ),
-      ),
+    // return IntrinsicWidth(
+    //   child: Container(
+    //     padding: const EdgeInsets.symmetric(horizontal: 6.0),
+    //     // margin: const EdgeInsets.only(left: 8.0),
+    //     height: 24.h,
+    //     decoration: BoxDecoration(
+    //       border: Border.all(color: ColorName.fillColor),
+    //       borderRadius: BorderRadius.circular(4),
+    //     ),
+    //     child: Center(
+    //       child: Text(
+    //         text.toUpperCase(),
+    //         style: context.appTheme.textTheme.bodySmall?.copyWith(
+    //           fontSize: 12.8,
+    //           color: ColorName.fillColor,
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+    // );
+    return ChoiceChip(
+      label: Text(text.toUpperCase()),
+      onSelected: onSelected,
+      selected: selected,
+      selectedColor: ColorName.primary,
+      disabledColor: ColorName.multiline,
     );
   }
 }

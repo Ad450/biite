@@ -31,6 +31,7 @@ class BiiteMultilineTextfield extends StatelessWidget {
         controller: controller,
         maxLines: maxLines ?? 7,
         minLines: minLines ?? 5,
+        onChanged: onChanged,
         keyboardType: TextInputType.multiline,
         onTapOutside: (PointerDownEvent event) {
           FocusManager.instance.primaryFocus?.unfocus();

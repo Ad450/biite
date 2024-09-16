@@ -1,48 +1,47 @@
 import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/core/presentation/state/email.field.bloc.dart';
+import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
-import 'package:biite/core/presentation/widgets/biite.form.field.dart';
+import 'package:biite/core/presentation/state/name.field.bloc.dart';
+import 'package:biite/core/presentation/widgets/biite.textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthEmailField extends StatelessWidget {
-  const AuthEmailField({required this.instance, super.key});
-
-  final String instance;
+class TitleField extends StatelessWidget {
+  const TitleField({super.key});
 
   Widget _buildField(
     String? errorText, {
     required Function(String) onChanged,
     required TextEditingController controller,
   }) {
-    return BiiteFormField(
+    return BiiteTextfield(
       controller: controller,
-      inputType: TextInputType.emailAddress,
+      inputType: TextInputType.text,
       errorText: errorText,
-      hintText: "Email",
+      hintText: "Title",
       onChanged: onChanged,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final bloc = getIt.get<EmailFieldBloc>(instanceName: instance);
+    final bloc = getIt.get<NameFieldBloc>(instanceName: "createProject");
 
-    return BlocBuilder<EmailFieldBloc, EmailState>(
+    return BlocBuilder<NameFieldBloc, NameState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(
           null,
-          onChanged: (text) => bloc.add(EmailFieldEvent(text)),
-          controller: bloc.emailController,
+          onChanged: (text) => bloc.add(NameFieldEvent(text)),
+          controller: bloc.nameController,
         ),
         invalid: (state) => _buildField(
           state.message,
-          onChanged: (text) => bloc.add(EmailFieldEvent(text)),
-          controller: bloc.emailController,
+          onChanged: (text) => bloc.add(NameFieldEvent(text)),
+          controller: bloc.nameController,
         ),
       ),
     );

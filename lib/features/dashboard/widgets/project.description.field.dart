@@ -27,7 +27,7 @@ class ProjectDescriptionField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = getIt.get<DescriptionFieldBloc>();
+    final bloc = getIt.get<DescriptionFieldBloc>(instanceName: "createProject");
 
     return BlocBuilder<DescriptionFieldBloc, DescriptionState>(
       bloc: bloc,

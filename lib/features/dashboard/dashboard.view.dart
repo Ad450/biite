@@ -2,11 +2,14 @@ import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.dialog.dart';
-import 'package:biite/core/presentation/widgets/biite.textfield.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
+import 'package:biite/features/dashboard/widgets/compensation.field.dart';
 import 'package:biite/features/dashboard/widgets/create.project.form.button.dart';
 import 'package:biite/features/dashboard/widgets/project.description.field.dart';
+import 'package:biite/features/dashboard/widgets/tags.dart';
+import 'package:biite/features/dashboard/widgets/title.field.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/upload.file.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -31,20 +34,22 @@ class DashboardView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 40.h),
+              SizedBox(height: 10.h),
+              const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+              SizedBox(height: 10.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: BlocConsumer<DasboardBloc, DashboardState>(
                     bloc: dashboardBloc,
                     listener: (_, state) => state.maybeMap(
                       orElse: () => null,
+                      error: (state) => showToast(state.message!),
                       projectCreated: (_) => showBiiteDialog(context),
                     ),
                     builder: (_, state) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const BiiteAvatarWithText(name: "Emmanuel Adjei"),
-                        SizedBox(height: 48.h),
+                        SizedBox(height: 20.h),
                         Text(
                           "Create your project",
                           style: context.appTheme.textTheme.titleSmall?.copyWith(
@@ -52,6 +57,8 @@ class DashboardView extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        SizedBox(height: 16.h),
+                        const TitleField(),
                         SizedBox(height: 16.h),
                         const ProjectDescriptionField(),
                         SizedBox(height: 24.h),
@@ -82,8 +89,10 @@ class DashboardView extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 16.h),
-                        BiiteTextfield(controller: TextEditingController(), onChanged: (text) {}),
-                        SizedBox(height: 69.h),
+                        const CompensationField(),
+                        SizedBox(height: 16.h),
+                        const Tags(),
+                        SizedBox(height: 80.h),
 
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 56.w),

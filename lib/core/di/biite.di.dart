@@ -3,6 +3,7 @@ import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
 import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
 import 'package:biite/core/presentation/state/description.field.bloc.dart';
 import 'package:biite/core/presentation/state/email.field.bloc.dart';
+import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/core/presentation/state/password.field.bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -48,8 +49,14 @@ abstract class FirebaseModule {
   @singleton
   PasswordFieldBloc get loginPasswordFieldBloc => PasswordFieldBloc();
 
+  @Named('createProject')
+  @singleton
+  NameFieldBloc get nameFieldBloc => NameFieldBloc();
+
+  @Named('createProject')
   @lazySingleton
   CompensationFieldBloc get compensationFieldBloc => CompensationFieldBloc();
+  @Named('createProject')
   @lazySingleton
   DescriptionFieldBloc get descriptionFieldBloc => DescriptionFieldBloc();
 }

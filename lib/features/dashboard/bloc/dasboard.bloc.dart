@@ -1,19 +1,36 @@
 import 'dart:io';
 
+import 'package:biite/api/repositories/project.repository.dart';
+import 'package:biite/api/utils/repository.params.dart';
+import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
+import 'package:biite/core/presentation/state/description.field.bloc.dart';
+import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
+import 'package:biite/features/dashboard/bloc/tags.bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
 class DasboardBloc extends Cubit<DashboardState> {
-  DasboardBloc()
-      : super(const DashboardState.initial(
+  DasboardBloc(
+    this._projectRepository,
+    @Named('createProject') this._compensationFieldBloc,
+    @Named('createProject') this._descriptionFieldBloc,
+    @Named("createProject") this._titleFieldBloc,
+    this._tagsBloc,
+  ) : super(const DashboardState.initial(
           description: "",
           files: {},
           compensation: 0,
           message: null,
         ));
+
+  final ProjectRepository _projectRepository;
+  final DescriptionFieldBloc _descriptionFieldBloc;
+  final CompensationFieldBloc _compensationFieldBloc;
+  final TagsBloc _tagsBloc;
+  final NameFieldBloc _titleFieldBloc;
 
   DashboardState getErrorState(String message) => DashboardState.error(
         description: state.description,
@@ -61,5 +78,27 @@ class DasboardBloc extends Cubit<DashboardState> {
     emit(getFileSelectedState(files));
   }
 
-  void createProject() {}
+  void createProject() async {
+    print("got here create project");
+    emit(
+      DashboardState.loading(
+          description: state.description, files: state.files, compensation: state.compensation, message: state.message),
+    );
+    print("this is from dashboard ${_tagsBloc.state.tags}");
+
+    final param = CreateProjectParam(
+      description: _descriptionFieldBloc.state.data,
+      files: state.files.map((e) => e.path).toList(),
+      rate: _compensationFieldBloc.state.data,
+      tags: _tagsBloc.state.tags,
+      title: _titleFieldBloc.state.data,
+    );
+
+    final result = await _projectRepository.createProject(param);
+    result.fold(
+      (l) => emit(getErrorState(l.message)),
+      (r) => emit(DashboardState.projectCreated(
+          description: state.description, files: state.files, compensation: state.compensation, message: null)),
+    );
+  }
 }

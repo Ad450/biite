@@ -28,7 +28,7 @@ class AuthNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = getIt.get<NameFieldBloc>();
-    return BlocBuilder<NameFieldBloc, NameState>(
+    return BlocBuilder<NameFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(

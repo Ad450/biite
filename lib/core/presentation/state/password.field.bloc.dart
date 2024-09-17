@@ -6,29 +6,29 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class PasswordFieldBloc extends FieldBaseBloc<PasswordState> {
+class PasswordFieldBloc extends FieldBaseBloc {
   PasswordFieldBloc()
       : passwordController = TextEditingController(),
-        super(const PasswordState.initial(data: "", message: "invalid password", isValid: false)) {
+        super(const FieldState.initial()) {
     on<PasswordFieldEvent>(isValid);
   }
 
   final TextEditingController passwordController;
 
   @override
-  void isValid(FieldEvent event, Emitter<PasswordState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is PasswordFieldEvent) {
       if (event.password == null) {
-        emit(PasswordState.invalid(data: state.data, message: "email cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "email cant not be null"));
         return;
       }
 
       if (event.password!.length < 6) {
-        emit(PasswordState.invalid(data: state.data, message: "invalid password", isValid: false));
+        emit(const FieldState.invalid(message: "invalid password"));
         return;
       }
 
-      emit(PasswordState.valid(data: event.password!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.password!));
     }
   }
 

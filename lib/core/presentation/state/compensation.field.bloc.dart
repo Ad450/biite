@@ -4,33 +4,29 @@ import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CompensationFieldBloc extends FieldBaseBloc<CompensationState> {
+class CompensationFieldBloc extends FieldBaseBloc {
   CompensationFieldBloc()
       : compensationController = TextEditingController(),
-        super(const CompensationState.initial(data: 0.0, message: "invalid compensation", isValid: false)) {
+        super(const FieldState.initial()) {
     on<CompensationFieldEvent>(isValid);
   }
 
   final TextEditingController compensationController;
 
   @override
-  void isValid(FieldEvent event, Emitter<CompensationState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is CompensationFieldEvent) {
       if (event.rate == null) {
-        emit(CompensationState.invalid(data: state.data, message: "compensation cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "compensation cant not be null"));
         return;
       }
 
       if (event.rate! <= 0) {
-        emit(CompensationState.invalid(
-          data: state.data,
-          message: "compensation not acceptable",
-          isValid: false,
-        ));
+        emit(const FieldState.invalid(message: "compensation not acceptable"));
         return;
       }
 
-      emit(CompensationState.valid(data: event.rate!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.rate!.toString()));
     }
   }
 

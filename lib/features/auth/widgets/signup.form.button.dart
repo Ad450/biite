@@ -18,7 +18,7 @@ class SignupFormButton extends StatelessWidget {
     final signupBloc = getIt.get<SignupFormBloc>();
     final authBloc = getIt.get<AuthBloc>();
 
-    return BlocListener<SignupFormBloc, SignupFormFieldState>(
+    return BlocListener<SignupFormBloc, FormFieldBaseState>(
       bloc: signupBloc,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,

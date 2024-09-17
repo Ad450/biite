@@ -31,18 +31,18 @@ class AuthEmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = getIt.get<EmailFieldBloc>(instanceName: instance);
 
-    return BlocBuilder<EmailFieldBloc, EmailState>(
+    return BlocBuilder<EmailFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(
           null,
           onChanged: (text) => bloc.add(EmailFieldEvent(text)),
-          controller: bloc.emailController,
+          controller: bloc.controller,
         ),
         invalid: (state) => _buildField(
           state.message,
           onChanged: (text) => bloc.add(EmailFieldEvent(text)),
-          controller: bloc.emailController,
+          controller: bloc.controller,
         ),
       ),
     );

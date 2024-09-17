@@ -10,7 +10,7 @@ class Tags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tagsBloc = getIt.get<TagsBloc>();
+    final tagsBloc = getIt.get<TagsBloc>(instanceName: "createProject");
 
     return BlocBuilder<TagsBloc, TagsState>(
       bloc: tagsBloc,

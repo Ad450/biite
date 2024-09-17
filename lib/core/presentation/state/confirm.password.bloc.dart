@@ -7,10 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class ConfirmPasswordFieldBloc extends FieldBaseBloc<ConfirmPasswordState> {
+class ConfirmPasswordFieldBloc extends FieldBaseBloc {
   ConfirmPasswordFieldBloc(this.passwordFieldBloc)
       : confirmPasswordController = TextEditingController(),
-        super(const ConfirmPasswordState.initial(data: "", message: "invalid password", isValid: false)) {
+        super(const FieldState.initial()) {
     on<ConfirmPasswordFieldEvent>(isValid);
   }
 
@@ -18,28 +18,24 @@ class ConfirmPasswordFieldBloc extends FieldBaseBloc<ConfirmPasswordState> {
   final PasswordFieldBloc passwordFieldBloc;
 
   @override
-  void isValid(FieldEvent event, Emitter<ConfirmPasswordState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is ConfirmPasswordFieldEvent) {
       if (event.password == null) {
-        emit(ConfirmPasswordState.invalid(data: state.data, message: "email cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "password cant not be null"));
         return;
       }
 
       if (event.password!.length < 6) {
-        emit(ConfirmPasswordState.invalid(
-          data: state.data,
-          message: "password should not be less than 6 characters",
-          isValid: false,
-        ));
+        emit(const FieldState.invalid(message: "password should not be less than 6 characters"));
         return;
       }
 
-      if (passwordFieldBloc.state.data != event.password) {
-        emit(ConfirmPasswordState.invalid(data: state.data, message: "password mismatch", isValid: false));
+      if (passwordFieldBloc.state.maybeMap(orElse: () => true, valid: (state) => state.data) != event.password) {
+        emit(const FieldState.invalid(message: "password mismatch"));
         return;
       }
 
-      emit(ConfirmPasswordState.valid(data: event.password!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.password!));
     }
   }
 

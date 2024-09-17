@@ -16,65 +16,31 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DashboardState {
-  String get description => throw _privateConstructorUsedError;
-  Set<File> get files => throw _privateConstructorUsedError;
-  double get compensation => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,10 +73,6 @@ mixin _$DashboardState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $DashboardStateCopyWith<DashboardState> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -118,12 +80,6 @@ abstract class $DashboardStateCopyWith<$Res> {
   factory $DashboardStateCopyWith(
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res, DashboardState>;
-  @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
 }
 
 /// @nodoc
@@ -135,50 +91,14 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? description = null,
-    Object? files = null,
-    Object? compensation = null,
-    Object? message = freezed,
-  }) {
-    return _then(_value.copyWith(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      files: null == files
-          ? _value.files
-          : files // ignore: cast_nullable_to_non_nullable
-              as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$DashboardStateInitialImplCopyWith<$Res>
-    implements $DashboardStateCopyWith<$Res> {
+abstract class _$$DashboardStateInitialImplCopyWith<$Res> {
   factory _$$DashboardStateInitialImplCopyWith(
           _$DashboardStateInitialImpl value,
           $Res Function(_$DashboardStateInitialImpl) then) =
       __$$DashboardStateInitialImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
 }
 
 /// @nodoc
@@ -188,156 +108,64 @@ class __$$DashboardStateInitialImplCopyWithImpl<$Res>
   __$$DashboardStateInitialImplCopyWithImpl(_$DashboardStateInitialImpl _value,
       $Res Function(_$DashboardStateInitialImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? description = null,
-    Object? files = null,
-    Object? compensation = null,
-    Object? message = freezed,
-  }) {
-    return _then(_$DashboardStateInitialImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      files: null == files
-          ? _value._files
-          : files // ignore: cast_nullable_to_non_nullable
-              as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$DashboardStateInitialImpl implements _DashboardStateInitial {
-  const _$DashboardStateInitialImpl(
-      {required this.description,
-      required final Set<File> files,
-      required this.compensation,
-      required this.message})
-      : _files = files;
-
-  @override
-  final String description;
-  final Set<File> _files;
-  @override
-  Set<File> get files {
-    if (_files is EqualUnmodifiableSetView) return _files;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_files);
-  }
-
-  @override
-  final double compensation;
-  @override
-  final String? message;
+  const _$DashboardStateInitialImpl();
 
   @override
   String toString() {
-    return 'DashboardState.initial(description: $description, files: $files, compensation: $compensation, message: $message)';
+    return 'DashboardState.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DashboardStateInitialImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            (identical(other.compensation, compensation) ||
-                other.compensation == compensation) &&
-            (identical(other.message, message) || other.message == message));
+            other is _$DashboardStateInitialImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description,
-      const DeepCollectionEquality().hash(_files), compensation, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DashboardStateInitialImplCopyWith<_$DashboardStateInitialImpl>
-      get copyWith => __$$DashboardStateInitialImplCopyWithImpl<
-          _$DashboardStateInitialImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) {
-    return initial(description, files, compensation, message);
+    return initial();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) {
-    return initial?.call(description, files, compensation, message);
+    return initial?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(description, files, compensation, message);
+      return initial();
     }
     return orElse();
   }
@@ -385,40 +213,15 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
 }
 
 abstract class _DashboardStateInitial implements DashboardState {
-  const factory _DashboardStateInitial(
-      {required final String description,
-      required final Set<File> files,
-      required final double compensation,
-      required final String? message}) = _$DashboardStateInitialImpl;
-
-  @override
-  String get description;
-  @override
-  Set<File> get files;
-  @override
-  double get compensation;
-  @override
-  String? get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$DashboardStateInitialImplCopyWith<_$DashboardStateInitialImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _DashboardStateInitial() = _$DashboardStateInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$DashboardStateLoadingImplCopyWith<$Res>
-    implements $DashboardStateCopyWith<$Res> {
+abstract class _$$DashboardStateLoadingImplCopyWith<$Res> {
   factory _$$DashboardStateLoadingImplCopyWith(
           _$DashboardStateLoadingImpl value,
           $Res Function(_$DashboardStateLoadingImpl) then) =
       __$$DashboardStateLoadingImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
 }
 
 /// @nodoc
@@ -428,156 +231,64 @@ class __$$DashboardStateLoadingImplCopyWithImpl<$Res>
   __$$DashboardStateLoadingImplCopyWithImpl(_$DashboardStateLoadingImpl _value,
       $Res Function(_$DashboardStateLoadingImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? description = null,
-    Object? files = null,
-    Object? compensation = null,
-    Object? message = freezed,
-  }) {
-    return _then(_$DashboardStateLoadingImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      files: null == files
-          ? _value._files
-          : files // ignore: cast_nullable_to_non_nullable
-              as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
-  const _$DashboardStateLoadingImpl(
-      {required this.description,
-      required final Set<File> files,
-      required this.compensation,
-      required this.message})
-      : _files = files;
-
-  @override
-  final String description;
-  final Set<File> _files;
-  @override
-  Set<File> get files {
-    if (_files is EqualUnmodifiableSetView) return _files;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_files);
-  }
-
-  @override
-  final double compensation;
-  @override
-  final String? message;
+  const _$DashboardStateLoadingImpl();
 
   @override
   String toString() {
-    return 'DashboardState.loading(description: $description, files: $files, compensation: $compensation, message: $message)';
+    return 'DashboardState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DashboardStateLoadingImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            (identical(other.compensation, compensation) ||
-                other.compensation == compensation) &&
-            (identical(other.message, message) || other.message == message));
+            other is _$DashboardStateLoadingImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description,
-      const DeepCollectionEquality().hash(_files), compensation, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DashboardStateLoadingImplCopyWith<_$DashboardStateLoadingImpl>
-      get copyWith => __$$DashboardStateLoadingImplCopyWithImpl<
-          _$DashboardStateLoadingImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) {
-    return loading(description, files, compensation, message);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) {
-    return loading?.call(description, files, compensation, message);
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(description, files, compensation, message);
+      return loading();
     }
     return orElse();
   }
@@ -625,40 +336,15 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
 }
 
 abstract class _DashboardStateLoading implements DashboardState {
-  const factory _DashboardStateLoading(
-      {required final String description,
-      required final Set<File> files,
-      required final double compensation,
-      required final String? message}) = _$DashboardStateLoadingImpl;
-
-  @override
-  String get description;
-  @override
-  Set<File> get files;
-  @override
-  double get compensation;
-  @override
-  String? get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$DashboardStateLoadingImplCopyWith<_$DashboardStateLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _DashboardStateLoading() = _$DashboardStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$DashboardStateProjectCreatedImplCopyWith<$Res>
-    implements $DashboardStateCopyWith<$Res> {
+abstract class _$$DashboardStateProjectCreatedImplCopyWith<$Res> {
   factory _$$DashboardStateProjectCreatedImplCopyWith(
           _$DashboardStateProjectCreatedImpl value,
           $Res Function(_$DashboardStateProjectCreatedImpl) then) =
       __$$DashboardStateProjectCreatedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
 }
 
 /// @nodoc
@@ -670,158 +356,65 @@ class __$$DashboardStateProjectCreatedImplCopyWithImpl<$Res>
       _$DashboardStateProjectCreatedImpl _value,
       $Res Function(_$DashboardStateProjectCreatedImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? description = null,
-    Object? files = null,
-    Object? compensation = null,
-    Object? message = freezed,
-  }) {
-    return _then(_$DashboardStateProjectCreatedImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      files: null == files
-          ? _value._files
-          : files // ignore: cast_nullable_to_non_nullable
-              as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$DashboardStateProjectCreatedImpl
     implements _DashboardStateProjectCreated {
-  const _$DashboardStateProjectCreatedImpl(
-      {required this.description,
-      required final Set<File> files,
-      required this.compensation,
-      required this.message})
-      : _files = files;
-
-  @override
-  final String description;
-  final Set<File> _files;
-  @override
-  Set<File> get files {
-    if (_files is EqualUnmodifiableSetView) return _files;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_files);
-  }
-
-  @override
-  final double compensation;
-  @override
-  final String? message;
+  const _$DashboardStateProjectCreatedImpl();
 
   @override
   String toString() {
-    return 'DashboardState.projectCreated(description: $description, files: $files, compensation: $compensation, message: $message)';
+    return 'DashboardState.projectCreated()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DashboardStateProjectCreatedImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            (identical(other.compensation, compensation) ||
-                other.compensation == compensation) &&
-            (identical(other.message, message) || other.message == message));
+            other is _$DashboardStateProjectCreatedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description,
-      const DeepCollectionEquality().hash(_files), compensation, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DashboardStateProjectCreatedImplCopyWith<
-          _$DashboardStateProjectCreatedImpl>
-      get copyWith => __$$DashboardStateProjectCreatedImplCopyWithImpl<
-          _$DashboardStateProjectCreatedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) {
-    return projectCreated(description, files, compensation, message);
+    return projectCreated();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) {
-    return projectCreated?.call(description, files, compensation, message);
+    return projectCreated?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (projectCreated != null) {
-      return projectCreated(description, files, compensation, message);
+      return projectCreated();
     }
     return orElse();
   }
@@ -869,41 +462,18 @@ class _$DashboardStateProjectCreatedImpl
 }
 
 abstract class _DashboardStateProjectCreated implements DashboardState {
-  const factory _DashboardStateProjectCreated(
-      {required final String description,
-      required final Set<File> files,
-      required final double compensation,
-      required final String? message}) = _$DashboardStateProjectCreatedImpl;
-
-  @override
-  String get description;
-  @override
-  Set<File> get files;
-  @override
-  double get compensation;
-  @override
-  String? get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$DashboardStateProjectCreatedImplCopyWith<
-          _$DashboardStateProjectCreatedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _DashboardStateProjectCreated() =
+      _$DashboardStateProjectCreatedImpl;
 }
 
 /// @nodoc
-abstract class _$$DashboardStateFileSelectedImplCopyWith<$Res>
-    implements $DashboardStateCopyWith<$Res> {
+abstract class _$$DashboardStateFileSelectedImplCopyWith<$Res> {
   factory _$$DashboardStateFileSelectedImplCopyWith(
           _$DashboardStateFileSelectedImpl value,
           $Res Function(_$DashboardStateFileSelectedImpl) then) =
       __$$DashboardStateFileSelectedImplCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
+  $Res call({Set<File> files});
 }
 
 /// @nodoc
@@ -918,28 +488,13 @@ class __$$DashboardStateFileSelectedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
     Object? files = null,
-    Object? compensation = null,
-    Object? message = freezed,
   }) {
     return _then(_$DashboardStateFileSelectedImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
       files: null == files
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
               as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -947,15 +502,9 @@ class __$$DashboardStateFileSelectedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
-  const _$DashboardStateFileSelectedImpl(
-      {required this.description,
-      required final Set<File> files,
-      required this.compensation,
-      required this.message})
+  const _$DashboardStateFileSelectedImpl({required final Set<File> files})
       : _files = files;
 
-  @override
-  final String description;
   final Set<File> _files;
   @override
   Set<File> get files {
@@ -965,13 +514,8 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
   }
 
   @override
-  final double compensation;
-  @override
-  final String? message;
-
-  @override
   String toString() {
-    return 'DashboardState.fileSelected(description: $description, files: $files, compensation: $compensation, message: $message)';
+    return 'DashboardState.fileSelected(files: $files)';
   }
 
   @override
@@ -979,17 +523,12 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DashboardStateFileSelectedImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            (identical(other.compensation, compensation) ||
-                other.compensation == compensation) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other._files, _files));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description,
-      const DeepCollectionEquality().hash(_files), compensation, message);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_files));
 
   @JsonKey(ignore: true)
   @override
@@ -1001,69 +540,39 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) {
-    return fileSelected(description, files, compensation, message);
+    return fileSelected(files);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) {
-    return fileSelected?.call(description, files, compensation, message);
+    return fileSelected?.call(files);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (fileSelected != null) {
-      return fileSelected(description, files, compensation, message);
+      return fileSelected(files);
     }
     return orElse();
   }
@@ -1111,39 +620,22 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
 }
 
 abstract class _DashboardStateFileSelected implements DashboardState {
-  const factory _DashboardStateFileSelected(
-      {required final String description,
-      required final Set<File> files,
-      required final double compensation,
-      required final String? message}) = _$DashboardStateFileSelectedImpl;
+  const factory _DashboardStateFileSelected({required final Set<File> files}) =
+      _$DashboardStateFileSelectedImpl;
 
-  @override
-  String get description;
-  @override
   Set<File> get files;
-  @override
-  double get compensation;
-  @override
-  String? get message;
-  @override
   @JsonKey(ignore: true)
   _$$DashboardStateFileSelectedImplCopyWith<_$DashboardStateFileSelectedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DashboardStateErrorImplCopyWith<$Res>
-    implements $DashboardStateCopyWith<$Res> {
+abstract class _$$DashboardStateErrorImplCopyWith<$Res> {
   factory _$$DashboardStateErrorImplCopyWith(_$DashboardStateErrorImpl value,
           $Res Function(_$DashboardStateErrorImpl) then) =
       __$$DashboardStateErrorImplCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call(
-      {String description,
-      Set<File> files,
-      double compensation,
-      String? message});
+  $Res call({String? message});
 }
 
 /// @nodoc
@@ -1157,24 +649,9 @@ class __$$DashboardStateErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
-    Object? files = null,
-    Object? compensation = null,
     Object? message = freezed,
   }) {
     return _then(_$DashboardStateErrorImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      files: null == files
-          ? _value._files
-          : files // ignore: cast_nullable_to_non_nullable
-              as Set<File>,
-      compensation: null == compensation
-          ? _value.compensation
-          : compensation // ignore: cast_nullable_to_non_nullable
-              as double,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1186,31 +663,14 @@ class __$$DashboardStateErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DashboardStateErrorImpl implements _DashboardStateError {
-  const _$DashboardStateErrorImpl(
-      {required this.description,
-      required final Set<File> files,
-      required this.compensation,
-      required this.message})
-      : _files = files;
+  const _$DashboardStateErrorImpl({required this.message});
 
-  @override
-  final String description;
-  final Set<File> _files;
-  @override
-  Set<File> get files {
-    if (_files is EqualUnmodifiableSetView) return _files;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_files);
-  }
-
-  @override
-  final double compensation;
   @override
   final String? message;
 
   @override
   String toString() {
-    return 'DashboardState.error(description: $description, files: $files, compensation: $compensation, message: $message)';
+    return 'DashboardState.error(message: $message)';
   }
 
   @override
@@ -1218,17 +678,11 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DashboardStateErrorImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._files, _files) &&
-            (identical(other.compensation, compensation) ||
-                other.compensation == compensation) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description,
-      const DeepCollectionEquality().hash(_files), compensation, message);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -1240,69 +694,39 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        initial,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        loading,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        projectCreated,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        fileSelected,
-    required TResult Function(String description, Set<File> files,
-            double compensation, String? message)
-        error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
   }) {
-    return error(description, files, compensation, message);
+    return error(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult? Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
   }) {
-    return error?.call(description, files, compensation, message);
+    return error?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        initial,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        loading,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        projectCreated,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        fileSelected,
-    TResult Function(String description, Set<File> files, double compensation,
-            String? message)?
-        error,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(description, files, compensation, message);
+      return error(message);
     }
     return orElse();
   }
@@ -1350,21 +774,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
 }
 
 abstract class _DashboardStateError implements DashboardState {
-  const factory _DashboardStateError(
-      {required final String description,
-      required final Set<File> files,
-      required final double compensation,
-      required final String? message}) = _$DashboardStateErrorImpl;
+  const factory _DashboardStateError({required final String? message}) =
+      _$DashboardStateErrorImpl;
 
-  @override
-  String get description;
-  @override
-  Set<File> get files;
-  @override
-  double get compensation;
-  @override
   String? get message;
-  @override
   @JsonKey(ignore: true)
   _$$DashboardStateErrorImplCopyWith<_$DashboardStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1372,27 +785,22 @@ abstract class _DashboardStateError implements DashboardState {
 
 /// @nodoc
 mixin _$TagsState {
-  List<String> get tags => throw _privateConstructorUsedError;
-  int get time => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> tags, int time) initial,
-    required TResult Function(List<String> tags, int time) selected,
-    required TResult Function(List<String> tags, int time) unSelected,
+    required TResult Function() initial,
+    required TResult Function(List<String> tags) selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> tags, int time)? initial,
-    TResult? Function(List<String> tags, int time)? selected,
-    TResult? Function(List<String> tags, int time)? unSelected,
+    TResult? Function()? initial,
+    TResult? Function(List<String> tags)? selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> tags, int time)? initial,
-    TResult Function(List<String> tags, int time)? selected,
-    TResult Function(List<String> tags, int time)? unSelected,
+    TResult Function()? initial,
+    TResult Function(List<String> tags)? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1400,27 +808,20 @@ mixin _$TagsState {
   TResult map<TResult extends Object?>({
     required TResult Function(_TagsStateInitial value) initial,
     required TResult Function(_TagsStateSelected value) selected,
-    required TResult Function(_TagsStateUnSelected value) unSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TagsStateInitial value)? initial,
     TResult? Function(_TagsStateSelected value)? selected,
-    TResult? Function(_TagsStateUnSelected value)? unSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TagsStateInitial value)? initial,
     TResult Function(_TagsStateSelected value)? selected,
-    TResult Function(_TagsStateUnSelected value)? unSelected,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $TagsStateCopyWith<TagsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1428,8 +829,6 @@ mixin _$TagsState {
 abstract class $TagsStateCopyWith<$Res> {
   factory $TagsStateCopyWith(TagsState value, $Res Function(TagsState) then) =
       _$TagsStateCopyWithImpl<$Res, TagsState>;
-  @useResult
-  $Res call({List<String> tags, int time});
 }
 
 /// @nodoc
@@ -1441,35 +840,13 @@ class _$TagsStateCopyWithImpl<$Res, $Val extends TagsState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tags = null,
-    Object? time = null,
-  }) {
-    return _then(_value.copyWith(
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$TagsStateInitialImplCopyWith<$Res>
-    implements $TagsStateCopyWith<$Res> {
+abstract class _$$TagsStateInitialImplCopyWith<$Res> {
   factory _$$TagsStateInitialImplCopyWith(_$TagsStateInitialImpl value,
           $Res Function(_$TagsStateInitialImpl) then) =
       __$$TagsStateInitialImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<String> tags, int time});
 }
 
 /// @nodoc
@@ -1479,99 +856,54 @@ class __$$TagsStateInitialImplCopyWithImpl<$Res>
   __$$TagsStateInitialImplCopyWithImpl(_$TagsStateInitialImpl _value,
       $Res Function(_$TagsStateInitialImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tags = null,
-    Object? time = null,
-  }) {
-    return _then(_$TagsStateInitialImpl(
-      tags: null == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$TagsStateInitialImpl implements _TagsStateInitial {
-  const _$TagsStateInitialImpl(
-      {required final List<String> tags, required this.time})
-      : _tags = tags;
-
-  final List<String> _tags;
-  @override
-  List<String> get tags {
-    if (_tags is EqualUnmodifiableListView) return _tags;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tags);
-  }
-
-  @override
-  final int time;
+  const _$TagsStateInitialImpl();
 
   @override
   String toString() {
-    return 'TagsState.initial(tags: $tags, time: $time)';
+    return 'TagsState.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TagsStateInitialImpl &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            (identical(other.time, time) || other.time == time));
+        (other.runtimeType == runtimeType && other is _$TagsStateInitialImpl);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_tags), time);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TagsStateInitialImplCopyWith<_$TagsStateInitialImpl> get copyWith =>
-      __$$TagsStateInitialImplCopyWithImpl<_$TagsStateInitialImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> tags, int time) initial,
-    required TResult Function(List<String> tags, int time) selected,
-    required TResult Function(List<String> tags, int time) unSelected,
+    required TResult Function() initial,
+    required TResult Function(List<String> tags) selected,
   }) {
-    return initial(tags, time);
+    return initial();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> tags, int time)? initial,
-    TResult? Function(List<String> tags, int time)? selected,
-    TResult? Function(List<String> tags, int time)? unSelected,
+    TResult? Function()? initial,
+    TResult? Function(List<String> tags)? selected,
   }) {
-    return initial?.call(tags, time);
+    return initial?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> tags, int time)? initial,
-    TResult Function(List<String> tags, int time)? selected,
-    TResult Function(List<String> tags, int time)? unSelected,
+    TResult Function()? initial,
+    TResult Function(List<String> tags)? selected,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(tags, time);
+      return initial();
     }
     return orElse();
   }
@@ -1581,7 +913,6 @@ class _$TagsStateInitialImpl implements _TagsStateInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(_TagsStateInitial value) initial,
     required TResult Function(_TagsStateSelected value) selected,
-    required TResult Function(_TagsStateUnSelected value) unSelected,
   }) {
     return initial(this);
   }
@@ -1591,7 +922,6 @@ class _$TagsStateInitialImpl implements _TagsStateInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TagsStateInitial value)? initial,
     TResult? Function(_TagsStateSelected value)? selected,
-    TResult? Function(_TagsStateUnSelected value)? unSelected,
   }) {
     return initial?.call(this);
   }
@@ -1601,7 +931,6 @@ class _$TagsStateInitialImpl implements _TagsStateInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TagsStateInitial value)? initial,
     TResult Function(_TagsStateSelected value)? selected,
-    TResult Function(_TagsStateUnSelected value)? unSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1612,29 +941,16 @@ class _$TagsStateInitialImpl implements _TagsStateInitial {
 }
 
 abstract class _TagsStateInitial implements TagsState {
-  const factory _TagsStateInitial(
-      {required final List<String> tags,
-      required final int time}) = _$TagsStateInitialImpl;
-
-  @override
-  List<String> get tags;
-  @override
-  int get time;
-  @override
-  @JsonKey(ignore: true)
-  _$$TagsStateInitialImplCopyWith<_$TagsStateInitialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _TagsStateInitial() = _$TagsStateInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$TagsStateSelectedImplCopyWith<$Res>
-    implements $TagsStateCopyWith<$Res> {
+abstract class _$$TagsStateSelectedImplCopyWith<$Res> {
   factory _$$TagsStateSelectedImplCopyWith(_$TagsStateSelectedImpl value,
           $Res Function(_$TagsStateSelectedImpl) then) =
       __$$TagsStateSelectedImplCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call({List<String> tags, int time});
+  $Res call({List<String> tags});
 }
 
 /// @nodoc
@@ -1649,17 +965,12 @@ class __$$TagsStateSelectedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tags = null,
-    Object? time = null,
   }) {
     return _then(_$TagsStateSelectedImpl(
       tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -1667,8 +978,7 @@ class __$$TagsStateSelectedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TagsStateSelectedImpl implements _TagsStateSelected {
-  const _$TagsStateSelectedImpl(
-      {required final List<String> tags, required this.time})
+  const _$TagsStateSelectedImpl({required final List<String> tags})
       : _tags = tags;
 
   final List<String> _tags;
@@ -1680,11 +990,8 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
   }
 
   @override
-  final int time;
-
-  @override
   String toString() {
-    return 'TagsState.selected(tags: $tags, time: $time)';
+    return 'TagsState.selected(tags: $tags)';
   }
 
   @override
@@ -1692,13 +999,12 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TagsStateSelectedImpl &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            (identical(other.time, time) || other.time == time));
+            const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_tags), time);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
   @override
@@ -1710,33 +1016,30 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> tags, int time) initial,
-    required TResult Function(List<String> tags, int time) selected,
-    required TResult Function(List<String> tags, int time) unSelected,
+    required TResult Function() initial,
+    required TResult Function(List<String> tags) selected,
   }) {
-    return selected(tags, time);
+    return selected(tags);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> tags, int time)? initial,
-    TResult? Function(List<String> tags, int time)? selected,
-    TResult? Function(List<String> tags, int time)? unSelected,
+    TResult? Function()? initial,
+    TResult? Function(List<String> tags)? selected,
   }) {
-    return selected?.call(tags, time);
+    return selected?.call(tags);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> tags, int time)? initial,
-    TResult Function(List<String> tags, int time)? selected,
-    TResult Function(List<String> tags, int time)? unSelected,
+    TResult Function()? initial,
+    TResult Function(List<String> tags)? selected,
     required TResult orElse(),
   }) {
     if (selected != null) {
-      return selected(tags, time);
+      return selected(tags);
     }
     return orElse();
   }
@@ -1746,7 +1049,6 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
   TResult map<TResult extends Object?>({
     required TResult Function(_TagsStateInitial value) initial,
     required TResult Function(_TagsStateSelected value) selected,
-    required TResult Function(_TagsStateUnSelected value) unSelected,
   }) {
     return selected(this);
   }
@@ -1756,7 +1058,6 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TagsStateInitial value)? initial,
     TResult? Function(_TagsStateSelected value)? selected,
-    TResult? Function(_TagsStateUnSelected value)? unSelected,
   }) {
     return selected?.call(this);
   }
@@ -1766,7 +1067,6 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TagsStateInitial value)? initial,
     TResult Function(_TagsStateSelected value)? selected,
-    TResult Function(_TagsStateUnSelected value)? unSelected,
     required TResult orElse(),
   }) {
     if (selected != null) {
@@ -1777,181 +1077,11 @@ class _$TagsStateSelectedImpl implements _TagsStateSelected {
 }
 
 abstract class _TagsStateSelected implements TagsState {
-  const factory _TagsStateSelected(
-      {required final List<String> tags,
-      required final int time}) = _$TagsStateSelectedImpl;
+  const factory _TagsStateSelected({required final List<String> tags}) =
+      _$TagsStateSelectedImpl;
 
-  @override
   List<String> get tags;
-  @override
-  int get time;
-  @override
   @JsonKey(ignore: true)
   _$$TagsStateSelectedImplCopyWith<_$TagsStateSelectedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$TagsStateUnSelectedImplCopyWith<$Res>
-    implements $TagsStateCopyWith<$Res> {
-  factory _$$TagsStateUnSelectedImplCopyWith(_$TagsStateUnSelectedImpl value,
-          $Res Function(_$TagsStateUnSelectedImpl) then) =
-      __$$TagsStateUnSelectedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<String> tags, int time});
-}
-
-/// @nodoc
-class __$$TagsStateUnSelectedImplCopyWithImpl<$Res>
-    extends _$TagsStateCopyWithImpl<$Res, _$TagsStateUnSelectedImpl>
-    implements _$$TagsStateUnSelectedImplCopyWith<$Res> {
-  __$$TagsStateUnSelectedImplCopyWithImpl(_$TagsStateUnSelectedImpl _value,
-      $Res Function(_$TagsStateUnSelectedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tags = null,
-    Object? time = null,
-  }) {
-    return _then(_$TagsStateUnSelectedImpl(
-      tags: null == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$TagsStateUnSelectedImpl implements _TagsStateUnSelected {
-  const _$TagsStateUnSelectedImpl(
-      {required final List<String> tags, required this.time})
-      : _tags = tags;
-
-  final List<String> _tags;
-  @override
-  List<String> get tags {
-    if (_tags is EqualUnmodifiableListView) return _tags;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tags);
-  }
-
-  @override
-  final int time;
-
-  @override
-  String toString() {
-    return 'TagsState.unSelected(tags: $tags, time: $time)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TagsStateUnSelectedImpl &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            (identical(other.time, time) || other.time == time));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_tags), time);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TagsStateUnSelectedImplCopyWith<_$TagsStateUnSelectedImpl> get copyWith =>
-      __$$TagsStateUnSelectedImplCopyWithImpl<_$TagsStateUnSelectedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(List<String> tags, int time) initial,
-    required TResult Function(List<String> tags, int time) selected,
-    required TResult Function(List<String> tags, int time) unSelected,
-  }) {
-    return unSelected(tags, time);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> tags, int time)? initial,
-    TResult? Function(List<String> tags, int time)? selected,
-    TResult? Function(List<String> tags, int time)? unSelected,
-  }) {
-    return unSelected?.call(tags, time);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> tags, int time)? initial,
-    TResult Function(List<String> tags, int time)? selected,
-    TResult Function(List<String> tags, int time)? unSelected,
-    required TResult orElse(),
-  }) {
-    if (unSelected != null) {
-      return unSelected(tags, time);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_TagsStateInitial value) initial,
-    required TResult Function(_TagsStateSelected value) selected,
-    required TResult Function(_TagsStateUnSelected value) unSelected,
-  }) {
-    return unSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_TagsStateInitial value)? initial,
-    TResult? Function(_TagsStateSelected value)? selected,
-    TResult? Function(_TagsStateUnSelected value)? unSelected,
-  }) {
-    return unSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_TagsStateInitial value)? initial,
-    TResult Function(_TagsStateSelected value)? selected,
-    TResult Function(_TagsStateUnSelected value)? unSelected,
-    required TResult orElse(),
-  }) {
-    if (unSelected != null) {
-      return unSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TagsStateUnSelected implements TagsState {
-  const factory _TagsStateUnSelected(
-      {required final List<String> tags,
-      required final int time}) = _$TagsStateUnSelectedImpl;
-
-  @override
-  List<String> get tags;
-  @override
-  int get time;
-  @override
-  @JsonKey(ignore: true)
-  _$$TagsStateUnSelectedImplCopyWith<_$TagsStateUnSelectedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

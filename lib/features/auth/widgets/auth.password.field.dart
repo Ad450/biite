@@ -30,7 +30,7 @@ class AuthPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = getIt.get<PasswordFieldBloc>(instanceName: instance);
-    return BlocBuilder<PasswordFieldBloc, PasswordState>(
+    return BlocBuilder<PasswordFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(

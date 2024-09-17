@@ -17,7 +17,7 @@ class LoginFormButton extends StatelessWidget {
     final loginBloc = getIt.get<LoginFormBloc>();
     final authBloc = getIt.get<AuthBloc>();
 
-    return BlocListener<LoginFormBloc, SigninFormFieldState>(
+    return BlocListener<LoginFormBloc, FormFieldBaseState>(
       bloc: loginBloc,
       listenWhen: (previous, current) => true,
       listener: (_, state) => state.maybeMap(

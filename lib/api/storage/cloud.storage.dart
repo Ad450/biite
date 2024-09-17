@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,7 +16,7 @@ class CloudStorageImpl implements CloudStorage {
   @override
   Future<String> upload(String filepath) async {
     try {
-      Reference reference = _storage.ref(filepath);
+      Reference reference = _storage.ref();
 
       UploadTask uploadTask = reference.putFile(File(filepath));
 

@@ -24,11 +24,35 @@ class AuthBloc extends Bloc<AuthEvents, AuthState> {
   void _signup(SignupEvent event, Emitter<AuthState> emit) async {
     emit(AuthState.signupLoading(user: state.user, message: state.message));
 
-    final param = SignupParam(
-      email: _signupFormBloc.emailFieldBloc.state.data,
-      password: _signupFormBloc.confirmPasswordFieldBloc.state.data,
-      name: _signupFormBloc.nameFieldBloc.state.data,
+    final email = _signupFormBloc.emailFieldBloc.state.maybeMap(
+      orElse: () => "",
+      valid: (state) => state.data,
     );
+
+    final password = _signupFormBloc.confirmPasswordFieldBloc.state.maybeMap(
+      orElse: () => "",
+      valid: (state) => state.data,
+    );
+
+    final name = _signupFormBloc.nameFieldBloc.state.maybeMap(
+      orElse: () => "",
+      valid: (state) => state.data,
+    );
+
+    /// for debugging
+    assert(() {
+      if (name.isEmpty || password.isEmpty || email.isEmpty) {
+        return false;
+      }
+      return true;
+    }());
+
+    if (password.isEmpty || name.isEmpty || email.isEmpty) {
+      emit(const AuthState.error(user: null, message: "fill all fields"));
+      return;
+    }
+
+    final param = SignupParam(email: email, password: password, name: name);
 
     final result = await authRepository.signup(param);
     result.fold(
@@ -39,11 +63,29 @@ class AuthBloc extends Bloc<AuthEvents, AuthState> {
 
   void _signin(LoginEvent event, Emitter<AuthState> emit) async {
     emit(AuthState.signinLoading(user: state.user, message: state.message));
-
-    final param = SigninParam(
-      email: _loginFormBloc.emailFieldBloc.state.data,
-      password: _loginFormBloc.passwordFieldBloc.state.data,
+    final email = _loginFormBloc.emailFieldBloc.state.maybeMap(
+      orElse: () => "",
+      valid: (state) => state.data,
     );
+
+    final password = _loginFormBloc.passwordFieldBloc.state.maybeMap(
+      orElse: () => "",
+      valid: (state) => state.data,
+    );
+
+    assert(() {
+      if (password.isEmpty || email.isEmpty) {
+        return false;
+      }
+      return true;
+    }());
+
+    if (password.isEmpty || email.isEmpty) {
+      emit(const AuthState.error(user: null, message: "fill all fields"));
+      return;
+    }
+
+    final param = SigninParam(email: email, password: password);
 
     final result = await authRepository.signin(param);
     result.fold(

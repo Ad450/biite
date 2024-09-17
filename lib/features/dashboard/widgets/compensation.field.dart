@@ -29,12 +29,12 @@ class CompensationField extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = getIt.get<CompensationFieldBloc>(instanceName: "createProject");
 
-    return BlocBuilder<CompensationFieldBloc, CompensationState>(
+    return BlocBuilder<CompensationFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(
           null,
-          onChanged: (text) => bloc.add(CompensationFieldEvent(double.parse(text))),
+          onChanged: (text) => bloc.add(CompensationFieldEvent(double.parse(text.isEmpty ? "0" : text))),
           controller: bloc.compensationController,
         ),
         invalid: (state) => _buildField(

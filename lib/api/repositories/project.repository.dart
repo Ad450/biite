@@ -73,6 +73,8 @@ class ProjectRepostoryImpl implements ProjectRepository {
         throw Exception("id null at fetch all chats");
       }
 
+      print("here are the tags ${param.tags}");
+
       // upload files to cloud storage
       final futures = <Future<String>>[];
       for (var file in param.files) {

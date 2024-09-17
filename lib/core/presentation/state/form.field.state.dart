@@ -3,70 +3,21 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'form.field.state.freezed.dart';
 
 @freezed
-class SignupFormFieldState with _$SignupFormFieldState {
-  const factory SignupFormFieldState.initial({
-    required bool isValid,
-    required String? message,
-  }) = _SignupFormFieldStateInitial;
+class FormFieldBaseState with _$FormFieldBaseState {
+  const factory FormFieldBaseState.initial() = _FormFieldStateInitial;
 
-  const factory SignupFormFieldState.valid({
-    required bool isValid,
-    required String? message,
-  }) = _SignupFormFieldStateValid;
+  const factory FormFieldBaseState.valid() = _FormFieldStateValid;
 
-  const factory SignupFormFieldState.loading({
-    required bool isValid,
-    required String? message,
-  }) = _SignupFormFieldStateLoading;
+  const factory FormFieldBaseState.loading() = _FormFieldStateLoading;
 
-  const factory SignupFormFieldState.invalid({
-    required bool isValid,
-    required String? message,
-  }) = _SignupFormFieldStateInvalid;
-}
+  const factory FormFieldBaseState.invalid({required String? message}) = _FormFieldStateInvalid;
 
-@freezed
-class SigninFormFieldState with _$SigninFormFieldState {
-  const factory SigninFormFieldState.initial({
-    required bool isValid,
-    required String? message,
-  }) = _SigninFormFieldStateInitial;
+  /// Always return false to ensure objects are never considered equal
+  // @override
+  // bool operator ==(Object other) => false;
 
-  const factory SigninFormFieldState.valid({
-    required bool isValid,
-    required String? message,
-  }) = _SigninFormFieldStateValid;
+  // @override
+  // int get hashCode => 0;
 
-  const factory SigninFormFieldState.loading({
-    required bool isValid,
-    required String? message,
-  }) = _SigninFormFieldStateLoading;
-
-  const factory SigninFormFieldState.invalid({
-    required bool isValid,
-    required String? message,
-  }) = _SigninFormFieldStateInvalid;
-}
-
-@freezed
-class CreateProjectFormFieldState with _$CreateProjectFormFieldState {
-  const factory CreateProjectFormFieldState.initial({
-    required bool isValid,
-    required String? message,
-  }) = _CreateProjectFormFieldStateInitial;
-
-  const factory CreateProjectFormFieldState.valid({
-    required bool isValid,
-    required String? message,
-  }) = _CreateProjectFormFieldStateValid;
-
-  const factory CreateProjectFormFieldState.loading({
-    required bool isValid,
-    required String? message,
-  }) = _CreateProjectFormFieldStateLoading;
-
-  const factory CreateProjectFormFieldState.invalid({
-    required bool isValid,
-    required String? message,
-  }) = _CreateProjectFormFieldStateInvalid;
+  // FormFieldBaseState._();
 }

@@ -28,7 +28,7 @@ class AuthConfirmPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = getIt.get<ConfirmPasswordFieldBloc>();
-    return BlocBuilder<ConfirmPasswordFieldBloc, ConfirmPasswordState>(
+    return BlocBuilder<ConfirmPasswordFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(

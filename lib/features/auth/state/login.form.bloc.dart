@@ -7,11 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class LoginFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
+class LoginFormBloc extends FormFieldBaseBloc {
   LoginFormBloc(
     @Named("login") this.emailFieldBloc,
     @Named("login") this.passwordFieldBloc,
-  ) : super(const SigninFormFieldState.initial(isValid: false, message: null)) {
+  ) : super(const FormFieldBaseState.initial()) {
     on<LoginFormFieldEvent>(isValid);
   }
 
@@ -19,17 +19,18 @@ class LoginFormBloc extends FormFieldBaseBloc<SigninFormFieldState> {
   final PasswordFieldBloc passwordFieldBloc;
 
   @override
-  void isValid(FormFieldEvent event, Emitter<SigninFormFieldState> emit) {
+  void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
     if (event is LoginFormFieldEvent) {
-      if (!emailFieldBloc.state.isValid) {
-        emit(SigninFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+      const FormFieldBaseState.initial();
+      if (emailFieldBloc.state.maybeWhen(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: emailFieldBloc.getErrorText()));
         return;
       }
-      if (!passwordFieldBloc.state.isValid) {
-        emit(SigninFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+      if (passwordFieldBloc.state.maybeWhen(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: passwordFieldBloc.getErrorText()));
         return;
       }
-      emit(const SigninFormFieldState.valid(isValid: true, message: null));
+      emit(const FormFieldBaseState.valid());
     }
   }
 }

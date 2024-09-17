@@ -16,7 +16,7 @@ class CreateProjectFormButton extends StatelessWidget {
     final projectBloc = getIt.get<CreateProjectFormBloc>();
     final dashboardBloc = getIt.get<DasboardBloc>();
 
-    return BlocListener<CreateProjectFormBloc, CreateProjectFormFieldState>(
+    return BlocListener<CreateProjectFormBloc, FormFieldBaseState>(
       bloc: projectBloc,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,

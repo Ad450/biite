@@ -18,13 +18,8 @@ class DasboardBloc extends Cubit<DashboardState> {
     @Named('createProject') this._compensationFieldBloc,
     @Named('createProject') this._descriptionFieldBloc,
     @Named("createProject") this._titleFieldBloc,
-    this._tagsBloc,
-  ) : super(const DashboardState.initial(
-          description: "",
-          files: {},
-          compensation: 0,
-          message: null,
-        ));
+    @Named("createProject") this._tagsBloc,
+  ) : super(const DashboardState.initial());
 
   final ProjectRepository _projectRepository;
   final DescriptionFieldBloc _descriptionFieldBloc;
@@ -32,18 +27,8 @@ class DasboardBloc extends Cubit<DashboardState> {
   final TagsBloc _tagsBloc;
   final NameFieldBloc _titleFieldBloc;
 
-  DashboardState getErrorState(String message) => DashboardState.error(
-        description: state.description,
-        files: state.files,
-        compensation: state.compensation,
-        message: message,
-      );
-  DashboardState getFileSelectedState(Set<File> files) => DashboardState.fileSelected(
-        description: state.description,
-        files: files,
-        compensation: state.compensation,
-        message: state.message,
-      );
+  DashboardState getErrorState(String message) => DashboardState.error(message: message);
+  DashboardState getFileSelectedState(Set<File> files) => DashboardState.fileSelected(files: files);
 
   void pickFiles() async {
     Set<File> files = {};
@@ -70,7 +55,9 @@ class DasboardBloc extends Cubit<DashboardState> {
 
   void removeFile(String path) {
     /// make copy of files
-    var files = {...state.files};
+    var files = <File>{
+      ...state.maybeMap(orElse: () => {}, fileSelected: (fileState) => {...fileState.files})
+    };
 
     /// remove file with path [path] from the copy
     /// update the state with the copy
@@ -80,25 +67,35 @@ class DasboardBloc extends Cubit<DashboardState> {
 
   void createProject() async {
     print("got here create project");
-    emit(
-      DashboardState.loading(
-          description: state.description, files: state.files, compensation: state.compensation, message: state.message),
+    emit(const DashboardState.loading());
+
+    final description = _descriptionFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
+    final compensation = _compensationFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
+    final title = _titleFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
+    List<String> tags = _tagsBloc.state.maybeMap(orElse: () => <String>[], selected: (state) => state.tags);
+
+    List<String> files = state.maybeMap(
+      orElse: () => <String>[],
+      fileSelected: (state) => state.files.map((e) => e.path).toList(),
     );
-    print("this is from dashboard ${_tagsBloc.state.tags}");
+
+    if (title.isEmpty || description.isEmpty || compensation.isEmpty) {
+      emit(const DashboardState.error(message: "fill all fields"));
+      return;
+    }
 
     final param = CreateProjectParam(
-      description: _descriptionFieldBloc.state.data,
-      files: state.files.map((e) => e.path).toList(),
-      rate: _compensationFieldBloc.state.data,
-      tags: _tagsBloc.state.tags,
-      title: _titleFieldBloc.state.data,
+      description: description,
+      files: files,
+      rate: double.parse(compensation),
+      tags: tags,
+      title: title,
     );
 
     final result = await _projectRepository.createProject(param);
     result.fold(
       (l) => emit(getErrorState(l.message)),
-      (r) => emit(DashboardState.projectCreated(
-          description: state.description, files: state.files, compensation: state.compensation, message: null)),
+      (r) => emit(const DashboardState.projectCreated()),
     );
   }
 }

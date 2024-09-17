@@ -4,36 +4,36 @@ import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EmailFieldBloc extends FieldBaseBloc<EmailState> {
+class EmailFieldBloc extends FieldBaseBloc {
   EmailFieldBloc()
-      : emailController = TextEditingController(),
-        super(const EmailState.initial(data: "", message: "invalid email", isValid: false)) {
+      : controller = TextEditingController(),
+        super(const FieldState.initial()) {
     on<EmailFieldEvent>(isValid);
   }
 
-  final TextEditingController emailController;
+  final TextEditingController controller;
 
   final emailRegex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 
   @override
-  void isValid(FieldEvent event, Emitter<EmailState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is EmailFieldEvent) {
       if (event.email == null) {
-        emit(EmailState.invalid(data: state.data, message: "email cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "email cant not be null"));
         return;
       }
 
       if (!emailRegex.hasMatch(event.email!)) {
-        emit(EmailState.invalid(data: state.data, message: "invalid email", isValid: false));
+        emit(const FieldState.invalid(message: "invalid email"));
         return;
       }
-      emit(EmailState.valid(data: event.email!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.email!));
     }
   }
 
   @override
   Future<void> close() {
-    emailController.dispose();
+    controller.dispose();
     return super.close();
   }
 }

@@ -29,7 +29,7 @@ class ProjectDescriptionField extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = getIt.get<DescriptionFieldBloc>(instanceName: "createProject");
 
-    return BlocBuilder<DescriptionFieldBloc, DescriptionState>(
+    return BlocBuilder<DescriptionFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(

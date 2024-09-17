@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class NameFieldBloc extends FieldBaseBloc<NameState> {
+class NameFieldBloc extends FieldBaseBloc {
   NameFieldBloc()
       : nameController = TextEditingController(),
-        super(const NameState.initial(data: "", message: "invalid name", isValid: false)) {
+        super(const FieldState.initial()) {
     on<NameFieldEvent>(isValid);
   }
 
@@ -18,19 +18,19 @@ class NameFieldBloc extends FieldBaseBloc<NameState> {
   final nameRegex = RegExp(r'^[A-Za-z ]+$');
 
   @override
-  void isValid(FieldEvent event, Emitter<NameState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is NameFieldEvent) {
       if (event.name == null) {
-        emit(NameState.invalid(data: state.data, message: "name cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "name cant not be null"));
         return;
       }
 
       if (!nameRegex.hasMatch(event.name!)) {
-        emit(NameState.invalid(data: state.data, message: "invalid name", isValid: false));
+        emit(const FieldState.invalid(message: "invalid name"));
         return;
       }
 
-      emit(NameState.valid(data: event.name!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.name!));
     }
   }
 

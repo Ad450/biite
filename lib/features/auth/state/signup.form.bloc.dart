@@ -9,13 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
+class SignupFormBloc extends FormFieldBaseBloc {
   SignupFormBloc(
     @Named("signup") this.emailFieldBloc,
     @Named("signup") this.passwordFieldBloc,
     this.confirmPasswordFieldBloc,
     this.nameFieldBloc,
-  ) : super(const SignupFormFieldState.initial(isValid: false, message: null)) {
+  ) : super(const FormFieldBaseState.initial()) {
     on<SignupFormFieldEvent>(isValid);
   }
 
@@ -25,25 +25,25 @@ class SignupFormBloc extends FormFieldBaseBloc<SignupFormFieldState> {
   final NameFieldBloc nameFieldBloc;
 
   @override
-  void isValid(FormFieldEvent event, Emitter<SignupFormFieldState> emit) {
+  void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
     if (event is SignupFormFieldEvent) {
-      if (!emailFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: emailFieldBloc.state.message));
+      if (emailFieldBloc.state.maybeWhen(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: emailFieldBloc.getErrorText()));
         return;
       }
-      if (!passwordFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: passwordFieldBloc.state.message));
+      if (passwordFieldBloc.state.maybeMap(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: passwordFieldBloc.getErrorText()));
         return;
       }
-      if (!confirmPasswordFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: confirmPasswordFieldBloc.state.message));
+      if (confirmPasswordFieldBloc.state.maybeWhen(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: confirmPasswordFieldBloc.getErrorText()));
         return;
       }
-      if (!nameFieldBloc.state.isValid) {
-        emit(SignupFormFieldState.invalid(isValid: false, message: nameFieldBloc.state.message));
+      if (nameFieldBloc.state.maybeWhen(orElse: () => true, valid: (_) => false)) {
+        emit(FormFieldBaseState.invalid(message: nameFieldBloc.getErrorText()));
         return;
       }
-      emit(const SignupFormFieldState.valid(isValid: true, message: null));
+      emit(const FormFieldBaseState.valid());
     }
   }
 }

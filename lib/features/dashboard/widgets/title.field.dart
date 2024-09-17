@@ -1,5 +1,4 @@
 import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
 import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
@@ -30,7 +29,7 @@ class TitleField extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = getIt.get<NameFieldBloc>(instanceName: "createProject");
 
-    return BlocBuilder<NameFieldBloc, NameState>(
+    return BlocBuilder<NameFieldBloc, FieldState>(
       bloc: bloc,
       builder: (_, state) => state.maybeMap(
         orElse: () => _buildField(

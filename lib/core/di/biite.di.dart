@@ -5,6 +5,7 @@ import 'package:biite/core/presentation/state/description.field.bloc.dart';
 import 'package:biite/core/presentation/state/email.field.bloc.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/core/presentation/state/password.field.bloc.dart';
+import 'package:biite/features/dashboard/bloc/tags.bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -59,4 +60,8 @@ abstract class FirebaseModule {
   @Named('createProject')
   @lazySingleton
   DescriptionFieldBloc get descriptionFieldBloc => DescriptionFieldBloc();
+
+  @Named('createProject')
+  @lazySingleton
+  TagsBloc get tagsBloc => TagsBloc();
 }

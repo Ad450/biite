@@ -4,32 +4,31 @@ import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DescriptionFieldBloc extends FieldBaseBloc<DescriptionState> {
+class DescriptionFieldBloc extends FieldBaseBloc {
   DescriptionFieldBloc()
       : descriptionController = TextEditingController(),
-        super(const DescriptionState.initial(data: "", message: "invalid description", isValid: false)) {
+        super(const FieldState.initial()) {
     on<DescriptionFieldEvent>(isValid);
   }
 
   final TextEditingController descriptionController;
 
   @override
-  void isValid(FieldEvent event, Emitter<DescriptionState> emit) {
+  void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is DescriptionFieldEvent) {
       if (event.description == null) {
-        emit(DescriptionState.invalid(data: state.data, message: "description cant not be null", isValid: false));
+        emit(const FieldState.invalid(message: "description cant not be null"));
         return;
       }
 
       if (event.description!.length < 20) {
         emit(
-          DescriptionState.invalid(
-              data: state.data, message: "description should be more than 20 characters", isValid: false),
+          const FieldState.invalid(message: "description should be more than 20 characters"),
         );
         return;
       }
 
-      emit(DescriptionState.valid(data: event.description!, message: null, isValid: true));
+      emit(FieldState.valid(data: event.description!));
     }
   }
 

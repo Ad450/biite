@@ -3,6 +3,8 @@ import 'package:biite/core/presentation/state/email.field.bloc.dart';
 import 'package:biite/core/presentation/state/form.field.events.dart';
 import 'package:biite/core/presentation/state/form.field.state.dart';
 import 'package:biite/core/presentation/state/password.field.bloc.dart';
+import 'package:biite/features/auth/state/auth.bloc.dart';
+import 'package:biite/features/auth/state/auth.events.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,12 +13,14 @@ class LoginFormBloc extends FormFieldBaseBloc {
   LoginFormBloc(
     @Named("login") this.emailFieldBloc,
     @Named("login") this.passwordFieldBloc,
+    this._authBloc,
   ) : super(const FormFieldBaseState.initial()) {
     on<LoginFormFieldEvent>(isValid);
   }
 
   final EmailFieldBloc emailFieldBloc;
   final PasswordFieldBloc passwordFieldBloc;
+  final AuthBloc _authBloc;
 
   @override
   void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
@@ -30,7 +34,8 @@ class LoginFormBloc extends FormFieldBaseBloc {
         emit(FormFieldBaseState.invalid(message: passwordFieldBloc.getErrorText()));
         return;
       }
-      emit(const FormFieldBaseState.valid());
+      // emit(const FormFieldBaseState.valid());
+      _authBloc.add(LoginEvent());
     }
   }
 }

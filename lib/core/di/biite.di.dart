@@ -38,6 +38,10 @@ abstract class FirebaseModule {
   @singleton
   EmailFieldBloc get signupEmailFieldBloc => EmailFieldBloc();
 
+  @Named('signup')
+  @singleton
+  NameFieldBloc get signupNameFieldBloc => NameFieldBloc();
+
   @Named('login')
   @singleton
   EmailFieldBloc get loginEmailFieldBloc => EmailFieldBloc();

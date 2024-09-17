@@ -16,13 +16,13 @@ class SignupFormButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final signupBloc = getIt.get<SignupFormBloc>();
-    final authBloc = getIt.get<AuthBloc>();
+    // final authBloc = getIt.get<AuthBloc>();
 
     return BlocListener<SignupFormBloc, FormFieldBaseState>(
       bloc: signupBloc,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
-        valid: (state) => authBloc.add(SignupEvent()),
+        // valid: (state) => authBloc.add(SignupEvent()),
         invalid: (state) => showToast(state.message!),
       ),
       child: BiiteTextButton(

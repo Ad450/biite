@@ -5,6 +5,8 @@ import 'package:biite/core/presentation/state/form.field.events.dart';
 import 'package:biite/core/presentation/state/form.field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/core/presentation/state/password.field.bloc.dart';
+import 'package:biite/features/auth/state/auth.bloc.dart';
+import 'package:biite/features/auth/state/auth.events.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -23,6 +25,7 @@ class SignupFormBloc extends FormFieldBaseBloc {
   final PasswordFieldBloc passwordFieldBloc;
   final ConfirmPasswordFieldBloc confirmPasswordFieldBloc;
   final NameFieldBloc nameFieldBloc;
+  // final AuthBloc _authBloc;
 
   @override
   void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
@@ -43,7 +46,7 @@ class SignupFormBloc extends FormFieldBaseBloc {
         emit(FormFieldBaseState.invalid(message: nameFieldBloc.getErrorText()));
         return;
       }
-      emit(const FormFieldBaseState.valid());
+      // _authBloc.add(SignupEvent());
     }
   }
 }

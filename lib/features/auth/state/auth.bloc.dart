@@ -1,40 +1,50 @@
 import 'package:biite/api/repositories/auth.repository.dart';
 import 'package:biite/api/utils/repository.params.dart';
+import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
+import 'package:biite/core/presentation/state/email.field.bloc.dart';
+import 'package:biite/core/presentation/state/name.field.bloc.dart';
+import 'package:biite/core/presentation/state/password.field.bloc.dart';
 import 'package:biite/features/auth/state/auth.events.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
-import 'package:biite/features/auth/state/login.form.bloc.dart';
-import 'package:biite/features/auth/state/signup.form.bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
 class AuthBloc extends Bloc<AuthEvents, AuthState> {
-  AuthBloc(this.authRepository, this._loginFormBloc, this._signupFormBloc)
-      : super(const AuthState.initial(user: null, message: null)) {
+  AuthBloc(
+    this.authRepository,
+    @Named("signup") this._signupEmailFieldBloc,
+    @Named("signup") this._nameFieldBloc,
+    @Named("login") this._loginEmailFieldBloc,
+    @Named("login") this._loginPasswordFieldBloc,
+    this._confirmPasswordFieldBloc,
+  ) : super(const AuthState.initial(user: null, message: null)) {
     on<AppStartedEvent>(_checkUserExistence);
     on<SignupEvent>(_signup);
     on<LoginEvent>(_signin);
   }
 
   final AuthRepository authRepository;
-
-  final LoginFormBloc _loginFormBloc;
-  final SignupFormBloc _signupFormBloc;
+  final EmailFieldBloc _signupEmailFieldBloc;
+  final EmailFieldBloc _loginEmailFieldBloc;
+  final PasswordFieldBloc _loginPasswordFieldBloc;
+  final ConfirmPasswordFieldBloc _confirmPasswordFieldBloc;
+  final NameFieldBloc _nameFieldBloc;
 
   void _signup(SignupEvent event, Emitter<AuthState> emit) async {
     emit(AuthState.signupLoading(user: state.user, message: state.message));
 
-    final email = _signupFormBloc.emailFieldBloc.state.maybeMap(
+    final email = _signupEmailFieldBloc.state.maybeMap(
       orElse: () => "",
       valid: (state) => state.data,
     );
 
-    final password = _signupFormBloc.confirmPasswordFieldBloc.state.maybeMap(
+    final password = _confirmPasswordFieldBloc.state.maybeMap(
       orElse: () => "",
       valid: (state) => state.data,
     );
 
-    final name = _signupFormBloc.nameFieldBloc.state.maybeMap(
+    final name = _nameFieldBloc.state.maybeMap(
       orElse: () => "",
       valid: (state) => state.data,
     );
@@ -63,12 +73,12 @@ class AuthBloc extends Bloc<AuthEvents, AuthState> {
 
   void _signin(LoginEvent event, Emitter<AuthState> emit) async {
     emit(AuthState.signinLoading(user: state.user, message: state.message));
-    final email = _loginFormBloc.emailFieldBloc.state.maybeMap(
+    final email = _loginEmailFieldBloc.state.maybeMap(
       orElse: () => "",
       valid: (state) => state.data,
     );
 
-    final password = _loginFormBloc.passwordFieldBloc.state.maybeMap(
+    final password = _loginPasswordFieldBloc.state.maybeMap(
       orElse: () => "",
       valid: (state) => state.data,
     );

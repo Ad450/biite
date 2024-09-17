@@ -3,8 +3,6 @@ import 'package:biite/core/presentation/state/form.field.events.dart';
 import 'package:biite/core/presentation/state/form.field.state.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
-import 'package:biite/features/auth/state/auth.bloc.dart';
-import 'package:biite/features/auth/state/auth.events.dart';
 import 'package:biite/features/auth/state/login.form.bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,14 +13,14 @@ class LoginFormButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginBloc = getIt.get<LoginFormBloc>();
-    final authBloc = getIt.get<AuthBloc>();
+    // final authBloc = getIt.get<AuthBloc>();
 
     return BlocListener<LoginFormBloc, FormFieldBaseState>(
       bloc: loginBloc,
       listenWhen: (previous, current) => true,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
-        valid: (state) => authBloc.add(LoginEvent()),
+        // valid: (state) => authBloc.add(LoginEvent()),
         invalid: (state) => showToast(state.message!),
       ),
       child: BiiteTextButton(

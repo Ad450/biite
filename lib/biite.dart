@@ -2,7 +2,9 @@ import 'package:biite/core/app/app.router.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class Biite extends StatelessWidget {
   const Biite({super.key});
 

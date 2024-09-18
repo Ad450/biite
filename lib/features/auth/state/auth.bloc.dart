@@ -76,6 +76,9 @@ class AuthBloc extends Bloc<AuthEvents, AuthState> {
   }
 
   void _signin(LoginEvent event, Emitter<AuthState> emit) async {
+    bool isLoading = state.maybeWhen(orElse: () => false, signinLoading: (_, __) => true);
+    if (isLoading) return;
+
     emit(AuthState.signinLoading(user: state.user, message: state.message));
     final email = _loginEmailFieldBloc.state.maybeMap(
       orElse: () => "",

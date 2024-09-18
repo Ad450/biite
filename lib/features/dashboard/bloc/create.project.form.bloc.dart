@@ -5,6 +5,7 @@ import 'package:biite/core/presentation/state/form.field.events.dart';
 import 'package:biite/core/presentation/state/form.field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
+import 'package:biite/features/dashboard/bloc/project.bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -14,7 +15,7 @@ class CreateProjectFormBloc extends FormFieldBaseBloc {
     @Named("createProject") this._compensationFieldBloc,
     @Named("createProject") this._descriptionFieldBloc,
     @Named("createProject") this._titleFieldBloc,
-    this._dashboardBloc,
+    this._projectBloc,
   ) : super(const FormFieldBaseState.initial()) {
     on<CreateProjectFormFieldEvent>(isValid);
   }
@@ -22,7 +23,7 @@ class CreateProjectFormBloc extends FormFieldBaseBloc {
   final CompensationFieldBloc _compensationFieldBloc;
   final DescriptionFieldBloc _descriptionFieldBloc;
   final NameFieldBloc _titleFieldBloc;
-  final DasboardBloc _dashboardBloc;
+  final ProjectBloc _projectBloc;
 
   @override
   void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
@@ -40,7 +41,7 @@ class CreateProjectFormBloc extends FormFieldBaseBloc {
         emit(FormFieldBaseState.invalid(message: _descriptionFieldBloc.getErrorText()));
         return;
       }
-      _dashboardBloc.createProject();
+      _projectBloc.createProject();
     }
   }
 }

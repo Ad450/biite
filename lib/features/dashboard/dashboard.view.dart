@@ -5,6 +5,7 @@ import 'package:biite/core/presentation/widgets/biite.dialog.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
+import 'package:biite/features/dashboard/bloc/project.bloc.dart';
 import 'package:biite/features/dashboard/widgets/compensation.field.dart';
 import 'package:biite/features/dashboard/widgets/create.project.form.button.dart';
 import 'package:biite/features/dashboard/widgets/project.description.field.dart';
@@ -39,76 +40,99 @@ class DashboardView extends StatelessWidget {
               SizedBox(height: 10.h),
               Expanded(
                 child: SingleChildScrollView(
-                  child: BlocConsumer<DasboardBloc, DashboardState>(
-                    bloc: dashboardBloc,
-                    listener: (_, state) => state.maybeMap(
-                      orElse: () => null,
-                      error: (state) => showToast(state.message!),
-                      projectCreated: (_) => showBiiteDialog(context),
-                    ),
-                    builder: (_, state) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        SizedBox(height: 20.h),
-                        Text(
-                          "Create your project",
-                          style: context.appTheme.textTheme.titleSmall?.copyWith(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: 20.h),
+                      Text(
+                        "Create your project",
+                        style: context.appTheme.textTheme.titleSmall?.copyWith(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
                         ),
-                        SizedBox(height: 16.h),
-                        const TitleField(),
-                        SizedBox(height: 16.h),
-                        const ProjectDescriptionField(),
-                        SizedBox(height: 24.h),
-                        UploadFile(onTap: dashboardBloc.pickFiles),
-                        SizedBox(height: 24.h),
-                        // show file if chosen
-                        state.maybeMap(
-                          orElse: () => const SizedBox(),
-                          fileSelected: (state) => SizedBox(
-                              child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: state.files
-                                .map((e) => FileWidget(
-                                      filename: e.path.split("/").last,
-                                      onClose: () => dashboardBloc.removeFile(e.path),
-                                    ))
-                                .toList(),
-                          )),
-                        ),
+                      ),
+                      SizedBox(height: 16.h),
+                      const TitleField(),
+                      SizedBox(height: 16.h),
+                      const ProjectDescriptionField(),
+                      SizedBox(height: 24.h),
+                      UploadFile(onTap: dashboardBloc.pickFiles),
+                      SizedBox(height: 24.h),
+                      // show file if chosen
+                      const _SelectedFileWidget(),
 
-                        SizedBox(height: 16.h),
-                        Text(
-                          "Compensation (GHS)",
-                          style: context.appTheme.textTheme.bodySmall?.copyWith(
-                            fontSize: 16,
-                            color: ColorName.text,
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        "Compensation (GHS)",
+                        style: context.appTheme.textTheme.bodySmall?.copyWith(
+                          fontSize: 16,
+                          color: ColorName.text,
+                          fontWeight: FontWeight.normal,
                         ),
-                        SizedBox(height: 16.h),
-                        const CompensationField(),
-                        SizedBox(height: 16.h),
-                        const Tags(),
-                        SizedBox(height: 80.h),
+                      ),
+                      SizedBox(height: 16.h),
+                      const CompensationField(),
+                      SizedBox(height: 16.h),
+                      const Tags(),
+                      SizedBox(height: 80.h),
 
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 56.w),
-                          child: state.maybeMap(
-                            orElse: () => const CreateProjectFormButton(),
-                            loading: (_) =>
-                                const Align(alignment: Alignment.center, child: CupertinoActivityIndicator()),
-                          ),
-                        )
-                      ],
-                    ),
+                      const _CreateProjectButton(),
+                    ],
                   ),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SelectedFileWidget extends StatelessWidget {
+  const _SelectedFileWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    final dashboardBloc = getIt<DasboardBloc>();
+    return BlocConsumer<DasboardBloc, DashboardState>(
+      bloc: dashboardBloc,
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        error: (state) => showToast(state.message!),
+        projectCreated: (_) => showBiiteDialog(context),
+      ),
+      builder: (_, state) => state.maybeMap(
+        orElse: () => const SizedBox(),
+        fileSelected: (state) => SizedBox(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: state.files
+              .map((e) => FileWidget(
+                    filename: e.path.split("/").last,
+                    onClose: () => dashboardBloc.removeFile(e.path),
+                  ))
+              .toList(),
+        )),
+      ),
+    );
+  }
+}
+
+class _CreateProjectButton extends StatelessWidget {
+  const _CreateProjectButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ProjectBloc, DashboardState>(
+      bloc: getIt<ProjectBloc>(),
+      builder: (_, state) => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 56.w),
+        child: state.maybeMap(
+          orElse: () => const CreateProjectFormButton(),
+          loading: (_) {
+            return const Align(alignment: Alignment.center, child: CupertinoActivityIndicator());
+          },
         ),
       ),
     );

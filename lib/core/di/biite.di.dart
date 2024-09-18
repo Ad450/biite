@@ -1,6 +1,4 @@
 import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
-import 'package:biite/core/presentation/state/compensation.field.bloc.dart';
-import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
 import 'package:biite/core/presentation/state/description.field.bloc.dart';
 import 'package:biite/core/presentation/state/email.field.bloc.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';

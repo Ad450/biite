@@ -30,15 +30,15 @@ class CreatedProjects extends StatelessWidget {
         ),
         // show first 5 latest projects
         SizedBox(height: 16.h),
-        ...List.generate(
-          4,
-          (index) => ProjectWidget(
-            text: "You",
-            header: "Wireframes",
-            trailing: "12/12/2023",
-            onTap: () => context.push("/createdProjectDetail"),
-          ),
-        ),
+        // ...List.generate(
+        //   4,
+        //   (index) => ProjectWidget(
+        //     text: "You",
+        //     header: "Wireframes",
+        //     trailing: "12/12/2023",
+        //     onTap: () => context.push("/createdProjectDetail"),
+        //   ),
+        // ),
       ],
     );
   }

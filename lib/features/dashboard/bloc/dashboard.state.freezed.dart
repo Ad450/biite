@@ -21,6 +21,8 @@ mixin _$DashboardState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) =>
@@ -30,6 +32,8 @@ mixin _$DashboardState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) =>
@@ -39,6 +43,8 @@ mixin _$DashboardState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -50,6 +56,10 @@ mixin _$DashboardState {
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) =>
@@ -59,6 +69,10 @@ mixin _$DashboardState {
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) =>
@@ -68,6 +82,10 @@ mixin _$DashboardState {
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -112,8 +130,8 @@ class __$$DashboardStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DashboardStateInitialImpl implements _DashboardStateInitial {
-  const _$DashboardStateInitialImpl();
+class _$DashboardStateInitialImpl extends _DashboardStateInitial {
+  const _$DashboardStateInitialImpl() : super._();
 
   @override
   String toString() {
@@ -121,21 +139,13 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DashboardStateInitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) {
@@ -148,6 +158,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) {
@@ -160,6 +172,8 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -177,6 +191,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) {
@@ -189,6 +207,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) {
@@ -201,6 +223,10 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -212,8 +238,9 @@ class _$DashboardStateInitialImpl implements _DashboardStateInitial {
   }
 }
 
-abstract class _DashboardStateInitial implements DashboardState {
+abstract class _DashboardStateInitial extends DashboardState {
   const factory _DashboardStateInitial() = _$DashboardStateInitialImpl;
+  const _DashboardStateInitial._() : super._();
 }
 
 /// @nodoc
@@ -235,8 +262,8 @@ class __$$DashboardStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
-  const _$DashboardStateLoadingImpl();
+class _$DashboardStateLoadingImpl extends _DashboardStateLoading {
+  const _$DashboardStateLoadingImpl() : super._();
 
   @override
   String toString() {
@@ -244,21 +271,13 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DashboardStateLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) {
@@ -271,6 +290,8 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) {
@@ -283,6 +304,8 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -300,6 +323,10 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) {
@@ -312,6 +339,10 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) {
@@ -324,6 +355,10 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -335,8 +370,9 @@ class _$DashboardStateLoadingImpl implements _DashboardStateLoading {
   }
 }
 
-abstract class _DashboardStateLoading implements DashboardState {
+abstract class _DashboardStateLoading extends DashboardState {
   const factory _DashboardStateLoading() = _$DashboardStateLoadingImpl;
+  const _DashboardStateLoading._() : super._();
 }
 
 /// @nodoc
@@ -360,9 +396,8 @@ class __$$DashboardStateProjectCreatedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DashboardStateProjectCreatedImpl
-    implements _DashboardStateProjectCreated {
-  const _$DashboardStateProjectCreatedImpl();
+class _$DashboardStateProjectCreatedImpl extends _DashboardStateProjectCreated {
+  const _$DashboardStateProjectCreatedImpl() : super._();
 
   @override
   String toString() {
@@ -370,21 +405,13 @@ class _$DashboardStateProjectCreatedImpl
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DashboardStateProjectCreatedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) {
@@ -397,6 +424,8 @@ class _$DashboardStateProjectCreatedImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) {
@@ -409,6 +438,8 @@ class _$DashboardStateProjectCreatedImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -426,6 +457,10 @@ class _$DashboardStateProjectCreatedImpl
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) {
@@ -438,6 +473,10 @@ class _$DashboardStateProjectCreatedImpl
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) {
@@ -450,6 +489,10 @@ class _$DashboardStateProjectCreatedImpl
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -461,9 +504,364 @@ class _$DashboardStateProjectCreatedImpl
   }
 }
 
-abstract class _DashboardStateProjectCreated implements DashboardState {
+abstract class _DashboardStateProjectCreated extends DashboardState {
   const factory _DashboardStateProjectCreated() =
       _$DashboardStateProjectCreatedImpl;
+  const _DashboardStateProjectCreated._() : super._();
+}
+
+/// @nodoc
+abstract class _$$DashboardStateFetchActiveProjectsImplCopyWith<$Res> {
+  factory _$$DashboardStateFetchActiveProjectsImplCopyWith(
+          _$DashboardStateFetchActiveProjectsImpl value,
+          $Res Function(_$DashboardStateFetchActiveProjectsImpl) then) =
+      __$$DashboardStateFetchActiveProjectsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ProjectModel> projects});
+}
+
+/// @nodoc
+class __$$DashboardStateFetchActiveProjectsImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res,
+        _$DashboardStateFetchActiveProjectsImpl>
+    implements _$$DashboardStateFetchActiveProjectsImplCopyWith<$Res> {
+  __$$DashboardStateFetchActiveProjectsImplCopyWithImpl(
+      _$DashboardStateFetchActiveProjectsImpl _value,
+      $Res Function(_$DashboardStateFetchActiveProjectsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projects = null,
+  }) {
+    return _then(_$DashboardStateFetchActiveProjectsImpl(
+      null == projects
+          ? _value._projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DashboardStateFetchActiveProjectsImpl
+    extends _DashboardStateFetchActiveProjects {
+  const _$DashboardStateFetchActiveProjectsImpl(
+      final List<ProjectModel> projects)
+      : _projects = projects,
+        super._();
+
+  final List<ProjectModel> _projects;
+  @override
+  List<ProjectModel> get projects {
+    if (_projects is EqualUnmodifiableListView) return _projects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_projects);
+  }
+
+  @override
+  String toString() {
+    return 'DashboardState.fetchActiveProjects(projects: $projects)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DashboardStateFetchActiveProjectsImplCopyWith<
+          _$DashboardStateFetchActiveProjectsImpl>
+      get copyWith => __$$DashboardStateFetchActiveProjectsImplCopyWithImpl<
+          _$DashboardStateFetchActiveProjectsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
+  }) {
+    return fetchActiveProjects(projects);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
+  }) {
+    return fetchActiveProjects?.call(projects);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchActiveProjects != null) {
+      return fetchActiveProjects(projects);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DashboardStateInitial value) initial,
+    required TResult Function(_DashboardStateLoading value) loading,
+    required TResult Function(_DashboardStateProjectCreated value)
+        projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
+    required TResult Function(_DashboardStateFileSelected value) fileSelected,
+    required TResult Function(_DashboardStateError value) error,
+  }) {
+    return fetchActiveProjects(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DashboardStateInitial value)? initial,
+    TResult? Function(_DashboardStateLoading value)? loading,
+    TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult? Function(_DashboardStateFileSelected value)? fileSelected,
+    TResult? Function(_DashboardStateError value)? error,
+  }) {
+    return fetchActiveProjects?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DashboardStateInitial value)? initial,
+    TResult Function(_DashboardStateLoading value)? loading,
+    TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult Function(_DashboardStateFileSelected value)? fileSelected,
+    TResult Function(_DashboardStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchActiveProjects != null) {
+      return fetchActiveProjects(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DashboardStateFetchActiveProjects extends DashboardState {
+  const factory _DashboardStateFetchActiveProjects(
+          final List<ProjectModel> projects) =
+      _$DashboardStateFetchActiveProjectsImpl;
+  const _DashboardStateFetchActiveProjects._() : super._();
+
+  List<ProjectModel> get projects;
+  @JsonKey(ignore: true)
+  _$$DashboardStateFetchActiveProjectsImplCopyWith<
+          _$DashboardStateFetchActiveProjectsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DashboardStateFetchCreatedProjectsImplCopyWith<$Res> {
+  factory _$$DashboardStateFetchCreatedProjectsImplCopyWith(
+          _$DashboardStateFetchCreatedProjectsImpl value,
+          $Res Function(_$DashboardStateFetchCreatedProjectsImpl) then) =
+      __$$DashboardStateFetchCreatedProjectsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ProjectModel> projects});
+}
+
+/// @nodoc
+class __$$DashboardStateFetchCreatedProjectsImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res,
+        _$DashboardStateFetchCreatedProjectsImpl>
+    implements _$$DashboardStateFetchCreatedProjectsImplCopyWith<$Res> {
+  __$$DashboardStateFetchCreatedProjectsImplCopyWithImpl(
+      _$DashboardStateFetchCreatedProjectsImpl _value,
+      $Res Function(_$DashboardStateFetchCreatedProjectsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projects = null,
+  }) {
+    return _then(_$DashboardStateFetchCreatedProjectsImpl(
+      null == projects
+          ? _value._projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DashboardStateFetchCreatedProjectsImpl
+    extends _DashboardStateFetchCreatedProjects {
+  const _$DashboardStateFetchCreatedProjectsImpl(
+      final List<ProjectModel> projects)
+      : _projects = projects,
+        super._();
+
+  final List<ProjectModel> _projects;
+  @override
+  List<ProjectModel> get projects {
+    if (_projects is EqualUnmodifiableListView) return _projects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_projects);
+  }
+
+  @override
+  String toString() {
+    return 'DashboardState.fetchCreatedProjects(projects: $projects)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DashboardStateFetchCreatedProjectsImplCopyWith<
+          _$DashboardStateFetchCreatedProjectsImpl>
+      get copyWith => __$$DashboardStateFetchCreatedProjectsImplCopyWithImpl<
+          _$DashboardStateFetchCreatedProjectsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
+    required TResult Function(Set<File> files) fileSelected,
+    required TResult Function(String? message) error,
+  }) {
+    return fetchCreatedProjects(projects);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
+    TResult? Function(Set<File> files)? fileSelected,
+    TResult? Function(String? message)? error,
+  }) {
+    return fetchCreatedProjects?.call(projects);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
+    TResult Function(Set<File> files)? fileSelected,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchCreatedProjects != null) {
+      return fetchCreatedProjects(projects);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DashboardStateInitial value) initial,
+    required TResult Function(_DashboardStateLoading value) loading,
+    required TResult Function(_DashboardStateProjectCreated value)
+        projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
+    required TResult Function(_DashboardStateFileSelected value) fileSelected,
+    required TResult Function(_DashboardStateError value) error,
+  }) {
+    return fetchCreatedProjects(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DashboardStateInitial value)? initial,
+    TResult? Function(_DashboardStateLoading value)? loading,
+    TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult? Function(_DashboardStateFileSelected value)? fileSelected,
+    TResult? Function(_DashboardStateError value)? error,
+  }) {
+    return fetchCreatedProjects?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DashboardStateInitial value)? initial,
+    TResult Function(_DashboardStateLoading value)? loading,
+    TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
+    TResult Function(_DashboardStateFileSelected value)? fileSelected,
+    TResult Function(_DashboardStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchCreatedProjects != null) {
+      return fetchCreatedProjects(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DashboardStateFetchCreatedProjects extends DashboardState {
+  const factory _DashboardStateFetchCreatedProjects(
+          final List<ProjectModel> projects) =
+      _$DashboardStateFetchCreatedProjectsImpl;
+  const _DashboardStateFetchCreatedProjects._() : super._();
+
+  List<ProjectModel> get projects;
+  @JsonKey(ignore: true)
+  _$$DashboardStateFetchCreatedProjectsImplCopyWith<
+          _$DashboardStateFetchCreatedProjectsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -501,9 +899,10 @@ class __$$DashboardStateFileSelectedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
+class _$DashboardStateFileSelectedImpl extends _DashboardStateFileSelected {
   const _$DashboardStateFileSelectedImpl({required final Set<File> files})
-      : _files = files;
+      : _files = files,
+        super._();
 
   final Set<File> _files;
   @override
@@ -518,18 +917,6 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     return 'DashboardState.fileSelected(files: $files)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DashboardStateFileSelectedImpl &&
-            const DeepCollectionEquality().equals(other._files, _files));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_files));
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -543,6 +930,8 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) {
@@ -555,6 +944,8 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) {
@@ -567,6 +958,8 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -584,6 +977,10 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) {
@@ -596,6 +993,10 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) {
@@ -608,6 +1009,10 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -619,9 +1024,10 @@ class _$DashboardStateFileSelectedImpl implements _DashboardStateFileSelected {
   }
 }
 
-abstract class _DashboardStateFileSelected implements DashboardState {
+abstract class _DashboardStateFileSelected extends DashboardState {
   const factory _DashboardStateFileSelected({required final Set<File> files}) =
       _$DashboardStateFileSelectedImpl;
+  const _DashboardStateFileSelected._() : super._();
 
   Set<File> get files;
   @JsonKey(ignore: true)
@@ -662,8 +1068,8 @@ class __$$DashboardStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DashboardStateErrorImpl implements _DashboardStateError {
-  const _$DashboardStateErrorImpl({required this.message});
+class _$DashboardStateErrorImpl extends _DashboardStateError {
+  const _$DashboardStateErrorImpl({required this.message}) : super._();
 
   @override
   final String? message;
@@ -672,17 +1078,6 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
   String toString() {
     return 'DashboardState.error(message: $message)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DashboardStateErrorImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -697,6 +1092,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() projectCreated,
+    required TResult Function(List<ProjectModel> projects) fetchActiveProjects,
+    required TResult Function(List<ProjectModel> projects) fetchCreatedProjects,
     required TResult Function(Set<File> files) fileSelected,
     required TResult Function(String? message) error,
   }) {
@@ -709,6 +1106,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? projectCreated,
+    TResult? Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult? Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult? Function(Set<File> files)? fileSelected,
     TResult? Function(String? message)? error,
   }) {
@@ -721,6 +1120,8 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? projectCreated,
+    TResult Function(List<ProjectModel> projects)? fetchActiveProjects,
+    TResult Function(List<ProjectModel> projects)? fetchCreatedProjects,
     TResult Function(Set<File> files)? fileSelected,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -738,6 +1139,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     required TResult Function(_DashboardStateLoading value) loading,
     required TResult Function(_DashboardStateProjectCreated value)
         projectCreated,
+    required TResult Function(_DashboardStateFetchActiveProjects value)
+        fetchActiveProjects,
+    required TResult Function(_DashboardStateFetchCreatedProjects value)
+        fetchCreatedProjects,
     required TResult Function(_DashboardStateFileSelected value) fileSelected,
     required TResult Function(_DashboardStateError value) error,
   }) {
@@ -750,6 +1155,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult? Function(_DashboardStateInitial value)? initial,
     TResult? Function(_DashboardStateLoading value)? loading,
     TResult? Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult? Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult? Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult? Function(_DashboardStateFileSelected value)? fileSelected,
     TResult? Function(_DashboardStateError value)? error,
   }) {
@@ -762,6 +1171,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
     TResult Function(_DashboardStateInitial value)? initial,
     TResult Function(_DashboardStateLoading value)? loading,
     TResult Function(_DashboardStateProjectCreated value)? projectCreated,
+    TResult Function(_DashboardStateFetchActiveProjects value)?
+        fetchActiveProjects,
+    TResult Function(_DashboardStateFetchCreatedProjects value)?
+        fetchCreatedProjects,
     TResult Function(_DashboardStateFileSelected value)? fileSelected,
     TResult Function(_DashboardStateError value)? error,
     required TResult orElse(),
@@ -773,9 +1186,10 @@ class _$DashboardStateErrorImpl implements _DashboardStateError {
   }
 }
 
-abstract class _DashboardStateError implements DashboardState {
+abstract class _DashboardStateError extends DashboardState {
   const factory _DashboardStateError({required final String? message}) =
       _$DashboardStateErrorImpl;
+  const _DashboardStateError._() : super._();
 
   String? get message;
   @JsonKey(ignore: true)

@@ -1,3 +1,4 @@
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
@@ -11,7 +12,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class ActiveProjectDetail extends StatelessWidget {
-  const ActiveProjectDetail({super.key});
+  const ActiveProjectDetail({required this.project, super.key});
+
+  final ProjectModel project;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +39,15 @@ class ActiveProjectDetail extends StatelessWidget {
                   const BiiteAvatarWithText(name: "Emmanuel Adjei"),
                   SizedBox(height: 24.h),
                   Text(
-                    "Posted 8 days ago",
+                    "Posted ${project.createdAt.day} days ago",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   Text(
-                    "Wireframes",
+                    project.title,
                     style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
                   ),
                   Text(
-                    dummyProjectDescription,
+                    project.description,
                     style: context.appTheme.textTheme.bodyMedium?.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,

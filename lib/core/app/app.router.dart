@@ -1,3 +1,4 @@
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
 import 'package:biite/features/feed/widgets/all.propositions.dart';
@@ -25,7 +26,10 @@ final router = GoRouter(
     GoRoute(path: "/onboarding", builder: (context, state) => const Scaffold(body: OnboardingView())),
     GoRoute(path: "/home", builder: (context, state) => const HomeView()),
     GoRoute(path: "/feed-details", builder: (context, state) => const MetricDetail()),
-    GoRoute(path: "/activeProjectDetail", builder: (context, state) => const ActiveProjectDetail()),
+    GoRoute(
+      path: "/activeProjectDetail",
+      builder: (context, state) => ActiveProjectDetail(project: state.extra as ProjectModel),
+    ),
     GoRoute(path: "/sendYourWork", builder: (context, state) => const SendYourWork()),
     GoRoute(path: "/searchProjectDetail", builder: (context, state) => const SearchProjectDetail()),
     GoRoute(path: "/makeProposition", builder: (context, state) => const MakeProposition()),
@@ -35,7 +39,12 @@ final router = GoRouter(
     GoRoute(path: "/createdProjectDetail", builder: (context, state) => const CreatedProjectDetail()),
     GoRoute(path: "/allPropositions", builder: (context, state) => const AllPropositions()),
     GoRoute(path: "/allCreatedProjects", builder: (context, state) => const AllCreatedProjects()),
-    GoRoute(path: "/allActiveProjects", builder: (context, state) => const AllActiveProjects()),
+    GoRoute(
+      path: "/allActiveProjects",
+      builder: (context, state) => AllActiveProjects(
+        projects: state.extra as List<ProjectModel>,
+      ),
+    ),
     GoRoute(path: "/propositionDetail", builder: (context, state) => const PropositionDetails()),
     GoRoute(path: "/editProfile", builder: (context, state) => const EditProfile()),
   ],

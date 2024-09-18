@@ -1,3 +1,4 @@
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
@@ -6,24 +7,18 @@ import 'package:go_router/go_router.dart';
 
 class ProjectWidget extends StatelessWidget {
   const ProjectWidget({
-    required this.text,
-    required this.header,
-    required this.trailing,
-    this.onTap,
+    required this.projectModel,
     super.key,
   });
 
-  final String header;
-  final String text;
-  final String trailing;
-  final VoidCallback? onTap;
+  final ProjectModel projectModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GestureDetector(
-        onTap: onTap ?? () => context.push("/project-detail"),
+        onTap: () => context.push("/activeProjectDetail", extra: projectModel),
         child: Container(
           width: double.infinity,
           height: 102.h,
@@ -35,22 +30,27 @@ class ProjectWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  header,
+                  projectModel.title,
                   style: context.appTheme.textTheme.titleSmall?.copyWith(
                     fontSize: 20,
                     color: ColorName.onBackground,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      text,
-                      style: context.appTheme.textTheme.titleSmall
-                          ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                    Flexible(
+                      child: Text(
+                        projectModel.description,
+                        style: context.appTheme.textTheme.titleSmall
+                            ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
+                    const Spacer(),
                     Text(
-                      trailing,
+                      projectModel.status,
                       style: context.appTheme.textTheme.titleSmall
                           ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
                     ),

@@ -17,6 +17,7 @@ class SignupFormBloc extends FormFieldBaseBloc {
     @Named("signup") this.passwordFieldBloc,
     this.confirmPasswordFieldBloc,
     this.nameFieldBloc,
+    this._authBloc,
   ) : super(const FormFieldBaseState.initial()) {
     on<SignupFormFieldEvent>(isValid);
   }
@@ -25,7 +26,7 @@ class SignupFormBloc extends FormFieldBaseBloc {
   final PasswordFieldBloc passwordFieldBloc;
   final ConfirmPasswordFieldBloc confirmPasswordFieldBloc;
   final NameFieldBloc nameFieldBloc;
-  // final AuthBloc _authBloc;
+  final AuthBloc _authBloc;
 
   @override
   void isValid(FormFieldEvent event, Emitter<FormFieldBaseState> emit) {
@@ -46,7 +47,7 @@ class SignupFormBloc extends FormFieldBaseBloc {
         emit(FormFieldBaseState.invalid(message: nameFieldBloc.getErrorText()));
         return;
       }
-      // _authBloc.add(SignupEvent());
+      _authBloc.add(SignupEvent());
     }
   }
 }

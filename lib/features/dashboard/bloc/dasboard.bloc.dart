@@ -66,7 +66,9 @@ class DasboardBloc extends Cubit<DashboardState> {
   }
 
   void createProject() async {
-    print("got here create project");
+    bool isLoading = state.maybeWhen(orElse: () => false, loading: () => true);
+    if (isLoading) return;
+
     emit(const DashboardState.loading());
 
     final description = _descriptionFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);

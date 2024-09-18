@@ -23,12 +23,12 @@ import '../../api/repositories/user.repository.dart' as _i14;
 import '../../api/storage/cloud.storage.dart' as _i13;
 import '../../api/storage/hive.storage.dart' as _i8;
 import '../../features/auth/state/auth.bloc.dart' as _i23;
-import '../../features/auth/state/login.form.bloc.dart' as _i26;
-import '../../features/auth/state/signup.form.bloc.dart' as _i24;
+import '../../features/auth/state/login.form.bloc.dart' as _i25;
+import '../../features/auth/state/signup.form.bloc.dart' as _i26;
 import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i22;
 import '../../features/dashboard/bloc/dasboard.bloc.dart' as _i18;
 import '../../features/dashboard/bloc/tags.bloc.dart' as _i12;
-import '../../features/feed/state/feed.bloc.dart' as _i25;
+import '../../features/feed/state/feed.bloc.dart' as _i24;
 import '../presentation/state/compensation.field.bloc.dart' as _i10;
 import '../presentation/state/confirm.password.bloc.dart' as _i15;
 import '../presentation/state/description.field.bloc.dart' as _i11;
@@ -142,19 +142,20 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i6.PasswordFieldBloc>(instanceName: 'login'),
           gh<_i15.ConfirmPasswordFieldBloc>(),
         ));
-    gh.lazySingleton<_i24.SignupFormBloc>(() => _i24.SignupFormBloc(
+    gh.lazySingleton<_i24.FeedBloc>(() => _i24.FeedBloc(
+          gh<_i17.ProjectRepository>(),
+          gh<_i21.BidRepository>(),
+        ));
+    gh.lazySingleton<_i25.LoginFormBloc>(() => _i25.LoginFormBloc(
+          gh<_i9.EmailFieldBloc>(instanceName: 'login'),
+          gh<_i6.PasswordFieldBloc>(instanceName: 'login'),
+          gh<_i23.AuthBloc>(),
+        ));
+    gh.lazySingleton<_i26.SignupFormBloc>(() => _i26.SignupFormBloc(
           gh<_i9.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i6.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i15.ConfirmPasswordFieldBloc>(),
           gh<_i7.NameFieldBloc>(),
-        ));
-    gh.lazySingleton<_i25.FeedBloc>(() => _i25.FeedBloc(
-          gh<_i17.ProjectRepository>(),
-          gh<_i21.BidRepository>(),
-        ));
-    gh.lazySingleton<_i26.LoginFormBloc>(() => _i26.LoginFormBloc(
-          gh<_i9.EmailFieldBloc>(instanceName: 'login'),
-          gh<_i6.PasswordFieldBloc>(instanceName: 'login'),
           gh<_i23.AuthBloc>(),
         ));
     return this;

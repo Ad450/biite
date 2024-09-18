@@ -32,7 +32,7 @@ class DashboardView extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: 10.h),
               const BiiteAvatarWithText(name: "Emmanuel Adjei"),
@@ -47,7 +47,7 @@ class DashboardView extends StatelessWidget {
                       projectCreated: (_) => showBiiteDialog(context),
                     ),
                     builder: (_, state) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         SizedBox(height: 20.h),
                         Text(
@@ -98,7 +98,8 @@ class DashboardView extends StatelessWidget {
                           padding: EdgeInsets.symmetric(horizontal: 56.w),
                           child: state.maybeMap(
                             orElse: () => const CreateProjectFormButton(),
-                            loading: (_) => const CupertinoActivityIndicator(),
+                            loading: (_) =>
+                                const Align(alignment: Alignment.center, child: CupertinoActivityIndicator()),
                           ),
                         )
                       ],

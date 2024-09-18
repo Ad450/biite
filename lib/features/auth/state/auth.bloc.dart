@@ -32,6 +32,10 @@ class AuthBloc extends Bloc<AuthEvents, AuthState> {
   final NameFieldBloc _nameFieldBloc;
 
   void _signup(SignupEvent event, Emitter<AuthState> emit) async {
+    // lock down function while processing a request
+    bool isLoading = state.maybeWhen(orElse: () => false, signupLoading: (_, __) => true);
+    if (isLoading) return;
+
     emit(AuthState.signupLoading(user: state.user, message: state.message));
 
     final email = _signupEmailFieldBloc.state.maybeMap(

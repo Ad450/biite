@@ -1,3 +1,4 @@
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
@@ -5,12 +6,13 @@ import 'package:biite/core/presentation/widgets/biite.chip.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreatedProjectDetail extends StatelessWidget {
-  const CreatedProjectDetail({super.key});
+  const CreatedProjectDetail({required this.projectModel, super.key});
+
+  final ProjectModel projectModel;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +36,15 @@ class CreatedProjectDetail extends StatelessWidget {
                     const BiiteAvatarWithText(name: "Emmanuel Adjei"),
                     SizedBox(height: 24.h),
                     Text(
-                      "Created 8 days ago",
+                      projectModel.createdAt.day.toString(),
                       style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                     ),
                     Text(
-                      "Title of project",
+                      projectModel.title,
                       style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
                     ),
                     Text(
-                      dummyProjectDescription,
+                      projectModel.description,
                       style: context.appTheme.textTheme.bodyMedium?.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
@@ -53,13 +55,15 @@ class CreatedProjectDetail extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        BiiteChip(
-                          text: "WIREFRAME",
-                          selected: false,
-                          onSelected: (isSelected) {},
+                        ...projectModel.tags.map(
+                          (e) => BiiteChip(
+                            text: e,
+                            selected: false,
+                            onSelected: (isSelected) {},
+                          ),
                         ),
                         Text(
-                          "\$ 600",
+                          projectModel.rate.toString(),
                           style: context.appTheme.textTheme.bodySmall?.copyWith(
                             fontSize: 16,
                             color: ColorName.primary,
@@ -69,8 +73,12 @@ class CreatedProjectDetail extends StatelessWidget {
                     ),
                     SizedBox(height: 16.h),
                     // all project files
-                    const FileWidget(filename: "filename.jpg", image: Icon(Icons.download, color: ColorName.fillColor)),
-                    const FileWidget(filename: "filename.jpg", image: Icon(Icons.download, color: ColorName.fillColor)),
+                    ...projectModel.files.map(
+                      (e) => FileWidget(
+                        filename: e.split("/").last,
+                        image: const Icon(Icons.download, color: ColorName.fillColor),
+                      ),
+                    ),
                     SizedBox(height: 16.h),
                     Text(
                       "Propositions",

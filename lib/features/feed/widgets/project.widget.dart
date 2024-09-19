@@ -8,17 +8,19 @@ import 'package:go_router/go_router.dart';
 class ProjectWidget extends StatelessWidget {
   const ProjectWidget({
     required this.projectModel,
+    this.onTap,
     super.key,
   });
 
   final ProjectModel projectModel;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GestureDetector(
-        onTap: () => context.push("/activeProjectDetail", extra: projectModel),
+        onTap: onTap ?? () => context.push("/activeProjectDetail", extra: projectModel),
         child: Container(
           width: double.infinity,
           height: 102.h,

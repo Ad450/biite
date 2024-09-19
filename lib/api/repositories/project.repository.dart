@@ -21,6 +21,30 @@ class ProjectRepostoryImpl implements ProjectRepository {
   final HiveStore _hiveStore;
   final FirebaseFirestore _firestore;
   final CloudStorage _cloudStorage;
+
+  @override
+  Future<Either<UIError, List<ProjectModel>>> fetchActiveProjects() async {
+    try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      final query = await _firestore.collection(kProjectCollection).where("assignedTo", isNotEqualTo: id).get();
+
+      final projects = query.docs.map((e) {
+        var project = ProjectModel.fromJson(e.data());
+
+        project = project.copyWith(id: e.id);
+        return project;
+      }).toList();
+      return Right(projects);
+      // return Right([]);
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
   @override
   Future<Either<UIError, List<ProjectModel>>> fetchCreatedProjects() async {
     try {
@@ -41,39 +65,12 @@ class ProjectRepostoryImpl implements ProjectRepository {
   }
 
   @override
-  Future<Either<UIError, List<ProjectModel>>> fetchActiveProjects() async {
-    try {
-      final id = await _hiveStore.readItem("id", "id");
-      if (id == null) {
-        throw Exception("id null at fetch all chats");
-      }
-
-      final query = await _firestore
-          .collection(kProjectCollection)
-          .where("status", isEqualTo: "active")
-          .where("assignedTo", isEqualTo: id)
-          .get();
-      final projects = query.docs.map((e) {
-        var project = ProjectModel.fromJson(e.data());
-
-        project = project.copyWith(id: e.id);
-        return project;
-      }).toList();
-      return Right(projects);
-    } catch (e) {
-      return Left(UIError(e.toString()));
-    }
-  }
-
-  @override
   Future<Either<UIError, VoidType>> createProject(CreateProjectParam param) async {
     try {
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
-
-      print("here are the tags ${param.tags}");
 
       // upload files to cloud storage
       final futures = <Future<String>>[];

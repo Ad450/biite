@@ -58,13 +58,15 @@ class ActiveProjectDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      BiiteChip(
-                        text: "WIREFRAME",
-                        selected: false,
-                        onSelected: (isSelected) {},
+                      ...project.tags.map(
+                        (e) => BiiteChip(
+                          text: e,
+                          selected: false,
+                          onSelected: (isSelected) {},
+                        ),
                       ),
                       Text(
-                        "\$ 600",
+                        project.rate.toString(),
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           color: ColorName.primary,

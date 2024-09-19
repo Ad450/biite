@@ -3,7 +3,7 @@ import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.dialog.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
-import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
+import 'package:biite/features/dashboard/bloc/file.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
 import 'package:biite/features/dashboard/bloc/project.bloc.dart';
 import 'package:biite/features/dashboard/widgets/compensation.field.dart';
@@ -25,7 +25,7 @@ class DashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dashboardBloc = getIt<DasboardBloc>();
+    final dashboardBloc = getIt<FileBloc>();
 
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
@@ -94,13 +94,12 @@ class _SelectedFileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dashboardBloc = getIt<DasboardBloc>();
-    return BlocConsumer<DasboardBloc, DashboardState>(
+    final dashboardBloc = getIt<FileBloc>();
+    return BlocConsumer<FileBloc, FileState>(
       bloc: dashboardBloc,
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
         error: (state) => showToast(state.message!),
-        projectCreated: (_) => showBiiteDialog(context),
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
@@ -124,15 +123,20 @@ class _CreateProjectButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProjectBloc, DashboardState>(
+    return BlocConsumer<ProjectBloc, ProjectState>(
       bloc: getIt<ProjectBloc>(),
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        projectCreated: (_) => showBiiteDialog(context),
+      ),
       builder: (_, state) => Padding(
         padding: EdgeInsets.symmetric(horizontal: 56.w),
         child: state.maybeMap(
           orElse: () => const CreateProjectFormButton(),
-          loading: (_) {
-            return const Align(alignment: Alignment.center, child: CupertinoActivityIndicator());
-          },
+          loading: (_) => const Align(
+            alignment: Alignment.center,
+            child: CupertinoActivityIndicator(),
+          ),
         ),
       ),
     );

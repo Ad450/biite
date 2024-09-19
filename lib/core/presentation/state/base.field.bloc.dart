@@ -14,7 +14,7 @@ abstract class FieldBaseBloc extends Bloc<FieldEvent, FieldState> {
   // Get error messages for subclasses
   String getErrorText() {
     return state.maybeWhen(
-      orElse: () => "",
+      orElse: () => "Fill required fields",
       invalid: (message) => message!,
     );
   }

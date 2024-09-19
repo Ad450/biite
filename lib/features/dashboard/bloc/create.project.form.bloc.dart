@@ -4,7 +4,6 @@ import 'package:biite/core/presentation/state/description.field.bloc.dart';
 import 'package:biite/core/presentation/state/form.field.events.dart';
 import 'package:biite/core/presentation/state/form.field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
-import 'package:biite/features/dashboard/bloc/dasboard.bloc.dart';
 import 'package:biite/features/dashboard/bloc/project.bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';

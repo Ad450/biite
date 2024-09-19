@@ -5,11 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()
-class DasboardBloc extends Cubit<DashboardState> {
-  DasboardBloc() : super(const DashboardState.initial());
+class FileBloc extends Cubit<FileState> {
+  FileBloc() : super(const FileState.initial());
 
-  DashboardState getErrorState(String message) => DashboardState.error(message: message);
-  DashboardState getFileSelectedState(Set<File> files) => DashboardState.fileSelected(files: files);
+  FileState getErrorState(String message) => FileState.error(message: message);
+  FileState getFileSelectedState(Set<File> files) => FileState.fileSelected(files: files);
 
   void pickFiles() async {
     Set<File> files = {};

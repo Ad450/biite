@@ -12,6 +12,7 @@ abstract class ProjectRepository {
   Future<Either<UIError, List<ProjectModel>>> fetchCreatedProjects();
   Future<Either<UIError, List<ProjectModel>>> fetchActiveProjects();
   Future<Either<UIError, VoidType>> createProject(CreateProjectParam param);
+  Future<Either<UIError, List<ProjectModel>>> fetchProjects();
 }
 
 @LazySingleton(as: ProjectRepository)
@@ -95,6 +96,25 @@ class ProjectRepostoryImpl implements ProjectRepository {
       return const Right(VoidType());
     } catch (e) {
       print(e);
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, List<ProjectModel>>> fetchProjects() async {
+    try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      final projectsSnapshot = await _firestore.collection(kProjectCollection).get();
+      final projects = projectsSnapshot.docs.map((e) {
+        final model = ProjectModel.fromJson(e.data());
+        return model.copyWith(id: e.id);
+      }).toList();
+      return Right(projects);
+    } catch (e) {
       return Left(UIError(e.toString()));
     }
   }

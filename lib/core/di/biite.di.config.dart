@@ -24,23 +24,24 @@ import '../../api/repositories/user.repository.dart' as _i17;
 import '../../api/storage/cloud.storage.dart' as _i16;
 import '../../api/storage/hive.storage.dart' as _i8;
 import '../../biite.dart' as _i10;
-import '../../features/auth/state/auth.bloc.dart' as _i27;
-import '../../features/auth/state/login.form.bloc.dart' as _i30;
-import '../../features/auth/state/signup.form.bloc.dart' as _i31;
+import '../../features/auth/state/auth.bloc.dart' as _i28;
+import '../../features/auth/state/login.form.bloc.dart' as _i31;
+import '../../features/auth/state/signup.form.bloc.dart' as _i32;
 import '../../features/dashboard/bloc/active.projects.bloc.dart' as _i25;
-import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i29;
+import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i30;
 import '../../features/dashboard/bloc/created.projects.bloc.dart' as _i26;
 import '../../features/dashboard/bloc/file.bloc.dart' as _i9;
 import '../../features/dashboard/bloc/project.bloc.dart' as _i21;
 import '../../features/dashboard/bloc/tags.bloc.dart' as _i15;
-import '../../features/feed/state/bid.bloc.dart' as _i28;
+import '../../features/feed/state/bid.bloc.dart' as _i29;
+import '../../features/search/state/fetch.projects.bloc.dart' as _i27;
 import '../presentation/state/compensation.field.bloc.dart' as _i13;
 import '../presentation/state/confirm.password.bloc.dart' as _i18;
 import '../presentation/state/description.field.bloc.dart' as _i14;
 import '../presentation/state/email.field.bloc.dart' as _i12;
 import '../presentation/state/name.field.bloc.dart' as _i7;
 import '../presentation/state/password.field.bloc.dart' as _i6;
-import 'biite.di.dart' as _i32;
+import 'biite.di.dart' as _i33;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -90,6 +91,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i16.CloudStorage>(
         () => _i16.CloudStorageImpl(gh<_i4.FirebaseStorage>()));
     gh.lazySingleton<_i17.UserRepository>(() => _i17.UserRepositoryImpl());
+    gh.lazySingleton<_i7.NameFieldBloc>(
+      () => firebaseModule.searchField,
+      instanceName: 'search',
+    );
     gh.lazySingleton<_i18.ConfirmPasswordFieldBloc>(
         () => _i18.ConfirmPasswordFieldBloc(gh<_i6.PasswordFieldBloc>()));
     gh.singleton<_i12.EmailFieldBloc>(
@@ -139,7 +144,11 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i25.ActiveProjectsBloc(gh<_i20.ProjectRepository>()));
     gh.lazySingleton<_i26.CreatedProjectBloc>(
         () => _i26.CreatedProjectBloc(gh<_i20.ProjectRepository>()));
-    gh.lazySingleton<_i27.AuthBloc>(() => _i27.AuthBloc(
+    gh.lazySingleton<_i27.FetchProjectsBloc>(() => _i27.FetchProjectsBloc(
+          gh<_i7.NameFieldBloc>(instanceName: 'search'),
+          gh<_i20.ProjectRepository>(),
+        ));
+    gh.lazySingleton<_i28.AuthBloc>(() => _i28.AuthBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i7.NameFieldBloc>(instanceName: 'signup'),
@@ -147,29 +156,29 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i6.PasswordFieldBloc>(instanceName: 'login'),
           gh<_i18.ConfirmPasswordFieldBloc>(),
         ));
-    gh.lazySingleton<_i28.BidBloc>(
-        () => _i28.BidBloc(gh<_i24.BidRepository>()));
-    gh.lazySingleton<_i29.CreateProjectFormBloc>(
-        () => _i29.CreateProjectFormBloc(
+    gh.lazySingleton<_i29.BidBloc>(
+        () => _i29.BidBloc(gh<_i24.BidRepository>()));
+    gh.lazySingleton<_i30.CreateProjectFormBloc>(
+        () => _i30.CreateProjectFormBloc(
               gh<_i13.CompensationFieldBloc>(instanceName: 'createProject'),
               gh<_i14.DescriptionFieldBloc>(instanceName: 'createProject'),
               gh<_i7.NameFieldBloc>(instanceName: 'createProject'),
               gh<_i21.ProjectBloc>(),
             ));
-    gh.lazySingleton<_i30.LoginFormBloc>(() => _i30.LoginFormBloc(
+    gh.lazySingleton<_i31.LoginFormBloc>(() => _i31.LoginFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'login'),
           gh<_i6.PasswordFieldBloc>(instanceName: 'login'),
-          gh<_i27.AuthBloc>(),
+          gh<_i28.AuthBloc>(),
         ));
-    gh.lazySingleton<_i31.SignupFormBloc>(() => _i31.SignupFormBloc(
+    gh.lazySingleton<_i32.SignupFormBloc>(() => _i32.SignupFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i6.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i18.ConfirmPasswordFieldBloc>(),
           gh<_i7.NameFieldBloc>(),
-          gh<_i27.AuthBloc>(),
+          gh<_i28.AuthBloc>(),
         ));
     return this;
   }
 }
 
-class _$FirebaseModule extends _i32.FirebaseModule {}
+class _$FirebaseModule extends _i33.FirebaseModule {}

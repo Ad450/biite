@@ -1,3 +1,4 @@
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class SearchProjectDetail extends StatelessWidget {
-  const SearchProjectDetail({super.key});
+  const SearchProjectDetail({required this.project, super.key});
+
+  final ProjectModel project;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +34,12 @@ class SearchProjectDetail extends StatelessWidget {
                 children: <Widget>[
                   const BiiteAvatarWithText(name: "Hubert Adjei"),
                   SizedBox(height: 24.h),
-                  const SearchProjectCard(
-                    description: dummyProjectDescription,
-                    title: "This is the title",
-                    price: "500",
-                    daysPosted: "10",
-                    tags: ["UI/UX", "DESIGN", "FIGMA", "PHOTOSHOP"],
+                  SearchProjectCard(
+                    description: project.description,
+                    title: project.title,
+                    price: project.rate.toString(),
+                    daysPosted: project.createdAt.day.toString(),
+                    tags: project.tags,
                     propositions: "16",
                   ),
                 ],

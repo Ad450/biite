@@ -31,7 +31,12 @@ final router = GoRouter(
       builder: (context, state) => ActiveProjectDetail(project: state.extra as ProjectModel),
     ),
     GoRoute(path: "/sendYourWork", builder: (context, state) => const SendYourWork()),
-    GoRoute(path: "/searchProjectDetail", builder: (context, state) => const SearchProjectDetail()),
+    GoRoute(
+      path: "/searchProjectDetail",
+      builder: (context, state) => SearchProjectDetail(
+        project: state.extra as ProjectModel,
+      ),
+    ),
     GoRoute(path: "/makeProposition", builder: (context, state) => const MakeProposition()),
     GoRoute(path: "/messageDetail", builder: (context, state) => const MessageDetail()),
     GoRoute(path: "/reviewDetail", builder: (context, state) => const AllReviews()),

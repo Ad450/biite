@@ -20,8 +20,8 @@ class NameFieldBloc extends FieldBaseBloc {
   @override
   void isValid(FieldEvent event, Emitter<FieldState> emit) {
     if (event is NameFieldEvent) {
-      if (event.name == null) {
-        emit(const FieldState.invalid(message: "name cant not be null"));
+      if (event.name == null || event.name!.isEmpty) {
+        emit(const FieldState.initial());
         return;
       }
 

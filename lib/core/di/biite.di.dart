@@ -63,6 +63,15 @@ abstract class FirebaseModule {
   @Named('createProject')
   @lazySingleton
   CompensationFieldBloc get compensationFieldBloc => CompensationFieldBloc();
+
+  @Named('bid')
+  @lazySingleton
+  CompensationFieldBloc get bidCompensationFieldBloc => CompensationFieldBloc();
+
+  @Named('bid')
+  @lazySingleton
+  DescriptionFieldBloc get bidDescriptionFieldBloc => DescriptionFieldBloc();
+
   @Named('createProject')
   @lazySingleton
   DescriptionFieldBloc get descriptionFieldBloc => DescriptionFieldBloc();

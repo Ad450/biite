@@ -16,3 +16,17 @@ class SearchState with _$SearchState {
 
   bool operator ==(Object other) => false;
 }
+
+@freezed
+class PropositionState with _$PropositionState {
+  const factory PropositionState.initial() = _PropositionStateInitial;
+
+  const factory PropositionState.loading() = _PropositionStateLoading;
+
+  const factory PropositionState.create() = _PropositionStateCreate;
+  const factory PropositionState.error(String message) = _PropositionStateError;
+
+  const PropositionState._();
+
+  bool operator ==(Object other) => false;
+}

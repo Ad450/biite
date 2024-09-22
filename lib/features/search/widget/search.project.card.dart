@@ -34,7 +34,6 @@ class SearchProjectCard extends StatelessWidget {
         ),
         SizedBox(height: 24.h),
         Text(
-          // "This is the title",
           title,
           style: context.appTheme.textTheme.titleMedium?.copyWith(
             fontSize: 25,

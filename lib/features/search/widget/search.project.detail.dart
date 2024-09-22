@@ -4,7 +4,6 @@ import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/features/search/widget/search.project.card.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -48,7 +47,8 @@ class SearchProjectDetail extends StatelessWidget {
             SizedBox(height: 112.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 56.w),
-              child: BiiteTextButton(onPressed: () => context.push("/makeProposition"), text: "Make a proposition"),
+              child: BiiteTextButton(
+                  onPressed: () => context.push("/makeProposition", extra: project), text: "Make a proposition"),
             )
           ],
         ),

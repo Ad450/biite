@@ -578,3 +578,537 @@ abstract class _SearchStateError extends SearchState {
   _$$SearchStateErrorImplCopyWith<_$SearchStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$PropositionState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() create,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? create,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? create,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionStateInitial value) initial,
+    required TResult Function(_PropositionStateLoading value) loading,
+    required TResult Function(_PropositionStateCreate value) create,
+    required TResult Function(_PropositionStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionStateInitial value)? initial,
+    TResult? Function(_PropositionStateLoading value)? loading,
+    TResult? Function(_PropositionStateCreate value)? create,
+    TResult? Function(_PropositionStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionStateInitial value)? initial,
+    TResult Function(_PropositionStateLoading value)? loading,
+    TResult Function(_PropositionStateCreate value)? create,
+    TResult Function(_PropositionStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PropositionStateCopyWith<$Res> {
+  factory $PropositionStateCopyWith(
+          PropositionState value, $Res Function(PropositionState) then) =
+      _$PropositionStateCopyWithImpl<$Res, PropositionState>;
+}
+
+/// @nodoc
+class _$PropositionStateCopyWithImpl<$Res, $Val extends PropositionState>
+    implements $PropositionStateCopyWith<$Res> {
+  _$PropositionStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$PropositionStateInitialImplCopyWith<$Res> {
+  factory _$$PropositionStateInitialImplCopyWith(
+          _$PropositionStateInitialImpl value,
+          $Res Function(_$PropositionStateInitialImpl) then) =
+      __$$PropositionStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PropositionStateInitialImplCopyWithImpl<$Res>
+    extends _$PropositionStateCopyWithImpl<$Res, _$PropositionStateInitialImpl>
+    implements _$$PropositionStateInitialImplCopyWith<$Res> {
+  __$$PropositionStateInitialImplCopyWithImpl(
+      _$PropositionStateInitialImpl _value,
+      $Res Function(_$PropositionStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PropositionStateInitialImpl extends _PropositionStateInitial {
+  const _$PropositionStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PropositionState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() create,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? create,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? create,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionStateInitial value) initial,
+    required TResult Function(_PropositionStateLoading value) loading,
+    required TResult Function(_PropositionStateCreate value) create,
+    required TResult Function(_PropositionStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionStateInitial value)? initial,
+    TResult? Function(_PropositionStateLoading value)? loading,
+    TResult? Function(_PropositionStateCreate value)? create,
+    TResult? Function(_PropositionStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionStateInitial value)? initial,
+    TResult Function(_PropositionStateLoading value)? loading,
+    TResult Function(_PropositionStateCreate value)? create,
+    TResult Function(_PropositionStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionStateInitial extends PropositionState {
+  const factory _PropositionStateInitial() = _$PropositionStateInitialImpl;
+  const _PropositionStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PropositionStateLoadingImplCopyWith<$Res> {
+  factory _$$PropositionStateLoadingImplCopyWith(
+          _$PropositionStateLoadingImpl value,
+          $Res Function(_$PropositionStateLoadingImpl) then) =
+      __$$PropositionStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PropositionStateLoadingImplCopyWithImpl<$Res>
+    extends _$PropositionStateCopyWithImpl<$Res, _$PropositionStateLoadingImpl>
+    implements _$$PropositionStateLoadingImplCopyWith<$Res> {
+  __$$PropositionStateLoadingImplCopyWithImpl(
+      _$PropositionStateLoadingImpl _value,
+      $Res Function(_$PropositionStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PropositionStateLoadingImpl extends _PropositionStateLoading {
+  const _$PropositionStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PropositionState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() create,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? create,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? create,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionStateInitial value) initial,
+    required TResult Function(_PropositionStateLoading value) loading,
+    required TResult Function(_PropositionStateCreate value) create,
+    required TResult Function(_PropositionStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionStateInitial value)? initial,
+    TResult? Function(_PropositionStateLoading value)? loading,
+    TResult? Function(_PropositionStateCreate value)? create,
+    TResult? Function(_PropositionStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionStateInitial value)? initial,
+    TResult Function(_PropositionStateLoading value)? loading,
+    TResult Function(_PropositionStateCreate value)? create,
+    TResult Function(_PropositionStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionStateLoading extends PropositionState {
+  const factory _PropositionStateLoading() = _$PropositionStateLoadingImpl;
+  const _PropositionStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PropositionStateCreateImplCopyWith<$Res> {
+  factory _$$PropositionStateCreateImplCopyWith(
+          _$PropositionStateCreateImpl value,
+          $Res Function(_$PropositionStateCreateImpl) then) =
+      __$$PropositionStateCreateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PropositionStateCreateImplCopyWithImpl<$Res>
+    extends _$PropositionStateCopyWithImpl<$Res, _$PropositionStateCreateImpl>
+    implements _$$PropositionStateCreateImplCopyWith<$Res> {
+  __$$PropositionStateCreateImplCopyWithImpl(
+      _$PropositionStateCreateImpl _value,
+      $Res Function(_$PropositionStateCreateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PropositionStateCreateImpl extends _PropositionStateCreate {
+  const _$PropositionStateCreateImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PropositionState.create()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() create,
+    required TResult Function(String message) error,
+  }) {
+    return create();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? create,
+    TResult? Function(String message)? error,
+  }) {
+    return create?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? create,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (create != null) {
+      return create();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionStateInitial value) initial,
+    required TResult Function(_PropositionStateLoading value) loading,
+    required TResult Function(_PropositionStateCreate value) create,
+    required TResult Function(_PropositionStateError value) error,
+  }) {
+    return create(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionStateInitial value)? initial,
+    TResult? Function(_PropositionStateLoading value)? loading,
+    TResult? Function(_PropositionStateCreate value)? create,
+    TResult? Function(_PropositionStateError value)? error,
+  }) {
+    return create?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionStateInitial value)? initial,
+    TResult Function(_PropositionStateLoading value)? loading,
+    TResult Function(_PropositionStateCreate value)? create,
+    TResult Function(_PropositionStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (create != null) {
+      return create(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionStateCreate extends PropositionState {
+  const factory _PropositionStateCreate() = _$PropositionStateCreateImpl;
+  const _PropositionStateCreate._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PropositionStateErrorImplCopyWith<$Res> {
+  factory _$$PropositionStateErrorImplCopyWith(
+          _$PropositionStateErrorImpl value,
+          $Res Function(_$PropositionStateErrorImpl) then) =
+      __$$PropositionStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$PropositionStateErrorImplCopyWithImpl<$Res>
+    extends _$PropositionStateCopyWithImpl<$Res, _$PropositionStateErrorImpl>
+    implements _$$PropositionStateErrorImplCopyWith<$Res> {
+  __$$PropositionStateErrorImplCopyWithImpl(_$PropositionStateErrorImpl _value,
+      $Res Function(_$PropositionStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$PropositionStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PropositionStateErrorImpl extends _PropositionStateError {
+  const _$PropositionStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'PropositionState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PropositionStateErrorImplCopyWith<_$PropositionStateErrorImpl>
+      get copyWith => __$$PropositionStateErrorImplCopyWithImpl<
+          _$PropositionStateErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() create,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? create,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? create,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionStateInitial value) initial,
+    required TResult Function(_PropositionStateLoading value) loading,
+    required TResult Function(_PropositionStateCreate value) create,
+    required TResult Function(_PropositionStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionStateInitial value)? initial,
+    TResult? Function(_PropositionStateLoading value)? loading,
+    TResult? Function(_PropositionStateCreate value)? create,
+    TResult? Function(_PropositionStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionStateInitial value)? initial,
+    TResult Function(_PropositionStateLoading value)? loading,
+    TResult Function(_PropositionStateCreate value)? create,
+    TResult Function(_PropositionStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionStateError extends PropositionState {
+  const factory _PropositionStateError(final String message) =
+      _$PropositionStateErrorImpl;
+  const _PropositionStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$PropositionStateErrorImplCopyWith<_$PropositionStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

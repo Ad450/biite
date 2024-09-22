@@ -58,14 +58,14 @@ class MessageParam {
 // create bid param
 class CreateBidParam {
   final String projectId;
-  final String bidId;
+  final String? bidId;
   final List<String> tags;
   final String ownerId;
   final String description;
   final double rate;
 
   CreateBidParam({
-    required this.bidId,
+    this.bidId,
     required this.projectId,
     required this.ownerId,
     required this.description,

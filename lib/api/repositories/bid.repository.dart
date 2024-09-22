@@ -52,6 +52,10 @@ class BidRepositoryImpl implements BidRepository {
         throw Exception("Can not bid on your own projects");
       }
 
+      if (projectDoc.data()?["status"] == "active") {
+        throw Exception("Bidding over for this project");
+      }
+
       final query = _firestore.collection(kBidCollection);
 
       final bid = BidModel(

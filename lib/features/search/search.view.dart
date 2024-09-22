@@ -1,5 +1,6 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/search/state/fetch.projects.bloc.dart';
 import 'package:biite/features/search/state/search.state.dart';
 import 'package:biite/features/search/widget/search.project.dart';
@@ -54,7 +55,10 @@ class _SearchProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<FetchProjectsBloc, SearchState>(
       bloc: getIt.get<FetchProjectsBloc>()..fetch(),
-      listener: (_, state) => state.maybeMap,
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        errro: (state) => showToast(state.message),
+      ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
         loading: (_) => const Center(child: CupertinoActivityIndicator()),

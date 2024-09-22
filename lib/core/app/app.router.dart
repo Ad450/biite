@@ -37,7 +37,10 @@ final router = GoRouter(
         project: state.extra as ProjectModel,
       ),
     ),
-    GoRoute(path: "/makeProposition", builder: (context, state) => const MakeProposition()),
+    GoRoute(
+      path: "/makeProposition",
+      builder: (context, state) => MakeProposition(project: state.extra as ProjectModel),
+    ),
     GoRoute(path: "/messageDetail", builder: (context, state) => const MessageDetail()),
     GoRoute(path: "/reviewDetail", builder: (context, state) => const AllReviews()),
     GoRoute(path: "/login", builder: (context, state) => const Login()),

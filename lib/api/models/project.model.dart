@@ -1,4 +1,3 @@
-import 'package:biite/api/models/bid.model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'project.model.freezed.dart';

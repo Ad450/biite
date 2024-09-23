@@ -4,7 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class CloudStorage {
-  Future<String> upload(String filepath);
+  Future<String> upload(String filepath, String id);
 }
 
 @LazySingleton(as: CloudStorage)
@@ -14,15 +14,14 @@ class CloudStorageImpl implements CloudStorage {
   final FirebaseStorage _storage;
 
   @override
-  Future<String> upload(String filepath) async {
+  Future<String> upload(String filepath, String id) async {
     try {
       Reference reference = _storage.ref();
+      final picRef = reference.child('photos/$id');
 
-      UploadTask uploadTask = reference.putFile(File(filepath));
+      await picRef.putFile(File(filepath));
 
-      final storageSnapshot = uploadTask.snapshot;
-
-      final url = await storageSnapshot.ref.getDownloadURL();
+      final url = await picRef.getDownloadURL();
       return url;
     } catch (e) {
       rethrow;

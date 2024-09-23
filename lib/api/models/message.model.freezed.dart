@@ -22,6 +22,7 @@ MessageModel _$MessageModelFromJson(Map<String, dynamic> json) {
 mixin _$MessageModel {
   String? get id => throw _privateConstructorUsedError;
   String get roomId => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $MessageModelCopyWith<$Res> {
   $Res call(
       {String? id,
       String roomId,
+      String ownerId,
       String text,
       DateTime createdAt,
       String status});
@@ -61,6 +63,7 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
   $Res call({
     Object? id = freezed,
     Object? roomId = null,
+    Object? ownerId = null,
     Object? text = null,
     Object? createdAt = null,
     Object? status = null,
@@ -73,6 +76,10 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       text: null == text
           ? _value.text
@@ -101,6 +108,7 @@ abstract class _$$MessageModelImplCopyWith<$Res>
   $Res call(
       {String? id,
       String roomId,
+      String ownerId,
       String text,
       DateTime createdAt,
       String status});
@@ -119,6 +127,7 @@ class __$$MessageModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? roomId = null,
+    Object? ownerId = null,
     Object? text = null,
     Object? createdAt = null,
     Object? status = null,
@@ -131,6 +140,10 @@ class __$$MessageModelImplCopyWithImpl<$Res>
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       text: null == text
           ? _value.text
@@ -154,6 +167,7 @@ class _$MessageModelImpl implements _MessageModel {
   _$MessageModelImpl(
       {this.id,
       required this.roomId,
+      required this.ownerId,
       required this.text,
       required this.createdAt,
       required this.status});
@@ -166,6 +180,8 @@ class _$MessageModelImpl implements _MessageModel {
   @override
   final String roomId;
   @override
+  final String ownerId;
+  @override
   final String text;
   @override
   final DateTime createdAt;
@@ -174,7 +190,7 @@ class _$MessageModelImpl implements _MessageModel {
 
   @override
   String toString() {
-    return 'MessageModel(id: $id, roomId: $roomId, text: $text, createdAt: $createdAt, status: $status)';
+    return 'MessageModel(id: $id, roomId: $roomId, ownerId: $ownerId, text: $text, createdAt: $createdAt, status: $status)';
   }
 
   @override
@@ -184,6 +200,7 @@ class _$MessageModelImpl implements _MessageModel {
             other is _$MessageModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -193,7 +210,7 @@ class _$MessageModelImpl implements _MessageModel {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, roomId, text, createdAt, status);
+      Object.hash(runtimeType, id, roomId, ownerId, text, createdAt, status);
 
   @JsonKey(ignore: true)
   @override
@@ -213,6 +230,7 @@ abstract class _MessageModel implements MessageModel {
   factory _MessageModel(
       {final String? id,
       required final String roomId,
+      required final String ownerId,
       required final String text,
       required final DateTime createdAt,
       required final String status}) = _$MessageModelImpl;
@@ -224,6 +242,8 @@ abstract class _MessageModel implements MessageModel {
   String? get id;
   @override
   String get roomId;
+  @override
+  String get ownerId;
   @override
   String get text;
   @override

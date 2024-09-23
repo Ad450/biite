@@ -23,7 +23,7 @@ class SearchProjectDetail extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(onMessagePressed: () {}, showMessage: true),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: project.ownerId),
             ),
             SizedBox(height: 40.h),
             Container(
@@ -31,7 +31,7 @@ class SearchProjectDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const BiiteAvatarWithText(name: "Hubert Adjei"),
+                  const BiiteAvatarWithText(),
                   SizedBox(height: 24.h),
                   SearchProjectCard(
                     description: project.description,

@@ -8,6 +8,7 @@ abstract class MessageModel with _$MessageModel {
   factory MessageModel({
     String? id,
     required String roomId,
+    required String ownerId,
     required String text,
     required DateTime createdAt,
     required String status,

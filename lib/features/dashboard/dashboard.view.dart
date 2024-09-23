@@ -36,7 +36,7 @@ class DashboardView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: 10.h),
-              const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+              const BiiteAvatarWithText(),
               SizedBox(height: 10.h),
               Expanded(
                 child: SingleChildScrollView(

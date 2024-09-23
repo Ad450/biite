@@ -17,7 +17,7 @@ class AllReviews extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const BiiteBack(),
+              BiiteBack(),
               // ...List.generate(11, (index) => const ReviewContainer())
               SizedBox(height: 40.h),
               // Expanded(

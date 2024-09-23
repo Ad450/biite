@@ -1,3 +1,4 @@
+import 'package:biite/api/models/room.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -6,19 +7,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class MessageTile extends StatelessWidget {
-  const MessageTile({required this.backgroundColor, required this.name, super.key});
+  const MessageTile({
+    required this.room,
+    required this.index,
+    super.key,
+  });
 
-  final Color backgroundColor;
-  final String name;
+  final RoomModel room;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.push("/messageDetail"),
+      onTap: () => context.push("/messageDetail", extra: room),
       child: Container(
         height: 103.h,
         width: double.infinity,
-        decoration: BoxDecoration(color: backgroundColor),
+        decoration: BoxDecoration(
+          color: index % 2 == 0 ? ColorName.onboardingBackground : ColorName.white,
+        ),
         padding: const EdgeInsets.only(left: 16, right: 24),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,14 +43,14 @@ class MessageTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      name,
+                      room.peerName,
                       style: context.appTheme.textTheme.titleMedium?.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      name,
+                      room.latestMessageText ?? "",
                       style: context.appTheme.textTheme.bodySmall?.copyWith(
                         fontSize: 12.8,
                         fontWeight: FontWeight.normal,

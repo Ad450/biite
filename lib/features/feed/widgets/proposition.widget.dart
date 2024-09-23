@@ -22,7 +22,7 @@ class PropositionWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const BiiteAvatarWithText(name: "Elizabeth Gyimah", fontSize: 20, radius: 18),
+              const BiiteAvatarWithText(),
               const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

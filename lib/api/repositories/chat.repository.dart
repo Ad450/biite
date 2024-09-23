@@ -57,6 +57,8 @@ class ChatRepositoryImpl implements ChatRepository {
         throw Exception("id null at fetch all chats");
       }
 
+      if (peerId == id) throw Exception("unsupported operation");
+
       final doc = await _firestore
           .collection(kChatCollection)
           .where("ownerId", isEqualTo: id)

@@ -28,6 +28,13 @@ class PropositionBloc extends Cubit<PropositionState> {
     final description = _descriptionFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
     final compensation = _compensationFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
 
+    if (description.isEmpty || compensation.isEmpty) {
+      if (description.isEmpty) emit(const PropositionState.error("compensation is required"));
+      if (compensation.isEmpty) emit(const PropositionState.error("compensation is required"));
+
+      return;
+    }
+
     final param = CreateBidParam(
       bidId: bidId,
       projectId: projectId,

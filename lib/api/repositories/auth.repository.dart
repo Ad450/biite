@@ -39,6 +39,9 @@ class AuthRepositoryImpl implements AuthRepository {
         if (!query.docs.first.exists) {
           throw Exception("user document not found");
         }
+
+        print("....... this is the doc id I update ${query.docs.first.id}.....");
+
         await _hiveStore.saveItem(query.docs.first.id, "id", key: "id");
         return const Right(VoidType());
       }
@@ -84,6 +87,9 @@ class AuthRepositoryImpl implements AuthRepository {
     final user = UserModel(name: name, email: email, uid: uid);
     try {
       final doc = await _firestore.collection(kUserCollection).add(user.toJson());
+      await _firestore.collection(kUserCollection).doc(doc.id).update({
+        "id": doc.id,
+      });
       await _hiveStore.saveItem(doc.id, "id", key: "id");
     } catch (e) {
       rethrow;

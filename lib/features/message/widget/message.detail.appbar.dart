@@ -21,7 +21,7 @@ class MessageDetailAppbar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(height: 50.h),
-          const BiiteBack(),
+          BiiteBack(),
           SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

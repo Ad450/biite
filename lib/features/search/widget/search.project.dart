@@ -29,7 +29,7 @@ class SearchProject extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 height: 74.h,
                 decoration: const BoxDecoration(color: ColorName.searchCard),
-                child: const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+                child: const BiiteAvatarWithText(),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),

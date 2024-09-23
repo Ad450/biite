@@ -52,6 +52,10 @@ abstract class FirebaseModule {
   @singleton
   PasswordFieldBloc get loginPasswordFieldBloc => PasswordFieldBloc();
 
+  @Named('profile')
+  @singleton
+  PasswordFieldBloc get profilePasswordField => PasswordFieldBloc();
+
   @Named('createProject')
   @singleton
   NameFieldBloc get nameFieldBloc => NameFieldBloc();
@@ -59,6 +63,14 @@ abstract class FirebaseModule {
   @Named('search')
   @lazySingleton
   NameFieldBloc get searchField => NameFieldBloc();
+
+  @Named('chat')
+  @lazySingleton
+  NameFieldBloc get chatField => NameFieldBloc();
+
+  @Named('profile')
+  @lazySingleton
+  NameFieldBloc get profileNameField => NameFieldBloc();
 
   @Named('createProject')
   @lazySingleton
@@ -75,6 +87,10 @@ abstract class FirebaseModule {
   @Named('createProject')
   @lazySingleton
   DescriptionFieldBloc get descriptionFieldBloc => DescriptionFieldBloc();
+
+  @Named('profile')
+  @lazySingleton
+  DescriptionFieldBloc get profileDescrptionField => DescriptionFieldBloc();
 
   @Named('createProject')
   @lazySingleton

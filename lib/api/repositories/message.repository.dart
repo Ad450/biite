@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 
 abstract class MessageRepository {
   Future<void> addMessage(MessageParam param);
-  Future<MessageReturnType> fetchMessages(String roomId);
+  Future<List<MessageModel>> fetchMessages(String roomId);
   Future<void> markMessageAsRead(String roomId);
   Future<int> getCountOfUnreadMessages(String roomId);
   Future<MessageModel> getLastMessage(String roomId);
@@ -23,8 +23,14 @@ class MessageRepositoryImpl implements MessageRepository {
   @override
   Future<void> addMessage(MessageParam param) async {
     try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
       final message = MessageModel(
         roomId: param.roomId,
+        ownerId: id,
         text: param.text,
         createdAt: DateTime.now(),
         status: "unread",
@@ -37,7 +43,7 @@ class MessageRepositoryImpl implements MessageRepository {
   }
 
   @override
-  Future<MessageReturnType> fetchMessages(String roomId) async {
+  Future<List<MessageModel>> fetchMessages(String roomId) async {
     try {
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
@@ -51,10 +57,14 @@ class MessageRepositoryImpl implements MessageRepository {
         return model.copyWith(id: e.id);
       }).toList();
 
-      return MessageReturnType(
-        ownerMessages: messages.where((m) => m.id == id).toList(),
-        peerMessages: messages.where((m) => m.id != id).toList(),
-      );
+      ///TODO: save to hive after fetching
+      ///return last saved copy on any exception when fetching from remote
+
+      // return MessageReturnType(
+      //   ownerMessages: messages.where((m) => m.id == id).toList(),
+      //   peerMessages: messages.where((m) => m.id != id).toList(),
+      // );
+      return messages;
     } catch (e) {
       rethrow;
     }

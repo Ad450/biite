@@ -31,9 +31,9 @@ class MakeProposition extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const BiiteBack(),
+                BiiteBack(),
                 SizedBox(height: 40.h),
-                const BiiteAvatarWithText(name: "Hubert Adjei"),
+                const BiiteAvatarWithText(),
                 SizedBox(height: 48.h),
                 Text(
                   "Make a proposition",

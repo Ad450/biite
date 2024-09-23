@@ -1,4 +1,5 @@
 import 'package:biite/api/models/project.model.dart';
+import 'package:biite/api/models/room.model.dart';
 import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
 import 'package:biite/features/feed/widgets/all.propositions.dart';
@@ -8,6 +9,7 @@ import 'package:biite/features/feed/widgets/active.project.detail.dart';
 import 'package:biite/features/feed/widgets/proposition.details.dart';
 import 'package:biite/features/feed/widgets/send.your.work.dart';
 import 'package:biite/features/home/home.view.dart';
+import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/message/widget/message.detail.dart';
 import 'package:biite/features/onboarding/onboarding.view.dart';
 import 'package:biite/features/profile/widget/all.reviews.dart';
@@ -25,6 +27,7 @@ final router = GoRouter(
     GoRoute(path: "/login", builder: (context, state) => const Scaffold(body: Login())),
     GoRoute(path: "/onboarding", builder: (context, state) => const Scaffold(body: OnboardingView())),
     GoRoute(path: "/home", builder: (context, state) => const HomeView()),
+    GoRoute(path: "/chats", builder: (context, state) => const MessageView()),
     GoRoute(path: "/feed-details", builder: (context, state) => const MetricDetail()),
     GoRoute(
       path: "/activeProjectDetail",
@@ -41,7 +44,12 @@ final router = GoRouter(
       path: "/makeProposition",
       builder: (context, state) => MakeProposition(project: state.extra as ProjectModel),
     ),
-    GoRoute(path: "/messageDetail", builder: (context, state) => const MessageDetail()),
+    GoRoute(
+      path: "/messageDetail",
+      builder: (context, state) => MessageDetail(
+        room: state.extra as RoomModel,
+      ),
+    ),
     GoRoute(path: "/reviewDetail", builder: (context, state) => const AllReviews()),
     GoRoute(path: "/login", builder: (context, state) => const Login()),
     GoRoute(

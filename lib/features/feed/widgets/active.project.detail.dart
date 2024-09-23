@@ -36,7 +36,7 @@ class ActiveProjectDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+                  const BiiteAvatarWithText(),
                   SizedBox(height: 24.h),
                   Text(
                     "Posted ${project.createdAt.day} days ago",

@@ -1,40 +1,15 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
-import 'package:biite/core/presentation/widgets/biite.button.dart';
-import 'package:biite/core/presentation/widgets/biite.textfield.dart';
 import 'package:biite/features/profile/widget/edit.profile.avatar.dart';
+import 'package:biite/features/profile/widget/profile.button.dart';
+import 'package:biite/features/profile/widget/profile.description.field.dart';
+import 'package:biite/features/profile/widget/profile.name.field.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_picker/image_picker.dart';
 
-class EditProfile extends StatefulWidget {
+class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
-
-  @override
-  State<EditProfile> createState() => _EditProfileState();
-}
-
-class _EditProfileState extends State<EditProfile> {
-  bool _isFileSelected = false;
-  late ImagePicker _imagePicker;
-  XFile? xfile;
-
-  @override
-  void initState() {
-    super.initState();
-    _imagePicker = ImagePicker();
-  }
-
-  void _handlePickImage() async {
-    final image = await _imagePicker.pickImage(source: ImageSource.gallery);
-    if (image != null) {
-      setState(() {
-        _isFileSelected = true;
-        xfile = image;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +21,7 @@ class _EditProfileState extends State<EditProfile> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const Align(alignment: Alignment.centerLeft, child: BiiteBack()),
+              Align(alignment: Alignment.centerLeft, child: BiiteBack()),
               SizedBox(height: 40.h),
               Expanded(
                 child: SingleChildScrollView(
@@ -56,7 +31,7 @@ class _EditProfileState extends State<EditProfile> {
                       Align(
                         alignment: Alignment.center,
                         child: Text(
-                          "change profile picture",
+                          "Change profile picture",
                           style: context.appTheme.textTheme.bodySmall?.copyWith(
                             fontSize: 16,
                             color: ColorName.text,
@@ -65,10 +40,9 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      Align(
+                      const Align(
                         alignment: Alignment.center,
-                        child: EditProfileAvatar(
-                            handlePickImage: _handlePickImage, isFileSelected: _isFileSelected, path: xfile?.path),
+                        child: EditProfileAvatar(),
                       ),
                       SizedBox(height: 48.h),
                       Text(
@@ -80,14 +54,10 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      BiiteTextfield(
-                        controller: TextEditingController(),
-                        hintText: "First name",
-                        inputType: TextInputType.text,
-                        onChanged: (text) {},
-                      ),
+                      const ProfileNameField(),
+                      SizedBox(height: 16.h),
                       Text(
-                        "lastname",
+                        "About me",
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           color: ColorName.text,
@@ -95,32 +65,9 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      BiiteTextfield(
-                        controller: TextEditingController(),
-                        hintText: "Last name",
-                        inputType: TextInputType.text,
-                        onChanged: (text) {},
-                      ),
-                      Text(
-                        "password",
-                        style: context.appTheme.textTheme.bodySmall?.copyWith(
-                          fontSize: 16,
-                          color: ColorName.text,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                      SizedBox(height: 16.h),
-                      BiiteTextfield(
-                        controller: TextEditingController(),
-                        hintText: "Password",
-                        inputType: TextInputType.text,
-                        onChanged: (text) {},
-                      ),
+                      const ProfileDescriptionField(),
                       SizedBox(height: 69.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 56.w),
-                        child: BiiteTextButton(onPressed: () {}, text: "Finish"),
-                      )
+                      const ProfileButton(),
                     ],
                   ),
                 ),

@@ -25,7 +25,7 @@ class CreatedProjectDetail extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: BiiteBack(onMessagePressed: () {}, showMessage: true),
+                child: BiiteBack(onMessagePressed: () {}),
               ),
               SizedBox(height: 32.h),
               Container(
@@ -33,7 +33,7 @@ class CreatedProjectDetail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const BiiteAvatarWithText(name: "Emmanuel Adjei"),
+                    const BiiteAvatarWithText(),
                     SizedBox(height: 24.h),
                     Text(
                       projectModel.createdAt.day.toString(),

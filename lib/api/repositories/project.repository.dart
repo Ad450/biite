@@ -76,7 +76,7 @@ class ProjectRepostoryImpl implements ProjectRepository {
       // upload files to cloud storage
       final futures = <Future<String>>[];
       for (var file in param.files) {
-        futures.add(_cloudStorage.upload(file));
+        futures.add(_cloudStorage.upload(file, id));
       }
 
       List<String> urls = await Future.wait(futures);

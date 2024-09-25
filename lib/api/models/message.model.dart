@@ -12,6 +12,7 @@ abstract class MessageModel with _$MessageModel {
     required String text,
     required DateTime createdAt,
     required String status,
+    bool? isRight, // for UI
   }) = _MessageModel;
 
   factory MessageModel.fromJson(Map json) =>

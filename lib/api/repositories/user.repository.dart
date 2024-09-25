@@ -13,7 +13,9 @@ abstract class UserRepository {
     required String description,
   });
 
-  Future<UserModel> fetchPeer(String id);
+  Future<UserModel> fetchChatPeer(String chatOwner, String peerId);
+  Future<String> getCurrentUserId();
+  Future<UserModel> fetchPeer(String ownerId);
 }
 
 @LazySingleton(as: UserRepository)
@@ -78,13 +80,46 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<UserModel> fetchPeer(String id) async {
+  Future<UserModel> fetchPeer(String ownerId) async {
     try {
-      final doc = await _firestore.collection(kUserCollection).doc(id).get();
+      final doc = await _firestore.collection(kUserCollection).doc(ownerId).get();
       if (!doc.exists) {
         throw Exception("user document not found ");
       }
       return UserModel.fromJson(doc.data()!);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<UserModel> fetchChatPeer(String chatOwner, String peerId) async {
+    try {
+      final currentId = await _hiveStore.readItem("id", "id");
+      if (currentId == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      final queryId = currentId == peerId ? chatOwner : peerId;
+
+      final doc = await _firestore.collection(kUserCollection).doc(queryId).get();
+      if (!doc.exists) {
+        throw Exception("user document not found ");
+      }
+      return UserModel.fromJson(doc.data()!);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<String> getCurrentUserId() async {
+    try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+      return id;
     } catch (e) {
       rethrow;
     }

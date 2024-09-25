@@ -6,12 +6,13 @@ import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class AuthRepository {
   Future<Either<UIError, VoidType>> signup(SignupParam signupParam);
   Future<Either<UIError, VoidType>> signin(SigninParam signin);
-  Future<Either<UIError, bool>> isExistingUser();
+  Future<bool> isExistingUser();
   Future<Either<UIError, VoidType>> signout();
 }
 
@@ -73,11 +74,16 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<UIError, bool>> isExistingUser() async {
+  Future<bool> isExistingUser() async {
     try {
-      return Right(_firebaseAuth.currentUser != null);
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+      return true;
     } catch (e) {
-      return Left(UIError(e.toString()));
+      debugPrint(e.toString());
+      return false;
     }
   }
 

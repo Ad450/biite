@@ -80,6 +80,7 @@ class _PropositionButton extends StatelessWidget {
       listener: (_, state) => state.maybeMap(
         orElse: () => null,
         error: (state) => showToast(state.message),
+        create: (state) => showToast("Bid made!!!"),
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => BiiteTextButton(

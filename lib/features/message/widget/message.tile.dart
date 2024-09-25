@@ -8,22 +8,27 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class MessageTile extends StatelessWidget {
   const MessageTile({
     required this.room,
     required this.index,
+    required this.name,
+    required this.profileUrl,
+    required this.onTap,
     super.key,
   });
 
   final RoomModel room;
   final int index;
+  final String name;
+  final String? profileUrl;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.push("/messageDetail", extra: room),
+      onTap: onTap,
       child: Container(
         height: 103.h,
         width: double.infinity,
@@ -36,37 +41,38 @@ class MessageTile extends StatelessWidget {
           children: [
             Row(
               children: <Widget>[
-                MessageTilePicAvatar(ownerId: room.peerId),
+                MessageTilePicAvatar(profileUrl: profileUrl),
                 SizedBox(width: 16.w),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      room.peerName,
+                      name,
                       style: context.appTheme.textTheme.titleMedium?.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     BlocBuilder<MessageBloc, MessageState>(
-                        bloc: getIt.get<MessageBloc>()..fetchLastMessage(room.id!),
-                        builder: (_, state) => state.maybeMap(
-                              orElse: () => Text(
-                                "",
-                                style: context.appTheme.textTheme.bodySmall?.copyWith(
-                                  fontSize: 12.8,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                              lastMessage: (state) => Text(
-                                state.text,
-                                style: context.appTheme.textTheme.bodySmall?.copyWith(
-                                  fontSize: 12.8,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            )),
+                      bloc: getIt.get<MessageBloc>()..fetchLastMessage(room.id!),
+                      builder: (_, state) => state.maybeMap(
+                        orElse: () => Text(
+                          "",
+                          style: context.appTheme.textTheme.bodySmall?.copyWith(
+                            fontSize: 12.8,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        lastMessage: (state) => Text(
+                          state.text,
+                          style: context.appTheme.textTheme.bodySmall?.copyWith(
+                            fontSize: 12.8,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],

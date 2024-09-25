@@ -42,11 +42,11 @@ class Messaging extends StatelessWidget {
                 // chat messages here
                 snapshot.data!.length,
                 (i) => Align(
-                  alignment: snapshot.data![i].ownerId == room.ownerId ? Alignment.centerRight : Alignment.centerLeft,
+                  alignment: snapshot.data![i].isRight! ? Alignment.centerLeft : Alignment.centerRight,
                   child: Chat(
                     index: i,
                     text: snapshot.data![i].text,
-                    isRight: snapshot.data![i].ownerId == room.ownerId,
+                    isRight: snapshot.data![i].isRight!,
                     date: snapshot.data![i].createdAt,
                   ),
                 ),

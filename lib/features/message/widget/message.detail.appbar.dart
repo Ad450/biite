@@ -1,16 +1,22 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetailAppbar extends StatelessWidget {
-  const MessageDetailAppbar({required this.name, required this.peerId, super.key});
+  const MessageDetailAppbar({
+    required this.name,
+    required this.profileUrl,
+    super.key,
+  });
 
   final String name;
-  final String peerId;
+  final String profileUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +36,7 @@ class MessageDetailAppbar extends StatelessWidget {
             children: [
               Row(
                 children: <Widget>[
-                  MessageTilePicAvatar(ownerId: peerId, radius: 12),
+                  MessageTilePicAvatar(profileUrl: profileUrl, radius: 12),
                   SizedBox(width: 8.w),
                   Text(
                     name,
@@ -41,12 +47,16 @@ class MessageDetailAppbar extends StatelessWidget {
                   )
                 ],
               ),
-              Row(
-                children: <Widget>[
-                  Image.asset(Assets.images.phoneIcon.path),
-                  const SizedBox(width: 32),
-                  Image.asset(Assets.images.moreIcon.path),
-                ],
+              // TODO :add call and chat settings
+              GestureDetector(
+                onTap: () => showToast("feature not supported yet!"),
+                child: Row(
+                  children: <Widget>[
+                    Image.asset(Assets.images.phoneIcon.path),
+                    const SizedBox(width: 32),
+                    Image.asset(Assets.images.moreIcon.path),
+                  ],
+                ),
               )
             ],
           )

@@ -36,9 +36,6 @@ class ChatRepositoryImpl implements ChatRepository {
 
       final chats = all.map((e) {
         var room = RoomModel.fromJson(e.data());
-        // final lastMessage = await _messageRepository.getLastMessage(e.id);
-
-        // final unreadCount = await _messageRepository.getCountOfUnreadMessages(e.id);
 
         return room.copyWith(
           id: e.id,
@@ -46,6 +43,9 @@ class ChatRepositoryImpl implements ChatRepository {
           unreadMessageCount: 2,
         );
       }).toList();
+
+      print("....... here is the chats");
+      print("....... current id is $id");
 
       return Right(chats);
     } catch (e) {

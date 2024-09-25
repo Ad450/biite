@@ -22,6 +22,9 @@ class SignupState with _$SignupState {
 
   const factory SignupState.loading() = _SignupStateLoading;
   const factory SignupState.success() = _SignupStateSuccess;
+
+  const factory SignupState.authenticated() = _SignupStateAuthenticated;
+
   const factory SignupState.error(String message) = _SignupStateError;
 
   const SignupState._();

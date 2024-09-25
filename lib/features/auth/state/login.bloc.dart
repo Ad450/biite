@@ -54,14 +54,4 @@ class LoginBloc extends Cubit<LoginState> {
       (r) => emit(const LoginState.success()),
     );
   }
-
-  // void _checkUserExistence(AppStartedEvent event, Emitter<AuthState> emit) async {
-  //   emit(AuthState.signinLoading(user: null, message: state.message));
-
-  //   final result = await authRepository.isExistingUser();
-  //   result.fold(
-  //     (l) => emit(AuthState.error(user: null, message: l.message)),
-  //     (r) => emit(AuthState.userExists(user: state.user, message: null)),
-  //   );
-  // }
 }

@@ -547,6 +547,7 @@ mixin _$SignupState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() authenticated,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -555,6 +556,7 @@ mixin _$SignupState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? authenticated,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -563,6 +565,7 @@ mixin _$SignupState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? authenticated,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -572,6 +575,7 @@ mixin _$SignupState {
     required TResult Function(_SignupStateInitial value) initial,
     required TResult Function(_SignupStateLoading value) loading,
     required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
     required TResult Function(_SignupStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -580,6 +584,7 @@ mixin _$SignupState {
     TResult? Function(_SignupStateInitial value)? initial,
     TResult? Function(_SignupStateLoading value)? loading,
     TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
     TResult? Function(_SignupStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -588,6 +593,7 @@ mixin _$SignupState {
     TResult Function(_SignupStateInitial value)? initial,
     TResult Function(_SignupStateLoading value)? loading,
     TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
     TResult Function(_SignupStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -644,6 +650,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() authenticated,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -655,6 +662,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? authenticated,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -666,6 +674,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? authenticated,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -681,6 +690,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     required TResult Function(_SignupStateInitial value) initial,
     required TResult Function(_SignupStateLoading value) loading,
     required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
     required TResult Function(_SignupStateError value) error,
   }) {
     return initial(this);
@@ -692,6 +702,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     TResult? Function(_SignupStateInitial value)? initial,
     TResult? Function(_SignupStateLoading value)? loading,
     TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
     TResult? Function(_SignupStateError value)? error,
   }) {
     return initial?.call(this);
@@ -703,6 +714,7 @@ class _$SignupStateInitialImpl extends _SignupStateInitial {
     TResult Function(_SignupStateInitial value)? initial,
     TResult Function(_SignupStateLoading value)? loading,
     TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
     TResult Function(_SignupStateError value)? error,
     required TResult orElse(),
   }) {
@@ -750,6 +762,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() authenticated,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -761,6 +774,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? authenticated,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -772,6 +786,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? authenticated,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -787,6 +802,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     required TResult Function(_SignupStateInitial value) initial,
     required TResult Function(_SignupStateLoading value) loading,
     required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
     required TResult Function(_SignupStateError value) error,
   }) {
     return loading(this);
@@ -798,6 +814,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     TResult? Function(_SignupStateInitial value)? initial,
     TResult? Function(_SignupStateLoading value)? loading,
     TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
     TResult? Function(_SignupStateError value)? error,
   }) {
     return loading?.call(this);
@@ -809,6 +826,7 @@ class _$SignupStateLoadingImpl extends _SignupStateLoading {
     TResult Function(_SignupStateInitial value)? initial,
     TResult Function(_SignupStateLoading value)? loading,
     TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
     TResult Function(_SignupStateError value)? error,
     required TResult orElse(),
   }) {
@@ -856,6 +874,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() authenticated,
     required TResult Function(String message) error,
   }) {
     return success();
@@ -867,6 +886,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? authenticated,
     TResult? Function(String message)? error,
   }) {
     return success?.call();
@@ -878,6 +898,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? authenticated,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -893,6 +914,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     required TResult Function(_SignupStateInitial value) initial,
     required TResult Function(_SignupStateLoading value) loading,
     required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
     required TResult Function(_SignupStateError value) error,
   }) {
     return success(this);
@@ -904,6 +926,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     TResult? Function(_SignupStateInitial value)? initial,
     TResult? Function(_SignupStateLoading value)? loading,
     TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
     TResult? Function(_SignupStateError value)? error,
   }) {
     return success?.call(this);
@@ -915,6 +938,7 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
     TResult Function(_SignupStateInitial value)? initial,
     TResult Function(_SignupStateLoading value)? loading,
     TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
     TResult Function(_SignupStateError value)? error,
     required TResult orElse(),
   }) {
@@ -928,6 +952,120 @@ class _$SignupStateSuccessImpl extends _SignupStateSuccess {
 abstract class _SignupStateSuccess extends SignupState {
   const factory _SignupStateSuccess() = _$SignupStateSuccessImpl;
   const _SignupStateSuccess._() : super._();
+}
+
+/// @nodoc
+abstract class _$$SignupStateAuthenticatedImplCopyWith<$Res> {
+  factory _$$SignupStateAuthenticatedImplCopyWith(
+          _$SignupStateAuthenticatedImpl value,
+          $Res Function(_$SignupStateAuthenticatedImpl) then) =
+      __$$SignupStateAuthenticatedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignupStateAuthenticatedImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignupStateAuthenticatedImpl>
+    implements _$$SignupStateAuthenticatedImplCopyWith<$Res> {
+  __$$SignupStateAuthenticatedImplCopyWithImpl(
+      _$SignupStateAuthenticatedImpl _value,
+      $Res Function(_$SignupStateAuthenticatedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignupStateAuthenticatedImpl extends _SignupStateAuthenticated {
+  const _$SignupStateAuthenticatedImpl() : super._();
+
+  @override
+  String toString() {
+    return 'SignupState.authenticated()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() authenticated,
+    required TResult Function(String message) error,
+  }) {
+    return authenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? authenticated,
+    TResult? Function(String message)? error,
+  }) {
+    return authenticated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? authenticated,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (authenticated != null) {
+      return authenticated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignupStateInitial value) initial,
+    required TResult Function(_SignupStateLoading value) loading,
+    required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
+    required TResult Function(_SignupStateError value) error,
+  }) {
+    return authenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignupStateInitial value)? initial,
+    TResult? Function(_SignupStateLoading value)? loading,
+    TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
+    TResult? Function(_SignupStateError value)? error,
+  }) {
+    return authenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignupStateInitial value)? initial,
+    TResult Function(_SignupStateLoading value)? loading,
+    TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
+    TResult Function(_SignupStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (authenticated != null) {
+      return authenticated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignupStateAuthenticated extends SignupState {
+  const factory _SignupStateAuthenticated() = _$SignupStateAuthenticatedImpl;
+  const _SignupStateAuthenticated._() : super._();
 }
 
 /// @nodoc
@@ -987,6 +1125,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() authenticated,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -998,6 +1137,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? authenticated,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1009,6 +1149,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? authenticated,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1024,6 +1165,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     required TResult Function(_SignupStateInitial value) initial,
     required TResult Function(_SignupStateLoading value) loading,
     required TResult Function(_SignupStateSuccess value) success,
+    required TResult Function(_SignupStateAuthenticated value) authenticated,
     required TResult Function(_SignupStateError value) error,
   }) {
     return error(this);
@@ -1035,6 +1177,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     TResult? Function(_SignupStateInitial value)? initial,
     TResult? Function(_SignupStateLoading value)? loading,
     TResult? Function(_SignupStateSuccess value)? success,
+    TResult? Function(_SignupStateAuthenticated value)? authenticated,
     TResult? Function(_SignupStateError value)? error,
   }) {
     return error?.call(this);
@@ -1046,6 +1189,7 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     TResult Function(_SignupStateInitial value)? initial,
     TResult Function(_SignupStateLoading value)? loading,
     TResult Function(_SignupStateSuccess value)? success,
+    TResult Function(_SignupStateAuthenticated value)? authenticated,
     TResult Function(_SignupStateError value)? error,
     required TResult orElse(),
   }) {

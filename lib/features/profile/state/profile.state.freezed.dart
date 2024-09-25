@@ -732,7 +732,8 @@ mixin _$PeerState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel user) fetch,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -740,7 +741,8 @@ mixin _$PeerState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel user)? fetch,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -748,7 +750,8 @@ mixin _$PeerState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel user)? fetch,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -757,7 +760,8 @@ mixin _$PeerState {
   TResult map<TResult extends Object?>({
     required TResult Function(_PeerStateInitial value) initial,
     required TResult Function(_PeerStateLoading value) loading,
-    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
     required TResult Function(_PeerStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -765,7 +769,8 @@ mixin _$PeerState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PeerStateInitial value)? initial,
     TResult? Function(_PeerStateLoading value)? loading,
-    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult? Function(_PeerStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -773,7 +778,8 @@ mixin _$PeerState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PeerStateInitial value)? initial,
     TResult Function(_PeerStateLoading value)? loading,
-    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult Function(_PeerStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -828,7 +834,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel user) fetch,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -839,7 +846,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel user)? fetch,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -850,7 +858,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel user)? fetch,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -865,7 +874,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(_PeerStateInitial value) initial,
     required TResult Function(_PeerStateLoading value) loading,
-    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
     required TResult Function(_PeerStateError value) error,
   }) {
     return initial(this);
@@ -876,7 +886,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PeerStateInitial value)? initial,
     TResult? Function(_PeerStateLoading value)? loading,
-    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult? Function(_PeerStateError value)? error,
   }) {
     return initial?.call(this);
@@ -887,7 +898,8 @@ class _$PeerStateInitialImpl extends _PeerStateInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PeerStateInitial value)? initial,
     TResult Function(_PeerStateLoading value)? loading,
-    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult Function(_PeerStateError value)? error,
     required TResult orElse(),
   }) {
@@ -934,7 +946,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel user) fetch,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -945,7 +958,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel user)? fetch,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -956,7 +970,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel user)? fetch,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -971,7 +986,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(_PeerStateInitial value) initial,
     required TResult Function(_PeerStateLoading value) loading,
-    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
     required TResult Function(_PeerStateError value) error,
   }) {
     return loading(this);
@@ -982,7 +998,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PeerStateInitial value)? initial,
     TResult? Function(_PeerStateLoading value)? loading,
-    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult? Function(_PeerStateError value)? error,
   }) {
     return loading?.call(this);
@@ -993,7 +1010,8 @@ class _$PeerStateLoadingImpl extends _PeerStateLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PeerStateInitial value)? initial,
     TResult Function(_PeerStateLoading value)? loading,
-    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult Function(_PeerStateError value)? error,
     required TResult orElse(),
   }) {
@@ -1010,10 +1028,10 @@ abstract class _PeerStateLoading extends PeerState {
 }
 
 /// @nodoc
-abstract class _$$PeerStateFetchImplCopyWith<$Res> {
-  factory _$$PeerStateFetchImplCopyWith(_$PeerStateFetchImpl value,
-          $Res Function(_$PeerStateFetchImpl) then) =
-      __$$PeerStateFetchImplCopyWithImpl<$Res>;
+abstract class _$$PeerStateFetchChatImplCopyWith<$Res> {
+  factory _$$PeerStateFetchChatImplCopyWith(_$PeerStateFetchChatImpl value,
+          $Res Function(_$PeerStateFetchChatImpl) then) =
+      __$$PeerStateFetchChatImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserModel user});
 
@@ -1021,11 +1039,11 @@ abstract class _$$PeerStateFetchImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PeerStateFetchImplCopyWithImpl<$Res>
-    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateFetchImpl>
-    implements _$$PeerStateFetchImplCopyWith<$Res> {
-  __$$PeerStateFetchImplCopyWithImpl(
-      _$PeerStateFetchImpl _value, $Res Function(_$PeerStateFetchImpl) _then)
+class __$$PeerStateFetchChatImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateFetchChatImpl>
+    implements _$$PeerStateFetchChatImplCopyWith<$Res> {
+  __$$PeerStateFetchChatImplCopyWithImpl(_$PeerStateFetchChatImpl _value,
+      $Res Function(_$PeerStateFetchChatImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1033,7 +1051,7 @@ class __$$PeerStateFetchImplCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$PeerStateFetchImpl(
+    return _then(_$PeerStateFetchChatImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -1052,22 +1070,22 @@ class __$$PeerStateFetchImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PeerStateFetchImpl extends _PeerStateFetch {
-  const _$PeerStateFetchImpl(this.user) : super._();
+class _$PeerStateFetchChatImpl extends _PeerStateFetchChat {
+  const _$PeerStateFetchChatImpl(this.user) : super._();
 
   @override
   final UserModel user;
 
   @override
   String toString() {
-    return 'PeerState.fetch(user: $user)';
+    return 'PeerState.fetchChatPeer(user: $user)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PeerStateFetchImplCopyWith<_$PeerStateFetchImpl> get copyWith =>
-      __$$PeerStateFetchImplCopyWithImpl<_$PeerStateFetchImpl>(
+  _$$PeerStateFetchChatImplCopyWith<_$PeerStateFetchChatImpl> get copyWith =>
+      __$$PeerStateFetchChatImplCopyWithImpl<_$PeerStateFetchChatImpl>(
           this, _$identity);
 
   @override
@@ -1075,10 +1093,11 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel user) fetch,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
     required TResult Function(String message) error,
   }) {
-    return fetch(user);
+    return fetchChatPeer(user);
   }
 
   @override
@@ -1086,10 +1105,11 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel user)? fetch,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
     TResult? Function(String message)? error,
   }) {
-    return fetch?.call(user);
+    return fetchChatPeer?.call(user);
   }
 
   @override
@@ -1097,12 +1117,13 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel user)? fetch,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch(user);
+    if (fetchChatPeer != null) {
+      return fetchChatPeer(user);
     }
     return orElse();
   }
@@ -1112,10 +1133,11 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult map<TResult extends Object?>({
     required TResult Function(_PeerStateInitial value) initial,
     required TResult Function(_PeerStateLoading value) loading,
-    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
     required TResult Function(_PeerStateError value) error,
   }) {
-    return fetch(this);
+    return fetchChatPeer(this);
   }
 
   @override
@@ -1123,10 +1145,11 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PeerStateInitial value)? initial,
     TResult? Function(_PeerStateLoading value)? loading,
-    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult? Function(_PeerStateError value)? error,
   }) {
-    return fetch?.call(this);
+    return fetchChatPeer?.call(this);
   }
 
   @override
@@ -1134,24 +1157,179 @@ class _$PeerStateFetchImpl extends _PeerStateFetch {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PeerStateInitial value)? initial,
     TResult Function(_PeerStateLoading value)? loading,
-    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult Function(_PeerStateError value)? error,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch(this);
+    if (fetchChatPeer != null) {
+      return fetchChatPeer(this);
     }
     return orElse();
   }
 }
 
-abstract class _PeerStateFetch extends PeerState {
-  const factory _PeerStateFetch(final UserModel user) = _$PeerStateFetchImpl;
-  const _PeerStateFetch._() : super._();
+abstract class _PeerStateFetchChat extends PeerState {
+  const factory _PeerStateFetchChat(final UserModel user) =
+      _$PeerStateFetchChatImpl;
+  const _PeerStateFetchChat._() : super._();
 
   UserModel get user;
   @JsonKey(ignore: true)
-  _$$PeerStateFetchImplCopyWith<_$PeerStateFetchImpl> get copyWith =>
+  _$$PeerStateFetchChatImplCopyWith<_$PeerStateFetchChatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PeerStateFetchPeerImplCopyWith<$Res> {
+  factory _$$PeerStateFetchPeerImplCopyWith(_$PeerStateFetchPeerImpl value,
+          $Res Function(_$PeerStateFetchPeerImpl) then) =
+      __$$PeerStateFetchPeerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserModel user});
+
+  $UserModelCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$PeerStateFetchPeerImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateFetchPeerImpl>
+    implements _$$PeerStateFetchPeerImplCopyWith<$Res> {
+  __$$PeerStateFetchPeerImplCopyWithImpl(_$PeerStateFetchPeerImpl _value,
+      $Res Function(_$PeerStateFetchPeerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$PeerStateFetchPeerImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get user {
+    return $UserModelCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$PeerStateFetchPeerImpl extends _PeerStateFetchPeer {
+  const _$PeerStateFetchPeerImpl(this.user) : super._();
+
+  @override
+  final UserModel user;
+
+  @override
+  String toString() {
+    return 'PeerState.fetchPeer(user: $user)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PeerStateFetchPeerImplCopyWith<_$PeerStateFetchPeerImpl> get copyWith =>
+      __$$PeerStateFetchPeerImplCopyWithImpl<_$PeerStateFetchPeerImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
+    required TResult Function(String message) error,
+  }) {
+    return fetchPeer(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
+    TResult? Function(String message)? error,
+  }) {
+    return fetchPeer?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchPeer != null) {
+      return fetchPeer(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
+    required TResult Function(_PeerStateError value) error,
+  }) {
+    return fetchPeer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
+    TResult? Function(_PeerStateError value)? error,
+  }) {
+    return fetchPeer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetchPeer != null) {
+      return fetchPeer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PeerStateFetchPeer extends PeerState {
+  const factory _PeerStateFetchPeer(final UserModel user) =
+      _$PeerStateFetchPeerImpl;
+  const _PeerStateFetchPeer._() : super._();
+
+  UserModel get user;
+  @JsonKey(ignore: true)
+  _$$PeerStateFetchPeerImplCopyWith<_$PeerStateFetchPeerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1211,7 +1389,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel user) fetch,
+    required TResult Function(UserModel user) fetchChatPeer,
+    required TResult Function(UserModel user) fetchPeer,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -1222,7 +1401,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel user)? fetch,
+    TResult? Function(UserModel user)? fetchChatPeer,
+    TResult? Function(UserModel user)? fetchPeer,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1233,7 +1413,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel user)? fetch,
+    TResult Function(UserModel user)? fetchChatPeer,
+    TResult Function(UserModel user)? fetchPeer,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1248,7 +1429,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult map<TResult extends Object?>({
     required TResult Function(_PeerStateInitial value) initial,
     required TResult Function(_PeerStateLoading value) loading,
-    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateFetchChat value) fetchChatPeer,
+    required TResult Function(_PeerStateFetchPeer value) fetchPeer,
     required TResult Function(_PeerStateError value) error,
   }) {
     return error(this);
@@ -1259,7 +1441,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PeerStateInitial value)? initial,
     TResult? Function(_PeerStateLoading value)? loading,
-    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult? Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult? Function(_PeerStateError value)? error,
   }) {
     return error?.call(this);
@@ -1270,7 +1453,8 @@ class _$PeerStateErrorImpl extends _PeerStateError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PeerStateInitial value)? initial,
     TResult Function(_PeerStateLoading value)? loading,
-    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateFetchChat value)? fetchChatPeer,
+    TResult Function(_PeerStateFetchPeer value)? fetchPeer,
     TResult Function(_PeerStateError value)? error,
     required TResult orElse(),
   }) {

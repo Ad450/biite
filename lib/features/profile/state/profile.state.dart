@@ -29,7 +29,8 @@ class PeerState with _$PeerState {
 
   const factory PeerState.loading() = _PeerStateLoading;
 
-  const factory PeerState.fetch(UserModel user) = _PeerStateFetch;
+  const factory PeerState.fetchChatPeer(UserModel user) = _PeerStateFetchChat;
+  const factory PeerState.fetchPeer(UserModel user) = _PeerStateFetchPeer;
 
   const factory PeerState.error(String message) = _PeerStateError;
 

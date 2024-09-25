@@ -26,6 +26,7 @@ mixin _$MessageModel {
   String get text => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
+  bool? get isRight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +46,8 @@ abstract class $MessageModelCopyWith<$Res> {
       String ownerId,
       String text,
       DateTime createdAt,
-      String status});
+      String status,
+      bool? isRight});
 }
 
 /// @nodoc
@@ -67,6 +69,7 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
     Object? text = null,
     Object? createdAt = null,
     Object? status = null,
+    Object? isRight = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -93,6 +96,10 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
+      isRight: freezed == isRight
+          ? _value.isRight
+          : isRight // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -111,7 +118,8 @@ abstract class _$$MessageModelImplCopyWith<$Res>
       String ownerId,
       String text,
       DateTime createdAt,
-      String status});
+      String status,
+      bool? isRight});
 }
 
 /// @nodoc
@@ -131,6 +139,7 @@ class __$$MessageModelImplCopyWithImpl<$Res>
     Object? text = null,
     Object? createdAt = null,
     Object? status = null,
+    Object? isRight = freezed,
   }) {
     return _then(_$MessageModelImpl(
       id: freezed == id
@@ -157,6 +166,10 @@ class __$$MessageModelImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
+      isRight: freezed == isRight
+          ? _value.isRight
+          : isRight // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -170,7 +183,8 @@ class _$MessageModelImpl implements _MessageModel {
       required this.ownerId,
       required this.text,
       required this.createdAt,
-      required this.status});
+      required this.status,
+      this.isRight});
 
   factory _$MessageModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MessageModelImplFromJson(json);
@@ -187,10 +201,12 @@ class _$MessageModelImpl implements _MessageModel {
   final DateTime createdAt;
   @override
   final String status;
+  @override
+  final bool? isRight;
 
   @override
   String toString() {
-    return 'MessageModel(id: $id, roomId: $roomId, ownerId: $ownerId, text: $text, createdAt: $createdAt, status: $status)';
+    return 'MessageModel(id: $id, roomId: $roomId, ownerId: $ownerId, text: $text, createdAt: $createdAt, status: $status, isRight: $isRight)';
   }
 
   @override
@@ -204,13 +220,14 @@ class _$MessageModelImpl implements _MessageModel {
             (identical(other.text, text) || other.text == text) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isRight, isRight) || other.isRight == isRight));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, roomId, ownerId, text, createdAt, status);
+  int get hashCode => Object.hash(
+      runtimeType, id, roomId, ownerId, text, createdAt, status, isRight);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +250,8 @@ abstract class _MessageModel implements MessageModel {
       required final String ownerId,
       required final String text,
       required final DateTime createdAt,
-      required final String status}) = _$MessageModelImpl;
+      required final String status,
+      final bool? isRight}) = _$MessageModelImpl;
 
   factory _MessageModel.fromJson(Map<String, dynamic> json) =
       _$MessageModelImpl.fromJson;
@@ -250,6 +268,8 @@ abstract class _MessageModel implements MessageModel {
   DateTime get createdAt;
   @override
   String get status;
+  @override
+  bool? get isRight;
   @override
   @JsonKey(ignore: true)
   _$$MessageModelImplCopyWith<_$MessageModelImpl> get copyWith =>

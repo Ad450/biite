@@ -44,9 +44,10 @@ class OwnerProfileAvatar extends StatelessWidget {
 }
 
 class PeerProfileAvatar extends StatelessWidget {
-  const PeerProfileAvatar({required this.ownerId, super.key});
+  const PeerProfileAvatar({required this.ownerId, this.radius, super.key});
 
   final String ownerId;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -56,19 +57,19 @@ class PeerProfileAvatar extends StatelessWidget {
         children: <Widget>[
           state.maybeMap(
             orElse: () => const Icon(Icons.person),
-            fetch: (state) => CachedNetworkImage(
+            fetchPeer: (state) => CachedNetworkImage(
               imageUrl: state.user.profilePic ?? "",
               placeholder: (_, __) => const Icon(Icons.person),
               errorWidget: (_, __, ___) => const Icon(Icons.person),
               imageBuilder: (_, provider) => CircleAvatar(
                 backgroundImage: provider,
-                radius: 24,
+                radius: radius ?? 24,
               ),
             ),
           ),
           SizedBox(width: 8.w),
           Text(
-            state.maybeMap(orElse: () => "Anonymous", fetch: (state) => state.user.name),
+            state.maybeMap(orElse: () => "Anonymous", fetchPeer: (state) => state.user.name),
             style: context.appTheme.textTheme.titleMedium?.copyWith(
               fontSize: 25,
               fontWeight: FontWeight.bold,
@@ -81,26 +82,29 @@ class PeerProfileAvatar extends StatelessWidget {
 }
 
 class MessageTilePicAvatar extends StatelessWidget {
-  const MessageTilePicAvatar({required this.ownerId, this.radius, super.key});
-  final String ownerId;
+  const MessageTilePicAvatar({required this.profileUrl, this.radius, super.key});
   final double? radius;
+  final String? profileUrl;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PeerBloc, PeerState>(
-      bloc: getIt.get<PeerBloc>()..fetchPeer(ownerId),
-      builder: (_, state) => state.maybeMap(
-        orElse: () => const Icon(Icons.person),
-        fetch: (state) => CachedNetworkImage(
-          imageUrl: state.user.profilePic ?? "",
-          placeholder: (_, __) => const Icon(Icons.person),
-          errorWidget: (_, __, ___) => const Icon(Icons.person),
-          imageBuilder: (_, provider) => CircleAvatar(
-            backgroundImage: provider,
-            radius: radius ?? 24,
-          ),
-        ),
-      ),
-    );
+    return profileUrl == null
+        ? const Icon(Icons.person)
+        : CachedNetworkImage(
+            imageUrl: profileUrl!,
+            placeholder: (_, __) => const Icon(Icons.person),
+            errorWidget: (_, __, ___) => const Icon(Icons.person),
+            imageBuilder: (_, provider) => CircleAvatar(
+              backgroundImage: provider,
+              radius: radius ?? 24,
+            ),
+          );
+    // return BlocBuilder<PeerBloc, PeerState>(
+    //   bloc: getIt.get<PeerBloc>()..fetchChatPeer(chatOwner, peerId),
+    //   builder: (_, state) => state.maybeMap(
+    //     orElse: () => const Icon(Icons.person),
+    //     fetchChatPeer: (state) =>
+    //   ),
+    // );
   }
 }

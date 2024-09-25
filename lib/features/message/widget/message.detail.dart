@@ -15,9 +15,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetail extends StatefulWidget {
-  const MessageDetail({required this.room, super.key});
+  const MessageDetail({required this.extra, super.key});
 
-  final RoomModel room;
+  final Map<String, dynamic> extra;
 
   @override
   State<MessageDetail> createState() => _MessageDetailState();
@@ -56,17 +56,20 @@ class _MessageDetailState extends State<MessageDetail> {
       resizeToAvoidBottomInset: true,
       body: Column(
         children: [
-          MessageDetailAppbar(name: widget.room.peerName, peerId: widget.room.peerId),
+          MessageDetailAppbar(
+            name: widget.extra["name"],
+            profileUrl: widget.extra["profileUrl"],
+          ),
           Expanded(
             child: SingleChildScrollView(
               controller: _scrollController,
               child: Messaging(
-                room: widget.room,
+                room: widget.extra["room"],
                 // isTextfieldOpened: _focusNode.hasFocus,
               ),
             ),
           ),
-          _ChatTextField(roomId: widget.room.id!, focusNode: _focusNode)
+          _ChatTextField(roomId: widget.extra["room"].id!, focusNode: _focusNode)
         ],
       ),
     );

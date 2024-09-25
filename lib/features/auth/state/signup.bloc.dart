@@ -1,3 +1,4 @@
+import 'package:biite/api/models/user.model.dart';
 import 'package:biite/api/repositories/auth.repository.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
@@ -64,5 +65,19 @@ class SignupBloc extends Cubit<SignupState> {
       (l) => emit(SignupState.error(l.message)),
       (r) => emit(const SignupState.success()),
     );
+  }
+
+  void checkUserExistence() async {
+    try {
+      emit(const SignupState.loading());
+      final result = await authRepository.isExistingUser();
+      if (result) {
+        emit(const SignupState.authenticated());
+      }
+      return;
+    } catch (e) {
+      emit(SignupState.error(e.toString()));
+      return;
+    }
   }
 }

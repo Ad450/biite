@@ -43,6 +43,14 @@ class BidRepositoryImpl implements BidRepository {
         throw Exception("id null at fetch all chats");
       }
 
+      final bidExists = await _firestore
+          .collection(kProjectCollection)
+          .where("id", isEqualTo: param.projectId)
+          .where("ownerId", isEqualTo: param.ownerId)
+          .get();
+
+      if (bidExists.docs.isNotEmpty) throw Exception("You have a bid for this project, check it out");
+
       final projectDoc = await _firestore.collection(kProjectCollection).doc(param.projectId).get();
 
       if (!projectDoc.exists) {

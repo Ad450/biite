@@ -14,6 +14,7 @@ _$MessageModelImpl _$$MessageModelImplFromJson(Map<String, dynamic> json) =>
       text: json['text'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       status: json['status'] as String,
+      isRight: json['isRight'] as bool?,
     );
 
 Map<String, dynamic> _$$MessageModelImplToJson(_$MessageModelImpl instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$MessageModelImplToJson(_$MessageModelImpl instance) =>
       'text': instance.text,
       'createdAt': instance.createdAt.toIso8601String(),
       'status': instance.status,
+      'isRight': instance.isRight,
     };

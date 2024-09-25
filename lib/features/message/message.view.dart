@@ -4,11 +4,14 @@ import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/message/state/chats.bloc.dart';
 import 'package:biite/features/message/state/message.state.dart';
 import 'package:biite/features/message/widget/message.tile.dart';
+import 'package:biite/features/profile/state/peer.bloc.dart';
+import 'package:biite/features/profile/state/profile.state.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class MessageView extends StatelessWidget {
   const MessageView({super.key});
@@ -59,8 +62,8 @@ class _Chats extends StatelessWidget {
           child: Text("Get started by adding chats"),
         ),
         loading: (_) => const Center(child: CupertinoActivityIndicator()),
-        fetchChats: (state) => SingleChildScrollView(
-          child: state.chats.isEmpty
+        fetchChats: (roomState) => SingleChildScrollView(
+          child: roomState.chats.isEmpty
               ? Center(
                   child: Text(
                     "No chat added",
@@ -74,8 +77,29 @@ class _Chats extends StatelessWidget {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: List.generate(
-                    state.chats.length,
-                    (i) => MessageTile(room: state.chats[i], index: i),
+                    roomState.chats.length,
+                    (i) => BlocBuilder<PeerBloc, PeerState>(
+                      bloc: getIt.get<PeerBloc>()..fetchChatPeer(roomState.chats[i].ownerId, roomState.chats[i].peerId),
+                      builder: (_, state) => state.maybeMap(
+                        orElse: () => const SizedBox(),
+                        fetchChatPeer: (state) => MessageTile(
+                          name: state.user.name,
+                          profileUrl: state.user.profilePic,
+                          room: roomState.chats[i],
+                          index: i,
+                          onTap: () {
+                            context.push(
+                              "/messageDetail",
+                              extra: {
+                                "room": roomState.chats[i],
+                                "profileUrl": state.user.profilePic,
+                                "name": state.user.name,
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ),
                   ),
                 ),
         ),

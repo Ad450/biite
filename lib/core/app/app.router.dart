@@ -1,5 +1,4 @@
 import 'package:biite/api/models/project.model.dart';
-import 'package:biite/api/models/room.model.dart';
 import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
 import 'package:biite/features/feed/widgets/all.propositions.dart';
@@ -47,7 +46,7 @@ final router = GoRouter(
     GoRoute(
       path: "/messageDetail",
       builder: (context, state) => MessageDetail(
-        room: state.extra as RoomModel,
+        extra: state.extra as Map<String, dynamic>,
       ),
     ),
     GoRoute(path: "/reviewDetail", builder: (context, state) => const AllReviews()),

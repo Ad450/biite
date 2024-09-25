@@ -81,7 +81,7 @@ class MessageRepositoryImpl implements MessageRepository {
         final docs = snapshot.docs;
         final messages = docs.map((e) {
           var model = MessageModel.fromJson(e.data());
-          return model.copyWith(id: e.id);
+          return model.copyWith(id: e.id, isRight: id == model.ownerId);
         }).toList();
 
         messages.sort((a, b) => a.createdAt.compareTo(b.createdAt));

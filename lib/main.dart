@@ -2,6 +2,7 @@ import 'package:biite/biite.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/state/biite.observer.dart';
 import 'package:biite/firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,6 +28,7 @@ void main() async {
     );
     configureDependencies();
     Bloc.observer = BiiteObserver();
+    getIt.get<FirebaseFirestore>().settings = const Settings(persistenceEnabled: true);
   } catch (e) {
     debugPrint(e.toString());
   }

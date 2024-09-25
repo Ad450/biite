@@ -3,6 +3,7 @@ import 'package:biite/api/repositories/message.repository.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/message/state/message.state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -43,6 +44,15 @@ class MessageBloc extends Cubit<MessageState> {
       return;
     } catch (e) {
       emit(MessageState.error(e.toString()));
+    }
+  }
+
+  void fetchLastMessage(String roomId) async {
+    try {
+      final result = await _messageRepository.getLastMessage(roomId);
+      emit(MessageState.lastMessage(result.text));
+    } catch (e) {
+      debugPrint(e.toString());
     }
   }
 }

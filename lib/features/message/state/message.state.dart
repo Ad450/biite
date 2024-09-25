@@ -16,6 +16,8 @@ class MessageState with _$MessageState {
 
   const factory MessageState.addMessage() = _FeedStateAddMessages;
 
+  const factory MessageState.lastMessage(String text) = _FeedStateLastMessage;
+
   const factory MessageState.error(String message) = _FeedStateAddError;
 
   const MessageState._();

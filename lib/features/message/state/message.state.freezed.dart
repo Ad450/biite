@@ -23,6 +23,7 @@ mixin _$MessageState {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$MessageState {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$MessageState {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -54,6 +57,7 @@ mixin _$MessageState {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +68,7 @@ mixin _$MessageState {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,6 +79,7 @@ mixin _$MessageState {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) =>
@@ -132,6 +138,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -145,6 +152,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -158,6 +166,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -175,6 +184,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return initial(this);
@@ -188,6 +198,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return initial?.call(this);
@@ -201,6 +212,7 @@ class _$MessageStateInitialImpl extends _MessageStateInitial {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {
@@ -250,6 +262,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -263,6 +276,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -276,6 +290,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -293,6 +308,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return loading(this);
@@ -306,6 +322,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return loading?.call(this);
@@ -319,6 +336,7 @@ class _$MessageStateLoadingImpl extends _MessageStateLoading {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {
@@ -402,6 +420,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return fetchChats(chats);
@@ -415,6 +434,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return fetchChats?.call(chats);
@@ -428,6 +448,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -445,6 +466,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return fetchChats(this);
@@ -458,6 +480,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return fetchChats?.call(this);
@@ -471,6 +494,7 @@ class _$MessageStateFetchChatsImpl extends _MessageStateFetchChats {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {
@@ -560,6 +584,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return fetchMessages(messages);
@@ -573,6 +598,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return fetchMessages?.call(messages);
@@ -586,6 +612,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -603,6 +630,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return fetchMessages(this);
@@ -616,6 +644,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return fetchMessages?.call(this);
@@ -629,6 +658,7 @@ class _$FeedStateFetchMessagesImpl extends _FeedStateFetchMessages {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {
@@ -684,6 +714,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return addMessage();
@@ -697,6 +728,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return addMessage?.call();
@@ -710,6 +742,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -727,6 +760,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return addMessage(this);
@@ -740,6 +774,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return addMessage?.call(this);
@@ -753,6 +788,7 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {
@@ -766,6 +802,162 @@ class _$FeedStateAddMessagesImpl extends _FeedStateAddMessages {
 abstract class _FeedStateAddMessages extends MessageState {
   const factory _FeedStateAddMessages() = _$FeedStateAddMessagesImpl;
   const _FeedStateAddMessages._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FeedStateLastMessageImplCopyWith<$Res> {
+  factory _$$FeedStateLastMessageImplCopyWith(_$FeedStateLastMessageImpl value,
+          $Res Function(_$FeedStateLastMessageImpl) then) =
+      __$$FeedStateLastMessageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String text});
+}
+
+/// @nodoc
+class __$$FeedStateLastMessageImplCopyWithImpl<$Res>
+    extends _$MessageStateCopyWithImpl<$Res, _$FeedStateLastMessageImpl>
+    implements _$$FeedStateLastMessageImplCopyWith<$Res> {
+  __$$FeedStateLastMessageImplCopyWithImpl(_$FeedStateLastMessageImpl _value,
+      $Res Function(_$FeedStateLastMessageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+  }) {
+    return _then(_$FeedStateLastMessageImpl(
+      null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FeedStateLastMessageImpl extends _FeedStateLastMessage {
+  const _$FeedStateLastMessageImpl(this.text) : super._();
+
+  @override
+  final String text;
+
+  @override
+  String toString() {
+    return 'MessageState.lastMessage(text: $text)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FeedStateLastMessageImplCopyWith<_$FeedStateLastMessageImpl>
+      get copyWith =>
+          __$$FeedStateLastMessageImplCopyWithImpl<_$FeedStateLastMessageImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<RoomModel> chats) fetchChats,
+    required TResult Function(List<MessageModel> messages) fetchMessages,
+    required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
+    required TResult Function(String message) error,
+  }) {
+    return lastMessage(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<RoomModel> chats)? fetchChats,
+    TResult? Function(List<MessageModel> messages)? fetchMessages,
+    TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
+    TResult? Function(String message)? error,
+  }) {
+    return lastMessage?.call(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<RoomModel> chats)? fetchChats,
+    TResult Function(List<MessageModel> messages)? fetchMessages,
+    TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (lastMessage != null) {
+      return lastMessage(text);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MessageStateInitial value) initial,
+    required TResult Function(_MessageStateLoading value) loading,
+    required TResult Function(_MessageStateFetchChats value) fetchChats,
+    required TResult Function(_FeedStateFetchMessages value) fetchMessages,
+    required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
+    required TResult Function(_FeedStateAddError value) error,
+  }) {
+    return lastMessage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MessageStateInitial value)? initial,
+    TResult? Function(_MessageStateLoading value)? loading,
+    TResult? Function(_MessageStateFetchChats value)? fetchChats,
+    TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
+    TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
+    TResult? Function(_FeedStateAddError value)? error,
+  }) {
+    return lastMessage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MessageStateInitial value)? initial,
+    TResult Function(_MessageStateLoading value)? loading,
+    TResult Function(_MessageStateFetchChats value)? fetchChats,
+    TResult Function(_FeedStateFetchMessages value)? fetchMessages,
+    TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
+    TResult Function(_FeedStateAddError value)? error,
+    required TResult orElse(),
+  }) {
+    if (lastMessage != null) {
+      return lastMessage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FeedStateLastMessage extends MessageState {
+  const factory _FeedStateLastMessage(final String text) =
+      _$FeedStateLastMessageImpl;
+  const _FeedStateLastMessage._() : super._();
+
+  String get text;
+  @JsonKey(ignore: true)
+  _$$FeedStateLastMessageImplCopyWith<_$FeedStateLastMessageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -827,6 +1019,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     required TResult Function(List<RoomModel> chats) fetchChats,
     required TResult Function(List<MessageModel> messages) fetchMessages,
     required TResult Function() addMessage,
+    required TResult Function(String text) lastMessage,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -840,6 +1033,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     TResult? Function(List<RoomModel> chats)? fetchChats,
     TResult? Function(List<MessageModel> messages)? fetchMessages,
     TResult? Function()? addMessage,
+    TResult? Function(String text)? lastMessage,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -853,6 +1047,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     TResult Function(List<RoomModel> chats)? fetchChats,
     TResult Function(List<MessageModel> messages)? fetchMessages,
     TResult Function()? addMessage,
+    TResult Function(String text)? lastMessage,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -870,6 +1065,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     required TResult Function(_MessageStateFetchChats value) fetchChats,
     required TResult Function(_FeedStateFetchMessages value) fetchMessages,
     required TResult Function(_FeedStateAddMessages value) addMessage,
+    required TResult Function(_FeedStateLastMessage value) lastMessage,
     required TResult Function(_FeedStateAddError value) error,
   }) {
     return error(this);
@@ -883,6 +1079,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     TResult? Function(_MessageStateFetchChats value)? fetchChats,
     TResult? Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult? Function(_FeedStateAddMessages value)? addMessage,
+    TResult? Function(_FeedStateLastMessage value)? lastMessage,
     TResult? Function(_FeedStateAddError value)? error,
   }) {
     return error?.call(this);
@@ -896,6 +1093,7 @@ class _$FeedStateAddErrorImpl extends _FeedStateAddError {
     TResult Function(_MessageStateFetchChats value)? fetchChats,
     TResult Function(_FeedStateFetchMessages value)? fetchMessages,
     TResult Function(_FeedStateAddMessages value)? addMessage,
+    TResult Function(_FeedStateLastMessage value)? lastMessage,
     TResult Function(_FeedStateAddError value)? error,
     required TResult orElse(),
   }) {

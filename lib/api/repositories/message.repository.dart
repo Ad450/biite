@@ -136,6 +136,7 @@ class MessageRepositoryImpl implements MessageRepository {
         var model = MessageModel.fromJson(e.data());
         return model.copyWith(id: e.id);
       }).toList();
+      messages.sort((a, b) => a.createdAt.compareTo(b.createdAt));
       return messages.last;
     } catch (e) {
       rethrow;

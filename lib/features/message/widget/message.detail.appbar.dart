@@ -1,4 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -6,9 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetailAppbar extends StatelessWidget {
-  const MessageDetailAppbar({required this.name, super.key});
+  const MessageDetailAppbar({required this.name, required this.peerId, super.key});
 
   final String name;
+  final String peerId;
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +30,12 @@ class MessageDetailAppbar extends StatelessWidget {
             children: [
               Row(
                 children: <Widget>[
-                  CircleAvatar(
-                    radius: 12,
-                    // use caching mechanism here
-                    child: Image.asset(Assets.images.avatar.path, fit: BoxFit.cover),
-                  ),
+                  MessageTilePicAvatar(ownerId: peerId, radius: 12),
                   SizedBox(width: 8.w),
                   Text(
                     name,
                     style: context.appTheme.textTheme.titleMedium?.copyWith(
-                      fontSize: 25,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   )

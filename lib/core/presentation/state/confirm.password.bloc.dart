@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Singleton()
 class ConfirmPasswordFieldBloc extends FieldBaseBloc {
-  ConfirmPasswordFieldBloc(this.passwordFieldBloc)
+  ConfirmPasswordFieldBloc(@Named("signup") this.passwordFieldBloc)
       : confirmPasswordController = TextEditingController(),
         super(const FieldState.initial()) {
     on<ConfirmPasswordFieldEvent>(isValid);
@@ -30,7 +30,10 @@ class ConfirmPasswordFieldBloc extends FieldBaseBloc {
         return;
       }
 
-      if (passwordFieldBloc.state.maybeMap(orElse: () => true, valid: (state) => state.data) != event.password) {
+      final password = passwordFieldBloc.state
+          .maybeMap(orElse: () => null, invalid: (state) => state.message, valid: (state) => state.data);
+
+      if (password == null || password != event.password) {
         emit(const FieldState.invalid(message: "password mismatch"));
         return;
       }

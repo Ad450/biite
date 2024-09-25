@@ -29,6 +29,9 @@ class PasswordFieldBloc extends FieldBaseBloc {
       }
 
       emit(FieldState.valid(data: event.password!));
+      // print("this is the password, ${event.password}");
+      // final pass = state.maybeMap(orElse: () => null, valid: (state) => state.data);
+      // print(".....pass in state, $pass");
     }
   }
 

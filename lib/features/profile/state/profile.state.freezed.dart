@@ -727,6 +727,571 @@ abstract class _ProfileStateError extends ProfileState {
 }
 
 /// @nodoc
+mixin _$PeerState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetch,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetch,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PeerStateCopyWith<$Res> {
+  factory $PeerStateCopyWith(PeerState value, $Res Function(PeerState) then) =
+      _$PeerStateCopyWithImpl<$Res, PeerState>;
+}
+
+/// @nodoc
+class _$PeerStateCopyWithImpl<$Res, $Val extends PeerState>
+    implements $PeerStateCopyWith<$Res> {
+  _$PeerStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$PeerStateInitialImplCopyWith<$Res> {
+  factory _$$PeerStateInitialImplCopyWith(_$PeerStateInitialImpl value,
+          $Res Function(_$PeerStateInitialImpl) then) =
+      __$$PeerStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PeerStateInitialImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateInitialImpl>
+    implements _$$PeerStateInitialImplCopyWith<$Res> {
+  __$$PeerStateInitialImplCopyWithImpl(_$PeerStateInitialImpl _value,
+      $Res Function(_$PeerStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PeerStateInitialImpl extends _PeerStateInitial {
+  const _$PeerStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PeerState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PeerStateInitial extends PeerState {
+  const factory _PeerStateInitial() = _$PeerStateInitialImpl;
+  const _PeerStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PeerStateLoadingImplCopyWith<$Res> {
+  factory _$$PeerStateLoadingImplCopyWith(_$PeerStateLoadingImpl value,
+          $Res Function(_$PeerStateLoadingImpl) then) =
+      __$$PeerStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PeerStateLoadingImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateLoadingImpl>
+    implements _$$PeerStateLoadingImplCopyWith<$Res> {
+  __$$PeerStateLoadingImplCopyWithImpl(_$PeerStateLoadingImpl _value,
+      $Res Function(_$PeerStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PeerStateLoadingImpl extends _PeerStateLoading {
+  const _$PeerStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PeerState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PeerStateLoading extends PeerState {
+  const factory _PeerStateLoading() = _$PeerStateLoadingImpl;
+  const _PeerStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PeerStateFetchImplCopyWith<$Res> {
+  factory _$$PeerStateFetchImplCopyWith(_$PeerStateFetchImpl value,
+          $Res Function(_$PeerStateFetchImpl) then) =
+      __$$PeerStateFetchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserModel user});
+
+  $UserModelCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$PeerStateFetchImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateFetchImpl>
+    implements _$$PeerStateFetchImplCopyWith<$Res> {
+  __$$PeerStateFetchImplCopyWithImpl(
+      _$PeerStateFetchImpl _value, $Res Function(_$PeerStateFetchImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$PeerStateFetchImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get user {
+    return $UserModelCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$PeerStateFetchImpl extends _PeerStateFetch {
+  const _$PeerStateFetchImpl(this.user) : super._();
+
+  @override
+  final UserModel user;
+
+  @override
+  String toString() {
+    return 'PeerState.fetch(user: $user)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PeerStateFetchImplCopyWith<_$PeerStateFetchImpl> get copyWith =>
+      __$$PeerStateFetchImplCopyWithImpl<_$PeerStateFetchImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return fetch(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return fetch?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateError value) error,
+  }) {
+    return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateError value)? error,
+  }) {
+    return fetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PeerStateFetch extends PeerState {
+  const factory _PeerStateFetch(final UserModel user) = _$PeerStateFetchImpl;
+  const _PeerStateFetch._() : super._();
+
+  UserModel get user;
+  @JsonKey(ignore: true)
+  _$$PeerStateFetchImplCopyWith<_$PeerStateFetchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PeerStateErrorImplCopyWith<$Res> {
+  factory _$$PeerStateErrorImplCopyWith(_$PeerStateErrorImpl value,
+          $Res Function(_$PeerStateErrorImpl) then) =
+      __$$PeerStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$PeerStateErrorImplCopyWithImpl<$Res>
+    extends _$PeerStateCopyWithImpl<$Res, _$PeerStateErrorImpl>
+    implements _$$PeerStateErrorImplCopyWith<$Res> {
+  __$$PeerStateErrorImplCopyWithImpl(
+      _$PeerStateErrorImpl _value, $Res Function(_$PeerStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$PeerStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PeerStateErrorImpl extends _PeerStateError {
+  const _$PeerStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'PeerState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PeerStateErrorImplCopyWith<_$PeerStateErrorImpl> get copyWith =>
+      __$$PeerStateErrorImplCopyWithImpl<_$PeerStateErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel user) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel user)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel user)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerStateInitial value) initial,
+    required TResult Function(_PeerStateLoading value) loading,
+    required TResult Function(_PeerStateFetch value) fetch,
+    required TResult Function(_PeerStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerStateInitial value)? initial,
+    TResult? Function(_PeerStateLoading value)? loading,
+    TResult? Function(_PeerStateFetch value)? fetch,
+    TResult? Function(_PeerStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerStateInitial value)? initial,
+    TResult Function(_PeerStateLoading value)? loading,
+    TResult Function(_PeerStateFetch value)? fetch,
+    TResult Function(_PeerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PeerStateError extends PeerState {
+  const factory _PeerStateError(final String message) = _$PeerStateErrorImpl;
+  const _PeerStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$PeerStateErrorImplCopyWith<_$PeerStateErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$FetchPictureState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

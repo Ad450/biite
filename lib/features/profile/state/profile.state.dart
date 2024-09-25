@@ -24,6 +24,22 @@ class ProfileState with _$ProfileState {
 }
 
 @freezed
+class PeerState with _$PeerState {
+  const factory PeerState.initial() = _PeerStateInitial;
+
+  const factory PeerState.loading() = _PeerStateLoading;
+
+  const factory PeerState.fetch(UserModel user) = _PeerStateFetch;
+
+  const factory PeerState.error(String message) = _PeerStateError;
+
+  const PeerState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}
+
+@freezed
 class FetchPictureState with _$FetchPictureState {
   const factory FetchPictureState.initial() = _FetchPictureStateInitial;
 

@@ -28,5 +28,6 @@ class PropositionState with _$PropositionState {
 
   const PropositionState._();
 
+  @override
   bool operator ==(Object other) => false;
 }

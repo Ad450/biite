@@ -2,7 +2,6 @@ import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/message/state/chats.bloc.dart';
-import 'package:biite/features/message/state/message.bloc.dart';
 import 'package:biite/features/message/state/message.state.dart';
 import 'package:biite/features/message/widget/message.tile.dart';
 import 'package:biite/gen/colors.gen.dart';

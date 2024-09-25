@@ -7,113 +7,66 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/message/state/message.bloc.dart';
-import 'package:biite/features/message/state/message.state.dart';
 import 'package:biite/features/message/widget/message.detail.appbar.dart';
+import 'package:biite/features/message/widget/messaging.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MessageDetail extends StatelessWidget {
+class MessageDetail extends StatefulWidget {
   const MessageDetail({required this.room, super.key});
 
   final RoomModel room;
 
   @override
-  Widget build(BuildContext context) {
-    final bloc = getIt.get<MessageBloc>()..fetchMessages(room.id!);
-
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: <Widget>[
-                Positioned.fill(
-                    child: SingleChildScrollView(
-                  child: BlocBuilder<MessageBloc, MessageState>(
-                    bloc: bloc,
-                    builder: (_, state) => state.maybeMap(
-                      orElse: () => const Column(),
-                      fetchMessages: (state) => Column(
-                        children: <Widget>[
-                          SizedBox(height: 122.h),
-                          // )),
-                          ...List.generate(
-                            // chat messages here
-                            state.messages.length,
-                            (i) => Align(
-                              alignment: state.messages[i].ownerId == room.ownerId
-                                  ? Alignment.centerRight
-                                  : Alignment.centerLeft,
-                              child: _Chat(index: i, text: state.messages[i].text),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )),
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  child: MessageDetailAppbar(name: room.peerName),
-                ),
-              ],
-            ),
-          ),
-          _ChatTextField(roomId: room.id!)
-        ],
-      ),
-    );
-  }
+  State<MessageDetail> createState() => _MessageDetailState();
 }
 
-class _Chat extends StatelessWidget {
-  const _Chat({required this.index, required this.text, super.key});
+class _MessageDetailState extends State<MessageDetail> {
+  final ScrollController _scrollController = ScrollController();
+  final FocusNode _focusNode = FocusNode();
 
-  final int index;
-  // final bool isRead;
-  final String text;
+  @override
+  void initState() {
+    super.initState();
+    // _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+    Future.delayed(const Duration(milliseconds: 100), () => _scrollDown());
+
+    _focusNode.addListener(() {
+      if (_focusNode.hasFocus) {}
+      _scrollDown();
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _scrollDown() {
+    _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+        duration: const Duration(seconds: 1), curve: Curves.fastOutSlowIn);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.h),
-      margin: const EdgeInsets.symmetric(vertical: 24),
-      child: Column(
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      body: Column(
         children: [
-          Align(
-            alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
-            child: Container(
-              decoration: BoxDecoration(
-                color: index % 2 == 0 ? ColorName.primary : ColorName.ownerChat,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              width: 200.w,
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  text,
-                  maxLines: index % 2 == 0 ? 3 : 8,
-                  style: context.appTheme.textTheme.bodySmall
-                      ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.white),
-                ),
+          MessageDetailAppbar(name: widget.room.peerName, peerId: widget.room.peerId),
+          Expanded(
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: Messaging(
+                room: widget.room,
+                // isTextfieldOpened: _focusNode.hasFocus,
               ),
             ),
           ),
-          Align(
-            alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
-            child: SizedBox(
-              height: 16.h,
-              width: 78.w,
-              child: Text(
-                "Read 12:45 √",
-                style: context.appTheme.textTheme.bodySmall
-                    ?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal, color: ColorName.fillColor),
-              ),
-            ),
-          )
+          _ChatTextField(roomId: widget.room.id!, focusNode: _focusNode)
         ],
       ),
     );
@@ -121,9 +74,10 @@ class _Chat extends StatelessWidget {
 }
 
 class _ChatTextField extends StatelessWidget {
-  const _ChatTextField({required this.roomId, super.key});
+  const _ChatTextField({required this.roomId, this.focusNode, super.key});
 
   final String roomId;
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -145,6 +99,7 @@ class _ChatTextField extends StatelessWidget {
               bloc: bloc,
               builder: (_, state) => TextField(
                 controller: bloc.nameController,
+                focusNode: focusNode,
                 onChanged: (text) => bloc.add(NameFieldEvent(text)),
                 minLines: 1,
                 maxLines: 5,

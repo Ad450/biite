@@ -12,6 +12,8 @@ abstract class UserRepository {
     required String profilePic,
     required String description,
   });
+
+  Future<UserModel> fetchPeer(String id);
 }
 
 @LazySingleton(as: UserRepository)
@@ -70,6 +72,19 @@ class UserRepositoryImpl implements UserRepository {
       await query.update(update);
 
       return;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<UserModel> fetchPeer(String id) async {
+    try {
+      final doc = await _firestore.collection(kUserCollection).doc(id).get();
+      if (!doc.exists) {
+        throw Exception("user document not found ");
+      }
+      return UserModel.fromJson(doc.data()!);
     } catch (e) {
       rethrow;
     }

@@ -25,7 +25,7 @@ class SendYourWork extends StatelessWidget {
             children: <Widget>[
               BiiteBack(),
               SizedBox(height: 40.h),
-              const BiiteAvatarWithText(),
+              const OwnerProfileAvatar(),
               SizedBox(height: 48.h),
               Text(
                 sendYourWork,

@@ -1,71 +1,31 @@
-import 'package:biite/api/models/user.model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auth.state.freezed.dart';
 
 @freezed
-class AuthState with _$AuthState {
-  const factory AuthState.initial({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateInitial;
+class LoginState with _$LoginState {
+  const factory LoginState.initial() = _LoginStateInitial;
 
-  const factory AuthState.signupLoading({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSignupLoading;
-  const factory AuthState.signinLoading({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSigninLoading;
+  const factory LoginState.loading() = _LoginStateLoading;
+  const factory LoginState.success() = _LoginStateSuccess;
+  const factory LoginState.error(String message) = _LoginStateError;
 
-  const factory AuthState.signupSuccess({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSignupSuccess;
-  const factory AuthState.signinSuccess({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSigninSuccess;
+  const LoginState._();
 
-  const factory AuthState.signoutLoading({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSignoutLoading;
-  const factory AuthState.signoutSuccess({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateSignoutSuccess;
+  @override
+  bool operator ==(Object other) => false;
+}
 
-  const factory AuthState.updateUserSuccess({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateUpdateUserSuccess;
-  const factory AuthState.updateUserLoading({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateUpdateUserLoading;
+@freezed
+class SignupState with _$SignupState {
+  const factory SignupState.initial() = _SignupStateInitial;
 
-  const factory AuthState.error({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateError;
+  const factory SignupState.loading() = _SignupStateLoading;
+  const factory SignupState.success() = _SignupStateSuccess;
+  const factory SignupState.error(String message) = _SignupStateError;
 
-  const factory AuthState.userExists({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateUserExists;
-  const factory AuthState.newUser({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateNewUser;
+  const SignupState._();
 
-  const factory AuthState.fetchUserProfileSuccess({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateFetchUserProfileSuccess;
-  const factory AuthState.fetchUserProfileLoading({
-    required UserModel? user,
-    required String? message,
-  }) = _AuthStateFetchUserProfileLoading;
+  @override
+  bool operator ==(Object other) => false;
 }

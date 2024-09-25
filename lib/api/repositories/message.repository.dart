@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 
 abstract class MessageRepository {
   Future<void> addMessage(MessageParam param);
-  Future<List<MessageModel>> fetchMessages(String roomId);
+  Stream<List<MessageModel>> fetchMessages(String roomId);
   Future<void> markMessageAsRead(String roomId);
   Future<int> getCountOfUnreadMessages(String roomId);
   Future<MessageModel> getLastMessage(String roomId);
@@ -42,29 +42,51 @@ class MessageRepositoryImpl implements MessageRepository {
     }
   }
 
+  // var model = MessageModel.fromJson(e.data());
+  //         return model.copyWith(id: e.id);
+
+  // @override
+  // Future<List<MessageModel>> fetchMessages(String roomId) async {
+  //   try {
+  //     final id = await _hiveStore.readItem("id", "id");
+  //     if (id == null) {
+  //       throw Exception("id null at fetch all chats");
+  //     }
+
+  //     final query = await _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).get();
+  //     final docs = query.docs;
+  //     final messages = docs.map((e) {
+  //       var model = MessageModel.fromJson(e.data());
+  //       return model.copyWith(id: e.id);
+  //     }).toList();
+
+  //     messages.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+  //     return messages;
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
+
   @override
-  Future<List<MessageModel>> fetchMessages(String roomId) async {
+  Stream<List<MessageModel>> fetchMessages(String roomId) async* {
     try {
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
 
-      final query = await _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).get();
-      final docs = query.docs;
-      final messages = docs.map((e) {
-        var model = MessageModel.fromJson(e.data());
-        return model.copyWith(id: e.id);
-      }).toList();
+      final query = _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).snapshots();
 
-      ///TODO: save to hive after fetching
-      ///return last saved copy on any exception when fetching from remote
+      await for (final snapshot in query) {
+        final docs = snapshot.docs;
+        final messages = docs.map((e) {
+          var model = MessageModel.fromJson(e.data());
+          return model.copyWith(id: e.id);
+        }).toList();
 
-      // return MessageReturnType(
-      //   ownerMessages: messages.where((m) => m.id == id).toList(),
-      //   peerMessages: messages.where((m) => m.id != id).toList(),
-      // );
-      return messages;
+        messages.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+        yield messages; // Emit the sorted list of messages
+      }
     } catch (e) {
       rethrow;
     }

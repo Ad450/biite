@@ -1,4 +1,4 @@
-import 'package:biite/api/repositories/chat.repository.dart';
+import 'package:biite/api/models/message.model.dart';
 import 'package:biite/api/repositories/message.repository.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
@@ -6,7 +6,7 @@ import 'package:biite/features/message/state/message.state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Singleton()
 class MessageBloc extends Cubit<MessageState> {
   MessageBloc(
     this._messageRepository,
@@ -16,14 +16,18 @@ class MessageBloc extends Cubit<MessageState> {
   final MessageRepository _messageRepository;
   final NameFieldBloc _chatField;
 
-  void fetchMessages(String roomId) async {
-    try {
-      final result = await _messageRepository.fetchMessages(roomId);
-      emit(MessageState.fetchMessages(result));
-      return;
-    } catch (e) {
-      emit(MessageState.error(e.toString()));
-    }
+  // void fetchMessages(String roomId) async {
+  //   try {
+  //     final result = await _messageRepository.fetchMessages(roomId);
+  //     emit(MessageState.fetchMessages(result));
+  //     return;
+  //   } catch (e) {
+  //     emit(MessageState.error(e.toString()));
+  //   }
+  // }
+
+  Stream<List<MessageModel>> fetchMessages(String roomId) {
+    return _messageRepository.fetchMessages(roomId);
   }
 
   void addMessage(String roomId) async {
@@ -35,7 +39,7 @@ class MessageBloc extends Cubit<MessageState> {
 
     try {
       await _messageRepository.addMessage(MessageParam(roomId: roomId, text: text));
-      fetchMessages(roomId);
+      _chatField.nameController.clear();
       return;
     } catch (e) {
       emit(MessageState.error(e.toString()));

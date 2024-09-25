@@ -1,6 +1,5 @@
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/room.model.dart';
-import 'package:biite/api/repositories/message.repository.dart';
 import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/types.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,11 +13,10 @@ abstract class ChatRepository {
 
 @LazySingleton(as: ChatRepository)
 class ChatRepositoryImpl implements ChatRepository {
-  ChatRepositoryImpl(this._firestore, this._hiveStore, this._messageRepository);
+  ChatRepositoryImpl(this._firestore, this._hiveStore);
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;
-  final MessageRepository _messageRepository;
 
   @override
   Future<Either<UIError, List<RoomModel>>> fetchChats() async {
@@ -28,20 +26,26 @@ class ChatRepositoryImpl implements ChatRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final query = await _firestore.collection(kChatCollection).where("ownerId", isEqualTo: id).get();
+      final ownerDocs = await _firestore.collection(kChatCollection).where("ownerId", isEqualTo: id).get();
+      final asPeerDocs = await _firestore.collection(kChatCollection).where("peerId", isEqualTo: id).get();
+      Set all = {...asPeerDocs.docs, ...ownerDocs.docs};
 
-      final chats = await Future.wait(query.docs.map((e) async {
+      if (all.isEmpty) {
+        return const Right([]);
+      }
+
+      final chats = all.map((e) {
         var room = RoomModel.fromJson(e.data());
-        final lastMessage = await _messageRepository.getLastMessage(e.id);
+        // final lastMessage = await _messageRepository.getLastMessage(e.id);
 
-        final unreadCount = await _messageRepository.getCountOfUnreadMessages(e.id);
+        // final unreadCount = await _messageRepository.getCountOfUnreadMessages(e.id);
 
         return room.copyWith(
           id: e.id,
-          latestMessageText: lastMessage.text,
-          unreadMessageCount: unreadCount,
+          latestMessageText: "lastMessage.text",
+          unreadMessageCount: 2,
         );
-      }).toList());
+      }).toList();
 
       return Right(chats);
     } catch (e) {
@@ -65,7 +69,7 @@ class ChatRepositoryImpl implements ChatRepository {
           .where("peerId", isEqualTo: peerId)
           .get();
 
-      if (doc.docs.first.exists) {
+      if (doc.docs.isNotEmpty) {
         return const Right(VoidType());
       }
 

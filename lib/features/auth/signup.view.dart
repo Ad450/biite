@@ -1,8 +1,8 @@
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
-import 'package:biite/features/auth/state/auth.bloc.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
+import 'package:biite/features/auth/state/signup.bloc.dart';
 import 'package:biite/features/auth/widgets/auth.confirm.password.field.dart';
 import 'package:biite/features/auth/widgets/auth.email.field.dart';
 import 'package:biite/features/auth/widgets/auth.name.field.dart';
@@ -23,7 +23,7 @@ class SignupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final authBloc = getIt.get<AuthBloc>();
+    final authBloc = getIt.get<SignupBloc>();
 
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
@@ -40,15 +40,15 @@ class SignupView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: SingleChildScrollView(
-            child: BlocConsumer<AuthBloc, AuthState>(
+            child: BlocConsumer<SignupBloc, SignupState>(
               bloc: authBloc,
               listener: (_, state) => state.maybeMap(
                 orElse: () => null,
-                signupSuccess: (_) => context.go("/home"),
-                error: (state) => showToast(state.message!),
+                success: (_) => context.go("/home"),
+                error: (state) => showToast(state.message),
               ),
               builder: (_, state) => IgnorePointer(
-                ignoring: state.maybeMap(orElse: () => false, signupLoading: (_) => true),
+                ignoring: state.maybeMap(orElse: () => false, loading: (_) => true),
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 120.h),
@@ -67,7 +67,7 @@ class SignupView extends StatelessWidget {
                     SizedBox(height: 102.h),
                     state.maybeMap(
                       orElse: () => const SignupFormButton(),
-                      signupLoading: (_) => const CupertinoActivityIndicator(),
+                      loading: (_) => const CupertinoActivityIndicator(),
                     ),
                     SizedBox(height: 40.h),
                     BiiteAuthText(text: login, onTap: () => context.push("/login"))

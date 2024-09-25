@@ -29,7 +29,7 @@ class PropositionDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BiiteAvatarWithText(),
+                  const OwnerProfileAvatar(),
                   SizedBox(height: 24.h),
                   Text(
                     "Sent 8 days ago",

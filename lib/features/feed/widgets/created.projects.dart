@@ -13,38 +13,37 @@ class CreatedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Created projects",
-                style: context.appTheme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
+    return projects.isEmpty
+        ? const SizedBox()
+        : Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Created projects",
+                      style: context.appTheme.textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                    BiiteViewAll(onTap: () => context.push("/allCreatedProjects", extra: projects))
+                  ],
                 ),
               ),
-              BiiteViewAll(onTap: () => context.push("/allCreatedProjects", extra: projects))
+              SizedBox(height: 16.h),
+              // show two latest projects
+              ...projects
+                  .map(
+                    (e) => ProjectWidget(
+                      projectModel: e,
+                      onTap: () => context.push("/createdProjectDetail", extra: e),
+                    ),
+                  )
+                  .take(2)
             ],
-          ),
-        ),
-        SizedBox(height: 16.h),
-        // show two latest projects
-        ...projects
-            .map(
-              (e) => ProjectWidget(
-                projectModel: e,
-                onTap: () {
-                  print("I am taping on it ");
-                  context.push("/createdProjectDetail", extra: e);
-                },
-              ),
-            )
-            .take(2)
-      ],
-    );
+          );
   }
 }

@@ -33,7 +33,7 @@ class MakeProposition extends StatelessWidget {
               children: <Widget>[
                 BiiteBack(),
                 SizedBox(height: 40.h),
-                const BiiteAvatarWithText(),
+                PeerProfileAvatar(ownerId: project.ownerId),
                 SizedBox(height: 48.h),
                 Text(
                   "Make a proposition",

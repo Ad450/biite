@@ -31,7 +31,7 @@ class SearchProjectDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const BiiteAvatarWithText(),
+                  PeerProfileAvatar(ownerId: project.ownerId),
                   SizedBox(height: 24.h),
                   SearchProjectCard(
                     description: project.description,

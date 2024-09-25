@@ -2,8 +2,8 @@ import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
 import 'package:biite/core/presentation/widgets/biite.toast.dart';
-import 'package:biite/features/auth/state/auth.bloc.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
+import 'package:biite/features/auth/state/login.bloc.dart';
 import 'package:biite/features/auth/widgets/auth.email.field.dart';
 import 'package:biite/features/auth/widgets/auth.password.field.dart';
 import 'package:biite/features/auth/widgets/login.form.button.dart';
@@ -20,7 +20,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authBloc = getIt.get<AuthBloc>();
+    final loginBloc = getIt.get<LoginBloc>();
 
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
@@ -36,12 +36,12 @@ class Login extends StatelessWidget {
         ),
         child: Align(
           alignment: Alignment.center,
-          child: BlocConsumer<AuthBloc, AuthState>(
-            bloc: authBloc,
+          child: BlocConsumer<LoginBloc, LoginState>(
+            bloc: loginBloc,
             listener: (_, state) => state.maybeMap(
               orElse: () => null,
-              signinSuccess: (_) => context.go("/home"),
-              error: (state) => showToast(state.message!),
+              success: (_) => context.go("/home"),
+              error: (state) => showToast(state.message),
             ),
             builder: (_, state) => Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +57,7 @@ class Login extends StatelessWidget {
                 SizedBox(height: 24.h),
                 state.maybeMap(
                   orElse: () => const LoginFormButton(),
-                  signinLoading: (_) => const CupertinoActivityIndicator(),
+                  loading: (_) => const CupertinoActivityIndicator(),
                 ),
                 SizedBox(height: 24.h),
                 BiiteAuthText(

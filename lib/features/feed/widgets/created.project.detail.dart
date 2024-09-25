@@ -33,7 +33,7 @@ class CreatedProjectDetail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const BiiteAvatarWithText(),
+                    PeerProfileAvatar(ownerId: projectModel.ownerId),
                     SizedBox(height: 24.h),
                     Text(
                       projectModel.createdAt.day.toString(),

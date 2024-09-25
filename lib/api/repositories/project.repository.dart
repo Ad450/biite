@@ -31,7 +31,11 @@ class ProjectRepostoryImpl implements ProjectRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final query = await _firestore.collection(kProjectCollection).where("assignedTo", isNotEqualTo: id).get();
+      final query = await _firestore
+          .collection(kProjectCollection)
+          .where("assignedTo", isEqualTo: id)
+          .where("status", isEqualTo: "active")
+          .get();
 
       final projects = query.docs.map((e) {
         var project = ProjectModel.fromJson(e.data());
@@ -55,6 +59,7 @@ class ProjectRepostoryImpl implements ProjectRepository {
       }
 
       final projectsSnapshot = await _firestore.collection(kProjectCollection).where("ownerId", isEqualTo: id).get();
+
       final projects = projectsSnapshot.docs.map((e) {
         final model = ProjectModel.fromJson(e.data());
         return model.copyWith(id: e.id);
@@ -95,7 +100,6 @@ class ProjectRepostoryImpl implements ProjectRepository {
       await _firestore.collection(kProjectCollection).add(project.toJson());
       return const Right(VoidType());
     } catch (e) {
-      print(e);
       return Left(UIError(e.toString()));
     }
   }

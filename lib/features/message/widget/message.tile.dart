@@ -1,6 +1,6 @@
 import 'package:biite/api/models/room.model.dart';
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/gen/assets.gen.dart';
+import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,11 +32,7 @@ class MessageTile extends StatelessWidget {
           children: [
             Row(
               children: <Widget>[
-                CircleAvatar(
-                  radius: 24,
-                  // use caching mechanism here
-                  child: Image.asset(Assets.images.avatar.path, fit: BoxFit.cover),
-                ),
+                MessageTilePicAvatar(ownerId: room.peerId),
                 SizedBox(width: 16.w),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

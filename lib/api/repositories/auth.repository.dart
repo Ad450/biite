@@ -78,7 +78,7 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
-        throw Exception("id null at fetch all chats");
+        return false;
       }
       return true;
     } catch (e) {

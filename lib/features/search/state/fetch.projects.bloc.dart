@@ -20,8 +20,9 @@ class FetchProjectsBloc extends Cubit<SearchState> {
     final query = _searchField.state.maybeMap(orElse: () => "", valid: (state) => state.data);
 
     final result = await _projectRepository.fetchProjects();
+
     result.fold((l) => emit(SearchState.errro(l.message)), (r) {
-      final searchResult = r.where((e) => e.title.contains(query)).toList();
+      final searchResult = r.where((e) => e.title.toLowerCase().contains(query)).toList();
       emit(SearchState.fetch(searchResult));
     });
   }

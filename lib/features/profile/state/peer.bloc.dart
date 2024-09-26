@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Injectable()
 class PeerBloc extends Cubit<PeerState> {
   PeerBloc(this._userRepository) : super(const PeerState.initial());
 

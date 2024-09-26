@@ -43,10 +43,6 @@ class ChatRepositoryImpl implements ChatRepository {
           unreadMessageCount: 2,
         );
       }).toList();
-
-      print("....... here is the chats");
-      print("....... current id is $id");
-
       return Right(chats);
     } catch (e) {
       return Left(UIError(e.toString()));

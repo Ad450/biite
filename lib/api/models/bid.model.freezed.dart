@@ -23,6 +23,7 @@ mixin _$BidModel {
   String? get id => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
   String get ownerId => throw _privateConstructorUsedError;
+  String get projectOwnerId => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $BidModelCopyWith<$Res> {
       {String? id,
       String projectId,
       String ownerId,
+      String projectOwnerId,
       String description,
       DateTime createdAt,
       String status,
@@ -67,6 +69,7 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
     Object? id = freezed,
     Object? projectId = null,
     Object? ownerId = null,
+    Object? projectOwnerId = null,
     Object? description = null,
     Object? createdAt = null,
     Object? status = null,
@@ -85,6 +88,10 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectOwnerId: null == projectOwnerId
+          ? _value.projectOwnerId
+          : projectOwnerId // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -122,6 +129,7 @@ abstract class _$$BidModelImplCopyWith<$Res>
       {String? id,
       String projectId,
       String ownerId,
+      String projectOwnerId,
       String description,
       DateTime createdAt,
       String status,
@@ -143,6 +151,7 @@ class __$$BidModelImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? projectId = null,
     Object? ownerId = null,
+    Object? projectOwnerId = null,
     Object? description = null,
     Object? createdAt = null,
     Object? status = null,
@@ -161,6 +170,10 @@ class __$$BidModelImplCopyWithImpl<$Res>
       ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectOwnerId: null == projectOwnerId
+          ? _value.projectOwnerId
+          : projectOwnerId // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -193,6 +206,7 @@ class _$BidModelImpl implements _BidModel {
       {this.id,
       required this.projectId,
       required this.ownerId,
+      required this.projectOwnerId,
       required this.description,
       required this.createdAt,
       required this.status,
@@ -209,6 +223,8 @@ class _$BidModelImpl implements _BidModel {
   final String projectId;
   @override
   final String ownerId;
+  @override
+  final String projectOwnerId;
   @override
   final String description;
   @override
@@ -227,7 +243,7 @@ class _$BidModelImpl implements _BidModel {
 
   @override
   String toString() {
-    return 'BidModel(id: $id, projectId: $projectId, ownerId: $ownerId, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags)';
+    return 'BidModel(id: $id, projectId: $projectId, ownerId: $ownerId, projectOwnerId: $projectOwnerId, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags)';
   }
 
   @override
@@ -239,6 +255,8 @@ class _$BidModelImpl implements _BidModel {
             (identical(other.projectId, projectId) ||
                 other.projectId == projectId) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.projectOwnerId, projectOwnerId) ||
+                other.projectOwnerId == projectOwnerId) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.createdAt, createdAt) ||
@@ -255,6 +273,7 @@ class _$BidModelImpl implements _BidModel {
       id,
       projectId,
       ownerId,
+      projectOwnerId,
       description,
       createdAt,
       status,
@@ -280,6 +299,7 @@ abstract class _BidModel implements BidModel {
       {final String? id,
       required final String projectId,
       required final String ownerId,
+      required final String projectOwnerId,
       required final String description,
       required final DateTime createdAt,
       required final String status,
@@ -295,6 +315,8 @@ abstract class _BidModel implements BidModel {
   String get projectId;
   @override
   String get ownerId;
+  @override
+  String get projectOwnerId;
   @override
   String get description;
   @override

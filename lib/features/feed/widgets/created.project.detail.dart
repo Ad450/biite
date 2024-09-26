@@ -1,12 +1,17 @@
 import 'package:biite/api/models/project.model.dart';
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/core/presentation/widgets/biite.chip.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
+import 'package:biite/features/feed/state/bid.bloc.dart';
+import 'package:biite/features/feed/state/feed.state.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreatedProjectDetail extends StatelessWidget {
@@ -90,12 +95,37 @@ class CreatedProjectDetail extends StatelessWidget {
 
                     SizedBox(height: 16.h),
                     // first two propositions
-                    ...List.generate(6, (i) => const PropositionWidget())
+                    _ProjectPropositions(projectId: projectModel.id!)
                   ],
                 ),
               )
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProjectPropositions extends StatelessWidget {
+  const _ProjectPropositions({required this.projectId, super.key});
+
+  final String projectId;
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = getIt.get<BidBloc>()..fetchBidsByProjectId(projectId);
+
+    return BlocConsumer<BidBloc, BidState>(
+      bloc: bloc,
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        error: (state) => showToast(state.message),
+      ),
+      builder: (_, state) => state.maybeMap(
+        orElse: () => const SizedBox(),
+        fetchBidsById: (state) => Column(
+          children: state.bids.map((e) => PropositionWidget(bidModel: e)).toList(),
         ),
       ),
     );

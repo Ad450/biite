@@ -1,5 +1,6 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/profile/state/peer.bloc.dart';
 import 'package:biite/features/profile/state/profile.bloc.dart';
 import 'package:biite/features/profile/state/profile.state.dart';
@@ -99,12 +100,5 @@ class MessageTilePicAvatar extends StatelessWidget {
               radius: radius ?? 24,
             ),
           );
-    // return BlocBuilder<PeerBloc, PeerState>(
-    //   bloc: getIt.get<PeerBloc>()..fetchChatPeer(chatOwner, peerId),
-    //   builder: (_, state) => state.maybeMap(
-    //     orElse: () => const Icon(Icons.person),
-    //     fetchChatPeer: (state) =>
-    //   ),
-    // );
   }
 }

@@ -9,6 +9,7 @@ abstract class BidModel with _$BidModel {
     String? id,
     required String projectId,
     required String ownerId,
+    required String projectOwnerId,
     required String description,
     required DateTime createdAt,
     required String status,

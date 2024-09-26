@@ -25,6 +25,8 @@ class SignupState with _$SignupState {
 
   const factory SignupState.authenticated() = _SignupStateAuthenticated;
 
+  const factory SignupState.unAuthenticated() = _SignupStateUnAuthenticated;
+
   const factory SignupState.error(String message) = _SignupStateError;
 
   const SignupState._();

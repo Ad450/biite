@@ -1,5 +1,6 @@
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/bid.model.dart';
+import 'package:biite/api/models/project.model.dart';
 import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/api/utils/types.dart';
@@ -11,6 +12,7 @@ abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId);
   Future<Either<UIError, VoidType>> createBid(CreateBidParam param);
   Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
+  Future<Either<UIError, List<BidModel>>> fetchReceivedPropositions();
 }
 
 @LazySingleton(as: BidRepository)
@@ -68,6 +70,7 @@ class BidRepositoryImpl implements BidRepository {
 
       final bid = BidModel(
         projectId: param.projectId,
+        projectOwnerId: ProjectModel.fromJson(projectDoc.data()!).ownerId,
         ownerId: param.ownerId,
         description: param.description,
         createdAt: DateTime.now(),
@@ -119,6 +122,31 @@ class BidRepositoryImpl implements BidRepository {
       await projectQuery.update({"status": "active"});
 
       return const Right(VoidType());
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, List<BidModel>>> fetchReceivedPropositions() async {
+    try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+
+      final query = await _firestore.collection(kBidCollection).where("projectOwnerId", isEqualTo: id).get();
+      if (query.docs.isEmpty) {
+        return const Right(<BidModel>[]);
+      }
+      final bids = query.docs.map((e) {
+        var bid = BidModel.fromJson(e.data());
+        bid = bid.copyWith(id: e.id);
+        return bid;
+      }).toList();
+
+      bids.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+      return Right(bids.reversed.toList());
     } catch (e) {
       return Left(UIError(e.toString()));
     }

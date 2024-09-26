@@ -6,6 +6,7 @@ import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetailAppbar extends StatelessWidget {
@@ -48,15 +49,18 @@ class MessageDetailAppbar extends StatelessWidget {
                 ],
               ),
               // TODO :add call and chat settings
-              GestureDetector(
-                onTap: () => showToast("feature not supported yet!"),
-                child: Row(
-                  children: <Widget>[
-                    Image.asset(Assets.images.phoneIcon.path),
-                    const SizedBox(width: 32),
-                    Image.asset(Assets.images.moreIcon.path),
-                  ],
-                ),
+              Row(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () => showToast("feature not supported yet!"),
+                    child: Image.asset(Assets.images.phoneIcon.path),
+                  ),
+                  const SizedBox(width: 32),
+                  GestureDetector(
+                    onTap: () => showToast("feature not supported yet!"),
+                    child: Image.asset(Assets.images.moreIcon.path),
+                  ),
+                ],
               )
             ],
           )

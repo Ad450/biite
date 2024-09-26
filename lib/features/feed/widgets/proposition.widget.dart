@@ -1,3 +1,4 @@
+import 'package:biite/api/models/bid.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -5,14 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PropositionWidget extends StatelessWidget {
-  const PropositionWidget({super.key});
+  const PropositionWidget({required this.bidModel, super.key});
+
+  final BidModel bidModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GestureDetector(
-        onTap: () => context.push("/propositionDetail"),
+        onTap: () => context.push("/propositionDetail", extra: bidModel),
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(color: ColorName.white),
@@ -28,12 +31,13 @@ class PropositionWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "Truncated proposition text...",
+                    bidModel.description,
                     style: context.appTheme.textTheme.titleSmall
                         ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "12/12/2023",
+                    bidModel.createdAt.toString(),
                     style: context.appTheme.textTheme.titleSmall
                         ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
                   ),

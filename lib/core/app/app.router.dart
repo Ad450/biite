@@ -1,3 +1,4 @@
+import 'package:biite/api/models/bid.model.dart';
 import 'package:biite/api/models/project.model.dart';
 import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
@@ -57,7 +58,12 @@ final router = GoRouter(
         projectModel: state.extra as ProjectModel,
       ),
     ),
-    GoRoute(path: "/allPropositions", builder: (context, state) => const AllPropositions()),
+    GoRoute(
+      path: "/allPropositions",
+      builder: (context, state) => AllPropositions(
+        bids: state.extra as List<BidModel>,
+      ),
+    ),
     GoRoute(
       path: "/allCreatedProjects",
       builder: (context, state) => AllCreatedProjects(projects: state.extra as List<ProjectModel>),
@@ -68,7 +74,12 @@ final router = GoRouter(
         projects: state.extra as List<ProjectModel>,
       ),
     ),
-    GoRoute(path: "/propositionDetail", builder: (context, state) => const PropositionDetails()),
+    GoRoute(
+      path: "/propositionDetail",
+      builder: (context, state) => PropositionDetails(
+        bid: state.extra as BidModel,
+      ),
+    ),
     GoRoute(path: "/editProfile", builder: (context, state) => const EditProfile()),
   ],
 );

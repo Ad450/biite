@@ -162,8 +162,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i8.FetchPictureBloc>(),
           gh<_i19.UserRepository>(),
         ));
-    gh.lazySingleton<_i21.PeerBloc>(
-        () => _i21.PeerBloc(gh<_i19.UserRepository>()));
+    gh.factory<_i21.PeerBloc>(() => _i21.PeerBloc(gh<_i19.UserRepository>()));
     gh.factory<_i22.AuthRepository>(() => _i22.AuthRepositoryImpl(
           gh<_i9.HiveStore>(),
           gh<_i5.FirebaseFirestore>(),

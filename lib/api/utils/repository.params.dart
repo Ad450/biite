@@ -60,14 +60,12 @@ class CreateBidParam {
   final String projectId;
   final String? bidId;
   final List<String> tags;
-  final String ownerId;
   final String description;
   final double rate;
 
   CreateBidParam({
     this.bidId,
     required this.projectId,
-    required this.ownerId,
     required this.description,
     required this.rate,
     required this.tags,

@@ -4,6 +4,7 @@ import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 class PropositionWidget extends StatelessWidget {
   const PropositionWidget({required this.bidModel, super.key});
@@ -25,19 +26,22 @@ class PropositionWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const OwnerProfileAvatar(),
+              PeerProfileAvatar(ownerId: bidModel.ownerId),
               const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    bidModel.description,
-                    style: context.appTheme.textTheme.titleSmall
-                        ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
-                    overflow: TextOverflow.ellipsis,
+                  Expanded(
+                    child: Text(
+                      bidModel.description,
+                      style: context.appTheme.textTheme.titleSmall
+                          ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
+                  const Spacer(),
                   Text(
-                    bidModel.createdAt.toString(),
+                    DateFormat('yyyy-MM-dd').format(bidModel.createdAt).toString(),
                     style: context.appTheme.textTheme.titleSmall
                         ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
                   ),

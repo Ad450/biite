@@ -21,7 +21,6 @@ class PropositionBloc extends Cubit<PropositionState> {
   void makeProposition({
     String? bidId,
     required String projectId,
-    required String ownerId,
   }) async {
     emit(const PropositionState.loading());
 
@@ -38,7 +37,6 @@ class PropositionBloc extends Cubit<PropositionState> {
     final param = CreateBidParam(
       bidId: bidId,
       projectId: projectId,
-      ownerId: ownerId,
       description: description,
       rate: double.parse(compensation),
       tags: [],

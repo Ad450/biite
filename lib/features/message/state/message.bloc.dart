@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@Singleton()
+@Injectable()
 class MessageBloc extends Cubit<MessageState> {
   MessageBloc(
     this._messageRepository,
@@ -16,16 +16,6 @@ class MessageBloc extends Cubit<MessageState> {
 
   final MessageRepository _messageRepository;
   final NameFieldBloc _chatField;
-
-  // void fetchMessages(String roomId) async {
-  //   try {
-  //     final result = await _messageRepository.fetchMessages(roomId);
-  //     emit(MessageState.fetchMessages(result));
-  //     return;
-  //   } catch (e) {
-  //     emit(MessageState.error(e.toString()));
-  //   }
-  // }
 
   Stream<List<MessageModel>> fetchMessages(String roomId) {
     return _messageRepository.fetchMessages(roomId);
@@ -54,5 +44,10 @@ class MessageBloc extends Cubit<MessageState> {
     } catch (e) {
       debugPrint(e.toString());
     }
+  }
+
+  @override
+  Future<void> close() {
+    return super.close();
   }
 }

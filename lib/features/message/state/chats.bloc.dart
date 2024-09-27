@@ -3,7 +3,7 @@ import 'package:biite/features/message/state/message.state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@Injectable()
 class ChatBloc extends Cubit<ChatState> {
   ChatBloc(this._chatRepository) : super(const ChatState.initial());
 

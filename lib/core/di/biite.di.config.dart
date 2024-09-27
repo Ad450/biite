@@ -168,7 +168,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i5.FirebaseFirestore>(),
           gh<_i3.FirebaseAuth>(),
         ));
-    gh.singleton<_i23.MessageBloc>(() => _i23.MessageBloc(
+    gh.factory<_i23.MessageBloc>(() => _i23.MessageBloc(
           gh<_i16.MessageRepository>(),
           gh<_i13.NameFieldBloc>(instanceName: 'chat'),
         ));
@@ -215,8 +215,7 @@ extension GetItInjectableX on _i1.GetIt {
               gh<_i13.NameFieldBloc>(instanceName: 'createProject'),
               gh<_i18.ProjectBloc>(),
             ));
-    gh.lazySingleton<_i35.ChatBloc>(
-        () => _i35.ChatBloc(gh<_i25.ChatRepository>()));
+    gh.factory<_i35.ChatBloc>(() => _i35.ChatBloc(gh<_i25.ChatRepository>()));
     gh.lazySingleton<_i36.SignupBloc>(() => _i36.SignupBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),

@@ -3,6 +3,7 @@ import 'package:biite/api/models/message.model.dart';
 import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class MessageRepository {
@@ -42,31 +43,6 @@ class MessageRepositoryImpl implements MessageRepository {
     }
   }
 
-  // var model = MessageModel.fromJson(e.data());
-  //         return model.copyWith(id: e.id);
-
-  // @override
-  // Future<List<MessageModel>> fetchMessages(String roomId) async {
-  //   try {
-  //     final id = await _hiveStore.readItem("id", "id");
-  //     if (id == null) {
-  //       throw Exception("id null at fetch all chats");
-  //     }
-
-  //     final query = await _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).get();
-  //     final docs = query.docs;
-  //     final messages = docs.map((e) {
-  //       var model = MessageModel.fromJson(e.data());
-  //       return model.copyWith(id: e.id);
-  //     }).toList();
-
-  //     messages.sort((a, b) => a.createdAt.compareTo(b.createdAt));
-  //     return messages;
-  //   } catch (e) {
-  //     rethrow;
-  //   }
-  // }
-
   @override
   Stream<List<MessageModel>> fetchMessages(String roomId) async* {
     try {
@@ -77,7 +53,7 @@ class MessageRepositoryImpl implements MessageRepository {
 
       final query = _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).snapshots();
 
-      await for (final snapshot in query) {
+      await for (final snapshot in query.handleError((e) => debugPrint(e.toString()))) {
         final docs = snapshot.docs;
         final messages = docs.map((e) {
           var model = MessageModel.fromJson(e.data());
@@ -88,7 +64,7 @@ class MessageRepositoryImpl implements MessageRepository {
         yield messages; // Emit the sorted list of messages
       }
     } catch (e) {
-      rethrow;
+      debugPrint(e.toString());
     }
   }
 

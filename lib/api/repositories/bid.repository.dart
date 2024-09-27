@@ -47,8 +47,8 @@ class BidRepositoryImpl implements BidRepository {
 
       final bidExists = await _firestore
           .collection(kProjectCollection)
-          .where("id", isEqualTo: param.projectId)
-          .where("ownerId", isEqualTo: param.ownerId)
+          .where("ownerId", isEqualTo: id)
+          .where("projectId", isEqualTo: param.projectId)
           .get();
 
       if (bidExists.docs.isNotEmpty) throw Exception("You have a bid for this project, check it out");
@@ -71,7 +71,7 @@ class BidRepositoryImpl implements BidRepository {
       final bid = BidModel(
         projectId: param.projectId,
         projectOwnerId: ProjectModel.fromJson(projectDoc.data()!).ownerId,
-        ownerId: param.ownerId,
+        ownerId: id,
         description: param.description,
         createdAt: DateTime.now(),
         status: "pending",

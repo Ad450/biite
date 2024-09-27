@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class PropositionDetails extends StatelessWidget {
   const PropositionDetails({required this.bid, super.key});
@@ -28,7 +29,7 @@ class PropositionDetails extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(onMessagePressed: () {}, showMessage: true),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: bid.ownerId),
             ),
             SizedBox(height: 32.h),
             Container(
@@ -36,10 +37,10 @@ class PropositionDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const OwnerProfileAvatar(),
+                  PeerProfileAvatar(ownerId: bid.ownerId),
                   SizedBox(height: 24.h),
                   Text(
-                    "Sent ${bid.createdAt}",
+                    "Sent ${DateFormat('yyyy-MM-dd').format(bid.createdAt).toString()}",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   // Text(

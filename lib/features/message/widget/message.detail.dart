@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:biite/api/models/room.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/state/field.events.dart';

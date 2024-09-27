@@ -58,27 +58,33 @@ class ChatRepositoryImpl implements ChatRepository {
       }
 
       if (peerId == id) throw Exception("unsupported operation");
-
-      final doc = await _firestore
+      // query as owner of chat
+      final ownerDoc = await _firestore
           .collection(kChatCollection)
           .where("ownerId", isEqualTo: id)
           .where("peerId", isEqualTo: peerId)
           .get();
 
-      if (doc.docs.isNotEmpty) {
-        return const Right(VoidType());
+      // query as peer of chat
+      final peerDoc = await _firestore
+          .collection(kChatCollection)
+          .where("ownerId", isEqualTo: peerId)
+          .where("peerId", isEqualTo: id)
+          .get();
+
+      if (ownerDoc.docs.isEmpty && peerDoc.docs.isEmpty) {
+        final peerInfo = await _firestore.collection(kUserCollection).doc(peerId).get();
+
+        await _firestore.collection(kChatCollection).add(
+              RoomModel(
+                ownerId: id,
+                peerId: peerId,
+                peerName: peerInfo.data()?["name"],
+                peerProfilePic: peerInfo.data()?["profilePic"],
+              ).toJson(),
+            );
       }
 
-      final peerInfo = await _firestore.collection(kUserCollection).doc(peerId).get();
-
-      await _firestore.collection(kChatCollection).add(
-            RoomModel(
-              ownerId: id,
-              peerId: peerId,
-              peerName: peerInfo.data()?["name"],
-              peerProfilePic: peerInfo.data()?["profilePic"],
-            ).toJson(),
-          );
       return const Right(VoidType());
     } catch (e) {
       return Left(UIError(e.toString()));

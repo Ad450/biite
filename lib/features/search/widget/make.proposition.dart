@@ -49,7 +49,7 @@ class MakeProposition extends StatelessWidget {
                 SizedBox(height: 149.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 56.h),
-                  child: _PropositionButton(projectId: project.id!, ownerId: project.ownerId),
+                  child: _PropositionButton(projectId: project.id!),
                 ),
               ],
             ),
@@ -63,14 +63,12 @@ class MakeProposition extends StatelessWidget {
 class _PropositionButton extends StatelessWidget {
   const _PropositionButton({
     required this.projectId,
-    required this.ownerId,
     this.bidId,
     super.key,
   });
 
   final String? bidId;
   final String projectId;
-  final String ownerId;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +82,7 @@ class _PropositionButton extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => BiiteTextButton(
-          onPressed: () => bloc.makeProposition(projectId: projectId, ownerId: ownerId),
+          onPressed: () => bloc.makeProposition(projectId: projectId),
           text: "Send",
         ),
         loading: (_) => const Center(child: CupertinoActivityIndicator()),

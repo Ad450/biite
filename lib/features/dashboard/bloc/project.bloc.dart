@@ -17,7 +17,7 @@ class ProjectBloc extends Cubit<ProjectState> {
       @Named('createProject') this._descriptionFieldBloc,
       @Named("createProject") this._titleFieldBloc,
       @Named("createProject") this._tagsBloc,
-      this._fileBloc)
+      @Named("createProject") this._fileBloc)
       : super(const ProjectState.initial());
 
   final ProjectRepository _projectRepository;

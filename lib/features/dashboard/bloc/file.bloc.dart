@@ -2,9 +2,7 @@ import 'dart:io';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
-@LazySingleton()
 class FileBloc extends Cubit<FileState> {
   FileBloc() : super(const FileState.initial());
 

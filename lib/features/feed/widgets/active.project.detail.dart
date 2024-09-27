@@ -26,10 +26,10 @@ class ActiveProjectDetail extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(onMessagePressed: () {}, showMessage: true),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: project.ownerId),
             ),
             SizedBox(height: 32.h),
-            const InCharge(deadline: "28/03/2023"),
+            const InCharge(deadline: ": Not stated"),
             SizedBox(height: 32.h),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -79,7 +79,13 @@ class ActiveProjectDetail extends StatelessWidget {
                     alignment: Alignment.center,
                     child: SizedBox(
                       width: 263.w,
-                      child: BiiteTextButton(onPressed: () => context.push("/sendYourWork"), text: sendYourWork),
+                      child: BiiteTextButton(
+                        onPressed: () => context.push(
+                          "/sendYourWork",
+                          extra: project,
+                        ),
+                        text: sendYourWork,
+                      ),
                     ),
                   ),
                 ],

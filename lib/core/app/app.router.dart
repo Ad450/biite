@@ -33,7 +33,12 @@ final router = GoRouter(
       path: "/activeProjectDetail",
       builder: (context, state) => ActiveProjectDetail(project: state.extra as ProjectModel),
     ),
-    GoRoute(path: "/sendYourWork", builder: (context, state) => const SendYourWork()),
+    GoRoute(
+      path: "/sendYourWork",
+      builder: (context, state) => SendYourWork(
+        project: state.extra as ProjectModel,
+      ),
+    ),
     GoRoute(
       path: "/searchProjectDetail",
       builder: (context, state) => SearchProjectDetail(

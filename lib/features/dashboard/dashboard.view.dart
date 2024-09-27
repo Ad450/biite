@@ -25,7 +25,7 @@ class DashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dashboardBloc = getIt<FileBloc>();
+    final dashboardBloc = getIt<FileBloc>(instanceName: "createProject");
 
     return Scaffold(
       backgroundColor: ColorName.onboardingBackground,
@@ -94,7 +94,7 @@ class _SelectedFileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dashboardBloc = getIt<FileBloc>();
+    final dashboardBloc = getIt<FileBloc>(instanceName: "createProject");
     return BlocConsumer<FileBloc, FileState>(
       bloc: dashboardBloc,
       listener: (_, state) => state.maybeMap(

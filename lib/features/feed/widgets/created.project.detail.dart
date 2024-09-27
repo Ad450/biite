@@ -10,6 +10,7 @@ import 'package:biite/features/feed/state/feed.state.dart';
 import 'package:biite/features/feed/widgets/file.widget.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -124,6 +125,7 @@ class _ProjectPropositions extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
+        loading: (state) => const Align(alignment: Alignment.center, child: CupertinoActivityIndicator()),
         fetchBidsById: (state) => Column(
           children: state.bids.map((e) => PropositionWidget(bidModel: e)).toList(),
         ),

@@ -41,3 +41,19 @@ class BidState with _$BidState {
   @override
   bool operator ==(Object other) => false;
 }
+
+@freezed
+class AcceptBidState with _$AcceptBidState {
+  const factory AcceptBidState.initial() = _AcceptBidStateInitial;
+
+  const factory AcceptBidState.loading() = _AcceptBidStateLoading;
+
+  const factory AcceptBidState.accept() = _AcceptBidStateAccept;
+
+  const factory AcceptBidState.error(String message) = _AcceptBidStateError;
+
+  const AcceptBidState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}

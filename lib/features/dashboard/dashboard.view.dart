@@ -109,7 +109,7 @@ class _SelectedFileWidget extends StatelessWidget {
           children: state.files
               .map((e) => FileWidget(
                     filename: e.path.split("/").last,
-                    onClose: () => dashboardBloc.removeFile(e.path),
+                    onTap: () => dashboardBloc.removeFile(e.path),
                   ))
               .toList(),
         )),

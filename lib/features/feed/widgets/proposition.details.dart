@@ -5,7 +5,8 @@ import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/core/presentation/widgets/biite.chip.dart';
-import 'package:biite/features/feed/state/bid.bloc.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
+import 'package:biite/features/feed/state/accept.bid.bloc.dart';
 import 'package:biite/features/feed/state/feed.state.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/cupertino.dart';
@@ -98,9 +99,14 @@ class _PropositionDetailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = getIt.get<BidBloc>();
-    return BlocBuilder<BidBloc, BidState>(
+    final bloc = getIt.get<AcceptBidBloc>();
+    return BlocConsumer<AcceptBidBloc, AcceptBidState>(
       bloc: bloc,
+      listener: (_, state) => state.maybeMap(
+        orElse: () => null,
+        error: (state) => showToast(state.message),
+        accept: (_) => showToast("Bid accepted!!"),
+      ),
       builder: (_, state) => state.maybeMap(
         orElse: () => BiiteTextButton(
           onPressed: () => bloc.acceptBid(bidId: bidId, projectId: projectId),

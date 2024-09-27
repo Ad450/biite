@@ -118,8 +118,12 @@ class BidRepositoryImpl implements BidRepository {
         throw Exception("must be owner of project to accept bids");
       }
 
+      if (bid.data()!["status"] == "accepted") {
+        throw Exception("Bid accepted already, Check created projects");
+      }
+
       await bidQuery.update({"status": "accepted"});
-      await projectQuery.update({"status": "active"});
+      await projectQuery.update({"status": "active", "assignedTo": bid.data()!["ownerId"]});
 
       return const Right(VoidType());
     } catch (e) {
@@ -135,7 +139,11 @@ class BidRepositoryImpl implements BidRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final query = await _firestore.collection(kBidCollection).where("projectOwnerId", isEqualTo: id).get();
+      final query = await _firestore
+          .collection(kBidCollection)
+          .where("projectOwnerId", isEqualTo: id)
+          .where("status", isEqualTo: "pending")
+          .get();
       if (query.docs.isEmpty) {
         return const Right(<BidModel>[]);
       }

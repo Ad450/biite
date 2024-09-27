@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FileWidget extends StatelessWidget {
-  const FileWidget({required this.filename, this.image, this.onClose, super.key});
+  const FileWidget({required this.filename, this.image, this.onTap, super.key});
   final String filename;
   final Widget? image;
-  final VoidCallback? onClose;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +29,20 @@ class FileWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              filename,
-              style: context.appTheme.textTheme.bodySmall?.copyWith(
-                fontSize: 16,
-                color: ColorName.text,
-                fontWeight: FontWeight.normal,
+            Flexible(
+              child: Text(
+                filename,
+                style: context.appTheme.textTheme.bodySmall?.copyWith(
+                  fontSize: 16,
+                  color: ColorName.text,
+                  fontWeight: FontWeight.normal,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
+            const Spacer(),
             GestureDetector(
-              onTap: onClose,
+              onTap: onTap,
               child: image ?? Image.asset(Assets.images.cancelIcon.path),
             )
           ],

@@ -1778,3 +1778,532 @@ abstract class _BidStateError extends BidState {
   _$$BidStateErrorImplCopyWith<_$BidStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$AcceptBidState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() accept,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? accept,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? accept,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptBidStateInitial value) initial,
+    required TResult Function(_AcceptBidStateLoading value) loading,
+    required TResult Function(_AcceptBidStateAccept value) accept,
+    required TResult Function(_AcceptBidStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptBidStateInitial value)? initial,
+    TResult? Function(_AcceptBidStateLoading value)? loading,
+    TResult? Function(_AcceptBidStateAccept value)? accept,
+    TResult? Function(_AcceptBidStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptBidStateInitial value)? initial,
+    TResult Function(_AcceptBidStateLoading value)? loading,
+    TResult Function(_AcceptBidStateAccept value)? accept,
+    TResult Function(_AcceptBidStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AcceptBidStateCopyWith<$Res> {
+  factory $AcceptBidStateCopyWith(
+          AcceptBidState value, $Res Function(AcceptBidState) then) =
+      _$AcceptBidStateCopyWithImpl<$Res, AcceptBidState>;
+}
+
+/// @nodoc
+class _$AcceptBidStateCopyWithImpl<$Res, $Val extends AcceptBidState>
+    implements $AcceptBidStateCopyWith<$Res> {
+  _$AcceptBidStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$AcceptBidStateInitialImplCopyWith<$Res> {
+  factory _$$AcceptBidStateInitialImplCopyWith(
+          _$AcceptBidStateInitialImpl value,
+          $Res Function(_$AcceptBidStateInitialImpl) then) =
+      __$$AcceptBidStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AcceptBidStateInitialImplCopyWithImpl<$Res>
+    extends _$AcceptBidStateCopyWithImpl<$Res, _$AcceptBidStateInitialImpl>
+    implements _$$AcceptBidStateInitialImplCopyWith<$Res> {
+  __$$AcceptBidStateInitialImplCopyWithImpl(_$AcceptBidStateInitialImpl _value,
+      $Res Function(_$AcceptBidStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AcceptBidStateInitialImpl extends _AcceptBidStateInitial {
+  const _$AcceptBidStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'AcceptBidState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() accept,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? accept,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? accept,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptBidStateInitial value) initial,
+    required TResult Function(_AcceptBidStateLoading value) loading,
+    required TResult Function(_AcceptBidStateAccept value) accept,
+    required TResult Function(_AcceptBidStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptBidStateInitial value)? initial,
+    TResult? Function(_AcceptBidStateLoading value)? loading,
+    TResult? Function(_AcceptBidStateAccept value)? accept,
+    TResult? Function(_AcceptBidStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptBidStateInitial value)? initial,
+    TResult Function(_AcceptBidStateLoading value)? loading,
+    TResult Function(_AcceptBidStateAccept value)? accept,
+    TResult Function(_AcceptBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AcceptBidStateInitial extends AcceptBidState {
+  const factory _AcceptBidStateInitial() = _$AcceptBidStateInitialImpl;
+  const _AcceptBidStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AcceptBidStateLoadingImplCopyWith<$Res> {
+  factory _$$AcceptBidStateLoadingImplCopyWith(
+          _$AcceptBidStateLoadingImpl value,
+          $Res Function(_$AcceptBidStateLoadingImpl) then) =
+      __$$AcceptBidStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AcceptBidStateLoadingImplCopyWithImpl<$Res>
+    extends _$AcceptBidStateCopyWithImpl<$Res, _$AcceptBidStateLoadingImpl>
+    implements _$$AcceptBidStateLoadingImplCopyWith<$Res> {
+  __$$AcceptBidStateLoadingImplCopyWithImpl(_$AcceptBidStateLoadingImpl _value,
+      $Res Function(_$AcceptBidStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AcceptBidStateLoadingImpl extends _AcceptBidStateLoading {
+  const _$AcceptBidStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'AcceptBidState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() accept,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? accept,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? accept,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptBidStateInitial value) initial,
+    required TResult Function(_AcceptBidStateLoading value) loading,
+    required TResult Function(_AcceptBidStateAccept value) accept,
+    required TResult Function(_AcceptBidStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptBidStateInitial value)? initial,
+    TResult? Function(_AcceptBidStateLoading value)? loading,
+    TResult? Function(_AcceptBidStateAccept value)? accept,
+    TResult? Function(_AcceptBidStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptBidStateInitial value)? initial,
+    TResult Function(_AcceptBidStateLoading value)? loading,
+    TResult Function(_AcceptBidStateAccept value)? accept,
+    TResult Function(_AcceptBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AcceptBidStateLoading extends AcceptBidState {
+  const factory _AcceptBidStateLoading() = _$AcceptBidStateLoadingImpl;
+  const _AcceptBidStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AcceptBidStateAcceptImplCopyWith<$Res> {
+  factory _$$AcceptBidStateAcceptImplCopyWith(_$AcceptBidStateAcceptImpl value,
+          $Res Function(_$AcceptBidStateAcceptImpl) then) =
+      __$$AcceptBidStateAcceptImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AcceptBidStateAcceptImplCopyWithImpl<$Res>
+    extends _$AcceptBidStateCopyWithImpl<$Res, _$AcceptBidStateAcceptImpl>
+    implements _$$AcceptBidStateAcceptImplCopyWith<$Res> {
+  __$$AcceptBidStateAcceptImplCopyWithImpl(_$AcceptBidStateAcceptImpl _value,
+      $Res Function(_$AcceptBidStateAcceptImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AcceptBidStateAcceptImpl extends _AcceptBidStateAccept {
+  const _$AcceptBidStateAcceptImpl() : super._();
+
+  @override
+  String toString() {
+    return 'AcceptBidState.accept()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() accept,
+    required TResult Function(String message) error,
+  }) {
+    return accept();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? accept,
+    TResult? Function(String message)? error,
+  }) {
+    return accept?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? accept,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (accept != null) {
+      return accept();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptBidStateInitial value) initial,
+    required TResult Function(_AcceptBidStateLoading value) loading,
+    required TResult Function(_AcceptBidStateAccept value) accept,
+    required TResult Function(_AcceptBidStateError value) error,
+  }) {
+    return accept(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptBidStateInitial value)? initial,
+    TResult? Function(_AcceptBidStateLoading value)? loading,
+    TResult? Function(_AcceptBidStateAccept value)? accept,
+    TResult? Function(_AcceptBidStateError value)? error,
+  }) {
+    return accept?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptBidStateInitial value)? initial,
+    TResult Function(_AcceptBidStateLoading value)? loading,
+    TResult Function(_AcceptBidStateAccept value)? accept,
+    TResult Function(_AcceptBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (accept != null) {
+      return accept(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AcceptBidStateAccept extends AcceptBidState {
+  const factory _AcceptBidStateAccept() = _$AcceptBidStateAcceptImpl;
+  const _AcceptBidStateAccept._() : super._();
+}
+
+/// @nodoc
+abstract class _$$AcceptBidStateErrorImplCopyWith<$Res> {
+  factory _$$AcceptBidStateErrorImplCopyWith(_$AcceptBidStateErrorImpl value,
+          $Res Function(_$AcceptBidStateErrorImpl) then) =
+      __$$AcceptBidStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$AcceptBidStateErrorImplCopyWithImpl<$Res>
+    extends _$AcceptBidStateCopyWithImpl<$Res, _$AcceptBidStateErrorImpl>
+    implements _$$AcceptBidStateErrorImplCopyWith<$Res> {
+  __$$AcceptBidStateErrorImplCopyWithImpl(_$AcceptBidStateErrorImpl _value,
+      $Res Function(_$AcceptBidStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$AcceptBidStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AcceptBidStateErrorImpl extends _AcceptBidStateError {
+  const _$AcceptBidStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'AcceptBidState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AcceptBidStateErrorImplCopyWith<_$AcceptBidStateErrorImpl> get copyWith =>
+      __$$AcceptBidStateErrorImplCopyWithImpl<_$AcceptBidStateErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() accept,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? accept,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? accept,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptBidStateInitial value) initial,
+    required TResult Function(_AcceptBidStateLoading value) loading,
+    required TResult Function(_AcceptBidStateAccept value) accept,
+    required TResult Function(_AcceptBidStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptBidStateInitial value)? initial,
+    TResult? Function(_AcceptBidStateLoading value)? loading,
+    TResult? Function(_AcceptBidStateAccept value)? accept,
+    TResult? Function(_AcceptBidStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptBidStateInitial value)? initial,
+    TResult Function(_AcceptBidStateLoading value)? loading,
+    TResult Function(_AcceptBidStateAccept value)? accept,
+    TResult Function(_AcceptBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AcceptBidStateError extends AcceptBidState {
+  const factory _AcceptBidStateError(final String message) =
+      _$AcceptBidStateErrorImpl;
+  const _AcceptBidStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$AcceptBidStateErrorImplCopyWith<_$AcceptBidStateErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

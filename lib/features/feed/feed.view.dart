@@ -4,11 +4,13 @@ import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/dashboard/bloc/active.projects.bloc.dart';
 import 'package:biite/features/dashboard/bloc/created.projects.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
+import 'package:biite/features/feed/widgets/active.projects.dart';
 import 'package:biite/features/feed/widgets/created.projects.dart';
 import 'package:biite/features/feed/widgets/gains.widget.dart';
 import 'package:biite/features/feed/widgets/feed.propositions.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -77,6 +79,7 @@ class _CreatedProjectsFeed extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
+        loading: (_) => const Align(alignment: Alignment.center, child: CupertinoActivityIndicator()),
         fetch: (state) => CreatedProjects(
           projects: state.projects,
         ),
@@ -98,7 +101,7 @@ class _ActiveProjectsFeed extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
-        fetch: (state) => CreatedProjects(
+        fetch: (state) => ActiveProjects(
           projects: state.projects,
         ),
       ),

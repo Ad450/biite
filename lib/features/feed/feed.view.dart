@@ -6,8 +6,8 @@ import 'package:biite/features/dashboard/bloc/created.projects.bloc.dart';
 import 'package:biite/features/dashboard/bloc/dashboard.state.dart';
 import 'package:biite/features/feed/widgets/active.projects.dart';
 import 'package:biite/features/feed/widgets/created.projects.dart';
-import 'package:biite/features/feed/widgets/gains.widget.dart';
 import 'package:biite/features/feed/widgets/feed.propositions.dart';
+import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,7 +50,8 @@ class FeedView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8.h),
-                  const GainsWidget(),
+                  // const GainsWidget(),
+                  Image.asset(Assets.images.project.path, fit: BoxFit.cover),
                   const _ActiveProjectsFeed(),
                   SizedBox(height: 26.h),
                   const _CreatedProjectsFeed(),

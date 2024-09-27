@@ -11,6 +11,7 @@ class BiiteFormField extends StatelessWidget {
     this.hintText,
     this.errorText,
     this.inputType,
+    this.obscureText,
     super.key,
   });
 
@@ -19,6 +20,7 @@ class BiiteFormField extends StatelessWidget {
   final Function(String) onChanged;
   final TextInputType? inputType;
   final String? errorText;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class BiiteFormField extends StatelessWidget {
           fontWeight: FontWeight.normal,
           color: ColorName.onBackground,
         ),
+        obscureText: obscureText ?? false,
         onTapOutside: (PointerDownEvent event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },

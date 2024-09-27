@@ -106,6 +106,9 @@ class $AssetsImagesGen {
   AssetGenImage get profileIcon =>
       const AssetGenImage('assets/images/profile_icon.png');
 
+  /// File path: assets/images/project.png
+  AssetGenImage get project => const AssetGenImage('assets/images/project.png');
+
   /// File path: assets/images/search_active.png
   AssetGenImage get searchActive =>
       const AssetGenImage('assets/images/search_active.png');
@@ -145,6 +148,7 @@ class $AssetsImagesGen {
         portfolio,
         profileActive,
         profileIcon,
+        project,
         searchActive,
         searchIcon,
         uploadIcon

@@ -24,6 +24,7 @@ class AuthPasswordField extends StatelessWidget {
       errorText: errorText,
       hintText: "Password",
       onChanged: onChanged,
+      obscureText: true,
     );
   }
 

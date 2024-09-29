@@ -61,7 +61,10 @@ class _SearchProject extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
-        loading: (_) => const Center(child: CupertinoActivityIndicator()),
+        loading: (_) => const Center(
+            child: CupertinoActivityIndicator(
+          color: ColorName.onBackground,
+        )),
         fetch: (state) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: state.projects.map((e) => SearchProject(project: e)).toList(),

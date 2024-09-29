@@ -22,6 +22,7 @@ class AuthConfirmPasswordField extends StatelessWidget {
       errorText: errorText,
       hintText: "Confirm password",
       onChanged: onChanged,
+      obscureText: true,
     );
   }
 

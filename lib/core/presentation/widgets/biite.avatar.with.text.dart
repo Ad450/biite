@@ -72,7 +72,7 @@ class PeerProfileAvatar extends StatelessWidget {
           Text(
             state.maybeMap(orElse: () => "Anonymous", fetchPeer: (state) => state.user.name),
             style: context.appTheme.textTheme.titleMedium?.copyWith(
-              fontSize: 25,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           )

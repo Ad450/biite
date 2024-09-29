@@ -61,7 +61,11 @@ class _Chats extends StatelessWidget {
         orElse: () => const Center(
           child: Text("Get started by adding chats"),
         ),
-        loading: (_) => const Center(child: CupertinoActivityIndicator()),
+        loading: (_) => const Center(
+          child: CupertinoActivityIndicator(
+            color: ColorName.onBackground,
+          ),
+        ),
         fetchChats: (roomState) => SingleChildScrollView(
           child: roomState.chats.isEmpty
               ? Center(

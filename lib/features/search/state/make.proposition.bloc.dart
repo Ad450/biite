@@ -33,6 +33,7 @@ class PropositionBloc extends Cubit<PropositionState> {
 
       return;
     }
+    _clearFields();
 
     final param = CreateBidParam(
       bidId: bidId,
@@ -47,5 +48,10 @@ class PropositionBloc extends Cubit<PropositionState> {
       (l) => emit(PropositionState.error(l.message)),
       (r) => emit(const PropositionState.create()),
     );
+  }
+
+  void _clearFields() {
+    _compensationFieldBloc.compensationController.clear();
+    _descriptionFieldBloc.descriptionController.clear();
   }
 }

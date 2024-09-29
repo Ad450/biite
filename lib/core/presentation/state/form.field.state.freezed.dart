@@ -105,23 +105,13 @@ class __$$FormFieldStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FormFieldStateInitialImpl implements _FormFieldStateInitial {
-  const _$FormFieldStateInitialImpl();
+class _$FormFieldStateInitialImpl extends _FormFieldStateInitial {
+  const _$FormFieldStateInitialImpl() : super._();
 
   @override
   String toString() {
     return 'FormFieldBaseState.initial()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormFieldStateInitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -198,8 +188,9 @@ class _$FormFieldStateInitialImpl implements _FormFieldStateInitial {
   }
 }
 
-abstract class _FormFieldStateInitial implements FormFieldBaseState {
+abstract class _FormFieldStateInitial extends FormFieldBaseState {
   const factory _FormFieldStateInitial() = _$FormFieldStateInitialImpl;
+  const _FormFieldStateInitial._() : super._();
 }
 
 /// @nodoc
@@ -220,23 +211,13 @@ class __$$FormFieldStateValidImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FormFieldStateValidImpl implements _FormFieldStateValid {
-  const _$FormFieldStateValidImpl();
+class _$FormFieldStateValidImpl extends _FormFieldStateValid {
+  const _$FormFieldStateValidImpl() : super._();
 
   @override
   String toString() {
     return 'FormFieldBaseState.valid()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormFieldStateValidImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -313,8 +294,9 @@ class _$FormFieldStateValidImpl implements _FormFieldStateValid {
   }
 }
 
-abstract class _FormFieldStateValid implements FormFieldBaseState {
+abstract class _FormFieldStateValid extends FormFieldBaseState {
   const factory _FormFieldStateValid() = _$FormFieldStateValidImpl;
+  const _FormFieldStateValid._() : super._();
 }
 
 /// @nodoc
@@ -336,23 +318,13 @@ class __$$FormFieldStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FormFieldStateLoadingImpl implements _FormFieldStateLoading {
-  const _$FormFieldStateLoadingImpl();
+class _$FormFieldStateLoadingImpl extends _FormFieldStateLoading {
+  const _$FormFieldStateLoadingImpl() : super._();
 
   @override
   String toString() {
     return 'FormFieldBaseState.loading()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormFieldStateLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -429,8 +401,9 @@ class _$FormFieldStateLoadingImpl implements _FormFieldStateLoading {
   }
 }
 
-abstract class _FormFieldStateLoading implements FormFieldBaseState {
+abstract class _FormFieldStateLoading extends FormFieldBaseState {
   const factory _FormFieldStateLoading() = _$FormFieldStateLoadingImpl;
+  const _FormFieldStateLoading._() : super._();
 }
 
 /// @nodoc
@@ -467,8 +440,8 @@ class __$$FormFieldStateInvalidImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FormFieldStateInvalidImpl implements _FormFieldStateInvalid {
-  const _$FormFieldStateInvalidImpl({required this.message});
+class _$FormFieldStateInvalidImpl extends _FormFieldStateInvalid {
+  const _$FormFieldStateInvalidImpl({required this.message}) : super._();
 
   @override
   final String? message;
@@ -477,17 +450,6 @@ class _$FormFieldStateInvalidImpl implements _FormFieldStateInvalid {
   String toString() {
     return 'FormFieldBaseState.invalid(message: $message)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormFieldStateInvalidImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -571,9 +533,10 @@ class _$FormFieldStateInvalidImpl implements _FormFieldStateInvalid {
   }
 }
 
-abstract class _FormFieldStateInvalid implements FormFieldBaseState {
+abstract class _FormFieldStateInvalid extends FormFieldBaseState {
   const factory _FormFieldStateInvalid({required final String? message}) =
       _$FormFieldStateInvalidImpl;
+  const _FormFieldStateInvalid._() : super._();
 
   String? get message;
   @JsonKey(ignore: true)

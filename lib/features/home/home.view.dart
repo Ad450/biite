@@ -39,7 +39,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const [FeedView(), SearchView(), MessageView(), ProfileView(), DashboardView()][currentIndex],
+      body: const [
+        FeedView(),
+        SearchView(),
+        MessageView(),
+        DashboardView(),
+        ProfileView(),
+      ][currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
@@ -71,16 +77,16 @@ class _HomeViewState extends State<HomeView> {
                   : Image.asset(Assets.images.messageIcon.path),
               label: ""),
           BottomNavigationBarItem(
-              icon: currentIndex == 3
-                  ? Image.asset(Assets.images.profileActive.path)
-                  : Image.asset(Assets.images.profileIcon.path),
-              label: ""),
-          BottomNavigationBarItem(
               icon: Icon(
-                Icons.dashboard_customize_outlined,
-                color: currentIndex == 4 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                Icons.post_add_rounded,
+                color: currentIndex == 3 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
                 size: 30,
               ),
+              label: ""),
+          BottomNavigationBarItem(
+              icon: currentIndex == 4
+                  ? Image.asset(Assets.images.profileActive.path)
+                  : Image.asset(Assets.images.profileIcon.path),
               label: ""),
         ],
       ),

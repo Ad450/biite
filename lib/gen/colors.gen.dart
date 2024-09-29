@@ -16,20 +16,20 @@ class ColorName {
   /// Color: #E5E5E5
   static const Color background = Color(0xFFE5E5E5);
 
-  /// Color: #99879D
-  static const Color fillColor = Color(0xFF99879D);
+  /// Color: #17202A
+  static const Color fillColor = Color(0xFF17202A);
 
-  /// Color: #848484
-  static const Color hintColor = Color(0xFF848484);
+  /// Color: #FFFFFF
+  static const Color hintColor = Color(0xFFFFFFFF);
 
-  /// Color: #F2F2F2
-  static const Color multiline = Color(0xFFF2F2F2);
+  /// Color: #17202A
+  static const Color multiline = Color(0xFF17202A);
 
-  /// Color: #120E21
-  static const Color onBackground = Color(0xFF120E21);
+  /// Color: #FFFFFF
+  static const Color onBackground = Color(0xFFFFFFFF);
 
-  /// Color: #FAF9FE
-  static const Color onboardingBackground = Color(0xFFFAF9FE);
+  /// Color: #060201
+  static const Color onboardingBackground = Color(0xFF060201);
 
   /// Color: #CABDFD
   static const Color ownerChat = Color(0xFFCABDFD);
@@ -40,8 +40,8 @@ class ColorName {
   /// Color: #D8CEFF
   static const Color primaryAccent = Color(0xFFD8CEFF);
 
-  /// Color: #EFEDF0
-  static const Color searchCard = Color(0xFFEFEDF0);
+  /// Color: #17202A
+  static const Color searchCard = Color(0xFF17202A);
 
   /// Color: #F2F2F2
   static const Color searchbBorder = Color(0xFFF2F2F2);
@@ -52,9 +52,9 @@ class ColorName {
   /// Color: #595959
   static const Color text = Color(0xFF595959);
 
-  /// Color: #E2DBFF
-  static const Color textfield = Color(0xFFE2DBFF);
+  /// Color: #17202A
+  static const Color textfield = Color(0xFF17202A);
 
-  /// Color: #FFFFFF
-  static const Color white = Color(0xFFFFFFFF);
+  /// Color: #17202A
+  static const Color white = Color(0xFF17202A);
 }

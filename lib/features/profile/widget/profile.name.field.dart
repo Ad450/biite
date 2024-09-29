@@ -20,7 +20,7 @@ class ProfileNameField extends StatelessWidget {
       controller: controller,
       inputType: TextInputType.text,
       errorText: errorText,
-      hintText: "FullName",
+      hintText: "",
       onChanged: onChanged,
     );
   }

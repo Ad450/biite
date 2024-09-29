@@ -56,6 +56,7 @@ class SignupBloc extends Cubit<SignupState> {
       emit(const SignupState.error("fill all fields"));
       return;
     }
+    _clearFields();
 
     final param = SignupParam(email: email, password: password, name: name);
 
@@ -87,5 +88,11 @@ class SignupBloc extends Cubit<SignupState> {
       (l) => emit(SignupState.error(l.message)),
       (r) => emit(const SignupState.unAuthenticated()),
     );
+  }
+
+  void _clearFields() {
+    _confirmPasswordFieldBloc.confirmPasswordController.clear();
+    _nameFieldBloc.nameController.clear();
+    _signupEmailFieldBloc.controller.clear();
   }
 }

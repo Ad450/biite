@@ -10,13 +10,8 @@ class FieldState with _$FieldState {
 
   const factory FieldState.invalid({required String? message}) = _FieldStateInvalid;
 
-  /// Always return false to ensure objects are never considered equal
-  // @override
-  // bool operator ==(Object other) => false;
+  const FieldState._();
 
-  // @override
-  // int get hashCode => 0;
-
-  // // required by freezed
-  // FieldState._();
+  @override
+  bool operator ==(Object other) => false;
 }

@@ -22,7 +22,7 @@ class BiiteViewAll extends StatelessWidget {
         height: 34.h,
         width: 83.w,
         decoration: BoxDecoration(
-          color: ColorName.primaryAccent,
+          color: ColorName.primary,
           borderRadius: BorderRadius.circular(borderRadius ?? 20),
         ),
         child: Center(

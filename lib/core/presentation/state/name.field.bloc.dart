@@ -13,7 +13,7 @@ class NameFieldBloc extends FieldBaseBloc {
 
   final TextEditingController nameController;
 
-  final nameRegex = RegExp(r'^[A-Za-z ]+$');
+  // final nameRegex = RegExp(r'^[A-Za-z ]+$');
 
   @override
   void isValid(FieldEvent event, Emitter<FieldState> emit) {
@@ -23,10 +23,10 @@ class NameFieldBloc extends FieldBaseBloc {
         return;
       }
 
-      if (!nameRegex.hasMatch(event.name!)) {
-        emit(const FieldState.invalid(message: "invalid name"));
-        return;
-      }
+      // if (!nameRegex.hasMatch(event.name!)) {
+      //   emit(const FieldState.invalid(message: "invalid name"));
+      //   return;
+      // }
 
       emit(FieldState.valid(data: event.name!));
     }

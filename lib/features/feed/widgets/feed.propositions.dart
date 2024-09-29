@@ -31,7 +31,7 @@ class FeedPropositions extends StatelessWidget {
                                 "Propositions",
                                 style: context.appTheme.textTheme.titleLarge?.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 25,
+                                  fontSize: 20,
                                 ),
                               ),
                               BiiteViewAll(onTap: () => context.push("/allPropositions", extra: state.bids))

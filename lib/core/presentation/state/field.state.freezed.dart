@@ -98,22 +98,13 @@ class __$$FieldStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FieldStateInitialImpl implements _FieldStateInitial {
-  const _$FieldStateInitialImpl();
+class _$FieldStateInitialImpl extends _FieldStateInitial {
+  const _$FieldStateInitialImpl() : super._();
 
   @override
   String toString() {
     return 'FieldState.initial()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FieldStateInitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -184,8 +175,9 @@ class _$FieldStateInitialImpl implements _FieldStateInitial {
   }
 }
 
-abstract class _FieldStateInitial implements FieldState {
+abstract class _FieldStateInitial extends FieldState {
   const factory _FieldStateInitial() = _$FieldStateInitialImpl;
+  const _FieldStateInitial._() : super._();
 }
 
 /// @nodoc
@@ -221,8 +213,8 @@ class __$$FieldStateValidImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FieldStateValidImpl implements _FieldStateValid {
-  const _$FieldStateValidImpl({required this.data});
+class _$FieldStateValidImpl extends _FieldStateValid {
+  const _$FieldStateValidImpl({required this.data}) : super._();
 
   @override
   final String data;
@@ -231,17 +223,6 @@ class _$FieldStateValidImpl implements _FieldStateValid {
   String toString() {
     return 'FieldState.valid(data: $data)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FieldStateValidImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -319,9 +300,10 @@ class _$FieldStateValidImpl implements _FieldStateValid {
   }
 }
 
-abstract class _FieldStateValid implements FieldState {
+abstract class _FieldStateValid extends FieldState {
   const factory _FieldStateValid({required final String data}) =
       _$FieldStateValidImpl;
+  const _FieldStateValid._() : super._();
 
   String get data;
   @JsonKey(ignore: true)
@@ -362,8 +344,8 @@ class __$$FieldStateInvalidImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FieldStateInvalidImpl implements _FieldStateInvalid {
-  const _$FieldStateInvalidImpl({required this.message});
+class _$FieldStateInvalidImpl extends _FieldStateInvalid {
+  const _$FieldStateInvalidImpl({required this.message}) : super._();
 
   @override
   final String? message;
@@ -372,17 +354,6 @@ class _$FieldStateInvalidImpl implements _FieldStateInvalid {
   String toString() {
     return 'FieldState.invalid(message: $message)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FieldStateInvalidImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -460,9 +431,10 @@ class _$FieldStateInvalidImpl implements _FieldStateInvalid {
   }
 }
 
-abstract class _FieldStateInvalid implements FieldState {
+abstract class _FieldStateInvalid extends FieldState {
   const factory _FieldStateInvalid({required final String? message}) =
       _$FieldStateInvalidImpl;
+  const _FieldStateInvalid._() : super._();
 
   String? get message;
   @JsonKey(ignore: true)

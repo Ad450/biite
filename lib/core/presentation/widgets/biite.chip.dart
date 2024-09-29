@@ -35,7 +35,8 @@ class BiiteChip extends StatelessWidget {
       onSelected: onSelected,
       selected: selected,
       selectedColor: ColorName.primary,
-      disabledColor: ColorName.multiline,
+      // disabledColor: Colors.red,
+      backgroundColor: ColorName.onboardingBackground,
     );
   }
 }

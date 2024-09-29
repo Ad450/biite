@@ -155,11 +155,23 @@ class $AssetsImagesGen {
       ];
 }
 
+class $AssetsLauncherGen {
+  const $AssetsLauncherGen();
+
+  /// File path: assets/launcher/ic_launcher.png
+  AssetGenImage get icLauncher =>
+      const AssetGenImage('assets/launcher/ic_launcher.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icLauncher];
+}
+
 class Assets {
   Assets._();
 
   static const String aEnv = '.env';
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLauncherGen launcher = $AssetsLauncherGen();
 
   /// List of all assets
   static List<String> get values => [aEnv];

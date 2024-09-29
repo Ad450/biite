@@ -45,7 +45,7 @@ class BiiteFormField extends StatelessWidget {
           filled: true,
           fillColor: ColorName.textfield,
           hintStyle: const TextStyle(
-            color: ColorName.hintColor,
+            color: ColorName.text,
             fontWeight: FontWeight.normal,
             fontFamily: FontFamily.publicSans,
             fontSize: 16,

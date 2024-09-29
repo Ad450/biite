@@ -43,13 +43,13 @@ class BiiteBack extends StatelessWidget {
             width: 66.w,
             child: Row(
               children: [
-                const Icon(Icons.arrow_back, color: ColorName.fillColor, size: 16),
+                const Icon(Icons.arrow_back_ios, color: ColorName.onBackground, size: 16),
                 SizedBox(width: 4.w),
                 Text(
                   back,
                   style: context.appTheme.textTheme.titleSmall?.copyWith(
                     fontSize: 18,
-                    color: ColorName.fillColor,
+                    color: ColorName.onBackground,
                   ),
                 )
               ],

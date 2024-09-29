@@ -56,7 +56,6 @@ class SearchProjectCard extends StatelessWidget {
           style: context.appTheme.textTheme.bodyMedium?.copyWith(
             fontSize: 16,
             fontWeight: FontWeight.normal,
-            color: ColorName.fillColor,
           ),
           textAlign: TextAlign.justify,
         ),

@@ -54,7 +54,7 @@ class EditProfile extends StatelessWidget {
                       ),
                       SizedBox(height: 48.h),
                       Text(
-                        "First name",
+                        "Full name",
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           color: ColorName.text,

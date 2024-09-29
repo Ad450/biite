@@ -21,7 +21,7 @@ class PropositionWidget extends StatelessWidget {
           width: double.infinity,
           decoration: const BoxDecoration(color: ColorName.white),
           margin: const EdgeInsets.only(bottom: 16),
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class PropositionWidget extends StatelessWidget {
                     child: Text(
                       bidModel.description,
                       style: context.appTheme.textTheme.titleSmall
-                          ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                          ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -43,7 +43,7 @@ class PropositionWidget extends StatelessWidget {
                   Text(
                     DateFormat('yyyy-MM-dd').format(bidModel.createdAt).toString(),
                     style: context.appTheme.textTheme.titleSmall
-                        ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                        ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                   ),
                 ],
               )

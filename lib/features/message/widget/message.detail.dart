@@ -1,17 +1,8 @@
-import 'dart:io';
-
-import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/core/presentation/state/field.events.dart';
-import 'package:biite/core/presentation/state/field.state.dart';
-import 'package:biite/core/presentation/state/name.field.bloc.dart';
-import 'package:biite/features/message/state/message.bloc.dart';
+import 'package:biite/features/message/widget/chat.text.field.dart';
 import 'package:biite/features/message/widget/message.detail.appbar.dart';
 import 'package:biite/features/message/widget/messaging.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetail extends StatefulWidget {
   const MessageDetail({required this.extra, super.key});
@@ -53,6 +44,7 @@ class _MessageDetailState extends State<MessageDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
+      backgroundColor: ColorName.onboardingBackground,
       body: Column(
         children: [
           MessageDetailAppbar(
@@ -68,60 +60,7 @@ class _MessageDetailState extends State<MessageDetail> {
               ),
             ),
           ),
-          _ChatTextField(roomId: widget.extra["room"].id!, focusNode: _focusNode)
-        ],
-      ),
-    );
-  }
-}
-
-class _ChatTextField extends StatelessWidget {
-  const _ChatTextField({required this.roomId, this.focusNode, super.key});
-
-  final String roomId;
-  final FocusNode? focusNode;
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = getIt.get<NameFieldBloc>(instanceName: 'chat');
-    final messageBloc = getIt.get<MessageBloc>();
-
-    return Container(
-      padding: Platform.isAndroid
-          ? EdgeInsets.symmetric(horizontal: 16.h)
-          : EdgeInsets.only(
-              left: 16.h, right: 16, top: 10, bottom: 40), // TODO: adjust bottom space when keyboard tapped
-      color: ColorName.white,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        // textBaseline: TextBaseline.alphabetic,
-        children: [
-          Expanded(
-            child: BlocBuilder<NameFieldBloc, FieldState>(
-              bloc: bloc,
-              builder: (_, state) => TextField(
-                controller: bloc.nameController,
-                focusNode: focusNode,
-                onChanged: (text) => bloc.add(NameFieldEvent(text)),
-                minLines: 1,
-                maxLines: 5,
-                onTapOutside: (PointerDownEvent event) {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                },
-                style: context.appTheme.textTheme.bodySmall?.copyWith(
-                  fontSize: 13,
-                  fontWeight: FontWeight.normal,
-                  color: ColorName.onBackground,
-                ),
-                decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.all(8),
-                  isDense: true,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(width: 24.w),
-          IconButton(onPressed: () => messageBloc.addMessage(roomId), icon: const Icon(Icons.send))
+          ChatTextField(roomId: widget.extra["room"].id!, focusNode: _focusNode)
         ],
       ),
     );

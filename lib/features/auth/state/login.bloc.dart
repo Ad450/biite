@@ -46,6 +46,8 @@ class LoginBloc extends Cubit<LoginState> {
       return;
     }
 
+    _clearFields();
+
     final param = SigninParam(email: email, password: password);
 
     final result = await authRepository.signin(param);
@@ -53,5 +55,10 @@ class LoginBloc extends Cubit<LoginState> {
       (l) => emit(LoginState.error(l.message)),
       (r) => emit(const LoginState.success()),
     );
+  }
+
+  void _clearFields() {
+    _loginEmailFieldBloc.controller.clear();
+    _loginPasswordFieldBloc.passwordController.clear();
   }
 }

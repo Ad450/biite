@@ -48,6 +48,8 @@ class ProjectBloc extends Cubit<ProjectState> {
       return;
     }
 
+    _clearFields();
+
     final param = CreateProjectParam(
       description: description,
       files: files,
@@ -59,7 +61,17 @@ class ProjectBloc extends Cubit<ProjectState> {
     final result = await _projectRepository.createProject(param);
     result.fold(
       (l) => emit(ProjectState.error(l.message)),
-      (r) => emit(const ProjectState.projectCreated()),
+      (r) {
+        emit(const ProjectState.projectCreated());
+      },
     );
+  }
+
+  void _clearFields() {
+    _fileBloc.emit(const FileState.fileSelected(files: {}));
+    _titleFieldBloc.nameController.clear();
+    _descriptionFieldBloc.descriptionController.clear();
+    _compensationFieldBloc.compensationController.clear();
+    _tagsBloc.emit(const TagsState.selected(tags: []));
   }
 }

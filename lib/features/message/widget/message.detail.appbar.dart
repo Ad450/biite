@@ -1,12 +1,8 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
-import 'package:biite/core/presentation/widgets/biite.toast.dart';
-import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageDetailAppbar extends StatelessWidget {
@@ -22,16 +18,16 @@ class MessageDetailAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 122.h,
+      height: 140.h,
       width: 375.w,
-      color: ColorName.white.withOpacity(0.4),
+      color: ColorName.white,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(height: 50.h),
           BiiteBack(),
-          SizedBox(height: 10.h),
+          SizedBox(height: 15.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -42,7 +38,7 @@ class MessageDetailAppbar extends StatelessWidget {
                   Text(
                     name,
                     style: context.appTheme.textTheme.titleMedium?.copyWith(
-                      fontSize: 20.sp,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   )
@@ -51,15 +47,8 @@ class MessageDetailAppbar extends StatelessWidget {
               // TODO :add call and chat settings
               Row(
                 children: <Widget>[
-                  GestureDetector(
-                    onTap: () => showToast("feature not supported yet!"),
-                    child: Image.asset(Assets.images.phoneIcon.path),
-                  ),
-                  const SizedBox(width: 32),
-                  GestureDetector(
-                    onTap: () => showToast("feature not supported yet!"),
-                    child: Image.asset(Assets.images.moreIcon.path),
-                  ),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.phone, size: 20)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert_outlined, size: 20)),
                 ],
               )
             ],

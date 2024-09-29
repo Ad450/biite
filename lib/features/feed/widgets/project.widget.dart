@@ -24,7 +24,14 @@ class ProjectWidget extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: 102.h,
-          decoration: const BoxDecoration(color: ColorName.white),
+          decoration: BoxDecoration(
+            color: ColorName.white,
+            border: Border(
+              bottom: BorderSide(
+                color: ColorName.hintColor.withOpacity(0.1),
+              ),
+            ),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
@@ -34,7 +41,7 @@ class ProjectWidget extends StatelessWidget {
                 Text(
                   projectModel.title,
                   style: context.appTheme.textTheme.titleSmall?.copyWith(
-                    fontSize: 20,
+                    fontSize: 18,
                     color: ColorName.onBackground,
                   ),
                   overflow: TextOverflow.ellipsis,
@@ -46,7 +53,7 @@ class ProjectWidget extends StatelessWidget {
                       child: Text(
                         projectModel.description,
                         style: context.appTheme.textTheme.titleSmall
-                            ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                            ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -54,7 +61,7 @@ class ProjectWidget extends StatelessWidget {
                     Text(
                       projectModel.status,
                       style: context.appTheme.textTheme.titleSmall
-                          ?.copyWith(fontSize: 16, color: ColorName.fillColor, fontWeight: FontWeight.normal),
+                          ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                     ),
                   ],
                 )

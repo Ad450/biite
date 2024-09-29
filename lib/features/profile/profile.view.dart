@@ -49,7 +49,6 @@ class ProfileView extends StatelessWidget {
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
-                          color: ColorName.fillColor,
                         ),
                       ),
                       SizedBox(height: 32.h),

@@ -26,7 +26,7 @@ class CreatedProjects extends StatelessWidget {
                       "Created projects",
                       style: context.appTheme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 20,
                       ),
                     ),
                     BiiteViewAll(onTap: () => context.push("/allCreatedProjects", extra: projects))

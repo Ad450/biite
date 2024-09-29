@@ -12,12 +12,8 @@ class FormFieldBaseState with _$FormFieldBaseState {
 
   const factory FormFieldBaseState.invalid({required String? message}) = _FormFieldStateInvalid;
 
-  /// Always return false to ensure objects are never considered equal
-  // @override
-  // bool operator ==(Object other) => false;
+  const FormFieldBaseState._();
 
-  // @override
-  // int get hashCode => 0;
-
-  // FormFieldBaseState._();
+  @override
+  bool operator ==(Object other) => false;
 }

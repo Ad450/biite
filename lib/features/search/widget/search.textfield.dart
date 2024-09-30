@@ -37,7 +37,7 @@ class SearchTextfield extends StatelessWidget {
             onTapOutside: (PointerDownEvent event) {
               FocusManager.instance.primaryFocus?.unfocus();
             },
-            style: const TextStyle(color: ColorName.text, fontSize: 16, fontFamily: FontFamily.publicSans),
+            style: const TextStyle(color: ColorName.background, fontSize: 16, fontFamily: FontFamily.publicSans),
             decoration: InputDecoration(
               fillColor: ColorName.white,
               filled: true,
@@ -49,6 +49,7 @@ class SearchTextfield extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               errorText: state.maybeMap(orElse: () => null, invalid: (state) => state.message),
               errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(
                 color: Colors.red,

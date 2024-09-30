@@ -18,6 +18,7 @@ _$ProjectModelImpl _$$ProjectModelImplFromJson(Map<String, dynamic> json) =>
       rate: (json['rate'] as num).toDouble(),
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>).map((e) => e as String).toList(),
+      propositionCount: (json['propositionCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ProjectModelImplToJson(_$ProjectModelImpl instance) =>
@@ -32,4 +33,5 @@ Map<String, dynamic> _$$ProjectModelImplToJson(_$ProjectModelImpl instance) =>
       'rate': instance.rate,
       'tags': instance.tags,
       'files': instance.files,
+      'propositionCount': instance.propositionCount,
     };

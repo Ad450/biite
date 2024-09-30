@@ -13,6 +13,7 @@ abstract class ProjectRepository {
   Future<Either<UIError, List<ProjectModel>>> fetchActiveProjects();
   Future<Either<UIError, VoidType>> createProject(CreateProjectParam param);
   Future<Either<UIError, List<ProjectModel>>> fetchProjects();
+  Future<Either<UIError, int>> fetchPropositionByProjectId(String id);
 }
 
 @LazySingleton(as: ProjectRepository)
@@ -118,6 +119,19 @@ class ProjectRepostoryImpl implements ProjectRepository {
         return model.copyWith(id: e.id);
       }).toList();
       return Right(projects);
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, int>> fetchPropositionByProjectId(String id) async {
+    try {
+      final query = await _firestore.collection(kBidCollection).where("projectId", isEqualTo: id).get();
+      if (query.docs.isNotEmpty) {
+        return Right(query.docs.length);
+      }
+      return const Right(0);
     } catch (e) {
       return Left(UIError(e.toString()));
     }

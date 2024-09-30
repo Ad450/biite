@@ -31,3 +31,18 @@ class PropositionState with _$PropositionState {
   @override
   bool operator ==(Object other) => false;
 }
+
+@freezed
+class PropositionCountState with _$PropositionCountState {
+  const factory PropositionCountState.initial() = _PropositionCountStateInitial;
+
+  const factory PropositionCountState.loading() = _PropositionCountStateLoading;
+
+  const factory PropositionCountState.fetch(int count) = _PropositionCountStateCreate;
+  const factory PropositionCountState.error(String message) = _PropositionCountStateError;
+
+  const PropositionCountState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}

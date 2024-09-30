@@ -39,7 +39,6 @@ class SearchProjectDetail extends StatelessWidget {
                     price: project.rate.toString(),
                     daysPosted: project.createdAt.day.toString(),
                     tags: project.tags,
-                    propositions: "16",
                     projectId: project.id!,
                   ),
                 ],

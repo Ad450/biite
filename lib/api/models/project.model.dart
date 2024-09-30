@@ -16,6 +16,7 @@ abstract class ProjectModel with _$ProjectModel {
     required double rate,
     required List<String> tags,
     required List<String> files,
+    int? propositionCount,
   }) = _ProjectModel;
 
   factory ProjectModel.fromJson(Map json) => _$ProjectModelFromJson(

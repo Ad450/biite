@@ -1112,3 +1112,576 @@ abstract class _PropositionStateError extends PropositionState {
   _$$PropositionStateErrorImplCopyWith<_$PropositionStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$PropositionCountState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int count) fetch,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int count)? fetch,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int count)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionCountStateInitial value) initial,
+    required TResult Function(_PropositionCountStateLoading value) loading,
+    required TResult Function(_PropositionCountStateCreate value) fetch,
+    required TResult Function(_PropositionCountStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionCountStateInitial value)? initial,
+    TResult? Function(_PropositionCountStateLoading value)? loading,
+    TResult? Function(_PropositionCountStateCreate value)? fetch,
+    TResult? Function(_PropositionCountStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionCountStateInitial value)? initial,
+    TResult Function(_PropositionCountStateLoading value)? loading,
+    TResult Function(_PropositionCountStateCreate value)? fetch,
+    TResult Function(_PropositionCountStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PropositionCountStateCopyWith<$Res> {
+  factory $PropositionCountStateCopyWith(PropositionCountState value,
+          $Res Function(PropositionCountState) then) =
+      _$PropositionCountStateCopyWithImpl<$Res, PropositionCountState>;
+}
+
+/// @nodoc
+class _$PropositionCountStateCopyWithImpl<$Res,
+        $Val extends PropositionCountState>
+    implements $PropositionCountStateCopyWith<$Res> {
+  _$PropositionCountStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$PropositionCountStateInitialImplCopyWith<$Res> {
+  factory _$$PropositionCountStateInitialImplCopyWith(
+          _$PropositionCountStateInitialImpl value,
+          $Res Function(_$PropositionCountStateInitialImpl) then) =
+      __$$PropositionCountStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PropositionCountStateInitialImplCopyWithImpl<$Res>
+    extends _$PropositionCountStateCopyWithImpl<$Res,
+        _$PropositionCountStateInitialImpl>
+    implements _$$PropositionCountStateInitialImplCopyWith<$Res> {
+  __$$PropositionCountStateInitialImplCopyWithImpl(
+      _$PropositionCountStateInitialImpl _value,
+      $Res Function(_$PropositionCountStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PropositionCountStateInitialImpl extends _PropositionCountStateInitial {
+  const _$PropositionCountStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PropositionCountState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int count) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int count)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int count)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionCountStateInitial value) initial,
+    required TResult Function(_PropositionCountStateLoading value) loading,
+    required TResult Function(_PropositionCountStateCreate value) fetch,
+    required TResult Function(_PropositionCountStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionCountStateInitial value)? initial,
+    TResult? Function(_PropositionCountStateLoading value)? loading,
+    TResult? Function(_PropositionCountStateCreate value)? fetch,
+    TResult? Function(_PropositionCountStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionCountStateInitial value)? initial,
+    TResult Function(_PropositionCountStateLoading value)? loading,
+    TResult Function(_PropositionCountStateCreate value)? fetch,
+    TResult Function(_PropositionCountStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionCountStateInitial extends PropositionCountState {
+  const factory _PropositionCountStateInitial() =
+      _$PropositionCountStateInitialImpl;
+  const _PropositionCountStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PropositionCountStateLoadingImplCopyWith<$Res> {
+  factory _$$PropositionCountStateLoadingImplCopyWith(
+          _$PropositionCountStateLoadingImpl value,
+          $Res Function(_$PropositionCountStateLoadingImpl) then) =
+      __$$PropositionCountStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PropositionCountStateLoadingImplCopyWithImpl<$Res>
+    extends _$PropositionCountStateCopyWithImpl<$Res,
+        _$PropositionCountStateLoadingImpl>
+    implements _$$PropositionCountStateLoadingImplCopyWith<$Res> {
+  __$$PropositionCountStateLoadingImplCopyWithImpl(
+      _$PropositionCountStateLoadingImpl _value,
+      $Res Function(_$PropositionCountStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PropositionCountStateLoadingImpl extends _PropositionCountStateLoading {
+  const _$PropositionCountStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'PropositionCountState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int count) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int count)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int count)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionCountStateInitial value) initial,
+    required TResult Function(_PropositionCountStateLoading value) loading,
+    required TResult Function(_PropositionCountStateCreate value) fetch,
+    required TResult Function(_PropositionCountStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionCountStateInitial value)? initial,
+    TResult? Function(_PropositionCountStateLoading value)? loading,
+    TResult? Function(_PropositionCountStateCreate value)? fetch,
+    TResult? Function(_PropositionCountStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionCountStateInitial value)? initial,
+    TResult Function(_PropositionCountStateLoading value)? loading,
+    TResult Function(_PropositionCountStateCreate value)? fetch,
+    TResult Function(_PropositionCountStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionCountStateLoading extends PropositionCountState {
+  const factory _PropositionCountStateLoading() =
+      _$PropositionCountStateLoadingImpl;
+  const _PropositionCountStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$PropositionCountStateCreateImplCopyWith<$Res> {
+  factory _$$PropositionCountStateCreateImplCopyWith(
+          _$PropositionCountStateCreateImpl value,
+          $Res Function(_$PropositionCountStateCreateImpl) then) =
+      __$$PropositionCountStateCreateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$PropositionCountStateCreateImplCopyWithImpl<$Res>
+    extends _$PropositionCountStateCopyWithImpl<$Res,
+        _$PropositionCountStateCreateImpl>
+    implements _$$PropositionCountStateCreateImplCopyWith<$Res> {
+  __$$PropositionCountStateCreateImplCopyWithImpl(
+      _$PropositionCountStateCreateImpl _value,
+      $Res Function(_$PropositionCountStateCreateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_$PropositionCountStateCreateImpl(
+      null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PropositionCountStateCreateImpl extends _PropositionCountStateCreate {
+  const _$PropositionCountStateCreateImpl(this.count) : super._();
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'PropositionCountState.fetch(count: $count)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PropositionCountStateCreateImplCopyWith<_$PropositionCountStateCreateImpl>
+      get copyWith => __$$PropositionCountStateCreateImplCopyWithImpl<
+          _$PropositionCountStateCreateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int count) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return fetch(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int count)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return fetch?.call(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int count)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(count);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionCountStateInitial value) initial,
+    required TResult Function(_PropositionCountStateLoading value) loading,
+    required TResult Function(_PropositionCountStateCreate value) fetch,
+    required TResult Function(_PropositionCountStateError value) error,
+  }) {
+    return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionCountStateInitial value)? initial,
+    TResult? Function(_PropositionCountStateLoading value)? loading,
+    TResult? Function(_PropositionCountStateCreate value)? fetch,
+    TResult? Function(_PropositionCountStateError value)? error,
+  }) {
+    return fetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionCountStateInitial value)? initial,
+    TResult Function(_PropositionCountStateLoading value)? loading,
+    TResult Function(_PropositionCountStateCreate value)? fetch,
+    TResult Function(_PropositionCountStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionCountStateCreate extends PropositionCountState {
+  const factory _PropositionCountStateCreate(final int count) =
+      _$PropositionCountStateCreateImpl;
+  const _PropositionCountStateCreate._() : super._();
+
+  int get count;
+  @JsonKey(ignore: true)
+  _$$PropositionCountStateCreateImplCopyWith<_$PropositionCountStateCreateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PropositionCountStateErrorImplCopyWith<$Res> {
+  factory _$$PropositionCountStateErrorImplCopyWith(
+          _$PropositionCountStateErrorImpl value,
+          $Res Function(_$PropositionCountStateErrorImpl) then) =
+      __$$PropositionCountStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$PropositionCountStateErrorImplCopyWithImpl<$Res>
+    extends _$PropositionCountStateCopyWithImpl<$Res,
+        _$PropositionCountStateErrorImpl>
+    implements _$$PropositionCountStateErrorImplCopyWith<$Res> {
+  __$$PropositionCountStateErrorImplCopyWithImpl(
+      _$PropositionCountStateErrorImpl _value,
+      $Res Function(_$PropositionCountStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$PropositionCountStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PropositionCountStateErrorImpl extends _PropositionCountStateError {
+  const _$PropositionCountStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'PropositionCountState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PropositionCountStateErrorImplCopyWith<_$PropositionCountStateErrorImpl>
+      get copyWith => __$$PropositionCountStateErrorImplCopyWithImpl<
+          _$PropositionCountStateErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int count) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int count)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int count)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PropositionCountStateInitial value) initial,
+    required TResult Function(_PropositionCountStateLoading value) loading,
+    required TResult Function(_PropositionCountStateCreate value) fetch,
+    required TResult Function(_PropositionCountStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PropositionCountStateInitial value)? initial,
+    TResult? Function(_PropositionCountStateLoading value)? loading,
+    TResult? Function(_PropositionCountStateCreate value)? fetch,
+    TResult? Function(_PropositionCountStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PropositionCountStateInitial value)? initial,
+    TResult Function(_PropositionCountStateLoading value)? loading,
+    TResult Function(_PropositionCountStateCreate value)? fetch,
+    TResult Function(_PropositionCountStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PropositionCountStateError extends PropositionCountState {
+  const factory _PropositionCountStateError(final String message) =
+      _$PropositionCountStateErrorImpl;
+  const _PropositionCountStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$PropositionCountStateErrorImplCopyWith<_$PropositionCountStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

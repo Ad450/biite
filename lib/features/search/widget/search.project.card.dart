@@ -1,5 +1,6 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.chip.dart';
+import 'package:biite/features/search/widget/proposition.count.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +9,6 @@ class SearchProjectCard extends StatelessWidget {
   const SearchProjectCard({
     required this.daysPosted,
     required this.description,
-    required this.propositions,
     required this.price,
     required this.tags,
     required this.title,
@@ -19,7 +19,6 @@ class SearchProjectCard extends StatelessWidget {
   final String daysPosted;
   final String title;
   final String description;
-  final String propositions;
   final String price;
   final List<String> tags;
   final String projectId;
@@ -31,7 +30,7 @@ class SearchProjectCard extends StatelessWidget {
       children: <Widget>[
         SizedBox(height: 16.h),
         Text(
-          "Posted $daysPosted days ago",
+          "Posted $daysPosted",
           style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal),
         ),
         SizedBox(height: 24.h),
@@ -68,10 +67,7 @@ class SearchProjectCard extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "$propositions propositions",
-              style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal),
-            ),
+            PropositionCount(projectId: projectId),
             Text(
               "\$ $price",
               style: context.appTheme.textTheme.bodySmall?.copyWith(

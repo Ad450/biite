@@ -30,6 +30,7 @@ mixin _$ProjectModel {
   double get rate => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   List<String> get files => throw _privateConstructorUsedError;
+  int? get propositionCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +54,8 @@ abstract class $ProjectModelCopyWith<$Res> {
       String status,
       double rate,
       List<String> tags,
-      List<String> files});
+      List<String> files,
+      int? propositionCount});
 }
 
 /// @nodoc
@@ -79,6 +81,7 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
+    Object? propositionCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -121,6 +124,10 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
           ? _value.files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      propositionCount: freezed == propositionCount
+          ? _value.propositionCount
+          : propositionCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -143,7 +150,8 @@ abstract class _$$ProjectModelImplCopyWith<$Res>
       String status,
       double rate,
       List<String> tags,
-      List<String> files});
+      List<String> files,
+      int? propositionCount});
 }
 
 /// @nodoc
@@ -167,6 +175,7 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
     Object? rate = null,
     Object? tags = null,
     Object? files = null,
+    Object? propositionCount = freezed,
   }) {
     return _then(_$ProjectModelImpl(
       id: freezed == id
@@ -209,6 +218,10 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      propositionCount: freezed == propositionCount
+          ? _value.propositionCount
+          : propositionCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -226,7 +239,8 @@ class _$ProjectModelImpl implements _ProjectModel {
       required this.status,
       required this.rate,
       required final List<String> tags,
-      required final List<String> files})
+      required final List<String> files,
+      this.propositionCount})
       : _tags = tags,
         _files = files;
 
@@ -266,8 +280,11 @@ class _$ProjectModelImpl implements _ProjectModel {
   }
 
   @override
+  final int? propositionCount;
+
+  @override
   String toString() {
-    return 'ProjectModel(id: $id, ownerId: $ownerId, assignedTo: $assignedTo, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files)';
+    return 'ProjectModel(id: $id, ownerId: $ownerId, assignedTo: $assignedTo, title: $title, description: $description, createdAt: $createdAt, status: $status, rate: $rate, tags: $tags, files: $files, propositionCount: $propositionCount)';
   }
 
   @override
@@ -287,7 +304,9 @@ class _$ProjectModelImpl implements _ProjectModel {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.rate, rate) || other.rate == rate) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other._files, _files));
+            const DeepCollectionEquality().equals(other._files, _files) &&
+            (identical(other.propositionCount, propositionCount) ||
+                other.propositionCount == propositionCount));
   }
 
   @JsonKey(ignore: true)
@@ -303,7 +322,8 @@ class _$ProjectModelImpl implements _ProjectModel {
       status,
       rate,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(_files));
+      const DeepCollectionEquality().hash(_files),
+      propositionCount);
 
   @JsonKey(ignore: true)
   @override
@@ -330,7 +350,8 @@ abstract class _ProjectModel implements ProjectModel {
       required final String status,
       required final double rate,
       required final List<String> tags,
-      required final List<String> files}) = _$ProjectModelImpl;
+      required final List<String> files,
+      final int? propositionCount}) = _$ProjectModelImpl;
 
   factory _ProjectModel.fromJson(Map<String, dynamic> json) =
       _$ProjectModelImpl.fromJson;
@@ -355,6 +376,8 @@ abstract class _ProjectModel implements ProjectModel {
   List<String> get tags;
   @override
   List<String> get files;
+  @override
+  int? get propositionCount;
   @override
   @JsonKey(ignore: true)
   _$$ProjectModelImplCopyWith<_$ProjectModelImpl> get copyWith =>

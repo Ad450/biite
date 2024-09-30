@@ -12,8 +12,11 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class FeedView extends StatelessWidget {
   const FeedView({super.key});
@@ -51,7 +54,8 @@ class FeedView extends StatelessWidget {
                   ),
                   SizedBox(height: 8.h),
                   // const GainsWidget(),
-                  Image.asset(Assets.images.project.path, fit: BoxFit.cover),
+                  // Image.asset(Assets.images.project.path, fit: BoxFit.cover),
+                  const _AnimatedFeedImg(),
                   const _ActiveProjectsFeed(),
                   SizedBox(height: 26.h),
                   const _CreatedProjectsFeed(),
@@ -111,6 +115,32 @@ class _ActiveProjectsFeed extends StatelessWidget {
           projects: state.projects,
         ),
       ),
+    );
+  }
+}
+
+class _AnimatedFeedImg extends StatelessWidget {
+  const _AnimatedFeedImg({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 200.h,
+      child: SvgPicture.asset(Assets.images.feedImg, fit: BoxFit.contain)
+          .animate()
+          .shimmer(delay: 4000.ms, duration: 1800.ms)
+          .shakeX(delay: 300.ms, duration: 1.seconds)
+          .scale(
+              begin: const Offset(1.0, 1.0), // Normal size (like scale 1.0)
+              end: const Offset(1.1, 1.1),
+              duration: 600.ms)
+          .then(delay: 600.ms) // then wait and
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1 / 1.1, 1 / 1.1),
+          )
+          .then()
+          .rotate(),
     );
   }
 }

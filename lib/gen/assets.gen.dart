@@ -41,6 +41,9 @@ class $AssetsImagesGen {
   AssetGenImage get fadedDollar =>
       const AssetGenImage('assets/images/faded_dollar.png');
 
+  /// File path: assets/images/feed_img.svg
+  String get feedImg => 'assets/images/feed_img.svg';
+
   /// File path: assets/images/filterIcon.png
   AssetGenImage get filterIcon =>
       const AssetGenImage('assets/images/filterIcon.png');
@@ -122,7 +125,7 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/uploadIcon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         avatar,
         bubble1,
         cancelIcon,
@@ -131,6 +134,7 @@ class $AssetsImagesGen {
         earth,
         earthBubbles,
         fadedDollar,
+        feedImg,
         filterIcon,
         homeIcon,
         homeIconInactive,

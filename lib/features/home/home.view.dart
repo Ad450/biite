@@ -40,9 +40,9 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const [
-        FeedView(),
         SearchView(),
         MessageView(),
+        FeedView(),
         DashboardView(),
         ProfileView(),
       ][currentIndex],
@@ -57,14 +57,7 @@ class _HomeViewState extends State<HomeView> {
         },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: currentIndex == 0
-                  ? Image.asset(
-                      Assets.images.homeIcon.path,
-                    )
-                  : Image.asset(Assets.images.homeIconInactive.path),
-              label: ""),
-          BottomNavigationBarItem(
-            icon: currentIndex == 1
+            icon: currentIndex == 0
                 ? Image.asset(
                     Assets.images.searchActive.path,
                   )
@@ -72,9 +65,16 @@ class _HomeViewState extends State<HomeView> {
             label: "",
           ),
           BottomNavigationBarItem(
-              icon: currentIndex == 2
+              icon: currentIndex == 1
                   ? Image.asset(Assets.images.messageActive.path)
                   : Image.asset(Assets.images.messageIcon.path),
+              label: ""),
+          BottomNavigationBarItem(
+              icon: currentIndex == 2
+                  ? Image.asset(
+                      Assets.images.homeIcon.path,
+                    )
+                  : Image.asset(Assets.images.homeIconInactive.path),
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(

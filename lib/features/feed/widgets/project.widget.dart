@@ -38,13 +38,16 @@ class ProjectWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  projectModel.title,
-                  style: context.appTheme.textTheme.titleSmall?.copyWith(
-                    fontSize: 18,
-                    color: ColorName.onBackground,
+                Hero(
+                  tag: projectModel.id!,
+                  child: Text(
+                    projectModel.title,
+                    style: context.appTheme.textTheme.titleSmall?.copyWith(
+                      fontSize: 18,
+                      color: ColorName.onBackground,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

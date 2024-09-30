@@ -50,6 +50,7 @@ class SearchProject extends StatelessWidget {
                       daysPosted: project.createdAt.day.toString(),
                       tags: project.tags,
                       propositions: "16",
+                      projectId: project.id!,
                     ),
                     SizedBox(height: 16.h),
                   ],

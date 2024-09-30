@@ -9,11 +9,13 @@ class MessageDetailAppbar extends StatelessWidget {
   const MessageDetailAppbar({
     required this.name,
     required this.profileUrl,
+    required this.roomId,
     super.key,
   });
 
   final String name;
   final String profileUrl;
+  final String roomId;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class MessageDetailAppbar extends StatelessWidget {
             children: [
               Row(
                 children: <Widget>[
-                  MessageTilePicAvatar(profileUrl: profileUrl, radius: 12),
+                  Hero(tag: roomId, child: MessageTilePicAvatar(profileUrl: profileUrl, radius: 12)),
                   SizedBox(width: 8.w),
                   Text(
                     name,

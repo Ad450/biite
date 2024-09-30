@@ -45,16 +45,19 @@ class CreatedProjectDetail extends StatelessWidget {
                       projectModel.createdAt.day.toString(),
                       style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                     ),
-                    Text(
-                      projectModel.title,
-                      style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
+                    Hero(
+                      tag: projectModel.id!,
+                      child: Text(
+                        projectModel.title,
+                        style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
+                      ),
                     ),
                     Text(
                       projectModel.description,
                       style: context.appTheme.textTheme.bodyMedium?.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: ColorName.fillColor,
+                        color: ColorName.background,
                       ),
                       textAlign: TextAlign.justify,
                     ),
@@ -109,7 +112,7 @@ class CreatedProjectDetail extends StatelessWidget {
 }
 
 class _ProjectPropositions extends StatelessWidget {
-  const _ProjectPropositions({required this.projectId, super.key});
+  const _ProjectPropositions({required this.projectId});
 
   final String projectId;
 

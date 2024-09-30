@@ -41,7 +41,7 @@ class MessageTile extends StatelessWidget {
           children: [
             Row(
               children: <Widget>[
-                MessageTilePicAvatar(profileUrl: profileUrl),
+                Hero(tag: room.id!, child: MessageTilePicAvatar(profileUrl: profileUrl)),
                 SizedBox(width: 16.w),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -42,9 +42,12 @@ class ActiveProjectDetail extends StatelessWidget {
                     "Posted ${project.createdAt.day} days ago",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
-                  Text(
-                    project.title,
-                    style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
+                  Hero(
+                    tag: project.id!,
+                    child: Text(
+                      project.title,
+                      style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
+                    ),
                   ),
                   Text(
                     project.description,

@@ -9,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignupFormButton extends StatelessWidget {
-  const SignupFormButton({super.key});
+  const SignupFormButton({required this.isLoading, super.key});
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,14 @@ class SignupFormButton extends StatelessWidget {
         orElse: () => null,
         invalid: (state) => showToast(state.message!),
       ),
-      child: BiiteTextButton(
-        onPressed: () => signupBloc.add(SignupFormFieldEvent()),
-        text: signup,
+      // child: BiiteTextButton(
+      //   onPressed: () => signupBloc.add(SignupFormFieldEvent()),
+      //   text: signup,
+      // ),
+      child: LoadingButton(
+        isLoading: isLoading,
+        buttonText: signup,
+        onTap: () => signupBloc.add(SignupFormFieldEvent()),
       ),
     );
   }

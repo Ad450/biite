@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginFormButton extends StatelessWidget {
-  const LoginFormButton({super.key});
+  const LoginFormButton({required this.isLoading, super.key});
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,10 @@ class LoginFormButton extends StatelessWidget {
         orElse: () => null,
         invalid: (state) => showToast(state.message!),
       ),
-      child: BiiteTextButton(
-        onPressed: () => loginBloc.add(LoginFormFieldEvent()),
-        text: "Login",
+      child: LoadingButton(
+        isLoading: isLoading,
+        buttonText: "Login",
+        onTap: () => loginBloc.add(LoginFormFieldEvent()),
       ),
     );
   }

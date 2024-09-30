@@ -65,9 +65,8 @@ class SignupView extends StatelessWidget {
                     SizedBox(height: 24.h),
                     const AuthConfirmPasswordField(),
                     SizedBox(height: 102.h),
-                    state.maybeMap(
-                      orElse: () => const SignupFormButton(),
-                      loading: (_) => const CupertinoActivityIndicator(),
+                    SignupFormButton(
+                      isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
                     ),
                     SizedBox(height: 40.h),
                     BiiteAuthText(text: login, onTap: () => context.push("/login"))

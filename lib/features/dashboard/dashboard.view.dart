@@ -131,12 +131,15 @@ class _CreateProjectButton extends StatelessWidget {
       ),
       builder: (_, state) => Padding(
         padding: EdgeInsets.symmetric(horizontal: 56.w),
-        child: state.maybeMap(
-          orElse: () => const CreateProjectFormButton(),
-          loading: (_) => const Align(
-            alignment: Alignment.center,
-            child: CupertinoActivityIndicator(),
-          ),
+        // child: state.maybeMap(
+        //   orElse: () => const CreateProjectFormButton(),
+        //   loading: (_) => const Align(
+        //     alignment: Alignment.center,
+        //     child: CupertinoActivityIndicator(),
+        //   ),
+        // ),
+        child: CreateProjectFormButton(
+          isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
         ),
       ),
     );

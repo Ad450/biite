@@ -9,7 +9,6 @@ import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/feed/state/accept.bid.bloc.dart';
 import 'package:biite/features/feed/state/feed.state.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,7 +52,7 @@ class PropositionDetails extends StatelessWidget {
                     style: context.appTheme.textTheme.bodyMedium?.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: ColorName.fillColor,
+                      color: ColorName.background,
                     ),
                     textAlign: TextAlign.justify,
                   ),
@@ -107,12 +106,10 @@ class _PropositionDetailButton extends StatelessWidget {
         error: (state) => showToast(state.message),
         accept: (_) => showToast("Bid accepted!!"),
       ),
-      builder: (_, state) => state.maybeMap(
-        orElse: () => BiiteTextButton(
-          onPressed: () => bloc.acceptBid(bidId: bidId, projectId: projectId),
-          text: "Accept",
-        ),
-        loading: (_) => const CupertinoActivityIndicator(),
+      builder: (_, state) => LoadingButton(
+        isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
+        onTap: () => bloc.acceptBid(bidId: bidId, projectId: projectId),
+        buttonText: "Accept",
       ),
     );
   }

@@ -31,6 +31,7 @@ class BiiteTextfield extends StatelessWidget {
       maxLines: maxLines ?? 1,
       minLines: minLines ?? 1,
       keyboardType: inputType ?? TextInputType.number,
+      keyboardAppearance: Brightness.dark,
       onTapOutside: (PointerDownEvent event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },

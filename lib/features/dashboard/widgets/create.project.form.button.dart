@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateProjectFormButton extends StatelessWidget {
-  const CreateProjectFormButton({super.key});
+  const CreateProjectFormButton({required this.isLoading, super.key});
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,10 @@ class CreateProjectFormButton extends StatelessWidget {
         // valid: (state) => dashboardBloc.createProject(),
         invalid: (state) => showToast(state.message!),
       ),
-      child: BiiteTextButton(
-        onPressed: () => projectBloc.add(CreateProjectFormFieldEvent()),
-        text: "Create project",
+      child: LoadingButton(
+        isLoading: isLoading,
+        buttonText: "Create project",
+        onTap: () => projectBloc.add(CreateProjectFormFieldEvent()),
       ),
     );
   }

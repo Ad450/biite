@@ -80,12 +80,10 @@ class _PropositionButton extends StatelessWidget {
         error: (state) => showToast(state.message),
         create: (state) => showToast("Bid made!!!"),
       ),
-      builder: (_, state) => state.maybeMap(
-        orElse: () => BiiteTextButton(
-          onPressed: () => bloc.makeProposition(projectId: projectId),
-          text: "Send",
-        ),
-        loading: (_) => const Center(child: CupertinoActivityIndicator()),
+      builder: (_, state) => LoadingButton(
+        isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
+        onTap: () => bloc.makeProposition(projectId: projectId),
+        buttonText: "Send",
       ),
     );
   }

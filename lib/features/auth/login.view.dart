@@ -9,7 +9,6 @@ import 'package:biite/features/auth/widgets/auth.password.field.dart';
 import 'package:biite/features/auth/widgets/login.form.button.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,9 +54,8 @@ class Login extends StatelessWidget {
                 SizedBox(height: 24.h),
                 const AuthPasswordField(instance: "login"),
                 SizedBox(height: 24.h),
-                state.maybeMap(
-                  orElse: () => const LoginFormButton(),
-                  loading: (_) => const CupertinoActivityIndicator(),
+                LoginFormButton(
+                  isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
                 ),
                 SizedBox(height: 24.h),
                 BiiteAuthText(

@@ -50,6 +50,7 @@ class _MessageDetailState extends State<MessageDetail> {
           MessageDetailAppbar(
             name: widget.extra["name"],
             profileUrl: widget.extra["profileUrl"],
+            roomId: widget.extra["room"].id!,
           ),
           Expanded(
             child: SingleChildScrollView(

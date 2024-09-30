@@ -12,6 +12,7 @@ class SearchProjectCard extends StatelessWidget {
     required this.price,
     required this.tags,
     required this.title,
+    required this.projectId,
     super.key,
   });
 
@@ -21,6 +22,7 @@ class SearchProjectCard extends StatelessWidget {
   final String propositions;
   final String price;
   final List<String> tags;
+  final String projectId;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +35,14 @@ class SearchProjectCard extends StatelessWidget {
           style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8, fontWeight: FontWeight.normal),
         ),
         SizedBox(height: 24.h),
-        Text(
-          title,
-          style: context.appTheme.textTheme.titleMedium?.copyWith(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
+        Hero(
+          tag: projectId,
+          child: Text(
+            title,
+            style: context.appTheme.textTheme.titleMedium?.copyWith(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         SizedBox(height: 24.h),

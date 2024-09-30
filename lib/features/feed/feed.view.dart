@@ -80,7 +80,12 @@ class _CreatedProjectsFeed extends StatelessWidget {
       ),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
-        loading: (_) => const Align(alignment: Alignment.center, child: CupertinoActivityIndicator()),
+        loading: (_) => const Align(
+          alignment: Alignment.center,
+          child: CupertinoActivityIndicator(
+            color: ColorName.background,
+          ),
+        ),
         fetch: (state) => CreatedProjects(
           projects: state.projects,
         ),

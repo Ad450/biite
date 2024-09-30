@@ -31,6 +31,7 @@ class BiiteFormField extends StatelessWidget {
         keyboardType: inputType,
         controller: controller,
         onChanged: onChanged,
+        keyboardAppearance: Brightness.dark,
         textAlignVertical: TextAlignVertical.center,
         style: context.appTheme.textTheme.bodySmall?.copyWith(
           fontSize: 16,

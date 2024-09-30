@@ -5,7 +5,6 @@ import 'package:biite/features/profile/state/profile.bloc.dart';
 import 'package:biite/features/profile/state/profile.state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileButton extends StatelessWidget {
   const ProfileButton({super.key});
@@ -21,12 +20,10 @@ class ProfileButton extends StatelessWidget {
         error: (state) => showToast(state.message),
         updateProfie: (_) => showToast("profile updated!"),
       ),
-      builder: (_, state) => state.maybeMap(
-        loading: (_) => const Center(child: CupertinoActivityIndicator()),
-        orElse: () => Padding(
-          padding: EdgeInsets.symmetric(horizontal: 56.w),
-          child: BiiteTextButton(onPressed: bloc.update, text: "Finish"),
-        ),
+      builder: (_, state) => LoadingButton(
+        isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
+        onTap: bloc.update,
+        buttonText: "Finish",
       ),
     );
   }

@@ -34,10 +34,14 @@ class AuthRepositoryImpl implements AuthRepository {
       );
 
       if (credential.user != null) {
-        // add user
+        if (!credential.user!.emailVerified) {
+          await credential.user!.sendEmailVerification();
+          throw Exception("Please verify email to continue ");
+        }
+
         final query = await _firestore.collection(kUserCollection).where("uid", isEqualTo: credential.user!.uid).get();
 
-        if (!query.docs.first.exists) {
+        if (query.docs.isEmpty) {
           throw Exception("user document not found");
         }
 
@@ -62,6 +66,14 @@ class AuthRepositoryImpl implements AuthRepository {
 
       if (credential.user != null) {
         // add new user
+        try {
+          await credential.user!.sendEmailVerification();
+        } catch (e) {
+          await credential.user!.delete();
+          debugPrint("....verification result ${e.toString()}");
+          throw Exception("Email verification failed");
+        }
+
         await _addUser(signupParam.name, signupParam.email, credential.user!.uid);
         return const Right(VoidType());
       }
@@ -105,6 +117,23 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await _firebaseAuth.signOut();
       await _hiveStore.deleteItem("id", "id");
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+      // delete all bids and projects
+      final query = await _firestore.collection(kProjectCollection).where("ownerId", isEqualTo: id).get();
+
+      for (final project in query.docs) {
+        final bids = await _firestore.collection(kBidCollection).where("projectId", isEqualTo: project.id).get();
+
+        for (final bid in bids.docs) {
+          await _firestore.collection(kProjectCollection).doc(bid.id).delete();
+        }
+
+        await _firestore.collection(kProjectCollection).doc(project.id).delete();
+      }
+
       return const Right(VoidType());
     } catch (e) {
       return Left(UIError(e.toString()));

@@ -11,7 +11,6 @@ import 'package:biite/features/auth/widgets/signup.form.button.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +43,11 @@ class SignupView extends StatelessWidget {
               bloc: authBloc,
               listener: (_, state) => state.maybeMap(
                 orElse: () => null,
-                success: (_) => context.go("/home"),
+                success: (_) {
+                  showToast("Verify your email address");
+                  context.go("/login");
+                  return;
+                },
                 error: (state) => showToast(state.message),
               ),
               builder: (_, state) => IgnorePointer(

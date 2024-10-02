@@ -57,7 +57,7 @@ class _LoadingButtonState extends State<LoadingButton> with SingleTickerProvider
     // Initialize the animation controller and scale animation
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 600),
     );
 
     // Scale animation that shrinks the width
@@ -87,7 +87,7 @@ class _LoadingButtonState extends State<LoadingButton> with SingleTickerProvider
   Widget build(BuildContext context) {
     return Center(
       child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 600),
         child: widget.isLoading
             ? Container(
                 key: const ValueKey("loading"),

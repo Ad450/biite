@@ -25,7 +25,7 @@ import '../../api/storage/cloud.storage.dart' as _i16;
 import '../../api/storage/hive.storage.dart' as _i9;
 import '../../features/auth/state/login.bloc.dart' as _i33;
 import '../../features/auth/state/login.form.bloc.dart' as _i34;
-import '../../features/auth/state/signup.bloc.dart' as _i39;
+import '../../features/auth/state/signup.bloc.dart' as _i38;
 import '../../features/auth/state/signup.form.bloc.dart' as _i40;
 import '../../features/dashboard/bloc/active.projects.bloc.dart' as _i27;
 import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i37;
@@ -35,7 +35,7 @@ import '../../features/dashboard/bloc/project.bloc.dart' as _i31;
 import '../../features/dashboard/bloc/tags.bloc.dart' as _i15;
 import '../../features/feed/state/accept.bid.bloc.dart' as _i35;
 import '../../features/feed/state/bid.bloc.dart' as _i36;
-import '../../features/message/state/chats.bloc.dart' as _i38;
+import '../../features/message/state/chats.bloc.dart' as _i39;
 import '../../features/message/state/message.bloc.dart' as _i23;
 import '../../features/profile/state/fetch.picture.bloc.dart' as _i8;
 import '../../features/profile/state/peer.bloc.dart' as _i21;
@@ -231,19 +231,20 @@ extension GetItInjectableX on _i1.GetIt {
               gh<_i14.NameFieldBloc>(instanceName: 'createProject'),
               gh<_i31.ProjectBloc>(),
             ));
-    gh.factory<_i38.ChatBloc>(() => _i38.ChatBloc(gh<_i25.ChatRepository>()));
-    gh.lazySingleton<_i39.SignupBloc>(() => _i39.SignupBloc(
+    gh.lazySingleton<_i38.SignupBloc>(() => _i38.SignupBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
+          gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i30.ConfirmPasswordFieldBloc>(),
         ));
+    gh.factory<_i39.ChatBloc>(() => _i39.ChatBloc(gh<_i25.ChatRepository>()));
     gh.lazySingleton<_i40.SignupFormBloc>(() => _i40.SignupFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i30.ConfirmPasswordFieldBloc>(),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
-          gh<_i39.SignupBloc>(),
+          gh<_i38.SignupBloc>(),
         ));
     return this;
   }

@@ -3,6 +3,7 @@ import 'package:biite/api/utils/repository.params.dart';
 import 'package:biite/core/presentation/state/confirm.password.bloc.dart';
 import 'package:biite/core/presentation/state/email.field.bloc.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
+import 'package:biite/core/presentation/state/password.field.bloc.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +14,7 @@ class SignupBloc extends Cubit<SignupState> {
     this.authRepository,
     @Named("signup") this._signupEmailFieldBloc,
     @Named("signup") this._nameFieldBloc,
+    @Named("signup") this._passwordFieldBloc,
     this._confirmPasswordFieldBloc,
   ) : super(const SignupState.initial());
 
@@ -20,6 +22,7 @@ class SignupBloc extends Cubit<SignupState> {
   final EmailFieldBloc _signupEmailFieldBloc;
   final ConfirmPasswordFieldBloc _confirmPasswordFieldBloc;
   final NameFieldBloc _nameFieldBloc;
+  final PasswordFieldBloc _passwordFieldBloc;
 
   void signup() async {
     // lock down function while processing a request
@@ -93,6 +96,7 @@ class SignupBloc extends Cubit<SignupState> {
 
   void _clearFields() {
     _confirmPasswordFieldBloc.confirmPasswordController.clear();
+    _passwordFieldBloc.passwordController.clear();
     _nameFieldBloc.nameController.clear();
     _signupEmailFieldBloc.controller.clear();
   }

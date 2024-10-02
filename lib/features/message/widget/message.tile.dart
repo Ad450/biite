@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biite/api/models/room.model.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
@@ -47,18 +48,19 @@ class MessageTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
+                    AutoSizeText(
                       name,
                       style: context.appTheme.textTheme.titleMedium?.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+                      maxLines: 1,
                     ),
                     BlocBuilder<MessageBloc, MessageState>(
                       bloc: getIt.get<MessageBloc>()..fetchLastMessage(room.id!),
                       builder: (_, state) => state.maybeMap(
                         orElse: () => Text(
-                          "",
+                          "No message yet",
                           style: context.appTheme.textTheme.bodySmall?.copyWith(
                             fontSize: 12.8,
                             fontWeight: FontWeight.normal,

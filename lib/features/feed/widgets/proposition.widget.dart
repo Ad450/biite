@@ -1,4 +1,5 @@
 import 'package:biite/api/models/bid.model.dart';
+import 'package:biite/api/utils/functions.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -7,16 +8,19 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class PropositionWidget extends StatelessWidget {
-  const PropositionWidget({required this.bidModel, super.key});
+  const PropositionWidget({required this.bidModel, this.isFeed = false, super.key});
 
   final BidModel bidModel;
+  final bool isFeed;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GestureDetector(
-        onTap: () => context.push("/propositionDetail", extra: bidModel),
+        onTap: isFeed
+            ? () => context.push("/propositionRelatedProject", extra: bidModel)
+            : () => context.push("/propositionDetail", extra: bidModel),
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(color: ColorName.white),
@@ -41,9 +45,9 @@ class PropositionWidget extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    DateFormat('yyyy-MM-dd').format(bidModel.createdAt).toString(),
+                    convertDateTime(bidModel.createdAt),
                     style: context.appTheme.textTheme.titleSmall
-                        ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
+                        ?.copyWith(fontSize: 13, color: ColorName.onBackground, fontWeight: FontWeight.normal),
                   ),
                 ],
               )

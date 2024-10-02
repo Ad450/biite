@@ -1,7 +1,9 @@
 import 'package:biite/api/models/project.model.dart';
+import 'package:biite/api/utils/functions.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
+import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/search/widget/search.project.card.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
@@ -31,13 +33,13 @@ class SearchProjectDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  PeerProfileAvatar(ownerId: project.ownerId),
+                  PeerProfileAvatar(ownerId: project.ownerId, background: ColorName.white),
                   SizedBox(height: 24.h),
                   SearchProjectCard(
                     description: project.description,
                     title: project.title,
                     price: project.rate.toString(),
-                    daysPosted: project.createdAt.day.toString(),
+                    daysPosted: convertDateTime(project.createdAt),
                     tags: project.tags,
                     projectId: project.id!,
                   ),
@@ -48,7 +50,10 @@ class SearchProjectDetail extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 56.w),
               child: BiiteTextButton(
-                  onPressed: () => context.push("/makeProposition", extra: project), text: "Make a proposition"),
+                  onPressed: () => project.status.toLowerCase() == "active"
+                      ? showToast("Bidding is over for this project")
+                      : context.push("/makeProposition", extra: project),
+                  text: "Make a proposition"),
             )
           ],
         ),

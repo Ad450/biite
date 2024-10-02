@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/features/profile/state/profile.state.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -25,25 +26,29 @@ class ProfileAvatar extends StatelessWidget {
           ),
         ),
         SizedBox(width: 8.w),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              state.maybeMap(orElse: () => "Anonymous", fetch: (state) => state.user.name),
-              style: context.appTheme.textTheme.titleMedium?.copyWith(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              AutoSizeText(
+                state.maybeMap(orElse: () => "Anonymous", fetch: (state) => state.user.name),
+                style: context.appTheme.textTheme.titleMedium?.copyWith(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
+                // overflow: TextOverflow.ellipsis,
               ),
-            ),
-            Text(
-              "Anonymous",
-              style: context.appTheme.textTheme.bodySmall?.copyWith(
-                fontSize: 12.8,
-                fontWeight: FontWeight.normal,
+              Text(
+                "Anonymous",
+                style: context.appTheme.textTheme.bodySmall?.copyWith(
+                  fontSize: 12.8,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );

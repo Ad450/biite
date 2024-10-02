@@ -13,6 +13,7 @@ abstract class ProjectRepository {
   Future<Either<UIError, List<ProjectModel>>> fetchActiveProjects();
   Future<Either<UIError, VoidType>> createProject(CreateProjectParam param);
   Future<Either<UIError, List<ProjectModel>>> fetchProjects();
+  Future<Either<UIError, ProjectModel>> fetchProjectById(String projectId);
   Future<Either<UIError, int>> fetchPropositionByProjectId(String id);
 }
 
@@ -113,7 +114,7 @@ class ProjectRepostoryImpl implements ProjectRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final projectsSnapshot = await _firestore.collection(kProjectCollection).get();
+      final projectsSnapshot = await _firestore.collection(kProjectCollection).where("ownerId", isNotEqualTo: id).get();
       final projects = projectsSnapshot.docs.map((e) {
         final model = ProjectModel.fromJson(e.data());
         return model.copyWith(id: e.id);
@@ -132,6 +133,20 @@ class ProjectRepostoryImpl implements ProjectRepository {
         return Right(query.docs.length);
       }
       return const Right(0);
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, ProjectModel>> fetchProjectById(String projectId) async {
+    try {
+      final doc = await _firestore.collection(kProjectCollection).doc(projectId).get();
+      if (!doc.exists) {
+        throw Exception("project not found");
+      }
+      var project = ProjectModel.fromJson(doc.data()!).copyWith(id: doc.id);
+      return Right(project);
     } catch (e) {
       return Left(UIError(e.toString()));
     }

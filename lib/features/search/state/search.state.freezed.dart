@@ -1685,3 +1685,592 @@ abstract class _PropositionCountStateError extends PropositionCountState {
   _$$PropositionCountStateErrorImplCopyWith<_$PropositionCountStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$FetchSingleProjectState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProjectModel model) fetch,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProjectModel model)? fetch,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProjectModel model)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchSingleProjectStateInitial value) initial,
+    required TResult Function(FetchSingleProjectStateLoading value) loading,
+    required TResult Function(FetchSingleProjectStateFetch value) fetch,
+    required TResult Function(_FetchSingleProjectStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult? Function(FetchSingleProjectStateLoading value)? loading,
+    TResult? Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult? Function(_FetchSingleProjectStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult Function(FetchSingleProjectStateLoading value)? loading,
+    TResult Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult Function(_FetchSingleProjectStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FetchSingleProjectStateCopyWith<$Res> {
+  factory $FetchSingleProjectStateCopyWith(FetchSingleProjectState value,
+          $Res Function(FetchSingleProjectState) then) =
+      _$FetchSingleProjectStateCopyWithImpl<$Res, FetchSingleProjectState>;
+}
+
+/// @nodoc
+class _$FetchSingleProjectStateCopyWithImpl<$Res,
+        $Val extends FetchSingleProjectState>
+    implements $FetchSingleProjectStateCopyWith<$Res> {
+  _$FetchSingleProjectStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$FetchSingleProjectStateInitialImplCopyWith<$Res> {
+  factory _$$FetchSingleProjectStateInitialImplCopyWith(
+          _$FetchSingleProjectStateInitialImpl value,
+          $Res Function(_$FetchSingleProjectStateInitialImpl) then) =
+      __$$FetchSingleProjectStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchSingleProjectStateInitialImplCopyWithImpl<$Res>
+    extends _$FetchSingleProjectStateCopyWithImpl<$Res,
+        _$FetchSingleProjectStateInitialImpl>
+    implements _$$FetchSingleProjectStateInitialImplCopyWith<$Res> {
+  __$$FetchSingleProjectStateInitialImplCopyWithImpl(
+      _$FetchSingleProjectStateInitialImpl _value,
+      $Res Function(_$FetchSingleProjectStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchSingleProjectStateInitialImpl
+    extends _FetchSingleProjectStateInitial {
+  const _$FetchSingleProjectStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FetchSingleProjectState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProjectModel model) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProjectModel model)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProjectModel model)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchSingleProjectStateInitial value) initial,
+    required TResult Function(FetchSingleProjectStateLoading value) loading,
+    required TResult Function(FetchSingleProjectStateFetch value) fetch,
+    required TResult Function(_FetchSingleProjectStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult? Function(FetchSingleProjectStateLoading value)? loading,
+    TResult? Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult? Function(_FetchSingleProjectStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult Function(FetchSingleProjectStateLoading value)? loading,
+    TResult Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult Function(_FetchSingleProjectStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchSingleProjectStateInitial extends FetchSingleProjectState {
+  const factory _FetchSingleProjectStateInitial() =
+      _$FetchSingleProjectStateInitialImpl;
+  const _FetchSingleProjectStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FetchSingleProjectStateLoadingImplCopyWith<$Res> {
+  factory _$$FetchSingleProjectStateLoadingImplCopyWith(
+          _$FetchSingleProjectStateLoadingImpl value,
+          $Res Function(_$FetchSingleProjectStateLoadingImpl) then) =
+      __$$FetchSingleProjectStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchSingleProjectStateLoadingImplCopyWithImpl<$Res>
+    extends _$FetchSingleProjectStateCopyWithImpl<$Res,
+        _$FetchSingleProjectStateLoadingImpl>
+    implements _$$FetchSingleProjectStateLoadingImplCopyWith<$Res> {
+  __$$FetchSingleProjectStateLoadingImplCopyWithImpl(
+      _$FetchSingleProjectStateLoadingImpl _value,
+      $Res Function(_$FetchSingleProjectStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchSingleProjectStateLoadingImpl
+    extends FetchSingleProjectStateLoading {
+  const _$FetchSingleProjectStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FetchSingleProjectState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProjectModel model) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProjectModel model)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProjectModel model)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchSingleProjectStateInitial value) initial,
+    required TResult Function(FetchSingleProjectStateLoading value) loading,
+    required TResult Function(FetchSingleProjectStateFetch value) fetch,
+    required TResult Function(_FetchSingleProjectStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult? Function(FetchSingleProjectStateLoading value)? loading,
+    TResult? Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult? Function(_FetchSingleProjectStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult Function(FetchSingleProjectStateLoading value)? loading,
+    TResult Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult Function(_FetchSingleProjectStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchSingleProjectStateLoading extends FetchSingleProjectState {
+  const factory FetchSingleProjectStateLoading() =
+      _$FetchSingleProjectStateLoadingImpl;
+  const FetchSingleProjectStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FetchSingleProjectStateFetchImplCopyWith<$Res> {
+  factory _$$FetchSingleProjectStateFetchImplCopyWith(
+          _$FetchSingleProjectStateFetchImpl value,
+          $Res Function(_$FetchSingleProjectStateFetchImpl) then) =
+      __$$FetchSingleProjectStateFetchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ProjectModel model});
+
+  $ProjectModelCopyWith<$Res> get model;
+}
+
+/// @nodoc
+class __$$FetchSingleProjectStateFetchImplCopyWithImpl<$Res>
+    extends _$FetchSingleProjectStateCopyWithImpl<$Res,
+        _$FetchSingleProjectStateFetchImpl>
+    implements _$$FetchSingleProjectStateFetchImplCopyWith<$Res> {
+  __$$FetchSingleProjectStateFetchImplCopyWithImpl(
+      _$FetchSingleProjectStateFetchImpl _value,
+      $Res Function(_$FetchSingleProjectStateFetchImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? model = null,
+  }) {
+    return _then(_$FetchSingleProjectStateFetchImpl(
+      null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as ProjectModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProjectModelCopyWith<$Res> get model {
+    return $ProjectModelCopyWith<$Res>(_value.model, (value) {
+      return _then(_value.copyWith(model: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$FetchSingleProjectStateFetchImpl extends FetchSingleProjectStateFetch {
+  const _$FetchSingleProjectStateFetchImpl(this.model) : super._();
+
+  @override
+  final ProjectModel model;
+
+  @override
+  String toString() {
+    return 'FetchSingleProjectState.fetch(model: $model)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchSingleProjectStateFetchImplCopyWith<
+          _$FetchSingleProjectStateFetchImpl>
+      get copyWith => __$$FetchSingleProjectStateFetchImplCopyWithImpl<
+          _$FetchSingleProjectStateFetchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProjectModel model) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return fetch(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProjectModel model)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return fetch?.call(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProjectModel model)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(model);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchSingleProjectStateInitial value) initial,
+    required TResult Function(FetchSingleProjectStateLoading value) loading,
+    required TResult Function(FetchSingleProjectStateFetch value) fetch,
+    required TResult Function(_FetchSingleProjectStateError value) error,
+  }) {
+    return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult? Function(FetchSingleProjectStateLoading value)? loading,
+    TResult? Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult? Function(_FetchSingleProjectStateError value)? error,
+  }) {
+    return fetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult Function(FetchSingleProjectStateLoading value)? loading,
+    TResult Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult Function(_FetchSingleProjectStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchSingleProjectStateFetch extends FetchSingleProjectState {
+  const factory FetchSingleProjectStateFetch(final ProjectModel model) =
+      _$FetchSingleProjectStateFetchImpl;
+  const FetchSingleProjectStateFetch._() : super._();
+
+  ProjectModel get model;
+  @JsonKey(ignore: true)
+  _$$FetchSingleProjectStateFetchImplCopyWith<
+          _$FetchSingleProjectStateFetchImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FetchSingleProjectStateErrorImplCopyWith<$Res> {
+  factory _$$FetchSingleProjectStateErrorImplCopyWith(
+          _$FetchSingleProjectStateErrorImpl value,
+          $Res Function(_$FetchSingleProjectStateErrorImpl) then) =
+      __$$FetchSingleProjectStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FetchSingleProjectStateErrorImplCopyWithImpl<$Res>
+    extends _$FetchSingleProjectStateCopyWithImpl<$Res,
+        _$FetchSingleProjectStateErrorImpl>
+    implements _$$FetchSingleProjectStateErrorImplCopyWith<$Res> {
+  __$$FetchSingleProjectStateErrorImplCopyWithImpl(
+      _$FetchSingleProjectStateErrorImpl _value,
+      $Res Function(_$FetchSingleProjectStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FetchSingleProjectStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchSingleProjectStateErrorImpl extends _FetchSingleProjectStateError {
+  const _$FetchSingleProjectStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'FetchSingleProjectState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchSingleProjectStateErrorImplCopyWith<
+          _$FetchSingleProjectStateErrorImpl>
+      get copyWith => __$$FetchSingleProjectStateErrorImplCopyWithImpl<
+          _$FetchSingleProjectStateErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProjectModel model) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProjectModel model)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProjectModel model)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchSingleProjectStateInitial value) initial,
+    required TResult Function(FetchSingleProjectStateLoading value) loading,
+    required TResult Function(FetchSingleProjectStateFetch value) fetch,
+    required TResult Function(_FetchSingleProjectStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult? Function(FetchSingleProjectStateLoading value)? loading,
+    TResult? Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult? Function(_FetchSingleProjectStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchSingleProjectStateInitial value)? initial,
+    TResult Function(FetchSingleProjectStateLoading value)? loading,
+    TResult Function(FetchSingleProjectStateFetch value)? fetch,
+    TResult Function(_FetchSingleProjectStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchSingleProjectStateError extends FetchSingleProjectState {
+  const factory _FetchSingleProjectStateError(final String message) =
+      _$FetchSingleProjectStateErrorImpl;
+  const _FetchSingleProjectStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FetchSingleProjectStateErrorImplCopyWith<
+          _$FetchSingleProjectStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

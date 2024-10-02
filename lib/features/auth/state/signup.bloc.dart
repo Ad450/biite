@@ -46,6 +46,11 @@ class SignupBloc extends Cubit<SignupState> {
       valid: (state) => state.data,
     );
 
+    if (name.length > 11) {
+      emit(const SignupState.error("Name too long"));
+      return;
+    }
+
     /// for debugging
     assert(() {
       final condition = name.isEmpty || password.isEmpty || email.isEmpty;

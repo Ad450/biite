@@ -1,4 +1,5 @@
 import 'package:biite/api/models/bid.model.dart';
+import 'package:biite/api/utils/functions.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
@@ -12,7 +13,6 @@ import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 
 class PropositionDetails extends StatelessWidget {
   const PropositionDetails({required this.bid, super.key});
@@ -37,10 +37,10 @@ class PropositionDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PeerProfileAvatar(ownerId: bid.ownerId),
+                  PeerProfileAvatar(ownerId: bid.ownerId, background: ColorName.white),
                   SizedBox(height: 24.h),
                   Text(
-                    "Sent ${DateFormat('yyyy-MM-dd').format(bid.createdAt).toString()}",
+                    "Sent ${convertDateTime(bid.createdAt)}",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   // Text(
@@ -68,6 +68,7 @@ class PropositionDetails extends StatelessWidget {
                             ))
                         .toList(),
                   ),
+
                   SizedBox(height: 97.h),
                   Align(
                     alignment: Alignment.center,

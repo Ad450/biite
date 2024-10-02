@@ -1,4 +1,5 @@
 import 'package:biite/api/models/project.model.dart';
+import 'package:biite/api/utils/functions.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/features/search/widget/search.project.card.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -47,7 +48,7 @@ class SearchProject extends StatelessWidget {
                       description: project.description,
                       title: project.title,
                       price: project.rate.toString(),
-                      daysPosted: "${project.createdAt.year}-${project.createdAt.month}-${project.createdAt.day}",
+                      daysPosted: convertDateTime(project.createdAt),
                       tags: project.tags,
                       projectId: project.id!,
                     ),

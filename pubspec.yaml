@@ -70,6 +70,7 @@ dependencies:
   firebase_messaging: ^15.1.0
   googleapis_auth: ^1.6.0
   isolate_handler: ^1.0.2
+  auto_size_text: ^3.0.0
   # workmanager: ^0.5.2
 
 dev_dependencies:

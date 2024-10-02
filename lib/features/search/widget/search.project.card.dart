@@ -69,7 +69,7 @@ class SearchProjectCard extends StatelessWidget {
           children: [
             PropositionCount(projectId: projectId),
             Text(
-              "\$ $price",
+              "₵ $price",
               style: context.appTheme.textTheme.bodySmall?.copyWith(
                 fontSize: 16,
                 color: ColorName.primary,

@@ -4,6 +4,7 @@ import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
 import 'package:biite/features/feed/widgets/all.propositions.dart';
 import 'package:biite/features/feed/widgets/created.project.detail.dart';
+import 'package:biite/features/feed/widgets/feed.proposition.related.project.dart';
 import 'package:biite/features/feed/widgets/metric.details.dart';
 import 'package:biite/features/feed/widgets/active.project.detail.dart';
 import 'package:biite/features/feed/widgets/proposition.details.dart';
@@ -82,6 +83,12 @@ final router = GoRouter(
     GoRoute(
       path: "/propositionDetail",
       builder: (context, state) => PropositionDetails(
+        bid: state.extra as BidModel,
+      ),
+    ),
+    GoRoute(
+      path: "/propositionRelatedProject",
+      builder: (context, state) => RelatedProject(
         bid: state.extra as BidModel,
       ),
     ),

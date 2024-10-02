@@ -28,6 +28,11 @@ class ProfileBloc extends Cubit<ProfileState> {
     final description = _descriptionFieldBloc.state.maybeMap(orElse: () => "", valid: (state) => state.data);
     final filePath = _fetchPictureBloc.state.maybeMap(orElse: () => "", fetch: (state) => state.file.path);
 
+    if (name.length > 11) {
+      emit(const ProfileState.error("Name too long"));
+      return;
+    }
+
     if (name.isEmpty && description.isEmpty && filePath.isEmpty) {
       emit(const ProfileState.error("fill at least one field"));
 

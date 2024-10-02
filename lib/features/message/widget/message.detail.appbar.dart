@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
@@ -14,7 +15,7 @@ class MessageDetailAppbar extends StatelessWidget {
   });
 
   final String name;
-  final String profileUrl;
+  final String? profileUrl;
   final String roomId;
 
   @override
@@ -35,14 +36,30 @@ class MessageDetailAppbar extends StatelessWidget {
             children: [
               Row(
                 children: <Widget>[
-                  Hero(tag: roomId, child: MessageTilePicAvatar(profileUrl: profileUrl, radius: 12)),
+                  Hero(
+                    tag: roomId,
+                    child: MessageTilePicAvatar(
+                      profileUrl: profileUrl,
+                      radius: 12,
+                      background: ColorName.onboardingBackground,
+                    ),
+                  ),
                   SizedBox(width: 8.w),
-                  Text(
+                  // Text(
+                  //   name,
+                  //   style: context.appTheme.textTheme.titleMedium?.copyWith(
+                  //     fontSize: 18.sp,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  //   overflow: TextOverflow.clip,
+                  // ),
+                  AutoSizeText(
                     name,
                     style: context.appTheme.textTheme.titleMedium?.copyWith(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                     ),
+                    maxLines: 1,
                   )
                 ],
               ),

@@ -120,17 +120,17 @@ class AuthRepositoryImpl implements AuthRepository {
         throw Exception("id null at fetch all chats");
       }
       // delete all bids and projects created
-      final query = await _firestore.collection(kProjectCollection).where("ownerId", isEqualTo: id).get();
+      // final query = await _firestore.collection(kProjectCollection).where("ownerId", isEqualTo: id).get();
 
-      for (final project in query.docs) {
-        final bids = await _firestore.collection(kBidCollection).where("projectId", isEqualTo: project.id).get();
+      // for (final project in query.docs) {
+      //   final bids = await _firestore.collection(kBidCollection).where("projectId", isEqualTo: project.id).get();
 
-        for (final bid in bids.docs) {
-          await _firestore.collection(kProjectCollection).doc(bid.id).delete();
-        }
+      //   for (final bid in bids.docs) {
+      //     await _firestore.collection(kProjectCollection).doc(bid.id).delete();
+      //   }
 
-        await _firestore.collection(kProjectCollection).doc(project.id).delete();
-      }
+      //   await _firestore.collection(kProjectCollection).doc(project.id).delete();
+      // }
 
       await _hiveStore.deleteItem("id", "id");
       await _firebaseAuth.signOut();

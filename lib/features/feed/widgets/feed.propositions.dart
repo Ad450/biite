@@ -15,34 +15,35 @@ class FeedPropositions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BidBloc, BidState>(
-        bloc: getIt.get<BidBloc>()..fetchReceivedBids(),
-        builder: (_, state) => state.maybeMap(
-              orElse: () => const SizedBox(),
-              fetchReceivedBids: (state) => state.bids.isEmpty
-                  ? const SizedBox()
-                  : Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Propositions",
-                                style: context.appTheme.textTheme.titleLarge?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              BiiteViewAll(onTap: () => context.push("/allPropositions", extra: state.bids))
-                            ],
+      bloc: getIt.get<BidBloc>()..fetchReceivedBids(),
+      builder: (_, state) => state.maybeMap(
+        orElse: () => const SizedBox(),
+        fetchReceivedBids: (state) => state.bids.isEmpty
+            ? const SizedBox()
+            : Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Propositions",
+                          style: context.appTheme.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),
                         ),
-                        // show first 2 latest projects
-                        SizedBox(height: 16.h),
-                        ...state.bids.map((e) => PropositionWidget(bidModel: e)).take(2),
+                        BiiteViewAll(onTap: () => context.push("/allPropositions", extra: state.bids))
                       ],
                     ),
-            ));
+                  ),
+                  // show first 2 latest projects
+                  SizedBox(height: 16.h),
+                  ...state.bids.map((e) => PropositionWidget(bidModel: e, isFeed: true)).take(2),
+                ],
+              ),
+      ),
+    );
   }
 }

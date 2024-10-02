@@ -46,3 +46,18 @@ class PropositionCountState with _$PropositionCountState {
   @override
   bool operator ==(Object other) => false;
 }
+
+@freezed
+class FetchSingleProjectState with _$FetchSingleProjectState {
+  const factory FetchSingleProjectState.initial() = _FetchSingleProjectStateInitial;
+
+  const factory FetchSingleProjectState.loading() = FetchSingleProjectStateLoading;
+
+  const factory FetchSingleProjectState.fetch(ProjectModel model) = FetchSingleProjectStateFetch;
+  const factory FetchSingleProjectState.error(String message) = _FetchSingleProjectStateError;
+
+  const FetchSingleProjectState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}

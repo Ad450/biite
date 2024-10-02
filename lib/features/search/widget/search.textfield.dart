@@ -41,7 +41,7 @@ class SearchTextfield extends StatelessWidget {
             decoration: InputDecoration(
               fillColor: ColorName.white,
               filled: true,
-              suffixIcon: Image.asset(Assets.images.searchIcon.path),
+              suffixIcon: const Icon(Icons.search_outlined),
               border: OutlineInputBorder(
                 borderSide: const BorderSide(
                   width: 0,

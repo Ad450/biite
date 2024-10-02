@@ -33,11 +33,7 @@ void showBiiteDialog(
           actions: <Widget>[
             TextButton(
               onPressed: () => context.pop(),
-              child: const Text('Stay'),
-            ),
-            TextButton(
-              onPressed: () => context.go("/home"),
-              child: const Text('Go to Home'),
+              child: const Text('Ok'),
             ),
           ],
         );

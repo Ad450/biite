@@ -115,13 +115,11 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<UIError, VoidType>> signout() async {
     try {
-      await _firebaseAuth.signOut();
-      await _hiveStore.deleteItem("id", "id");
       final id = await _hiveStore.readItem("id", "id");
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
-      // delete all bids and projects
+      // delete all bids and projects created
       final query = await _firestore.collection(kProjectCollection).where("ownerId", isEqualTo: id).get();
 
       for (final project in query.docs) {
@@ -133,6 +131,9 @@ class AuthRepositoryImpl implements AuthRepository {
 
         await _firestore.collection(kProjectCollection).doc(project.id).delete();
       }
+
+      await _hiveStore.deleteItem("id", "id");
+      await _firebaseAuth.signOut();
 
       return const Right(VoidType());
     } catch (e) {

@@ -142,16 +142,7 @@ Future<void> _getDeviceToken() async {
         final token = await messaging.getToken();
         _updateUserToken(token);
       } else {
-        await Future<void>.delayed(
-          const Duration(
-            seconds: 3,
-          ),
-        );
-        final apnsToken = await messaging.getAPNSToken();
-        if (apnsToken != null) {
-          final token = await messaging.getToken();
-          _updateUserToken(token);
-        }
+        return; // Push Notificationn not available yet. I dont have the iOS developer account yet
       }
     }
     final token = await messaging.getToken();

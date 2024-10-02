@@ -14,6 +14,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class CreatedProjectDetail extends StatelessWidget {
   const CreatedProjectDetail({required this.projectModel, super.key});
@@ -42,7 +43,7 @@ class CreatedProjectDetail extends StatelessWidget {
                     PeerProfileAvatar(ownerId: projectModel.ownerId),
                     SizedBox(height: 24.h),
                     Text(
-                      projectModel.createdAt.day.toString(),
+                      DateFormat('yyyy-MM-dd').format(projectModel.createdAt).toString(),
                       style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                     ),
                     Hero(

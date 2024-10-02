@@ -10,6 +10,7 @@ import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 class ActiveProjectDetail extends StatelessWidget {
   const ActiveProjectDetail({required this.project, super.key});
@@ -39,7 +40,7 @@ class ActiveProjectDetail extends StatelessWidget {
                   PeerProfileAvatar(ownerId: project.ownerId),
                   SizedBox(height: 24.h),
                   Text(
-                    "Posted ${project.createdAt.day} days ago",
+                    "Posted: ${DateFormat('yyyy-MM-dd').format(project.createdAt).toString()} ",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   Hero(

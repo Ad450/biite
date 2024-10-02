@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/message.model.dart';
 import 'package:biite/api/repositories/cloud.messaging.dart';
@@ -42,13 +40,12 @@ class MessageRepositoryImpl implements MessageRepository {
       await _firestore.collection(kMessageCollection).add(message.toJson());
 
       // send notification to receiver
-      if (Platform.isAndroid) {
-        final data = {
-          'roomId': param.roomId,
-          'senderId': id,
-        };
-        sendNotification(data);
-      }
+
+      final data = {
+        'roomId': param.roomId,
+        'senderId': id,
+      };
+      sendNotification(data);
 
       // Run the task in an isolate using isolate_handler
 

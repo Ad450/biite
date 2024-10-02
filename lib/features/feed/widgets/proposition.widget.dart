@@ -5,7 +5,6 @@ import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 
 class PropositionWidget extends StatelessWidget {
   const PropositionWidget({required this.bidModel, this.isFeed = false, super.key});

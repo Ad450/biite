@@ -4,7 +4,6 @@ import 'package:biite/core/presentation/state/field.events.dart';
 import 'package:biite/core/presentation/state/field.state.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/search/state/fetch.projects.bloc.dart';
-import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';

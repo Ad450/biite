@@ -4,10 +4,12 @@ import 'package:biite/core/presentation/widgets/biite.auth.text.dart';
 import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/features/auth/state/auth.state.dart';
 import 'package:biite/features/auth/state/signup.bloc.dart';
+import 'package:biite/features/home/home.view.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -19,14 +21,19 @@ class StartupView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return BlocConsumer<SignupBloc, SignupState>(
-      bloc: getIt.get<SignupBloc>()..checkUserExistence(),
-      listener: (_, state) => state.maybeMap(
-        orElse: () => null,
-        authenticated: (_) => context.go("/home"),
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent, // or any other color
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
       ),
+    );
+
+    return BlocBuilder<SignupBloc, SignupState>(
+      bloc: getIt.get<SignupBloc>()..checkUserExistence(),
       builder: (_, state) => state.maybeMap(
         loading: (state) => const BiiteInitial(),
+        authenticated: (state) => const HomeView(),
         orElse: () => Container(
           constraints: const BoxConstraints.expand(),
           decoration: BoxDecoration(

@@ -27,10 +27,10 @@ class MessageBloc extends Cubit<MessageState> {
       emit(const MessageState.error("enter message"));
       return;
     }
+    _chatField.nameController.clear();
 
     try {
       await _messageRepository.addMessage(MessageParam(roomId: roomId, text: text));
-      _chatField.nameController.clear();
       return;
     } catch (e) {
       emit(MessageState.error(e.toString()));

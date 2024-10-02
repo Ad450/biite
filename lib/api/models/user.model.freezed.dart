@@ -26,6 +26,7 @@ mixin _$UserModel {
   String get uid => throw _privateConstructorUsedError;
   String? get profilePic => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  String? get deviceToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +45,8 @@ abstract class $UserModelCopyWith<$Res> {
       String email,
       String uid,
       String? profilePic,
-      String? description});
+      String? description,
+      String? deviceToken});
 }
 
 /// @nodoc
@@ -66,6 +68,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? uid = null,
     Object? profilePic = freezed,
     Object? description = freezed,
+    Object? deviceToken = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -92,6 +95,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      deviceToken: freezed == deviceToken
+          ? _value.deviceToken
+          : deviceToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -110,7 +117,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String email,
       String uid,
       String? profilePic,
-      String? description});
+      String? description,
+      String? deviceToken});
 }
 
 /// @nodoc
@@ -130,6 +138,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? uid = null,
     Object? profilePic = freezed,
     Object? description = freezed,
+    Object? deviceToken = freezed,
   }) {
     return _then(_$UserModelImpl(
       id: freezed == id
@@ -156,6 +165,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      deviceToken: freezed == deviceToken
+          ? _value.deviceToken
+          : deviceToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -169,7 +182,8 @@ class _$UserModelImpl implements _UserModel {
       required this.email,
       required this.uid,
       this.profilePic,
-      this.description});
+      this.description,
+      this.deviceToken});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -186,10 +200,12 @@ class _$UserModelImpl implements _UserModel {
   final String? profilePic;
   @override
   final String? description;
+  @override
+  final String? deviceToken;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, name: $name, email: $email, uid: $uid, profilePic: $profilePic, description: $description)';
+    return 'UserModel(id: $id, name: $name, email: $email, uid: $uid, profilePic: $profilePic, description: $description, deviceToken: $deviceToken)';
   }
 
   @override
@@ -204,13 +220,15 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.deviceToken, deviceToken) ||
+                other.deviceToken == deviceToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, email, uid, profilePic, description);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, email, uid, profilePic, description, deviceToken);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +251,8 @@ abstract class _UserModel implements UserModel {
       required final String email,
       required final String uid,
       final String? profilePic,
-      final String? description}) = _$UserModelImpl;
+      final String? description,
+      final String? deviceToken}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -250,6 +269,8 @@ abstract class _UserModel implements UserModel {
   String? get profilePic;
   @override
   String? get description;
+  @override
+  String? get deviceToken;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>

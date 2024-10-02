@@ -23,7 +23,7 @@ class Chat extends StatelessWidget {
     return Align(
       alignment: isRight ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12),
         margin: const EdgeInsets.symmetric(vertical: 24),
         decoration: BoxDecoration(
           color: isRight ? ColorName.primary : ColorName.ownerChat,

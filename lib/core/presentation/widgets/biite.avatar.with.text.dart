@@ -1,6 +1,5 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/core/presentation/widgets/biite.toast.dart';
 import 'package:biite/features/profile/state/peer.bloc.dart';
 import 'package:biite/features/profile/state/profile.bloc.dart';
 import 'package:biite/features/profile/state/profile.state.dart';

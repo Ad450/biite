@@ -1,16 +1,18 @@
 import 'package:biite/api/models/message.model.dart';
 import 'package:biite/api/models/room.model.dart';
+import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/features/message/state/message.bloc.dart';
 import 'package:biite/features/message/widget/chat.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Messaging extends StatelessWidget {
-  const Messaging({required this.room, super.key});
+  const Messaging({required this.scrollDown, required this.room, super.key});
 
   final RoomModel room;
+  final VoidCallback scrollDown;
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +33,23 @@ class Messaging extends StatelessWidget {
               );
             }
             if (!snapshot.hasData) {
-              return const Column(
+              return Column(
                 children: <Widget>[
                   Center(
-                    child: Text("No data fetched yet"),
+                    child: Text("No data fetched yet", style: context.appTheme.textTheme.bodySmall),
                   )
                 ],
               );
             }
             return Column(
               children: [
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_downward),
+                    onPressed: scrollDown,
+                  ),
+                ),
                 ...List.generate(
                   // chat messages here
                   snapshot.data!.length,
@@ -54,7 +63,7 @@ class Messaging extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 300.h)
+                SizedBox(height: 400.h)
               ],
             );
           }),

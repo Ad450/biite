@@ -73,6 +73,7 @@ class SignupBloc extends Cubit<SignupState> {
       final result = await authRepository.isExistingUser();
       if (result) {
         emit(const SignupState.authenticated());
+        return;
       }
       emit(const SignupState.unAuthenticated());
       return;

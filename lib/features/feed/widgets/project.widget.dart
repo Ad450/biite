@@ -17,59 +17,56 @@ class ProjectWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: GestureDetector(
-        onTap: onTap ?? () => context.push("/activeProjectDetail", extra: projectModel),
-        child: Container(
-          width: double.infinity,
-          height: 102.h,
-          decoration: BoxDecoration(
-            color: ColorName.white,
-            border: Border(
-              bottom: BorderSide(
-                color: ColorName.hintColor.withOpacity(0.1),
-              ),
+    return GestureDetector(
+      onTap: onTap ?? () => context.push("/activeProjectDetail", extra: projectModel),
+      child: Container(
+        width: double.infinity,
+        // height: 102.h,
+        decoration: BoxDecoration(
+          color: ColorName.white,
+          border: Border(
+            bottom: BorderSide(
+              color: ColorName.hintColor.withOpacity(0.1),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Hero(
-                  tag: projectModel.id!,
-                  child: Text(
-                    projectModel.title,
-                    style: context.appTheme.textTheme.titleSmall?.copyWith(
-                      fontSize: 18,
-                      color: ColorName.onBackground,
-                    ),
-                    overflow: TextOverflow.ellipsis,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Hero(
+                tag: projectModel.id!,
+                child: Text(
+                  projectModel.title,
+                  style: context.appTheme.textTheme.titleSmall?.copyWith(
+                    fontSize: 18.sp,
+                    color: ColorName.onBackground,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Flexible(
-                      child: Text(
-                        projectModel.description,
-                        style: context.appTheme.textTheme.titleSmall
-                            ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    const Spacer(),
-                    Text(
-                      projectModel.status,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Flexible(
+                    child: Text(
+                      projectModel.description,
                       style: context.appTheme.textTheme.titleSmall
-                          ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
+                          ?.copyWith(fontSize: 14.sp, color: ColorName.onBackground, fontWeight: FontWeight.normal),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    projectModel.status,
+                    style: context.appTheme.textTheme.titleSmall
+                        ?.copyWith(fontSize: 16, color: ColorName.onBackground, fontWeight: FontWeight.normal),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),

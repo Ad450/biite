@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:biite/api/api.constants.dart';
 import 'package:biite/api/models/message.model.dart';
+import 'package:biite/api/repositories/cloud.messaging.dart';
 import 'package:biite/api/storage/hive.storage.dart';
 import 'package:biite/api/utils/repository.params.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,6 +40,41 @@ class MessageRepositoryImpl implements MessageRepository {
         status: "unread",
       );
       await _firestore.collection(kMessageCollection).add(message.toJson());
+
+      // send notification to receiver
+      if (Platform.isAndroid) {
+        final data = {
+          'roomId': param.roomId,
+          'senderId': id,
+        };
+        sendNotification(data);
+      }
+
+      // Run the task in an isolate using isolate_handler
+
+      // get room
+      // final roomDoc = await _firestore.collection(kChatCollection).doc(param.roomId).get();
+      // if (!roomDoc.exists) return;
+      // final room = RoomModel.fromJson(roomDoc.data()!);
+      // final participants = [room.ownerId, room.peerId];
+
+      // // get receiver device token
+      // final receiverId = participants.where((e) => e != id).first;
+
+      // final userDoc = await _firestore.collection(kUserCollection).doc(receiverId).get();
+      // if (!userDoc.exists) return;
+
+      // final user = UserModel.fromJson(userDoc.data()!);
+
+      // // send notification
+      // if (user.deviceToken != null) {
+      //   await _cloudMessaging.send(
+      //     deviceToken: user.deviceToken!,
+      //     imageAddress: user.profilePic,
+      //     username: user.name,
+      //   );
+      // }
+
       return;
     } catch (e) {
       rethrow;

@@ -21,7 +21,7 @@ class _MessageDetailState extends State<MessageDetail> {
   void initState() {
     super.initState();
     // _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
-    Future.delayed(const Duration(milliseconds: 100), () => _scrollDown());
+    Future.delayed(const Duration(milliseconds: 300), () => _scrollDown());
 
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {}
@@ -55,8 +55,10 @@ class _MessageDetailState extends State<MessageDetail> {
           Expanded(
             child: SingleChildScrollView(
               controller: _scrollController,
+              physics: const BouncingScrollPhysics(),
               child: Messaging(
                 room: widget.extra["room"],
+                scrollDown: _scrollDown,
                 // isTextfieldOpened: _focusNode.hasFocus,
               ),
             ),

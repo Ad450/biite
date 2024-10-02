@@ -1,13 +1,10 @@
 import 'package:biite/core/app/app.router.dart';
 import 'package:biite/core/app/app.theme.dart';
-import 'package:biite/core/di/biite.di.dart';
-import 'package:biite/features/auth/state/signup.bloc.dart';
 import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class Biite extends StatelessWidget {
   const Biite({super.key});

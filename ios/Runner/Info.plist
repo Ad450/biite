@@ -32,6 +32,11 @@
 	<string>This app requires access to your photo library to allow you to upload photos.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string></string>
 	<key>UIMainStoryboardFile</key>

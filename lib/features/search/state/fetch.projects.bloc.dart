@@ -1,3 +1,4 @@
+import 'package:biite/api/repositories/cloud.messaging.dart';
 import 'package:biite/api/repositories/project.repository.dart';
 import 'package:biite/core/presentation/state/name.field.bloc.dart';
 import 'package:biite/features/search/state/search.state.dart';
@@ -9,7 +10,10 @@ class FetchProjectsBloc extends Cubit<SearchState> {
   FetchProjectsBloc(
     @Named('search') this._searchField,
     this._projectRepository,
-  ) : super(const SearchState.initial());
+  ) : super(const SearchState.initial()) {
+    /// top level function to get fcm token
+    getUserDeviceToken();
+  }
 
   final NameFieldBloc _searchField;
   final ProjectRepository _projectRepository;

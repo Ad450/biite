@@ -4,7 +4,6 @@ import 'package:biite/features/feed/feed.view.dart';
 import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/profile/profile.view.dart';
 import 'package:biite/features/search/search.view.dart';
-import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -46,49 +45,59 @@ class _HomeViewState extends State<HomeView> {
         DashboardView(),
         ProfileView(),
       ][currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: ColorName.onboardingBackground,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: currentIndex == 0
-                ? Image.asset(
-                    Assets.images.searchActive.path,
-                  )
-                : Image.asset(Assets.images.searchIcon.path),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-              icon: currentIndex == 1
-                  ? Image.asset(Assets.images.messageActive.path)
-                  : Image.asset(Assets.images.messageIcon.path),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: currentIndex == 2
-                  ? Image.asset(
-                      Assets.images.homeIcon.path,
-                    )
-                  : Image.asset(Assets.images.homeIconInactive.path),
-              label: ""),
-          BottomNavigationBarItem(
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+        ),
+        child: BottomNavigationBar(
+          currentIndex: currentIndex,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: ColorName.onboardingBackground,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
               icon: Icon(
-                Icons.post_add_rounded,
-                color: currentIndex == 3 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                Icons.search_outlined,
+                color: currentIndex == 0 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
                 size: 30,
               ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: currentIndex == 4
-                  ? Image.asset(Assets.images.profileActive.path)
-                  : Image.asset(Assets.images.profileIcon.path),
-              label: ""),
-        ],
+              label: "",
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.message_outlined,
+                  color: currentIndex == 1 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                  size: 30,
+                ),
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.dashboard_outlined,
+                  color: currentIndex == 2 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                  size: 30,
+                ),
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.post_add_rounded,
+                  color: currentIndex == 3 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                  size: 30,
+                ),
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person_pin_circle_outlined,
+                  color: currentIndex == 4 ? ColorName.primary : ColorName.primary.withOpacity(0.4),
+                  size: 30,
+                ),
+                label: ""),
+          ],
+        ),
       ),
     );
   }

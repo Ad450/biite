@@ -77,7 +77,11 @@ class MessageTile extends StatelessWidget {
                 )
               ],
             ),
-            const Icon(Icons.arrow_forward_ios, color: ColorName.fillColor, size: 13)
+            Icon(
+              Icons.arrow_forward_ios,
+              color: index % 2 == 0 ? ColorName.background : ColorName.onboardingBackground,
+              size: 13,
+            )
           ],
         ),
       ),

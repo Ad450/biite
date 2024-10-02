@@ -20,7 +20,7 @@ class MessageDetailAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140.h,
+      // height: 140.h,
       width: 375.w,
       color: ColorName.white,
       padding: const EdgeInsets.symmetric(horizontal: 16),

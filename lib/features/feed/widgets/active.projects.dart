@@ -14,29 +14,31 @@ class ActiveProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                activeProjects,
-                style: context.appTheme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+    return projects.isEmpty
+        ? const SizedBox()
+        : Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      activeProjects,
+                      style: context.appTheme.textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    BiiteViewAll(onTap: () => context.push("/allActiveProjects", extra: projects))
+                  ],
                 ),
               ),
-              BiiteViewAll(onTap: () => context.push("/allActiveProjects", extra: projects))
-            ],
-          ),
-        ),
-        // show first 2 latest projects
-        SizedBox(height: 16.h),
+              // show first 2 latest projects
+              SizedBox(height: 16.h),
 
-        ...projects.map((e) => ProjectWidget(projectModel: e)).take(2)
-      ],
-    );
+              ...projects.map((e) => ProjectWidget(projectModel: e)).take(2)
+            ],
+          );
   }
 }

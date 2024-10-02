@@ -12,6 +12,7 @@ abstract class UserModel with _$UserModel {
     required String uid,
     String? profilePic,
     String? description,
+    String? deviceToken,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map json) => _$UserModelFromJson(

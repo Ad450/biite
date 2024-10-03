@@ -63,7 +63,7 @@ class BiiteBack extends StatelessWidget {
             listener: (_, state) => state.maybeMap(
               orElse: () => null,
               error: (state) => showToast(state.message),
-              createChat: (state) => showToast("Chat added, continue by checkout messages"),
+              createChat: (state) => showToast("Chat added!!"),
             ),
             builder: (_, state) => state.maybeMap(
               loading: (_) => const CupertinoActivityIndicator(),

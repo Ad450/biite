@@ -1,8 +1,10 @@
 import 'package:biite/core/app/app.theme.dart';
+import 'package:biite/gen/assets.gen.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class InCharge extends StatefulWidget {
   const InCharge({required this.deadline, super.key});
@@ -25,7 +27,7 @@ class _InChargeState extends State<InCharge> with SingleTickerProviderStateMixin
       duration: const Duration(milliseconds: 1000),
     );
 
-    _heightAnimation = Tween<double>(begin: 0, end: 82).animate(
+    _heightAnimation = Tween<double>(begin: 0, end: 300).animate(
       CurvedAnimation(
         curve: Curves.fastOutSlowIn,
         parent: _animationController,
@@ -64,14 +66,7 @@ class _InChargeState extends State<InCharge> with SingleTickerProviderStateMixin
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  Text(
-                    "Deadline ${widget.deadline}",
-                    style: context.appTheme.textTheme.bodySmall?.copyWith(
-                      fontSize: 12.8,
-                      color: ColorName.onboardingBackground,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  )
+                  if (_heightAnimation.value > 280) SvgPicture.asset(Assets.images.inCharge, height: 200.h)
                 ],
               ),
       ),

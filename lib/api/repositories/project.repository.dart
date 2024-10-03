@@ -45,7 +45,9 @@ class ProjectRepostoryImpl implements ProjectRepository {
         project = project.copyWith(id: e.id);
         return project;
       }).toList();
-      return Right(projects);
+
+      projects.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+      return Right(projects.reversed.toList());
       // return Right([]);
     } catch (e) {
       return Left(UIError(e.toString()));
@@ -66,7 +68,9 @@ class ProjectRepostoryImpl implements ProjectRepository {
         final model = ProjectModel.fromJson(e.data());
         return model.copyWith(id: e.id);
       }).toList();
-      return Right(projects);
+
+      projects.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+      return Right(projects.reversed.toList());
     } catch (e) {
       return Left(UIError(e.toString()));
     }
@@ -119,7 +123,9 @@ class ProjectRepostoryImpl implements ProjectRepository {
         final model = ProjectModel.fromJson(e.data());
         return model.copyWith(id: e.id);
       }).toList();
-      return Right(projects);
+
+      projects.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+      return Right(projects.reversed.toList());
     } catch (e) {
       return Left(UIError(e.toString()));
     }

@@ -56,6 +56,9 @@ class $AssetsImagesGen {
   AssetGenImage get homeIconInactive =>
       const AssetGenImage('assets/images/home_icon_inactive.png');
 
+  /// File path: assets/images/in_charge.svg
+  String get inCharge => 'assets/images/in_charge.svg';
+
   /// File path: assets/images/login_bubbles.png
   AssetGenImage get loginBubbles =>
       const AssetGenImage('assets/images/login_bubbles.png');
@@ -138,6 +141,7 @@ class $AssetsImagesGen {
         filterIcon,
         homeIcon,
         homeIconInactive,
+        inCharge,
         loginBubbles,
         love,
         loveBubbles,

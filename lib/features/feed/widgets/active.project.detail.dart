@@ -81,7 +81,7 @@ class ActiveProjectDetail extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        project.rate.toString(),
+                        "¢${project.rate.toString()}",
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           color: ColorName.primary,
@@ -89,19 +89,19 @@ class ActiveProjectDetail extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 97.h),
-                    Align(
-                      alignment: Alignment.center,
-                      child: SizedBox(
-                        width: 263.w,
-                        child: BiiteTextButton(
-                          onPressed: () => context.push(
-                            "/sendYourWork",
-                            extra: project,
-                          ),
-                          text: sendYourWork,
-                        ),
-                      ),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.center,
+                    //   child: SizedBox(
+                    //     width: 263.w,
+                    //     child: BiiteTextButton(
+                    //       onPressed: () => context.push(
+                    //         "/sendYourWork",
+                    //         extra: project,
+                    //       ),
+                    //       text: sendYourWork,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               )

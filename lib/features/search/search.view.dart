@@ -17,31 +17,34 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorName.onboardingBackground,
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 56.h),
-                Text(
-                  search,
-                  style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 24.h),
-                const SearchTextfield(),
-                SizedBox(height: 32.h),
-              ],
-            ),
-            const Expanded(
-              child: SingleChildScrollView(child: _SearchProject()),
-            ),
-            SizedBox(height: 16.h),
-          ],
+    return RefreshIndicator(
+      onRefresh: () async => getIt.get<FetchProjectsBloc>().fetch(),
+      child: Scaffold(
+        backgroundColor: ColorName.onboardingBackground,
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 56.h),
+                  Text(
+                    search,
+                    style: context.appTheme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 24.h),
+                  const SearchTextfield(),
+                  SizedBox(height: 32.h),
+                ],
+              ),
+              const Expanded(
+                child: SingleChildScrollView(child: _SearchProject()),
+              ),
+              SizedBox(height: 16.h),
+            ],
+          ),
         ),
       ),
     );

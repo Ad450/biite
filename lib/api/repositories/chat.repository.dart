@@ -43,7 +43,8 @@ class ChatRepositoryImpl implements ChatRepository {
           unreadMessageCount: 2,
         );
       }).toList();
-      return Right(chats);
+      chats.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
+      return Right(chats.reversed.toList());
     } catch (e) {
       return Left(UIError(e.toString()));
     }

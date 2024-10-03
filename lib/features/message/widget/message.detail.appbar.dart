@@ -30,48 +30,29 @@ class MessageDetailAppbar extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 50.h),
           BiiteBack(),
-          SizedBox(height: 15.h),
+          SizedBox(height: 25.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: <Widget>[
-                  Hero(
-                    tag: roomId,
-                    child: MessageTilePicAvatar(
-                      profileUrl: profileUrl,
-                      radius: 12,
-                      background: ColorName.onboardingBackground,
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  // Text(
-                  //   name,
-                  //   style: context.appTheme.textTheme.titleMedium?.copyWith(
-                  //     fontSize: 18.sp,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  //   overflow: TextOverflow.clip,
-                  // ),
-                  AutoSizeText(
-                    name,
-                    style: context.appTheme.textTheme.titleMedium?.copyWith(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    maxLines: 1,
-                  )
-                ],
+            children: <Widget>[
+              Hero(
+                tag: roomId,
+                child: MessageTilePicAvatar(
+                  profileUrl: profileUrl,
+                  radius: 12,
+                  background: ColorName.onboardingBackground,
+                ),
               ),
-              // TODO :add call and chat settings
-              Row(
-                children: <Widget>[
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.phone, size: 20)),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert_outlined, size: 20)),
-                ],
+              SizedBox(width: 8.w),
+              AutoSizeText(
+                name,
+                style: context.appTheme.textTheme.titleMedium?.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
               )
             ],
-          )
+          ),
+          SizedBox(height: 20.h),
         ],
       ),
     );

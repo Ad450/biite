@@ -46,7 +46,7 @@ class BidRepositoryImpl implements BidRepository {
       }
 
       final bidExists = await _firestore
-          .collection(kProjectCollection)
+          .collection(kBidCollection)
           .where("ownerId", isEqualTo: id)
           .where("projectId", isEqualTo: param.projectId)
           .get();

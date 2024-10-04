@@ -42,6 +42,7 @@ class SearchProjectDetail extends StatelessWidget {
                     daysPosted: convertDateTime(project.createdAt),
                     tags: project.tags,
                     projectId: project.id!,
+                    isDetail: true,
                   ),
                 ],
               ),

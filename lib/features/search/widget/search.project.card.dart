@@ -13,6 +13,7 @@ class SearchProjectCard extends StatelessWidget {
     required this.tags,
     required this.title,
     required this.projectId,
+    required this.isDetail,
     super.key,
   });
 
@@ -22,6 +23,7 @@ class SearchProjectCard extends StatelessWidget {
   final String price;
   final List<String> tags;
   final String projectId;
+  final bool isDetail;
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +57,8 @@ class SearchProjectCard extends StatelessWidget {
         SizedBox(height: 8.h),
         Text(
           description,
-          maxLines: 4,
-          overflow: TextOverflow.ellipsis,
+          maxLines: isDetail ? null : 1,
+          overflow: isDetail ? null : TextOverflow.ellipsis,
           style: context.appTheme.textTheme.bodyMedium?.copyWith(
             fontSize: 16,
             fontWeight: FontWeight.normal,

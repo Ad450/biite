@@ -51,6 +51,7 @@ class SearchProject extends StatelessWidget {
                       daysPosted: convertDateTime(project.createdAt),
                       tags: project.tags,
                       projectId: project.id!,
+                      isDetail: false,
                     ),
                     SizedBox(height: 16.h),
                   ],

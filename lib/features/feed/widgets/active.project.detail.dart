@@ -3,14 +3,11 @@ import 'package:biite/api/utils/functions.dart';
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/presentation/widgets/biite.avatar.with.text.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
-import 'package:biite/core/presentation/widgets/biite.button.dart';
 import 'package:biite/core/presentation/widgets/biite.chip.dart';
 import 'package:biite/features/feed/widgets/in.charge.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:biite/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class ActiveProjectDetail extends StatelessWidget {
   const ActiveProjectDetail({required this.project, super.key});

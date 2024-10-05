@@ -154,7 +154,7 @@ class _ProjectPropositions extends StatelessWidget {
                 ),
               )
             : Column(
-                children: state.bids.map((e) => PropositionWidget(bidModel: e, isSent: false)).toList(),
+                children: state.bids.map((e) => PropositionWidget(bidModel: e)).toList(),
               ),
       ),
     );

@@ -23,35 +23,36 @@ import '../../api/repositories/project.repository.dart' as _i18;
 import '../../api/repositories/user.repository.dart' as _i19;
 import '../../api/storage/cloud.storage.dart' as _i16;
 import '../../api/storage/hive.storage.dart' as _i9;
-import '../../features/auth/state/login.bloc.dart' as _i34;
-import '../../features/auth/state/login.form.bloc.dart' as _i35;
-import '../../features/auth/state/signup.bloc.dart' as _i40;
-import '../../features/auth/state/signup.form.bloc.dart' as _i42;
-import '../../features/dashboard/bloc/active.projects.bloc.dart' as _i28;
-import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i39;
+import '../../features/auth/state/login.bloc.dart' as _i35;
+import '../../features/auth/state/login.form.bloc.dart' as _i36;
+import '../../features/auth/state/signup.bloc.dart' as _i41;
+import '../../features/auth/state/signup.form.bloc.dart' as _i43;
+import '../../features/dashboard/bloc/active.projects.bloc.dart' as _i29;
+import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i40;
 import '../../features/dashboard/bloc/created.projects.bloc.dart' as _i27;
+import '../../features/dashboard/bloc/fetch.single.project.bloc.dart' as _i28;
 import '../../features/dashboard/bloc/file.bloc.dart' as _i13;
-import '../../features/dashboard/bloc/project.bloc.dart' as _i32;
+import '../../features/dashboard/bloc/project.bloc.dart' as _i33;
 import '../../features/dashboard/bloc/tags.bloc.dart' as _i15;
-import '../../features/feed/state/accept.bid.bloc.dart' as _i37;
-import '../../features/feed/state/bid.bloc.dart' as _i38;
-import '../../features/feed/state/sent.bid.bloc.dart' as _i36;
-import '../../features/message/state/chats.bloc.dart' as _i41;
+import '../../features/feed/state/accept.bid.bloc.dart' as _i38;
+import '../../features/feed/state/bid.bloc.dart' as _i39;
+import '../../features/feed/state/sent.bid.bloc.dart' as _i37;
+import '../../features/message/state/chats.bloc.dart' as _i42;
 import '../../features/message/state/message.bloc.dart' as _i23;
 import '../../features/profile/state/fetch.picture.bloc.dart' as _i8;
 import '../../features/profile/state/peer.bloc.dart' as _i21;
 import '../../features/profile/state/profile.bloc.dart' as _i20;
-import '../../features/search/state/fetch.projects.bloc.dart' as _i30;
-import '../../features/search/state/fetch.proposition.count.bloc.dart' as _i29;
+import '../../features/search/state/fetch.projects.bloc.dart' as _i31;
+import '../../features/search/state/fetch.proposition.count.bloc.dart' as _i30;
 import '../../features/search/state/fetch.single.project.bloc.dart' as _i26;
-import '../../features/search/state/make.proposition.bloc.dart' as _i33;
+import '../../features/search/state/make.proposition.bloc.dart' as _i34;
 import '../presentation/state/compensation.field.bloc.dart' as _i10;
-import '../presentation/state/confirm.password.bloc.dart' as _i31;
+import '../presentation/state/confirm.password.bloc.dart' as _i32;
 import '../presentation/state/description.field.bloc.dart' as _i11;
 import '../presentation/state/email.field.bloc.dart' as _i12;
 import '../presentation/state/name.field.bloc.dart' as _i14;
 import '../presentation/state/password.field.bloc.dart' as _i7;
-import 'biite.di.dart' as _i43;
+import 'biite.di.dart' as _i44;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -190,18 +191,20 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i26.FetchSingleProjectsBloc(gh<_i18.ProjectRepository>()));
     gh.lazySingleton<_i27.CreatedProjectBloc>(
         () => _i27.CreatedProjectBloc(gh<_i18.ProjectRepository>()));
-    gh.lazySingleton<_i28.ActiveProjectsBloc>(
-        () => _i28.ActiveProjectsBloc(gh<_i18.ProjectRepository>()));
-    gh.factory<_i29.FetchPropositionCountBloc>(
-        () => _i29.FetchPropositionCountBloc(gh<_i18.ProjectRepository>()));
-    gh.lazySingleton<_i30.FetchProjectsBloc>(() => _i30.FetchProjectsBloc(
+    gh.lazySingleton<_i28.FetchSingleProjectBloc>(
+        () => _i28.FetchSingleProjectBloc(gh<_i18.ProjectRepository>()));
+    gh.lazySingleton<_i29.ActiveProjectsBloc>(
+        () => _i29.ActiveProjectsBloc(gh<_i18.ProjectRepository>()));
+    gh.factory<_i30.FetchPropositionCountBloc>(
+        () => _i30.FetchPropositionCountBloc(gh<_i18.ProjectRepository>()));
+    gh.lazySingleton<_i31.FetchProjectsBloc>(() => _i31.FetchProjectsBloc(
           gh<_i14.NameFieldBloc>(instanceName: 'search'),
           gh<_i18.ProjectRepository>(),
         ));
-    gh.singleton<_i31.ConfirmPasswordFieldBloc>(() =>
-        _i31.ConfirmPasswordFieldBloc(
+    gh.singleton<_i32.ConfirmPasswordFieldBloc>(() =>
+        _i32.ConfirmPasswordFieldBloc(
             gh<_i7.PasswordFieldBloc>(instanceName: 'signup')));
-    gh.lazySingleton<_i32.ProjectBloc>(() => _i32.ProjectBloc(
+    gh.lazySingleton<_i33.ProjectBloc>(() => _i33.ProjectBloc(
           gh<_i18.ProjectRepository>(),
           gh<_i10.CompensationFieldBloc>(instanceName: 'createProject'),
           gh<_i11.DescriptionFieldBloc>(instanceName: 'createProject'),
@@ -209,51 +212,51 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i15.TagsBloc>(instanceName: 'createProject'),
           gh<_i13.FileBloc>(instanceName: 'createProject'),
         ));
-    gh.lazySingleton<_i33.PropositionBloc>(() => _i33.PropositionBloc(
+    gh.lazySingleton<_i34.PropositionBloc>(() => _i34.PropositionBloc(
           gh<_i10.CompensationFieldBloc>(instanceName: 'bid'),
           gh<_i11.DescriptionFieldBloc>(instanceName: 'bid'),
           gh<_i24.BidRepository>(),
         ));
-    gh.lazySingleton<_i34.LoginBloc>(() => _i34.LoginBloc(
+    gh.lazySingleton<_i35.LoginBloc>(() => _i35.LoginBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'login'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'login'),
         ));
-    gh.lazySingleton<_i35.LoginFormBloc>(() => _i35.LoginFormBloc(
+    gh.lazySingleton<_i36.LoginFormBloc>(() => _i36.LoginFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'login'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'login'),
-          gh<_i34.LoginBloc>(),
+          gh<_i35.LoginBloc>(),
         ));
-    gh.factory<_i36.SentBidBloc>(
-        () => _i36.SentBidBloc(gh<_i24.BidRepository>()));
-    gh.factory<_i37.AcceptBidBloc>(
-        () => _i37.AcceptBidBloc(gh<_i24.BidRepository>()));
-    gh.lazySingleton<_i38.BidBloc>(
-        () => _i38.BidBloc(gh<_i24.BidRepository>()));
-    gh.lazySingleton<_i39.CreateProjectFormBloc>(
-        () => _i39.CreateProjectFormBloc(
+    gh.factory<_i37.SentBidBloc>(
+        () => _i37.SentBidBloc(gh<_i24.BidRepository>()));
+    gh.factory<_i38.AcceptBidBloc>(
+        () => _i38.AcceptBidBloc(gh<_i24.BidRepository>()));
+    gh.lazySingleton<_i39.BidBloc>(
+        () => _i39.BidBloc(gh<_i24.BidRepository>()));
+    gh.lazySingleton<_i40.CreateProjectFormBloc>(
+        () => _i40.CreateProjectFormBloc(
               gh<_i10.CompensationFieldBloc>(instanceName: 'createProject'),
               gh<_i11.DescriptionFieldBloc>(instanceName: 'createProject'),
               gh<_i14.NameFieldBloc>(instanceName: 'createProject'),
-              gh<_i32.ProjectBloc>(),
+              gh<_i33.ProjectBloc>(),
             ));
-    gh.lazySingleton<_i40.SignupBloc>(() => _i40.SignupBloc(
+    gh.lazySingleton<_i41.SignupBloc>(() => _i41.SignupBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
-          gh<_i31.ConfirmPasswordFieldBloc>(),
+          gh<_i32.ConfirmPasswordFieldBloc>(),
         ));
-    gh.factory<_i41.ChatBloc>(() => _i41.ChatBloc(gh<_i25.ChatRepository>()));
-    gh.lazySingleton<_i42.SignupFormBloc>(() => _i42.SignupFormBloc(
+    gh.factory<_i42.ChatBloc>(() => _i42.ChatBloc(gh<_i25.ChatRepository>()));
+    gh.lazySingleton<_i43.SignupFormBloc>(() => _i43.SignupFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
-          gh<_i31.ConfirmPasswordFieldBloc>(),
+          gh<_i32.ConfirmPasswordFieldBloc>(),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
-          gh<_i40.SignupBloc>(),
+          gh<_i41.SignupBloc>(),
         ));
     return this;
   }
 }
 
-class _$FirebaseModule extends _i43.FirebaseModule {}
+class _$FirebaseModule extends _i44.FirebaseModule {}

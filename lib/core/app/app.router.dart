@@ -3,12 +3,14 @@ import 'package:biite/api/models/project.model.dart';
 import 'package:biite/features/feed/widgets/all.active.projects.dart';
 import 'package:biite/features/feed/widgets/all.created.projects.dart';
 import 'package:biite/features/feed/widgets/all.propositions.dart';
+import 'package:biite/features/feed/widgets/bid.related.project.detial.dart';
 import 'package:biite/features/feed/widgets/created.project.detail.dart';
 import 'package:biite/features/feed/widgets/feed.proposition.related.project.dart';
 import 'package:biite/features/feed/widgets/metric.details.dart';
 import 'package:biite/features/feed/widgets/active.project.detail.dart';
 import 'package:biite/features/feed/widgets/proposition.details.dart';
 import 'package:biite/features/feed/widgets/send.your.work.dart';
+import 'package:biite/features/feed/widgets/sent.bids.details.dart';
 import 'package:biite/features/home/home.view.dart';
 import 'package:biite/features/message/message.view.dart';
 import 'package:biite/features/message/widget/message.detail.dart';
@@ -83,7 +85,7 @@ final router = GoRouter(
     GoRoute(
       path: "/propositionDetail",
       builder: (context, state) => PropositionDetails(
-        params: state.extra as Map<String, dynamic>,
+        bid: state.extra as BidModel,
       ),
     ),
     GoRoute(
@@ -93,5 +95,15 @@ final router = GoRouter(
       ),
     ),
     GoRoute(path: "/editProfile", builder: (context, state) => const EditProfile()),
+    GoRoute(
+      path: "/sendBidsDetails",
+      builder: (context, state) => SentBidDetails(bid: state.extra as BidModel),
+    ),
+    // sendBidsDetails
+    GoRoute(
+      path: "/bidRelatedProjectDetail",
+      builder: (context, state) => BidRelatedProjectDetail(projectModel: state.extra as ProjectModel),
+    ),
+    //
   ],
 );

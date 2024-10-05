@@ -1,5 +1,6 @@
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
+import 'package:biite/features/feed/widgets/sent.bid.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,10 +25,12 @@ class AllPropositions extends StatelessWidget {
 
               Expanded(
                 child: ListView.separated(
-                  itemBuilder: (_, i) => PropositionWidget(
-                    bidModel: params["bids"][i],
-                    isSent: params["isSent"],
-                  ),
+                  itemBuilder: (_, i) => params["isSent"]
+                      ? SentBidWidget(bidModel: params["bids"][i])
+                      : PropositionWidget(
+                          bidModel: params["bids"][i],
+                          // isSent: params["isSent"],
+                        ),
                   separatorBuilder: (_, __) => SizedBox(height: 8.h),
                   itemCount: params["bids"].length,
                 ),

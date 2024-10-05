@@ -88,6 +88,22 @@ class CreatedProjectState with _$CreatedProjectState {
 }
 
 @freezed
+class FetchSingleProjectState with _$FetchSingleProjectState {
+  const factory FetchSingleProjectState.initial() = _FetchSingleProjectStateInitial;
+
+  const factory FetchSingleProjectState.loading() = _FetchSingleProjectStateLoading;
+
+  const factory FetchSingleProjectState.fetch(ProjectModel project) = _FetchSingleProjectStateFetch;
+
+  const factory FetchSingleProjectState.error(String message) = _FetchSingleProjectStateError;
+
+  const FetchSingleProjectState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}
+
+@freezed
 class TagsState with _$TagsState {
   const factory TagsState.initial() = _TagsStateInitial;
 

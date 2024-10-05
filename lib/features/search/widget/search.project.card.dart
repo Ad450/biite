@@ -45,6 +45,8 @@ class SearchProjectCard extends StatelessWidget {
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
+            maxLines: isDetail ? null : 1,
+            overflow: isDetail ? null : TextOverflow.ellipsis,
           ),
         ),
         SizedBox(height: 24.h),

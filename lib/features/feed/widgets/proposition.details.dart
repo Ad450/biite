@@ -15,9 +15,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PropositionDetails extends StatelessWidget {
-  const PropositionDetails({required this.params, super.key});
+  const PropositionDetails({required this.bid, super.key});
 
-  final Map<String, dynamic> params;
+  final BidModel bid;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class PropositionDetails extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: params["bid"].ownerId),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: bid.ownerId),
             ),
             SizedBox(height: 32.h),
             Container(
@@ -37,10 +37,10 @@ class PropositionDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PeerProfileAvatar(ownerId: params["bid"].ownerId, background: ColorName.white),
+                  PeerProfileAvatar(ownerId: bid.ownerId, background: ColorName.white),
                   SizedBox(height: 24.h),
                   Text(
-                    "Sent ${convertDateTime(params["bid"].createdAt)}",
+                    "Sent ${convertDateTime(bid.createdAt)}",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   // Text(
@@ -48,7 +48,7 @@ class PropositionDetails extends StatelessWidget {
                   //   style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
                   // ),
                   Text(
-                    params["bid"].description,
+                    bid.description,
                     style: context.appTheme.textTheme.bodyMedium?.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -60,8 +60,7 @@ class PropositionDetails extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 8,
                     direction: Axis.horizontal,
-                    children: (params["bid"] as BidModel)
-                        .tags
+                    children: bid.tags
                         .map((e) => BiiteChip(
                               text: e,
                               selected: false,
@@ -71,18 +70,18 @@ class PropositionDetails extends StatelessWidget {
                   ),
 
                   SizedBox(height: 97.h),
-                  if (!params["isSent"])
-                    Align(
-                      alignment: Alignment.center,
-                      child: SizedBox(
-                        width: 263.w,
-                        child: _PropositionDetailButton(
-                          projectId: params["bid"].projectId,
-                          bidId: params["bid"].id!,
-                          bidStatus: params["bid"].status,
-                        ),
+
+                  Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      width: 263.w,
+                      child: _PropositionDetailButton(
+                        projectId: bid.projectId,
+                        bidId: bid.id!,
+                        bidStatus: bid.status,
                       ),
                     ),
+                  ),
                 ],
               ),
             )

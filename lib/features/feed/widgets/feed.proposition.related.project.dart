@@ -40,7 +40,18 @@ class _RelatedProjectOrElse extends StatelessWidget {
       backgroundColor: ColorName.onboardingBackground,
       body: Center(
         child: isLoading
-            ? const CupertinoActivityIndicator(color: Colors.white)
+            ? Container(
+                width: 60.0,
+                height: 60.0,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  color: ColorName.primary,
+                  shape: BoxShape.circle,
+                ),
+                child: const CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
             : Text(
                 "Could not fetch project details",
                 style: context.appTheme.textTheme.bodySmall

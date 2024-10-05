@@ -1780,6 +1780,586 @@ abstract class _BidStateError extends BidState {
 }
 
 /// @nodoc
+mixin _$FetchReceivedBidState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<BidModel> bids) fetch,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<BidModel> bids)? fetch,
+    TResult? Function(String message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<BidModel> bids)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchReceivedBidStateInitial value) initial,
+    required TResult Function(_FetchReceivedBidStateLoading value) loading,
+    required TResult Function(_FetchReceivedBidStateFetch value) fetch,
+    required TResult Function(_FetchReceivedBidStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult? Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult? Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult? Function(_FetchReceivedBidStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult Function(_FetchReceivedBidStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FetchReceivedBidStateCopyWith<$Res> {
+  factory $FetchReceivedBidStateCopyWith(FetchReceivedBidState value,
+          $Res Function(FetchReceivedBidState) then) =
+      _$FetchReceivedBidStateCopyWithImpl<$Res, FetchReceivedBidState>;
+}
+
+/// @nodoc
+class _$FetchReceivedBidStateCopyWithImpl<$Res,
+        $Val extends FetchReceivedBidState>
+    implements $FetchReceivedBidStateCopyWith<$Res> {
+  _$FetchReceivedBidStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$FetchReceivedBidStateInitialImplCopyWith<$Res> {
+  factory _$$FetchReceivedBidStateInitialImplCopyWith(
+          _$FetchReceivedBidStateInitialImpl value,
+          $Res Function(_$FetchReceivedBidStateInitialImpl) then) =
+      __$$FetchReceivedBidStateInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchReceivedBidStateInitialImplCopyWithImpl<$Res>
+    extends _$FetchReceivedBidStateCopyWithImpl<$Res,
+        _$FetchReceivedBidStateInitialImpl>
+    implements _$$FetchReceivedBidStateInitialImplCopyWith<$Res> {
+  __$$FetchReceivedBidStateInitialImplCopyWithImpl(
+      _$FetchReceivedBidStateInitialImpl _value,
+      $Res Function(_$FetchReceivedBidStateInitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchReceivedBidStateInitialImpl extends _FetchReceivedBidStateInitial {
+  const _$FetchReceivedBidStateInitialImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FetchReceivedBidState.initial()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<BidModel> bids) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<BidModel> bids)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<BidModel> bids)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchReceivedBidStateInitial value) initial,
+    required TResult Function(_FetchReceivedBidStateLoading value) loading,
+    required TResult Function(_FetchReceivedBidStateFetch value) fetch,
+    required TResult Function(_FetchReceivedBidStateError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult? Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult? Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult? Function(_FetchReceivedBidStateError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult Function(_FetchReceivedBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchReceivedBidStateInitial extends FetchReceivedBidState {
+  const factory _FetchReceivedBidStateInitial() =
+      _$FetchReceivedBidStateInitialImpl;
+  const _FetchReceivedBidStateInitial._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FetchReceivedBidStateLoadingImplCopyWith<$Res> {
+  factory _$$FetchReceivedBidStateLoadingImplCopyWith(
+          _$FetchReceivedBidStateLoadingImpl value,
+          $Res Function(_$FetchReceivedBidStateLoadingImpl) then) =
+      __$$FetchReceivedBidStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchReceivedBidStateLoadingImplCopyWithImpl<$Res>
+    extends _$FetchReceivedBidStateCopyWithImpl<$Res,
+        _$FetchReceivedBidStateLoadingImpl>
+    implements _$$FetchReceivedBidStateLoadingImplCopyWith<$Res> {
+  __$$FetchReceivedBidStateLoadingImplCopyWithImpl(
+      _$FetchReceivedBidStateLoadingImpl _value,
+      $Res Function(_$FetchReceivedBidStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchReceivedBidStateLoadingImpl extends _FetchReceivedBidStateLoading {
+  const _$FetchReceivedBidStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FetchReceivedBidState.loading()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<BidModel> bids) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<BidModel> bids)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<BidModel> bids)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchReceivedBidStateInitial value) initial,
+    required TResult Function(_FetchReceivedBidStateLoading value) loading,
+    required TResult Function(_FetchReceivedBidStateFetch value) fetch,
+    required TResult Function(_FetchReceivedBidStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult? Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult? Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult? Function(_FetchReceivedBidStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult Function(_FetchReceivedBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchReceivedBidStateLoading extends FetchReceivedBidState {
+  const factory _FetchReceivedBidStateLoading() =
+      _$FetchReceivedBidStateLoadingImpl;
+  const _FetchReceivedBidStateLoading._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FetchReceivedBidStateFetchImplCopyWith<$Res> {
+  factory _$$FetchReceivedBidStateFetchImplCopyWith(
+          _$FetchReceivedBidStateFetchImpl value,
+          $Res Function(_$FetchReceivedBidStateFetchImpl) then) =
+      __$$FetchReceivedBidStateFetchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<BidModel> bids});
+}
+
+/// @nodoc
+class __$$FetchReceivedBidStateFetchImplCopyWithImpl<$Res>
+    extends _$FetchReceivedBidStateCopyWithImpl<$Res,
+        _$FetchReceivedBidStateFetchImpl>
+    implements _$$FetchReceivedBidStateFetchImplCopyWith<$Res> {
+  __$$FetchReceivedBidStateFetchImplCopyWithImpl(
+      _$FetchReceivedBidStateFetchImpl _value,
+      $Res Function(_$FetchReceivedBidStateFetchImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bids = null,
+  }) {
+    return _then(_$FetchReceivedBidStateFetchImpl(
+      null == bids
+          ? _value._bids
+          : bids // ignore: cast_nullable_to_non_nullable
+              as List<BidModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchReceivedBidStateFetchImpl extends _FetchReceivedBidStateFetch {
+  const _$FetchReceivedBidStateFetchImpl(final List<BidModel> bids)
+      : _bids = bids,
+        super._();
+
+  final List<BidModel> _bids;
+  @override
+  List<BidModel> get bids {
+    if (_bids is EqualUnmodifiableListView) return _bids;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bids);
+  }
+
+  @override
+  String toString() {
+    return 'FetchReceivedBidState.fetch(bids: $bids)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchReceivedBidStateFetchImplCopyWith<_$FetchReceivedBidStateFetchImpl>
+      get copyWith => __$$FetchReceivedBidStateFetchImplCopyWithImpl<
+          _$FetchReceivedBidStateFetchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<BidModel> bids) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return fetch(bids);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<BidModel> bids)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return fetch?.call(bids);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<BidModel> bids)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(bids);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchReceivedBidStateInitial value) initial,
+    required TResult Function(_FetchReceivedBidStateLoading value) loading,
+    required TResult Function(_FetchReceivedBidStateFetch value) fetch,
+    required TResult Function(_FetchReceivedBidStateError value) error,
+  }) {
+    return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult? Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult? Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult? Function(_FetchReceivedBidStateError value)? error,
+  }) {
+    return fetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult Function(_FetchReceivedBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchReceivedBidStateFetch extends FetchReceivedBidState {
+  const factory _FetchReceivedBidStateFetch(final List<BidModel> bids) =
+      _$FetchReceivedBidStateFetchImpl;
+  const _FetchReceivedBidStateFetch._() : super._();
+
+  List<BidModel> get bids;
+  @JsonKey(ignore: true)
+  _$$FetchReceivedBidStateFetchImplCopyWith<_$FetchReceivedBidStateFetchImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FetchReceivedBidStateErrorImplCopyWith<$Res> {
+  factory _$$FetchReceivedBidStateErrorImplCopyWith(
+          _$FetchReceivedBidStateErrorImpl value,
+          $Res Function(_$FetchReceivedBidStateErrorImpl) then) =
+      __$$FetchReceivedBidStateErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FetchReceivedBidStateErrorImplCopyWithImpl<$Res>
+    extends _$FetchReceivedBidStateCopyWithImpl<$Res,
+        _$FetchReceivedBidStateErrorImpl>
+    implements _$$FetchReceivedBidStateErrorImplCopyWith<$Res> {
+  __$$FetchReceivedBidStateErrorImplCopyWithImpl(
+      _$FetchReceivedBidStateErrorImpl _value,
+      $Res Function(_$FetchReceivedBidStateErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FetchReceivedBidStateErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchReceivedBidStateErrorImpl extends _FetchReceivedBidStateError {
+  const _$FetchReceivedBidStateErrorImpl(this.message) : super._();
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'FetchReceivedBidState.error(message: $message)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchReceivedBidStateErrorImplCopyWith<_$FetchReceivedBidStateErrorImpl>
+      get copyWith => __$$FetchReceivedBidStateErrorImplCopyWithImpl<
+          _$FetchReceivedBidStateErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<BidModel> bids) fetch,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<BidModel> bids)? fetch,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<BidModel> bids)? fetch,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchReceivedBidStateInitial value) initial,
+    required TResult Function(_FetchReceivedBidStateLoading value) loading,
+    required TResult Function(_FetchReceivedBidStateFetch value) fetch,
+    required TResult Function(_FetchReceivedBidStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult? Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult? Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult? Function(_FetchReceivedBidStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchReceivedBidStateInitial value)? initial,
+    TResult Function(_FetchReceivedBidStateLoading value)? loading,
+    TResult Function(_FetchReceivedBidStateFetch value)? fetch,
+    TResult Function(_FetchReceivedBidStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchReceivedBidStateError extends FetchReceivedBidState {
+  const factory _FetchReceivedBidStateError(final String message) =
+      _$FetchReceivedBidStateErrorImpl;
+  const _FetchReceivedBidStateError._() : super._();
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FetchReceivedBidStateErrorImplCopyWith<_$FetchReceivedBidStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AcceptBidState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

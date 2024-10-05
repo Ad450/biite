@@ -7,10 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PropositionWidget extends StatelessWidget {
-  const PropositionWidget({required this.bidModel, this.isFeed = false, super.key});
+  const PropositionWidget({required this.bidModel, required this.onTap, this.isFeed = false, super.key});
 
   final BidModel bidModel;
   final bool isFeed;
+  final VoidCallback onTap;
   // final bool isSent;
 
   @override
@@ -18,12 +19,13 @@ class PropositionWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: GestureDetector(
-        onTap: isFeed
-            ? () => context.push("/propositionRelatedProject", extra: bidModel)
-            : () => context.push(
-                  "/propositionDetail",
-                  extra: bidModel,
-                ),
+        onTap: onTap,
+        // isFeed
+        //     ? () => context.push("/propositionRelatedProject", extra: bidModel)
+        //     : () => context.push(
+        //           "/propositionDetail",
+        //           extra: bidModel,
+        //         ),
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(color: ColorName.white),

@@ -43,6 +43,22 @@ class BidState with _$BidState {
 }
 
 @freezed
+class FetchReceivedBidState with _$FetchReceivedBidState {
+  const factory FetchReceivedBidState.initial() = _FetchReceivedBidStateInitial;
+
+  const factory FetchReceivedBidState.loading() = _FetchReceivedBidStateLoading;
+
+  const factory FetchReceivedBidState.fetch(List<BidModel> bids) = _FetchReceivedBidStateFetch;
+
+  const factory FetchReceivedBidState.error(String message) = _FetchReceivedBidStateError;
+
+  const FetchReceivedBidState._();
+
+  @override
+  bool operator ==(Object other) => false;
+}
+
+@freezed
 class AcceptBidState with _$AcceptBidState {
   const factory AcceptBidState.initial() = _AcceptBidStateInitial;
 

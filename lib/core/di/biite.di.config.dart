@@ -25,10 +25,10 @@ import '../../api/storage/cloud.storage.dart' as _i16;
 import '../../api/storage/hive.storage.dart' as _i9;
 import '../../features/auth/state/login.bloc.dart' as _i35;
 import '../../features/auth/state/login.form.bloc.dart' as _i36;
-import '../../features/auth/state/signup.bloc.dart' as _i41;
-import '../../features/auth/state/signup.form.bloc.dart' as _i43;
+import '../../features/auth/state/signup.bloc.dart' as _i42;
+import '../../features/auth/state/signup.form.bloc.dart' as _i44;
 import '../../features/dashboard/bloc/active.projects.bloc.dart' as _i29;
-import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i40;
+import '../../features/dashboard/bloc/create.project.form.bloc.dart' as _i41;
 import '../../features/dashboard/bloc/created.projects.bloc.dart' as _i27;
 import '../../features/dashboard/bloc/fetch.single.project.bloc.dart' as _i28;
 import '../../features/dashboard/bloc/file.bloc.dart' as _i13;
@@ -36,8 +36,9 @@ import '../../features/dashboard/bloc/project.bloc.dart' as _i33;
 import '../../features/dashboard/bloc/tags.bloc.dart' as _i15;
 import '../../features/feed/state/accept.bid.bloc.dart' as _i38;
 import '../../features/feed/state/bid.bloc.dart' as _i39;
+import '../../features/feed/state/fetch.received.bid.bloc.dart' as _i40;
 import '../../features/feed/state/sent.bid.bloc.dart' as _i37;
-import '../../features/message/state/chats.bloc.dart' as _i42;
+import '../../features/message/state/chats.bloc.dart' as _i43;
 import '../../features/message/state/message.bloc.dart' as _i23;
 import '../../features/profile/state/fetch.picture.bloc.dart' as _i8;
 import '../../features/profile/state/peer.bloc.dart' as _i21;
@@ -52,7 +53,7 @@ import '../presentation/state/description.field.bloc.dart' as _i11;
 import '../presentation/state/email.field.bloc.dart' as _i12;
 import '../presentation/state/name.field.bloc.dart' as _i14;
 import '../presentation/state/password.field.bloc.dart' as _i7;
-import 'biite.di.dart' as _i44;
+import 'biite.di.dart' as _i45;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -233,30 +234,32 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i38.AcceptBidBloc(gh<_i24.BidRepository>()));
     gh.lazySingleton<_i39.BidBloc>(
         () => _i39.BidBloc(gh<_i24.BidRepository>()));
-    gh.lazySingleton<_i40.CreateProjectFormBloc>(
-        () => _i40.CreateProjectFormBloc(
+    gh.lazySingleton<_i40.FetchReceivedBidBloc>(
+        () => _i40.FetchReceivedBidBloc(gh<_i24.BidRepository>()));
+    gh.lazySingleton<_i41.CreateProjectFormBloc>(
+        () => _i41.CreateProjectFormBloc(
               gh<_i10.CompensationFieldBloc>(instanceName: 'createProject'),
               gh<_i11.DescriptionFieldBloc>(instanceName: 'createProject'),
               gh<_i14.NameFieldBloc>(instanceName: 'createProject'),
               gh<_i33.ProjectBloc>(),
             ));
-    gh.lazySingleton<_i41.SignupBloc>(() => _i41.SignupBloc(
+    gh.lazySingleton<_i42.SignupBloc>(() => _i42.SignupBloc(
           gh<_i22.AuthRepository>(),
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i32.ConfirmPasswordFieldBloc>(),
         ));
-    gh.factory<_i42.ChatBloc>(() => _i42.ChatBloc(gh<_i25.ChatRepository>()));
-    gh.lazySingleton<_i43.SignupFormBloc>(() => _i43.SignupFormBloc(
+    gh.factory<_i43.ChatBloc>(() => _i43.ChatBloc(gh<_i25.ChatRepository>()));
+    gh.lazySingleton<_i44.SignupFormBloc>(() => _i44.SignupFormBloc(
           gh<_i12.EmailFieldBloc>(instanceName: 'signup'),
           gh<_i7.PasswordFieldBloc>(instanceName: 'signup'),
           gh<_i32.ConfirmPasswordFieldBloc>(),
           gh<_i14.NameFieldBloc>(instanceName: 'signup'),
-          gh<_i41.SignupBloc>(),
+          gh<_i42.SignupBloc>(),
         ));
     return this;
   }
 }
 
-class _$FirebaseModule extends _i44.FirebaseModule {}
+class _$FirebaseModule extends _i45.FirebaseModule {}

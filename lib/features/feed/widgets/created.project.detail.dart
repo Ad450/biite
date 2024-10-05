@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CreatedProjectDetail extends StatelessWidget {
   const CreatedProjectDetail({required this.projectModel, super.key});
@@ -154,7 +155,15 @@ class _ProjectPropositions extends StatelessWidget {
                 ),
               )
             : Column(
-                children: state.bids.map((e) => PropositionWidget(bidModel: e)).toList(),
+                children: state.bids
+                    .map((e) => PropositionWidget(
+                          bidModel: e,
+                          onTap: () => context.push(
+                            "/propositionDetail",
+                            extra: e,
+                          ),
+                        ))
+                    .toList(),
               ),
       ),
     );

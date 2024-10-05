@@ -1,8 +1,8 @@
 import 'package:biite/core/app/app.theme.dart';
 import 'package:biite/core/di/biite.di.dart';
 import 'package:biite/core/presentation/widgets/biite.view.all.dart';
-import 'package:biite/features/feed/state/bid.bloc.dart';
 import 'package:biite/features/feed/state/feed.state.dart';
+import 'package:biite/features/feed/state/fetch.received.bid.bloc.dart';
 import 'package:biite/features/feed/state/sent.bid.bloc.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/features/feed/widgets/sent.bid.widget.dart';
@@ -16,11 +16,11 @@ class FeedPropositions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BidBloc, BidState>(
-      bloc: getIt.get<BidBloc>()..fetchReceivedBids(),
+    return BlocBuilder<FetchReceivedBidBloc, FetchReceivedBidState>(
+      bloc: getIt.get<FetchReceivedBidBloc>()..fetch(),
       builder: (_, state) => state.maybeMap(
         orElse: () => const SizedBox(),
-        fetchReceivedBids: (state) => state.bids.isEmpty
+        fetch: (state) => state.bids.isEmpty
             ? const SizedBox()
             : Column(
                 children: <Widget>[
@@ -36,21 +36,20 @@ class FeedPropositions extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
-                        // BiiteViewAll(
-                        //   onTap: () => context.push(
-                        //     "/allPropositions",
-                        //     extra: {
-                        //       "bids": state.bids,
-                        //       "isSent": false,
-                        //     },
-                        //   ),
-                        // )
                       ],
                     ),
                   ),
                   // show first 2 latest projects
                   SizedBox(height: 16.h),
-                  ...state.bids.map((e) => PropositionWidget(bidModel: e, isFeed: true)).take(1),
+                  ...state.bids
+                      .map(
+                        (e) => PropositionWidget(
+                          bidModel: e,
+                          isFeed: true,
+                          onTap: () => context.push("/propositionRelatedProject", extra: e),
+                        ),
+                      )
+                      .take(1),
                 ],
               ),
       ),

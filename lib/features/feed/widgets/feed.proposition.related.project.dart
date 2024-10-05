@@ -5,7 +5,6 @@ import 'package:biite/features/feed/widgets/created.project.detail.dart';
 import 'package:biite/features/search/state/fetch.single.project.bloc.dart';
 import 'package:biite/features/search/state/search.state.dart';
 import 'package:biite/gen/colors.gen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

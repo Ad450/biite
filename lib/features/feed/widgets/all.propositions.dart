@@ -4,6 +4,7 @@ import 'package:biite/features/feed/widgets/sent.bid.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class AllPropositions extends StatelessWidget {
   const AllPropositions({required this.params, super.key});
@@ -29,6 +30,10 @@ class AllPropositions extends StatelessWidget {
                       ? SentBidWidget(bidModel: params["bids"][i])
                       : PropositionWidget(
                           bidModel: params["bids"][i],
+                          onTap: () => context.push(
+                            "/propositionDetail",
+                            extra: params["bids"][i],
+                          ),
                           // isSent: params["isSent"],
                         ),
                   separatorBuilder: (_, __) => SizedBox(height: 8.h),

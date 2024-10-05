@@ -3,6 +3,7 @@ import 'package:biite/core/presentation/widgets/biite.chip.dart';
 import 'package:biite/features/search/widget/proposition.count.dart';
 import 'package:biite/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchProjectCard extends StatelessWidget {
@@ -71,11 +72,12 @@ class SearchProjectCard extends StatelessWidget {
           children: [
             PropositionCount(projectId: projectId),
             Text(
-              "₵ $price",
+              price,
               style: context.appTheme.textTheme.bodySmall?.copyWith(
                 fontSize: 16,
                 color: ColorName.primary,
               ),
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

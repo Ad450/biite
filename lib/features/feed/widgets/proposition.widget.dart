@@ -7,10 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PropositionWidget extends StatelessWidget {
-  const PropositionWidget({required this.bidModel, this.isFeed = false, super.key});
+  const PropositionWidget({required this.bidModel, required this.isSent, this.isFeed = false, super.key});
 
   final BidModel bidModel;
   final bool isFeed;
+  final bool isSent;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,10 @@ class PropositionWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: isFeed
             ? () => context.push("/propositionRelatedProject", extra: bidModel)
-            : () => context.push("/propositionDetail", extra: bidModel),
+            : () => context.push(
+                  "/propositionDetail",
+                  extra: <String, dynamic>{"bid": bidModel, "isSent": isSent},
+                ),
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(color: ColorName.white),

@@ -66,7 +66,9 @@ class FeedView extends StatelessWidget {
                     SizedBox(height: 26.h),
                     const _CreatedProjectsFeed(),
                     SizedBox(height: 26.h),
-                    const FeedPropositions()
+                    const FeedPropositions(),
+                    SizedBox(height: 26.h),
+                    const FeedSentPropositions(),
                   ],
                 ),
               ),

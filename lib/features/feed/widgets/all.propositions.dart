@@ -1,4 +1,3 @@
-import 'package:biite/api/models/bid.model.dart';
 import 'package:biite/core/presentation/widgets/biite.back.dart';
 import 'package:biite/features/feed/widgets/proposition.widget.dart';
 import 'package:biite/gen/colors.gen.dart';
@@ -6,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AllPropositions extends StatelessWidget {
-  const AllPropositions({required this.bids, super.key});
+  const AllPropositions({required this.params, super.key});
 
-  final List<BidModel> bids;
+  final Map<String, dynamic> params;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +24,12 @@ class AllPropositions extends StatelessWidget {
 
               Expanded(
                 child: ListView.separated(
-                  itemBuilder: (_, i) => PropositionWidget(bidModel: bids[i]),
+                  itemBuilder: (_, i) => PropositionWidget(
+                    bidModel: params["bids"][i],
+                    isSent: params["isSent"],
+                  ),
                   separatorBuilder: (_, __) => SizedBox(height: 8.h),
-                  itemCount: bids.length,
+                  itemCount: params["bids"].length,
                 ),
               ),
               SizedBox(height: 10.h),

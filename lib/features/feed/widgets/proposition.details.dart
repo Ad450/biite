@@ -15,9 +15,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PropositionDetails extends StatelessWidget {
-  const PropositionDetails({required this.bid, super.key});
+  const PropositionDetails({required this.params, super.key});
 
-  final BidModel bid;
+  final Map<String, dynamic> params;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class PropositionDetails extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: bid.ownerId),
+              child: BiiteBack(onMessagePressed: () {}, showMessage: true, peerId: params["bid"].ownerId),
             ),
             SizedBox(height: 32.h),
             Container(
@@ -37,10 +37,10 @@ class PropositionDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PeerProfileAvatar(ownerId: bid.ownerId, background: ColorName.white),
+                  PeerProfileAvatar(ownerId: params["bid"].ownerId, background: ColorName.white),
                   SizedBox(height: 24.h),
                   Text(
-                    "Sent ${convertDateTime(bid.createdAt)}",
+                    "Sent ${convertDateTime(params["bid"].createdAt)}",
                     style: context.appTheme.textTheme.bodySmall?.copyWith(fontSize: 12.8),
                   ),
                   // Text(
@@ -48,7 +48,7 @@ class PropositionDetails extends StatelessWidget {
                   //   style: context.appTheme.textTheme.titleMedium?.copyWith(fontSize: 25),
                   // ),
                   Text(
-                    bid.description,
+                    params["bid"].description,
                     style: context.appTheme.textTheme.bodyMedium?.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -60,7 +60,8 @@ class PropositionDetails extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 8,
                     direction: Axis.horizontal,
-                    children: bid.tags
+                    children: (params["bid"] as BidModel)
+                        .tags
                         .map((e) => BiiteChip(
                               text: e,
                               selected: false,
@@ -70,13 +71,18 @@ class PropositionDetails extends StatelessWidget {
                   ),
 
                   SizedBox(height: 97.h),
-                  Align(
-                    alignment: Alignment.center,
-                    child: SizedBox(
-                      width: 263.w,
-                      child: _PropositionDetailButton(projectId: bid.projectId, bidId: bid.id!),
+                  if (!params["isSent"])
+                    Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: 263.w,
+                        child: _PropositionDetailButton(
+                          projectId: params["bid"].projectId,
+                          bidId: params["bid"].id!,
+                          bidStatus: params["bid"].status,
+                        ),
+                      ),
                     ),
-                  ),
                 ],
               ),
             )
@@ -91,11 +97,13 @@ class _PropositionDetailButton extends StatelessWidget {
   const _PropositionDetailButton({
     required this.bidId,
     required this.projectId,
+    required this.bidStatus,
     super.key,
   });
 
   final String projectId;
   final String bidId;
+  final String bidStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -109,8 +117,8 @@ class _PropositionDetailButton extends StatelessWidget {
       ),
       builder: (_, state) => LoadingButton(
         isLoading: state.maybeMap(orElse: () => false, loading: (_) => true),
-        onTap: () => bloc.acceptBid(bidId: bidId, projectId: projectId),
-        buttonText: "Accept",
+        onTap: bidStatus == "accepted" ? () {} : () => bloc.acceptBid(bidId: bidId, projectId: projectId),
+        buttonText: bidStatus == "accepted" ? "Accepted" : "Accept",
       ),
     );
   }

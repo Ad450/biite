@@ -58,22 +58,37 @@ class MessageTile extends StatelessWidget {
                     ),
                     BlocBuilder<MessageBloc, MessageState>(
                       bloc: getIt.get<MessageBloc>()..fetchLastMessage(room.id!),
-                      builder: (_, state) => state.maybeMap(
-                        orElse: () => Text(
-                          "No message yet",
+                      builder: (_, state) => SizedBox(
+                        width: 200.w,
+                        child: AutoSizeText(
+                          state.maybeMap(orElse: () => "No message yet", lastMessage: (state) => state.text),
                           style: context.appTheme.textTheme.bodySmall?.copyWith(
                             fontSize: 12.8,
                             fontWeight: FontWeight.normal,
                           ),
-                        ),
-                        lastMessage: (state) => Text(
-                          state.text,
-                          style: context.appTheme.textTheme.bodySmall?.copyWith(
-                            fontSize: 12.8,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
                         ),
                       ),
+
+                      // state.maybeMap(
+                      //   orElse: () => Text(
+                      //     "No message yet",
+                      //     style: context.appTheme.textTheme.bodySmall?.copyWith(
+                      //       fontSize: 12.8,
+                      //       fontWeight: FontWeight.normal,
+                      //     ),
+                      //   ),
+                      //   lastMessage: (state) => Text(
+                      //     state.text,
+                      //     style: context.appTheme.textTheme.bodySmall?.copyWith(
+                      //       fontSize: 12.8,
+                      //       fontWeight: FontWeight.normal,
+                      //     ),
+                      //     overflow: TextOverflow.ellipsis,
+                      //     maxLines: 1,
+                      //   ),
+                      // ),
                     ),
                   ],
                 )

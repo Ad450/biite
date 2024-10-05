@@ -67,7 +67,7 @@ final router = GoRouter(
     GoRoute(
       path: "/allPropositions",
       builder: (context, state) => AllPropositions(
-        bids: state.extra as List<BidModel>,
+        params: state.extra as Map<String, dynamic>,
       ),
     ),
     GoRoute(
@@ -83,7 +83,7 @@ final router = GoRouter(
     GoRoute(
       path: "/propositionDetail",
       builder: (context, state) => PropositionDetails(
-        bid: state.extra as BidModel,
+        params: state.extra as Map<String, dynamic>,
       ),
     ),
     GoRoute(

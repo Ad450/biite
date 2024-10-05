@@ -84,7 +84,7 @@ class CreatedProjectDetail extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          "₵${projectModel.rate}",
+                          "GHS ${projectModel.rate}",
                           style: context.appTheme.textTheme.bodySmall?.copyWith(
                             fontSize: 16,
                             color: ColorName.primary,
@@ -154,7 +154,7 @@ class _ProjectPropositions extends StatelessWidget {
                 ),
               )
             : Column(
-                children: state.bids.map((e) => PropositionWidget(bidModel: e)).toList(),
+                children: state.bids.map((e) => PropositionWidget(bidModel: e, isSent: false)).toList(),
               ),
       ),
     );

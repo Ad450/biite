@@ -13,6 +13,7 @@ abstract class BidRepository {
   Future<Either<UIError, VoidType>> createBid(CreateBidParam param);
   Future<Either<UIError, VoidType>> acceptBid(String bidId, String projectId);
   Future<Either<UIError, List<BidModel>>> fetchReceivedPropositions();
+  Future<Either<UIError, List<BidModel>>> fetchSentBids();
 }
 
 @LazySingleton(as: BidRepository)
@@ -64,6 +65,9 @@ class BidRepositoryImpl implements BidRepository {
 
       if (projectDoc.data()?["status"] == "active") {
         throw Exception("Bidding over for this project");
+      }
+      if (param.rate.toString().length > 10) {
+        throw Exception("Compensation not acceptable");
       }
 
       final query = _firestore.collection(kBidCollection);
@@ -155,6 +159,29 @@ class BidRepositoryImpl implements BidRepository {
 
       bids.sort((a, b) => a.createdAt.compareTo(b.createdAt));
       return Right(bids.reversed.toList());
+    } catch (e) {
+      return Left(UIError(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<UIError, List<BidModel>>> fetchSentBids() async {
+    try {
+      final id = await _hiveStore.readItem("id", "id");
+      if (id == null) {
+        throw Exception("id null at fetch all chats");
+      }
+      final query = await _firestore.collection(kBidCollection).where("ownerId", isEqualTo: id).get();
+      if (query.docs.isEmpty) {
+        return const Right([]);
+      }
+
+      final bids = query.docs.map((e) {
+        final bid = BidModel.fromJson(e.data());
+        return bid.copyWith(id: e.id);
+      }).toList();
+
+      return Right(bids);
     } catch (e) {
       return Left(UIError(e.toString()));
     }

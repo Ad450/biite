@@ -81,7 +81,7 @@ class ActiveProjectDetail extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "¢${project.rate.toString()}",
+                        "GHS ${project.rate.toString()}",
                         style: context.appTheme.textTheme.bodySmall?.copyWith(
                           fontSize: 16,
                           color: ColorName.primary,

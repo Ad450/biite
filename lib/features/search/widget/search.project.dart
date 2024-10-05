@@ -47,7 +47,7 @@ class SearchProject extends StatelessWidget {
                     SearchProjectCard(
                       description: project.description,
                       title: project.title,
-                      price: project.rate.toString(),
+                      price: "GHS ${project.rate}",
                       daysPosted: convertDateTime(project.createdAt),
                       tags: project.tags,
                       projectId: project.id!,

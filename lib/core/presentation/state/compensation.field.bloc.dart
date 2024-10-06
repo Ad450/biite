@@ -25,6 +25,10 @@ class CompensationFieldBloc extends FieldBaseBloc {
         emit(const FieldState.invalid(message: "compensation not acceptable"));
         return;
       }
+      if (event.rate!.toString().length > 9) {
+        emit(const FieldState.invalid(message: "compensation not acceptable"));
+        return;
+      }
 
       emit(FieldState.valid(data: event.rate!.toString()));
     }

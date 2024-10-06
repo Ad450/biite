@@ -11,8 +11,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class FeedPropositions extends StatelessWidget {
-  const FeedPropositions({super.key});
+class FeedReceivedPropositions extends StatelessWidget {
+  const FeedReceivedPropositions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +36,15 @@ class FeedPropositions extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
+                        BiiteViewAll(
+                          onTap: () => context.push(
+                            "/allPropositions",
+                            extra: {
+                              "bids": state.bids,
+                              "isSent": false,
+                            },
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -49,7 +58,7 @@ class FeedPropositions extends StatelessWidget {
                           onTap: () => context.push("/propositionRelatedProject", extra: e),
                         ),
                       )
-                      .take(1),
+                      .take(2),
                 ],
               ),
       ),

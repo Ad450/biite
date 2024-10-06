@@ -66,9 +66,6 @@ class BidRepositoryImpl implements BidRepository {
       if (projectDoc.data()?["status"] == "active") {
         throw Exception("Bidding over for this project");
       }
-      if (param.rate.toString().length > 10) {
-        throw Exception("Compensation not acceptable");
-      }
 
       final query = _firestore.collection(kBidCollection);
 

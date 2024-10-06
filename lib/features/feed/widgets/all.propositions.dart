@@ -30,12 +30,9 @@ class AllPropositions extends StatelessWidget {
                       ? SentBidWidget(bidModel: params["bids"][i])
                       : PropositionWidget(
                           bidModel: params["bids"][i],
-                          onTap: () => context.push(
-                            "/propositionDetail",
-                            extra: params["bids"][i],
-                          ),
+                          onTap: () => context.push("/propositionRelatedProject", extra: params["bids"][i])
                           // isSent: params["isSent"],
-                        ),
+                          ),
                   separatorBuilder: (_, __) => SizedBox(height: 8.h),
                   itemCount: params["bids"].length,
                 ),

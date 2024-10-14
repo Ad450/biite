@@ -43,7 +43,9 @@ class ChatRepositoryImpl implements ChatRepository {
           unreadMessageCount: 2,
         );
       }).toList();
-      chats.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
+
+      // chats.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
+
       return Right(chats.reversed.toList());
     } catch (e) {
       return Left(UIError(e.toString()));
@@ -82,6 +84,7 @@ class ChatRepositoryImpl implements ChatRepository {
                 peerId: peerId,
                 peerName: peerInfo.data()?["name"],
                 peerProfilePic: peerInfo.data()?["profilePic"],
+                createdAt: DateTime.now(),
               ).toJson(),
             );
       }

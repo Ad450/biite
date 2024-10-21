@@ -32,8 +32,12 @@ mixin _$ProjectModel {
   List<String> get files => throw _privateConstructorUsedError;
   int? get propositionCount => throw _privateConstructorUsedError;
 
+  /// Serializes this ProjectModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProjectModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProjectModelCopyWith<ProjectModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -68,6 +72,8 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProjectModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,6 +168,8 @@ class __$$ProjectModelImplCopyWithImpl<$Res>
       _$ProjectModelImpl _value, $Res Function(_$ProjectModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProjectModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -309,7 +317,7 @@ class _$ProjectModelImpl implements _ProjectModel {
                 other.propositionCount == propositionCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -325,7 +333,9 @@ class _$ProjectModelImpl implements _ProjectModel {
       const DeepCollectionEquality().hash(_files),
       propositionCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProjectModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProjectModelImplCopyWith<_$ProjectModelImpl> get copyWith =>
@@ -378,8 +388,11 @@ abstract class _ProjectModel implements ProjectModel {
   List<String> get files;
   @override
   int? get propositionCount;
+
+  /// Create a copy of ProjectModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProjectModelImplCopyWith<_$ProjectModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

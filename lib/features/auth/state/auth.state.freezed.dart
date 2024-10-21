@@ -84,6 +84,9 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$LoginStateInitialImplCopyWithImpl<$Res>
   __$$LoginStateInitialImplCopyWithImpl(_$LoginStateInitialImpl _value,
       $Res Function(_$LoginStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -206,6 +212,9 @@ class __$$LoginStateLoadingImplCopyWithImpl<$Res>
   __$$LoginStateLoadingImplCopyWithImpl(_$LoginStateLoadingImpl _value,
       $Res Function(_$LoginStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -312,6 +321,9 @@ class __$$LoginStateSuccessImplCopyWithImpl<$Res>
   __$$LoginStateSuccessImplCopyWithImpl(_$LoginStateSuccessImpl _value,
       $Res Function(_$LoginStateSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -421,6 +433,8 @@ class __$$LoginStateErrorImplCopyWithImpl<$Res>
       _$LoginStateErrorImpl _value, $Res Function(_$LoginStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -448,7 +462,9 @@ class _$LoginStateErrorImpl extends _LoginStateError {
     return 'LoginState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginStateErrorImplCopyWith<_$LoginStateErrorImpl> get copyWith =>
@@ -535,7 +551,10 @@ abstract class _LoginStateError extends LoginState {
   const _LoginStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginStateErrorImplCopyWith<_$LoginStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -623,6 +642,9 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -639,6 +661,9 @@ class __$$SignupStateInitialImplCopyWithImpl<$Res>
   __$$SignupStateInitialImplCopyWithImpl(_$SignupStateInitialImpl _value,
       $Res Function(_$SignupStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -758,6 +783,9 @@ class __$$SignupStateLoadingImplCopyWithImpl<$Res>
   __$$SignupStateLoadingImplCopyWithImpl(_$SignupStateLoadingImpl _value,
       $Res Function(_$SignupStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -877,6 +905,9 @@ class __$$SignupStateSuccessImplCopyWithImpl<$Res>
   __$$SignupStateSuccessImplCopyWithImpl(_$SignupStateSuccessImpl _value,
       $Res Function(_$SignupStateSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -998,6 +1029,9 @@ class __$$SignupStateAuthenticatedImplCopyWithImpl<$Res>
       _$SignupStateAuthenticatedImpl _value,
       $Res Function(_$SignupStateAuthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1119,6 +1153,9 @@ class __$$SignupStateUnAuthenticatedImplCopyWithImpl<$Res>
       _$SignupStateUnAuthenticatedImpl _value,
       $Res Function(_$SignupStateUnAuthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1242,6 +1279,8 @@ class __$$SignupStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$SignupStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1269,7 +1308,9 @@ class _$SignupStateErrorImpl extends _SignupStateError {
     return 'SignupState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SignupStateErrorImplCopyWith<_$SignupStateErrorImpl> get copyWith =>
@@ -1370,7 +1411,10 @@ abstract class _SignupStateError extends SignupState {
   const _SignupStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SignupState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SignupStateErrorImplCopyWith<_$SignupStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -84,6 +84,9 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$SearchStateInitialImplCopyWithImpl<$Res>
   __$$SearchStateInitialImplCopyWithImpl(_$SearchStateInitialImpl _value,
       $Res Function(_$SearchStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -206,6 +212,9 @@ class __$$SearchStateLoadingImplCopyWithImpl<$Res>
   __$$SearchStateLoadingImplCopyWithImpl(_$SearchStateLoadingImpl _value,
       $Res Function(_$SearchStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -315,6 +324,8 @@ class __$$SearchStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$SearchStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -349,7 +360,9 @@ class _$SearchStateFetchImpl extends _SearchStateFetch {
     return 'SearchState.fetch(projects: $projects)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchStateFetchImplCopyWith<_$SearchStateFetchImpl> get copyWith =>
@@ -437,7 +450,10 @@ abstract class _SearchStateFetch extends SearchState {
   const _SearchStateFetch._() : super._();
 
   List<ProjectModel> get projects;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchStateFetchImplCopyWith<_$SearchStateFetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -459,6 +475,8 @@ class __$$SearchStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$SearchStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -486,7 +504,9 @@ class _$SearchStateErrorImpl extends _SearchStateError {
     return 'SearchState.errro(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchStateErrorImplCopyWith<_$SearchStateErrorImpl> get copyWith =>
@@ -574,7 +594,10 @@ abstract class _SearchStateError extends SearchState {
   const _SearchStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchStateErrorImplCopyWith<_$SearchStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -649,6 +672,9 @@ class _$PropositionStateCopyWithImpl<$Res, $Val extends PropositionState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -667,6 +693,9 @@ class __$$PropositionStateInitialImplCopyWithImpl<$Res>
       _$PropositionStateInitialImpl _value,
       $Res Function(_$PropositionStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -775,6 +804,9 @@ class __$$PropositionStateLoadingImplCopyWithImpl<$Res>
       _$PropositionStateLoadingImpl _value,
       $Res Function(_$PropositionStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -883,6 +915,9 @@ class __$$PropositionStateCreateImplCopyWithImpl<$Res>
       _$PropositionStateCreateImpl _value,
       $Res Function(_$PropositionStateCreateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -993,6 +1028,8 @@ class __$$PropositionStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$PropositionStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1020,7 +1057,9 @@ class _$PropositionStateErrorImpl extends _PropositionStateError {
     return 'PropositionState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PropositionStateErrorImplCopyWith<_$PropositionStateErrorImpl>
@@ -1108,7 +1147,10 @@ abstract class _PropositionStateError extends PropositionState {
   const _PropositionStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PropositionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PropositionStateErrorImplCopyWith<_$PropositionStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1184,6 +1226,9 @@ class _$PropositionCountStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1203,6 +1248,9 @@ class __$$PropositionCountStateInitialImplCopyWithImpl<$Res>
       _$PropositionCountStateInitialImpl _value,
       $Res Function(_$PropositionCountStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1313,6 +1361,9 @@ class __$$PropositionCountStateLoadingImplCopyWithImpl<$Res>
       _$PropositionCountStateLoadingImpl _value,
       $Res Function(_$PropositionCountStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1426,6 +1477,8 @@ class __$$PropositionCountStateCreateImplCopyWithImpl<$Res>
       $Res Function(_$PropositionCountStateCreateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1453,7 +1506,9 @@ class _$PropositionCountStateCreateImpl extends _PropositionCountStateCreate {
     return 'PropositionCountState.fetch(count: $count)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PropositionCountStateCreateImplCopyWith<_$PropositionCountStateCreateImpl>
@@ -1541,7 +1596,10 @@ abstract class _PropositionCountStateCreate extends PropositionCountState {
   const _PropositionCountStateCreate._() : super._();
 
   int get count;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PropositionCountStateCreateImplCopyWith<_$PropositionCountStateCreateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1566,6 +1624,8 @@ class __$$PropositionCountStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$PropositionCountStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1593,7 +1653,9 @@ class _$PropositionCountStateErrorImpl extends _PropositionCountStateError {
     return 'PropositionCountState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PropositionCountStateErrorImplCopyWith<_$PropositionCountStateErrorImpl>
@@ -1681,7 +1743,10 @@ abstract class _PropositionCountStateError extends PropositionCountState {
   const _PropositionCountStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PropositionCountState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PropositionCountStateErrorImplCopyWith<_$PropositionCountStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1757,6 +1822,9 @@ class _$FetchSingleProjectStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1776,6 +1844,9 @@ class __$$FetchSingleProjectStateInitialImplCopyWithImpl<$Res>
       _$FetchSingleProjectStateInitialImpl _value,
       $Res Function(_$FetchSingleProjectStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1887,6 +1958,9 @@ class __$$FetchSingleProjectStateLoadingImplCopyWithImpl<$Res>
       _$FetchSingleProjectStateLoadingImpl _value,
       $Res Function(_$FetchSingleProjectStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2003,6 +2077,8 @@ class __$$FetchSingleProjectStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$FetchSingleProjectStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2016,6 +2092,8 @@ class __$$FetchSingleProjectStateFetchImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProjectModelCopyWith<$Res> get model {
@@ -2038,7 +2116,9 @@ class _$FetchSingleProjectStateFetchImpl extends FetchSingleProjectStateFetch {
     return 'FetchSingleProjectState.fetch(model: $model)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchSingleProjectStateFetchImplCopyWith<
@@ -2127,7 +2207,10 @@ abstract class FetchSingleProjectStateFetch extends FetchSingleProjectState {
   const FetchSingleProjectStateFetch._() : super._();
 
   ProjectModel get model;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchSingleProjectStateFetchImplCopyWith<
           _$FetchSingleProjectStateFetchImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2153,6 +2236,8 @@ class __$$FetchSingleProjectStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$FetchSingleProjectStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2180,7 +2265,9 @@ class _$FetchSingleProjectStateErrorImpl extends _FetchSingleProjectStateError {
     return 'FetchSingleProjectState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchSingleProjectStateErrorImplCopyWith<
@@ -2269,7 +2356,10 @@ abstract class _FetchSingleProjectStateError extends FetchSingleProjectState {
   const _FetchSingleProjectStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchSingleProjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchSingleProjectStateErrorImplCopyWith<
           _$FetchSingleProjectStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

@@ -29,8 +29,12 @@ mixin _$RoomModel {
   String? get peerProfilePic => throw _privateConstructorUsedError;
   int? get unreadMessageCount => throw _privateConstructorUsedError;
 
+  /// Serializes this RoomModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RoomModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RoomModelCopyWith<RoomModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +65,8 @@ class _$RoomModelCopyWithImpl<$Res, $Val extends RoomModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RoomModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,6 +143,8 @@ class __$$RoomModelImplCopyWithImpl<$Res>
       _$RoomModelImpl _value, $Res Function(_$RoomModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RoomModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -244,12 +252,14 @@ class _$RoomModelImpl implements _RoomModel {
                 other.unreadMessageCount == unreadMessageCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, ownerId, peerId, createdAt,
       peerName, latestMessageText, peerProfilePic, unreadMessageCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RoomModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RoomModelImplCopyWith<_$RoomModelImpl> get copyWith =>
@@ -293,8 +303,11 @@ abstract class _RoomModel implements RoomModel {
   String? get peerProfilePic;
   @override
   int? get unreadMessageCount;
+
+  /// Create a copy of RoomModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RoomModelImplCopyWith<_$RoomModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

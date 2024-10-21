@@ -95,6 +95,9 @@ class _$FeedStateCopyWithImpl<$Res, $Val extends FeedState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -111,6 +114,9 @@ class __$$FeedStateInitialImplCopyWithImpl<$Res>
   __$$FeedStateInitialImplCopyWithImpl(_$FeedStateInitialImpl _value,
       $Res Function(_$FeedStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -229,6 +235,9 @@ class __$$FeedStateLoadingImplCopyWithImpl<$Res>
   __$$FeedStateLoadingImplCopyWithImpl(_$FeedStateLoadingImpl _value,
       $Res Function(_$FeedStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -350,6 +359,8 @@ class __$$FeedStateFetchBidsImplCopyWithImpl<$Res>
       $Res Function(_$FeedStateFetchBidsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -384,7 +395,9 @@ class _$FeedStateFetchBidsImpl extends _FeedStateFetchBids {
     return 'FeedState.fetchBids(bids: $bids)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FeedStateFetchBidsImplCopyWith<_$FeedStateFetchBidsImpl> get copyWith =>
@@ -484,7 +497,10 @@ abstract class _FeedStateFetchBids extends FeedState {
   const _FeedStateFetchBids._() : super._();
 
   List<BidModel> get bids;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FeedStateFetchBidsImplCopyWith<_$FeedStateFetchBidsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -503,6 +519,9 @@ class __$$FeedStateCreateBidImplCopyWithImpl<$Res>
   __$$FeedStateCreateBidImplCopyWithImpl(_$FeedStateCreateBidImpl _value,
       $Res Function(_$FeedStateCreateBidImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -621,6 +640,9 @@ class __$$FeedStateAcceptBidImplCopyWithImpl<$Res>
   __$$FeedStateAcceptBidImplCopyWithImpl(_$FeedStateAcceptBidImpl _value,
       $Res Function(_$FeedStateAcceptBidImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -742,6 +764,8 @@ class __$$FeedStateErrorImplCopyWithImpl<$Res>
       _$FeedStateErrorImpl _value, $Res Function(_$FeedStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -769,7 +793,9 @@ class _$FeedStateErrorImpl extends _FeedStateError {
     return 'FeedState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FeedStateErrorImplCopyWith<_$FeedStateErrorImpl> get copyWith =>
@@ -868,7 +894,10 @@ abstract class _FeedStateError extends FeedState {
   const _FeedStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FeedStateErrorImplCopyWith<_$FeedStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -955,6 +984,9 @@ class _$BidStateCopyWithImpl<$Res, $Val extends BidState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -971,6 +1003,9 @@ class __$$BidStateInitialImplCopyWithImpl<$Res>
   __$$BidStateInitialImplCopyWithImpl(
       _$BidStateInitialImpl _value, $Res Function(_$BidStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1090,6 +1125,9 @@ class __$$BidStateLoadingImplCopyWithImpl<$Res>
   __$$BidStateLoadingImplCopyWithImpl(
       _$BidStateLoadingImpl _value, $Res Function(_$BidStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1209,6 +1247,9 @@ class __$$BidStateAcceptImplCopyWithImpl<$Res>
   __$$BidStateAcceptImplCopyWithImpl(
       _$BidStateAcceptImpl _value, $Res Function(_$BidStateAcceptImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1332,6 +1373,8 @@ class __$$BidStateFetchBidsByIdImplCopyWithImpl<$Res>
       $Res Function(_$BidStateFetchBidsByIdImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1366,7 +1409,9 @@ class _$BidStateFetchBidsByIdImpl extends _BidStateFetchBidsById {
     return 'BidState.fetchBidsById(bids: $bids)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BidStateFetchBidsByIdImplCopyWith<_$BidStateFetchBidsByIdImpl>
@@ -1467,7 +1512,10 @@ abstract class _BidStateFetchBidsById extends BidState {
   const _BidStateFetchBidsById._() : super._();
 
   List<BidModel> get bids;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BidStateFetchBidsByIdImplCopyWith<_$BidStateFetchBidsByIdImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1491,6 +1539,8 @@ class __$$BidStateFetchReceivedBidsImplCopyWithImpl<$Res>
       $Res Function(_$BidStateFetchReceivedBidsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1525,7 +1575,9 @@ class _$BidStateFetchReceivedBidsImpl extends _BidStateFetchReceivedBids {
     return 'BidState.fetchReceivedBids(bids: $bids)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BidStateFetchReceivedBidsImplCopyWith<_$BidStateFetchReceivedBidsImpl>
@@ -1626,7 +1678,10 @@ abstract class _BidStateFetchReceivedBids extends BidState {
   const _BidStateFetchReceivedBids._() : super._();
 
   List<BidModel> get bids;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BidStateFetchReceivedBidsImplCopyWith<_$BidStateFetchReceivedBidsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1648,6 +1703,8 @@ class __$$BidStateErrorImplCopyWithImpl<$Res>
       _$BidStateErrorImpl _value, $Res Function(_$BidStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1675,7 +1732,9 @@ class _$BidStateErrorImpl extends _BidStateError {
     return 'BidState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BidStateErrorImplCopyWith<_$BidStateErrorImpl> get copyWith =>
@@ -1774,7 +1833,10 @@ abstract class _BidStateError extends BidState {
   const _BidStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BidStateErrorImplCopyWith<_$BidStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1850,6 +1912,9 @@ class _$FetchReceivedBidStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1869,6 +1934,9 @@ class __$$FetchReceivedBidStateInitialImplCopyWithImpl<$Res>
       _$FetchReceivedBidStateInitialImpl _value,
       $Res Function(_$FetchReceivedBidStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1979,6 +2047,9 @@ class __$$FetchReceivedBidStateLoadingImplCopyWithImpl<$Res>
       _$FetchReceivedBidStateLoadingImpl _value,
       $Res Function(_$FetchReceivedBidStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2092,6 +2163,8 @@ class __$$FetchReceivedBidStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$FetchReceivedBidStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2126,7 +2199,9 @@ class _$FetchReceivedBidStateFetchImpl extends _FetchReceivedBidStateFetch {
     return 'FetchReceivedBidState.fetch(bids: $bids)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchReceivedBidStateFetchImplCopyWith<_$FetchReceivedBidStateFetchImpl>
@@ -2214,7 +2289,10 @@ abstract class _FetchReceivedBidStateFetch extends FetchReceivedBidState {
   const _FetchReceivedBidStateFetch._() : super._();
 
   List<BidModel> get bids;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchReceivedBidStateFetchImplCopyWith<_$FetchReceivedBidStateFetchImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2239,6 +2317,8 @@ class __$$FetchReceivedBidStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$FetchReceivedBidStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2266,7 +2346,9 @@ class _$FetchReceivedBidStateErrorImpl extends _FetchReceivedBidStateError {
     return 'FetchReceivedBidState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchReceivedBidStateErrorImplCopyWith<_$FetchReceivedBidStateErrorImpl>
@@ -2354,7 +2436,10 @@ abstract class _FetchReceivedBidStateError extends FetchReceivedBidState {
   const _FetchReceivedBidStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchReceivedBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchReceivedBidStateErrorImplCopyWith<_$FetchReceivedBidStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2429,6 +2514,9 @@ class _$AcceptBidStateCopyWithImpl<$Res, $Val extends AcceptBidState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2446,6 +2534,9 @@ class __$$AcceptBidStateInitialImplCopyWithImpl<$Res>
   __$$AcceptBidStateInitialImplCopyWithImpl(_$AcceptBidStateInitialImpl _value,
       $Res Function(_$AcceptBidStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2553,6 +2644,9 @@ class __$$AcceptBidStateLoadingImplCopyWithImpl<$Res>
   __$$AcceptBidStateLoadingImplCopyWithImpl(_$AcceptBidStateLoadingImpl _value,
       $Res Function(_$AcceptBidStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2659,6 +2753,9 @@ class __$$AcceptBidStateAcceptImplCopyWithImpl<$Res>
   __$$AcceptBidStateAcceptImplCopyWithImpl(_$AcceptBidStateAcceptImpl _value,
       $Res Function(_$AcceptBidStateAcceptImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2768,6 +2865,8 @@ class __$$AcceptBidStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$AcceptBidStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2795,7 +2894,9 @@ class _$AcceptBidStateErrorImpl extends _AcceptBidStateError {
     return 'AcceptBidState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AcceptBidStateErrorImplCopyWith<_$AcceptBidStateErrorImpl> get copyWith =>
@@ -2883,7 +2984,10 @@ abstract class _AcceptBidStateError extends AcceptBidState {
   const _AcceptBidStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AcceptBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AcceptBidStateErrorImplCopyWith<_$AcceptBidStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2958,6 +3062,9 @@ class _$SentBidStateCopyWithImpl<$Res, $Val extends SentBidState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2974,6 +3081,9 @@ class __$$SentBidStateInitialImplCopyWithImpl<$Res>
   __$$SentBidStateInitialImplCopyWithImpl(_$SentBidStateInitialImpl _value,
       $Res Function(_$SentBidStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3080,6 +3190,9 @@ class __$$SentBidStateLoadingImplCopyWithImpl<$Res>
   __$$SentBidStateLoadingImplCopyWithImpl(_$SentBidStateLoadingImpl _value,
       $Res Function(_$SentBidStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3189,6 +3302,8 @@ class __$$SentBidStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$SentBidStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3223,7 +3338,9 @@ class _$SentBidStateFetchImpl extends SentBidStateFetch {
     return 'SentBidState.fetch(bids: $bids)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SentBidStateFetchImplCopyWith<_$SentBidStateFetchImpl> get copyWith =>
@@ -3311,7 +3428,10 @@ abstract class SentBidStateFetch extends SentBidState {
   const SentBidStateFetch._() : super._();
 
   List<BidModel> get bids;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SentBidStateFetchImplCopyWith<_$SentBidStateFetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3333,6 +3453,8 @@ class __$$SentBidStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$SentBidStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3360,7 +3482,9 @@ class _$SentBidStateErrorImpl extends _SentBidStateError {
     return 'SentBidState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SentBidStateErrorImplCopyWith<_$SentBidStateErrorImpl> get copyWith =>
@@ -3448,7 +3572,10 @@ abstract class _SentBidStateError extends SentBidState {
   const _SentBidStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SentBidState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SentBidStateErrorImplCopyWith<_$SentBidStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

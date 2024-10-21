@@ -78,6 +78,9 @@ class _$FieldStateCopyWithImpl<$Res, $Val extends FieldState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -94,6 +97,9 @@ class __$$FieldStateInitialImplCopyWithImpl<$Res>
   __$$FieldStateInitialImplCopyWithImpl(_$FieldStateInitialImpl _value,
       $Res Function(_$FieldStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -197,6 +203,8 @@ class __$$FieldStateValidImplCopyWithImpl<$Res>
       _$FieldStateValidImpl _value, $Res Function(_$FieldStateValidImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -224,7 +232,9 @@ class _$FieldStateValidImpl extends _FieldStateValid {
     return 'FieldState.valid(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FieldStateValidImplCopyWith<_$FieldStateValidImpl> get copyWith =>
@@ -306,7 +316,10 @@ abstract class _FieldStateValid extends FieldState {
   const _FieldStateValid._() : super._();
 
   String get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FieldStateValidImplCopyWith<_$FieldStateValidImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -328,6 +341,8 @@ class __$$FieldStateInvalidImplCopyWithImpl<$Res>
       $Res Function(_$FieldStateInvalidImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -355,7 +370,9 @@ class _$FieldStateInvalidImpl extends _FieldStateInvalid {
     return 'FieldState.invalid(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FieldStateInvalidImplCopyWith<_$FieldStateInvalidImpl> get copyWith =>
@@ -437,7 +454,10 @@ abstract class _FieldStateInvalid extends FieldState {
   const _FieldStateInvalid._() : super._();
 
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FieldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FieldStateInvalidImplCopyWith<_$FieldStateInvalidImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -90,6 +90,9 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -106,6 +109,9 @@ class __$$ProfileStateInitialImplCopyWithImpl<$Res>
   __$$ProfileStateInitialImplCopyWithImpl(_$ProfileStateInitialImpl _value,
       $Res Function(_$ProfileStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -218,6 +224,9 @@ class __$$ProfileStateLoadingImplCopyWithImpl<$Res>
   __$$ProfileStateLoadingImplCopyWithImpl(_$ProfileStateLoadingImpl _value,
       $Res Function(_$ProfileStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -332,6 +341,9 @@ class __$$ProfileStateUpdateProfileImplCopyWithImpl<$Res>
       _$ProfileStateUpdateProfileImpl _value,
       $Res Function(_$ProfileStateUpdateProfileImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -449,6 +461,8 @@ class __$$ProfileStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$ProfileStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -462,6 +476,8 @@ class __$$ProfileStateFetchImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserModelCopyWith<$Res> get user {
@@ -484,7 +500,9 @@ class _$ProfileStateFetchImpl extends _ProfileStateFetch {
     return 'ProfileState.fetch(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProfileStateFetchImplCopyWith<_$ProfileStateFetchImpl> get copyWith =>
@@ -578,7 +596,10 @@ abstract class _ProfileStateFetch extends ProfileState {
   const _ProfileStateFetch._() : super._();
 
   UserModel get user;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProfileStateFetchImplCopyWith<_$ProfileStateFetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -600,6 +621,8 @@ class __$$ProfileStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$ProfileStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -627,7 +650,9 @@ class _$ProfileStateErrorImpl extends _ProfileStateError {
     return 'ProfileState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProfileStateErrorImplCopyWith<_$ProfileStateErrorImpl> get copyWith =>
@@ -721,7 +746,10 @@ abstract class _ProfileStateError extends ProfileState {
   const _ProfileStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProfileStateErrorImplCopyWith<_$ProfileStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -801,6 +829,9 @@ class _$PeerStateCopyWithImpl<$Res, $Val extends PeerState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -817,6 +848,9 @@ class __$$PeerStateInitialImplCopyWithImpl<$Res>
   __$$PeerStateInitialImplCopyWithImpl(_$PeerStateInitialImpl _value,
       $Res Function(_$PeerStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -929,6 +963,9 @@ class __$$PeerStateLoadingImplCopyWithImpl<$Res>
   __$$PeerStateLoadingImplCopyWithImpl(_$PeerStateLoadingImpl _value,
       $Res Function(_$PeerStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1046,6 +1083,8 @@ class __$$PeerStateFetchChatImplCopyWithImpl<$Res>
       $Res Function(_$PeerStateFetchChatImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1059,6 +1098,8 @@ class __$$PeerStateFetchChatImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserModelCopyWith<$Res> get user {
@@ -1081,7 +1122,9 @@ class _$PeerStateFetchChatImpl extends _PeerStateFetchChat {
     return 'PeerState.fetchChatPeer(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PeerStateFetchChatImplCopyWith<_$PeerStateFetchChatImpl> get copyWith =>
@@ -1175,7 +1218,10 @@ abstract class _PeerStateFetchChat extends PeerState {
   const _PeerStateFetchChat._() : super._();
 
   UserModel get user;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PeerStateFetchChatImplCopyWith<_$PeerStateFetchChatImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1199,6 +1245,8 @@ class __$$PeerStateFetchPeerImplCopyWithImpl<$Res>
       $Res Function(_$PeerStateFetchPeerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1212,6 +1260,8 @@ class __$$PeerStateFetchPeerImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserModelCopyWith<$Res> get user {
@@ -1234,7 +1284,9 @@ class _$PeerStateFetchPeerImpl extends _PeerStateFetchPeer {
     return 'PeerState.fetchPeer(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PeerStateFetchPeerImplCopyWith<_$PeerStateFetchPeerImpl> get copyWith =>
@@ -1328,7 +1380,10 @@ abstract class _PeerStateFetchPeer extends PeerState {
   const _PeerStateFetchPeer._() : super._();
 
   UserModel get user;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PeerStateFetchPeerImplCopyWith<_$PeerStateFetchPeerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1350,6 +1405,8 @@ class __$$PeerStateErrorImplCopyWithImpl<$Res>
       _$PeerStateErrorImpl _value, $Res Function(_$PeerStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1377,7 +1434,9 @@ class _$PeerStateErrorImpl extends _PeerStateError {
     return 'PeerState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PeerStateErrorImplCopyWith<_$PeerStateErrorImpl> get copyWith =>
@@ -1470,7 +1529,10 @@ abstract class _PeerStateError extends PeerState {
   const _PeerStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PeerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PeerStateErrorImplCopyWith<_$PeerStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1545,6 +1607,9 @@ class _$FetchPictureStateCopyWithImpl<$Res, $Val extends FetchPictureState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1564,6 +1629,9 @@ class __$$FetchPictureStateInitialImplCopyWithImpl<$Res>
       _$FetchPictureStateInitialImpl _value,
       $Res Function(_$FetchPictureStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1673,6 +1741,9 @@ class __$$FetchPictureStateLoadingImplCopyWithImpl<$Res>
       _$FetchPictureStateLoadingImpl _value,
       $Res Function(_$FetchPictureStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1784,6 +1855,8 @@ class __$$FetchPictureStateFetchImplCopyWithImpl<$Res>
       $Res Function(_$FetchPictureStateFetchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1811,7 +1884,9 @@ class _$FetchPictureStateFetchImpl extends FetchPictureStateFetch {
     return 'FetchPictureState.fetch(file: $file)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchPictureStateFetchImplCopyWith<_$FetchPictureStateFetchImpl>
@@ -1899,7 +1974,10 @@ abstract class FetchPictureStateFetch extends FetchPictureState {
   const FetchPictureStateFetch._() : super._();
 
   File get file;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchPictureStateFetchImplCopyWith<_$FetchPictureStateFetchImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1923,6 +2001,8 @@ class __$$FetchPictureStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$FetchPictureStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1950,7 +2030,9 @@ class _$FetchPictureStateErrorImpl extends _FetchPictureStateError {
     return 'FetchPictureState.error(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FetchPictureStateErrorImplCopyWith<_$FetchPictureStateErrorImpl>
@@ -2038,7 +2120,10 @@ abstract class _FetchPictureStateError extends FetchPictureState {
   const _FetchPictureStateError._() : super._();
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FetchPictureState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchPictureStateErrorImplCopyWith<_$FetchPictureStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

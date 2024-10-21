@@ -84,6 +84,9 @@ class _$FormFieldBaseStateCopyWithImpl<$Res, $Val extends FormFieldBaseState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -101,6 +104,9 @@ class __$$FormFieldStateInitialImplCopyWithImpl<$Res>
   __$$FormFieldStateInitialImplCopyWithImpl(_$FormFieldStateInitialImpl _value,
       $Res Function(_$FormFieldStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -207,6 +213,9 @@ class __$$FormFieldStateValidImplCopyWithImpl<$Res>
   __$$FormFieldStateValidImplCopyWithImpl(_$FormFieldStateValidImpl _value,
       $Res Function(_$FormFieldStateValidImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -314,6 +323,9 @@ class __$$FormFieldStateLoadingImplCopyWithImpl<$Res>
   __$$FormFieldStateLoadingImplCopyWithImpl(_$FormFieldStateLoadingImpl _value,
       $Res Function(_$FormFieldStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -424,6 +436,8 @@ class __$$FormFieldStateInvalidImplCopyWithImpl<$Res>
       $Res Function(_$FormFieldStateInvalidImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -451,7 +465,9 @@ class _$FormFieldStateInvalidImpl extends _FormFieldStateInvalid {
     return 'FormFieldBaseState.invalid(message: $message)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FormFieldStateInvalidImplCopyWith<_$FormFieldStateInvalidImpl>
@@ -539,7 +555,10 @@ abstract class _FormFieldStateInvalid extends FormFieldBaseState {
   const _FormFieldStateInvalid._() : super._();
 
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FormFieldBaseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FormFieldStateInvalidImplCopyWith<_$FormFieldStateInvalidImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

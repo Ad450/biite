@@ -30,8 +30,12 @@ mixin _$BidModel {
   double get rate => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
+  /// Serializes this BidModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BidModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BidModelCopyWith<BidModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$BidModelCopyWithImpl<$Res, $Val extends BidModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BidModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,6 +151,8 @@ class __$$BidModelImplCopyWithImpl<$Res>
       _$BidModelImpl _value, $Res Function(_$BidModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BidModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -266,7 +274,7 @@ class _$BidModelImpl implements _BidModel {
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -280,7 +288,9 @@ class _$BidModelImpl implements _BidModel {
       rate,
       const DeepCollectionEquality().hash(_tags));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BidModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BidModelImplCopyWith<_$BidModelImpl> get copyWith =>
@@ -327,8 +337,11 @@ abstract class _BidModel implements BidModel {
   double get rate;
   @override
   List<String> get tags;
+
+  /// Create a copy of BidModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BidModelImplCopyWith<_$BidModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

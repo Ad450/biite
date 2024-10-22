@@ -11,7 +11,7 @@ final authenticationGetIt = GetIt.instance;
   preferRelativeImports: true,
   asExtension: true,
 )
-void configureLocalStorageDependencies() => authenticationGetIt.init();
+void configureAuthenticationRepositoryDependencies() => authenticationGetIt.init();
 
 @module
 abstract class Modules {

@@ -11,7 +11,7 @@ final bidGetIt = GetIt.instance;
   preferRelativeImports: true,
   asExtension: true,
 )
-void configureLocalStorageDependencies() => bidGetIt.init();
+void configureBidDependencies() => bidGetIt.init();
 
 @module
 abstract class Modules {

@@ -1,6 +1,6 @@
 import 'package:authentication_repository/src/models/param.dart';
-import 'package:authentication_repository/src/models/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common_repository/common_repository.dart';
 import 'package:configuration/configuration.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,7 +37,13 @@ class AuthRepositoryImpl implements AuthenticationRepository {
           throw Exception("Please verify email to continue ");
         }
 
-        final query = await _firestore.collection(kUserCollection).where("uid", isEqualTo: credential.user!.uid).get();
+        final query = await _firestore
+            .collection(kUserCollection)
+            .where(
+              "uid",
+              isEqualTo: credential.user!.uid,
+            )
+            .get();
 
         if (query.docs.isEmpty) {
           throw Exception("user document not found");

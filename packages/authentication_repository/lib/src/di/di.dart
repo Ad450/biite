@@ -1,26 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:authentication_repository/src/di/di.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:local_storage/local_storage.dart';
 
 final authenticationGetIt = GetIt.instance;
 
 @InjectableInit(
-  initializerName: 'init',
+  initializerName: 'configureAuthDeps',
   preferRelativeImports: true,
   asExtension: true,
 )
-void configureAuthenticationRepositoryDependencies() => authenticationGetIt.init();
-
-@module
-abstract class Modules {
-  @lazySingleton
-  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-
-  @lazySingleton
-  FirebaseFirestore get firebaseFirestore => FirebaseFirestore.instance;
-
-  @lazySingleton
-  HiveStore get hiveStore => localStorageGetit.get<HiveStore>();
-}
+void configureAuthenticationRepositoryDependencies() => authenticationGetIt.configureAuthDeps();

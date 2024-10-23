@@ -10,9 +10,11 @@ abstract class ChatRepository {
   Future<Either<UIError, VoidType>> createChat(String peerId);
 }
 
-@LazySingleton(as: ChatRepository)
+@Singleton(as: ChatRepository)
 class ChatRepositoryImpl implements ChatRepository {
-  ChatRepositoryImpl(this._firestore, this._hiveStore);
+  ChatRepositoryImpl()
+      : _firestore = commonGetIt.get<FirebaseFirestore>(),
+        _hiveStore = localStorageGetit.get<HiveStore>();
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;

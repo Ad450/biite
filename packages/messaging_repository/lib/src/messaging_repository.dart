@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common_repository/common_repository.dart';
 import 'package:configuration/configuration.dart';
 
 import 'package:injectable/injectable.dart';
@@ -17,7 +18,9 @@ abstract class MessageRepository {
 
 @LazySingleton(as: MessageRepository)
 class MessageRepositoryImpl implements MessageRepository {
-  MessageRepositoryImpl(this._firestore, this._hiveStore);
+  MessageRepositoryImpl()
+      : _hiveStore = localStorageGetit.get<HiveStore>(),
+        _firestore = commonGetIt.get<FirebaseFirestore>();
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;
@@ -61,7 +64,13 @@ class MessageRepositoryImpl implements MessageRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final query = _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).snapshots();
+      final query = _firestore
+          .collection(kMessageCollection)
+          .where(
+            "roomId",
+            isEqualTo: roomId,
+          )
+          .snapshots();
 
       await for (final snapshot in query.handleError((e) => print(e.toString()))) {
         final docs = snapshot.docs;
@@ -96,7 +105,13 @@ class MessageRepositoryImpl implements MessageRepository {
   Future<void> markMessageAsRead(String roomId) async {
     try {
       final batch = _firestore.batch();
-      final query = await _firestore.collection(kMessageCollection).where("roomId", isEqualTo: roomId).get();
+      final query = await _firestore
+          .collection(kMessageCollection)
+          .where(
+            "roomId",
+            isEqualTo: roomId,
+          )
+          .get();
 
       for (var doc in query.docs) {
         batch.update(doc.reference, {"status": "read"});

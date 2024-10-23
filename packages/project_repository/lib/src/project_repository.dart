@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_storage/cloud_storage.dart';
+import 'package:common_repository/common_repository.dart';
 import 'package:configuration/configuration.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -16,9 +17,12 @@ abstract class ProjectRepository {
   Future<Either<UIError, int>> fetchPropositionByProjectId(String id);
 }
 
-@LazySingleton(as: ProjectRepository)
+@Singleton(as: ProjectRepository)
 class ProjectRepostoryImpl implements ProjectRepository {
-  ProjectRepostoryImpl(this._firestore, this._hiveStore, this._cloudStorage);
+  ProjectRepostoryImpl()
+      : _hiveStore = localStorageGetit.get<HiveStore>(),
+        _firestore = commonGetIt.get<FirebaseFirestore>(),
+        _cloudStorage = cloudStorageGetIt.get<CloudStorage>();
 
   final HiveStore _hiveStore;
   final FirebaseFirestore _firestore;

@@ -24,7 +24,7 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
-    gh.lazySingleton<_i251.HiveStore>(() => _i251.HiveStore());
+    gh.singleton<_i251.HiveStore>(() => _i251.HiveStore());
     return this;
   }
 }

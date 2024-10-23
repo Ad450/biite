@@ -1,0 +1,131 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "biite",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "biite (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "biite (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "authentication_repository",
+            "cwd": "packages/authentication_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "bid_repository",
+            "cwd": "packages/bid_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "chat_repository",
+            "cwd": "packages/chat_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cloud_storage",
+            "cwd": "packages/cloud_storage",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "common_repository",
+            "cwd": "packages/common_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "configuration",
+            "cwd": "packages/configuration",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "form_validator",
+            "cwd": "packages/form_validator",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "form_validator (profile mode)",
+            "cwd": "packages/form_validator",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "form_validator (release mode)",
+            "cwd": "packages/form_validator",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "local_storage",
+            "cwd": "packages/local_storage",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "messaging_repository",
+            "cwd": "packages/messaging_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "notification",
+            "cwd": "packages/notification",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "presentation",
+            "cwd": "packages/presentation",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "presentation (profile mode)",
+            "cwd": "packages/presentation",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "presentation (release mode)",
+            "cwd": "packages/presentation",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "project_repository",
+            "cwd": "packages/project_repository",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "user_repository",
+            "cwd": "packages/user_repository",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

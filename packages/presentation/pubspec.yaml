@@ -13,6 +13,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   card_loading: ^0.3.2
   fluttertoast: ^8.2.8
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:

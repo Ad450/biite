@@ -14,9 +14,12 @@ abstract class AuthenticationRepository {
   Future<Either<UIError, VoidType>> signout();
 }
 
-@LazySingleton(as: AuthenticationRepository)
+@Singleton(as: AuthenticationRepository)
 class AuthRepositoryImpl implements AuthenticationRepository {
-  AuthRepositoryImpl(this._hiveStore, this._firestore, this._firebaseAuth);
+  AuthRepositoryImpl()
+      : _hiveStore = localStorageGetit.get<HiveStore>(),
+        _firebaseAuth = commonGetIt.get<FirebaseAuth>(),
+        _firestore = commonGetIt.get<FirebaseFirestore>();
 
   final FirebaseFirestore _firestore;
   final FirebaseAuth _firebaseAuth;

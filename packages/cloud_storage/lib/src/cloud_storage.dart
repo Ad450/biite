@@ -7,7 +7,7 @@ abstract class CloudStorage {
   Future<String> upload(String filepath, String id);
 }
 
-@LazySingleton(as: CloudStorage)
+@Singleton(as: CloudStorage)
 class CloudStorageImpl implements CloudStorage {
   CloudStorageImpl(this._storage);
 

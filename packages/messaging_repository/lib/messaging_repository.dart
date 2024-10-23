@@ -8,5 +8,3 @@ export 'src/di/di.config.dart';
 export 'src/models/message_model.dart';
 export 'src/models/message_param.dart';
 export 'src/messaging_repository.dart';
-
-// TODO: Export any libraries intended for clients of this package.

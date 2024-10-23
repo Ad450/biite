@@ -18,9 +18,12 @@ abstract class UserRepository {
   Future<UserModel> fetchPeer(String ownerId);
 }
 
-@LazySingleton(as: UserRepository)
+@Singleton(as: UserRepository)
 class UserRepositoryImpl implements UserRepository {
-  UserRepositoryImpl(this._firestore, this._hiveStore, this._cloudStorage);
+  UserRepositoryImpl()
+      : _hiveStore = localStorageGetit.get<HiveStore>(),
+        _firestore = commonGetIt.get<FirebaseFirestore>(),
+        _cloudStorage = cloudStorageGetIt.get<CloudStorage>();
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;

@@ -21,6 +21,8 @@ dependencies:
     path: "../configuration"
   cloud_storage:
     path: "../cloud_storage"
+  common_repository:
+    path: "../common_repository"
   freezed: ^2.5.2
   freezed_annotation: ^2.4.4
   firebase_storage: ^12.2.0

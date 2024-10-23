@@ -1,6 +1,7 @@
 import 'package:bid_repository/src/models/bid_model.dart';
 import 'package:bid_repository/src/models/create_bid_param.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common_repository/common_repository.dart';
 import 'package:configuration/configuration.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -15,9 +16,11 @@ abstract class BidRepository {
   Future<Either<UIError, List<BidModel>>> fetchSentBids();
 }
 
-@LazySingleton(as: BidRepository)
+@Singleton(as: BidRepository)
 class BidRepositoryImpl implements BidRepository {
-  BidRepositoryImpl(this._firestore, this._hiveStore);
+  BidRepositoryImpl()
+      : _firestore = commonGetIt.get<FirebaseFirestore>(),
+        _hiveStore = localStorageGetit.get<HiveStore>();
 
   final FirebaseFirestore _firestore;
   final HiveStore _hiveStore;

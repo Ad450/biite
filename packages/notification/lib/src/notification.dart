@@ -7,10 +7,9 @@ import 'package:configuration/configuration.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:http/http.dart' as http;
 import 'package:local_storage/local_storage.dart';
-import 'package:notification/src/di/di.dart';
 
 void sendNotification(Map<String, dynamic> data) async {
-  final firestore = notificationGetIt.get<FirebaseFirestore>();
+  final firestore = commonGetIt.get<FirebaseFirestore>();
   // get from task data
   final roomId = data['roomId'] as String;
   final senderId = data['senderId'] as String;
@@ -131,7 +130,7 @@ Future<void> _send({
 }
 
 Future<void> _getDeviceToken() async {
-  final messaging = notificationGetIt.get<FirebaseMessaging>();
+  final messaging = commonGetIt.get<FirebaseMessaging>();
   try {
     if (Platform.isIOS) {
       final apnsToken = await messaging.getAPNSToken();
@@ -151,7 +150,7 @@ Future<void> _getDeviceToken() async {
 }
 
 void getUserDeviceToken() {
-  final messaging = notificationGetIt.get<FirebaseMessaging>();
+  final messaging = commonGetIt.get<FirebaseMessaging>();
   _getDeviceToken();
 
   messaging.onTokenRefresh.listen((newToken) async {
@@ -160,8 +159,8 @@ void getUserDeviceToken() {
 }
 
 void _updateUserToken(String? deviceToken) async {
-  final firestore = notificationGetIt.get<FirebaseFirestore>();
-  final hiveStore = notificationGetIt.get<HiveStore>();
+  final firestore = commonGetIt.get<FirebaseFirestore>();
+  final hiveStore = commonGetIt.get<HiveStore>();
   final id = await hiveStore.readItem("id", "id");
   if (id == null) {
     return;

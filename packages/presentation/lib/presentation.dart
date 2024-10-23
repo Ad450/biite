@@ -1,7 +1,16 @@
-library presentation;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'gen/assets.gen.dart';
+export 'gen/fonts.gen.dart';
+export "gen/colors.gen.dart";
+export 'locales.dart';
+export 'widgets/auth_text.dart';
+export 'widgets/button.dart';
+export 'widgets/chip.dart';
+export 'widgets/dialog.dart';
+export 'widgets/form_field.dart';
+export 'widgets/list_loading.dart';
+export 'widgets/view.all.dart';
+export 'widgets/toast.dart';
+export 'widgets/textfield.dart';
+export 'widgets/multiline_textfield.dart';
+export 'theme/theme.dart';
+export 'observers/observers.dart';

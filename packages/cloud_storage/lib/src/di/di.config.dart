@@ -12,7 +12,7 @@ import 'package:firebase_storage/firebase_storage.dart' as _i457;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../cloud_storage.dart' as _i695;
+import '../cloud_storage.dart' as _i420;
 import 'di.dart' as _i913;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -27,8 +27,10 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final firebaseModule = _$FirebaseModule();
-    gh.lazySingleton<_i457.FirebaseStorage>(() => firebaseModule.firebaseStorage);
-    gh.lazySingleton<_i695.CloudStorage>(() => _i695.CloudStorageImpl(gh<_i457.FirebaseStorage>()));
+    gh.lazySingleton<_i457.FirebaseStorage>(
+        () => firebaseModule.firebaseStorage);
+    gh.singleton<_i420.CloudStorage>(
+        () => _i420.CloudStorageImpl(gh<_i457.FirebaseStorage>()));
     return this;
   }
 }

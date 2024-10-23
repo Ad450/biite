@@ -1,7 +1,9 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+void initializeHive() async => await Hive.initFlutter();
+
+@Singleton()
 class HiveStore {
   Future<void> deleteItem(key, String boxName) async {
     final box = await _openBox(boxName);

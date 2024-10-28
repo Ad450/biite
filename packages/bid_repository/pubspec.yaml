@@ -1,0 +1,35 @@
+name: bid_repository
+description: A starting point for Dart libraries or applications.
+publish_to: none
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.5.3
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.8.0
+  firebase_auth: ^5.2.0
+  cloud_firestore: ^5.3.0
+  get_it: ^8.0.0
+  injectable: ^2.4.2
+  injectable_generator: ^2.6.1
+  local_storage:
+    path: "../local_storage"
+  configuration:
+    path: "../configuration"
+  project_repository:
+    path: "../project_repository"
+  common_repository:
+    path: "../common_repository"
+  freezed: ^2.5.2
+  freezed_annotation: ^2.4.4
+  firebase_storage: ^12.2.0
+  dartz: ^0.10.1
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.24.0
+  build_runner:
+  json_serializable: ^6.8.0

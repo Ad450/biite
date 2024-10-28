@@ -170,6 +170,10 @@ void _updateUserToken(String? deviceToken) async {
   if (!query.exists) return;
   final user = UserModel.fromJson(query.data()!);
 
-  await firestore.collection(kUserCollection).doc(id).update(user.copyWith(deviceToken: deviceToken).toJson());
+  await firestore.collection(kUserCollection).doc(id).update(user
+      .copyWith(
+        deviceToken: deviceToken,
+      )
+      .toJson());
   await hiveStore.saveItem(deviceToken, "deviceToken", key: "deviceToken");
 }

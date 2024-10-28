@@ -6,7 +6,6 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:local_storage/local_storage.dart';
 import 'package:project_repository/project_repository.dart';
-import 'package:project_repository/src/models/create_project_param.dart';
 
 abstract class ProjectRepository {
   Future<Either<UIError, List<ProjectModel>>> fetchCreatedProjects();
@@ -168,7 +167,12 @@ class ProjectRepostoryImpl implements ProjectRepository {
   @override
   Future<Either<UIError, ProjectModel>> fetchProjectById(String projectId) async {
     try {
-      final doc = await _firestore.collection(kProjectCollection).doc(projectId).get();
+      final doc = await _firestore
+          .collection(kProjectCollection)
+          .doc(
+            projectId,
+          )
+          .get();
       if (!doc.exists) {
         throw Exception("project not found");
       }

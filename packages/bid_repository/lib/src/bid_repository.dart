@@ -28,7 +28,13 @@ class BidRepositoryImpl implements BidRepository {
   @override
   Future<Either<UIError, List<BidModel>>> fetchBidsByProjectId(String projectId) async {
     try {
-      final query = await _firestore.collection(kBidCollection).where("projectId", isEqualTo: projectId).get();
+      final query = await _firestore
+          .collection(kBidCollection)
+          .where(
+            "projectId",
+            isEqualTo: projectId,
+          )
+          .get();
       final bids = query.docs.map((e) {
         var bid = BidModel.fromJson(e.data());
         bid = bid.copyWith(id: e.id);
@@ -174,7 +180,13 @@ class BidRepositoryImpl implements BidRepository {
       if (id == null) {
         throw Exception("id null at fetch all chats");
       }
-      final query = await _firestore.collection(kBidCollection).where("ownerId", isEqualTo: id).get();
+      final query = await _firestore
+          .collection(kBidCollection)
+          .where(
+            "ownerId",
+            isEqualTo: id,
+          )
+          .get();
       if (query.docs.isEmpty) {
         return const Right([]);
       }

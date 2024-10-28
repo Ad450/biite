@@ -27,8 +27,20 @@ class ChatRepositoryImpl implements ChatRepository {
         throw Exception("id null at fetch all chats");
       }
 
-      final ownerDocs = await _firestore.collection(kChatCollection).where("ownerId", isEqualTo: id).get();
-      final asPeerDocs = await _firestore.collection(kChatCollection).where("peerId", isEqualTo: id).get();
+      final ownerDocs = await _firestore
+          .collection(kChatCollection)
+          .where(
+            "ownerId",
+            isEqualTo: id,
+          )
+          .get();
+      final asPeerDocs = await _firestore
+          .collection(kChatCollection)
+          .where(
+            "peerId",
+            isEqualTo: id,
+          )
+          .get();
       Set all = {...asPeerDocs.docs, ...ownerDocs.docs};
 
       if (all.isEmpty) {

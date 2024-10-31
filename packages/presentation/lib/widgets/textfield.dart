@@ -25,44 +25,51 @@ class BiiteTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      onChanged: onChanged,
-      maxLines: maxLines ?? 1,
-      minLines: minLines ?? 1,
-      keyboardType: inputType ?? TextInputType.number,
-      keyboardAppearance: Brightness.dark,
-      onTapOutside: (PointerDownEvent event) {
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      // expands: true,
-      style: context.appTheme.textTheme.bodySmall?.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-        color: ColorName.onBackground,
-      ),
-      textAlign: TextAlign.left,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: ColorName.multiline,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17),
-        hintText: hintText ?? "100",
-        hintStyle: const TextStyle(
-          color: ColorName.text,
-          fontSize: 16,
-          fontFamily: FontFamily.publicSans,
-          fontWeight: FontWeight.normal,
+    return Column(
+      children: <Widget>[
+        if (errorText != null)
+          Text(
+            errorText!,
+            style: context.appTheme.textTheme.bodySmall?.copyWith(
+              fontSize: 12,
+              color: Colors.red,
+            ),
+          ),
+        TextField(
+          controller: controller,
+          onChanged: onChanged,
+          maxLines: maxLines ?? 1,
+          minLines: minLines ?? 1,
+          keyboardType: inputType ?? TextInputType.number,
+          keyboardAppearance: Brightness.dark,
+          onTapOutside: (PointerDownEvent event) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          // expands: true,
+          style: context.appTheme.textTheme.bodySmall?.copyWith(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: ColorName.onBackground,
+          ),
+          textAlign: TextAlign.left,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: ColorName.multiline,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17),
+            hintText: hintText ?? "100",
+            hintStyle: const TextStyle(
+              color: ColorName.text,
+              fontSize: 16,
+              fontFamily: FontFamily.publicSans,
+              fontWeight: FontWeight.normal,
+            ),
+            border: OutlineInputBorder(
+              borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+              borderRadius: BorderRadius.circular(7),
+            ),
+          ),
         ),
-        border: OutlineInputBorder(
-          borderSide: const BorderSide(width: 0, style: BorderStyle.none),
-          borderRadius: BorderRadius.circular(7),
-        ),
-        errorText: errorText,
-        errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(
-          fontSize: 12,
-          color: Colors.red,
-        ),
-      ),
+      ],
     );
   }
 }

@@ -25,47 +25,51 @@ class BiiteMultilineTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // height: 160.h,
-      child: TextField(
-        controller: controller,
-        maxLines: maxLines ?? 7,
-        minLines: minLines ?? 5,
-        onChanged: onChanged,
-        keyboardType: TextInputType.multiline,
-        keyboardAppearance: Brightness.dark,
-        onTapOutside: (PointerDownEvent event) {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        // expands: true,
-        style: context.appTheme.textTheme.bodySmall?.copyWith(
-          fontSize: 16,
-          fontWeight: FontWeight.normal,
-          color: ColorName.onBackground,
-        ),
-        textAlign: TextAlign.left,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: ColorName.multiline,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17),
-          hintText: hintText ?? "Message",
-          hintStyle: const TextStyle(
-            color: ColorName.text,
+    return Column(
+      children: <Widget>[
+        if (errorText != null)
+          Text(
+            errorText!,
+            style: context.appTheme.textTheme.bodySmall?.copyWith(
+              fontSize: 12,
+              color: Colors.red,
+            ),
+          ),
+        TextField(
+          controller: controller,
+          maxLines: maxLines ?? 7,
+          minLines: minLines ?? 5,
+          onChanged: onChanged,
+          keyboardType: TextInputType.multiline,
+          keyboardAppearance: Brightness.dark,
+          onTapOutside: (PointerDownEvent event) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          // expands: true,
+          style: context.appTheme.textTheme.bodySmall?.copyWith(
             fontSize: 16,
-            fontFamily: FontFamily.publicSans,
             fontWeight: FontWeight.normal,
+            color: ColorName.onBackground,
           ),
-          border: OutlineInputBorder(
-            borderSide: const BorderSide(width: 0, style: BorderStyle.none),
-            borderRadius: BorderRadius.circular(7),
-          ),
-          errorText: errorText,
-          errorStyle: context.appTheme.textTheme.bodySmall?.copyWith(
-            fontSize: 12,
-            color: Colors.red,
+          textAlign: TextAlign.left,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: ColorName.multiline,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17),
+            hintText: hintText ?? "Message",
+            hintStyle: const TextStyle(
+              color: ColorName.text,
+              fontSize: 16,
+              fontFamily: FontFamily.publicSans,
+              fontWeight: FontWeight.normal,
+            ),
+            border: OutlineInputBorder(
+              borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+              borderRadius: BorderRadius.circular(7),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

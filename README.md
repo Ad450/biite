@@ -1,10 +1,8 @@
-# biite
+# Biite
+Biite is a freelancing software that anybody can own a project and as well take on a project. To take on a project, you must bid for it. 
+Users are able to communicate through an inbuilt chat system.
 
-A freelancing software where anybody can own a project and as well take on a project.
-To take on a project, you must bid for it.
-Users are able to communicate through an inbuilt chat system .
-
-Biite is a free software, feel free to use it.
-To use this source code, create a new firebase project and configure this to use your firebase project.
+Biite is free software; feel free to use it. 
+To use the source code of Biite, create a new Firebase project and configure your clone to use your Firebase project.
 
 **Happy coding!**

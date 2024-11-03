@@ -7,6 +7,7 @@ import 'package:configuration/configuration.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:http/http.dart' as http;
 import 'package:local_storage/local_storage.dart';
+import 'package:notification/src/service.account.dart';
 
 void sendNotification(Map<String, dynamic> data) async {
   final firestore = commonGetIt.get<FirebaseFirestore>();
@@ -40,22 +41,6 @@ void sendNotification(Map<String, dynamic> data) async {
   }
 }
 
-final _serviceAccount = <String, String>{
-  "type": "service_account",
-  "project_id": "biite-fc6d7",
-  "private_key_id": "a12afc13d0f82955d12bbd9882baac61d6f94e3a",
-  "private_key":
-      "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCrG5jpKcWWrdun\nfQzzUOHV47Xcjx8z4heUltOPEHZUZSddRrTGqchY3q0M6dxi7+Q7/NUpL8ya9JbR\nggWsGA2MJCZBziU/xE7ll/Z5ePR0kcmIXz2yhegNRgF2LO6XER2EVnLjg9187gZN\nqprPozOjarhAXnZi5bzak0hvR5HyCng3Cz5WHF/nHGlUy5fznMOU5MUn2HX9OKiP\nQ8gBH9jLwiZtG6EtdaAq6RGNBNZM7Fcd9NfGwV37Ks6TZuTMfO5GNbyeOPwEVqrn\nBmwcdYnpYe8ztGx4XSpr9xiSrZ4HvhpyLDosgGFIQ7G6uhp+30E0qQv4dwNFjk4b\nMFj1K+B1AgMBAAECggEAGuMkCNWLyzToLH45u/1Ec4oL8Ivb5Rj8yBhYR6WYVoQr\nppxe+U3CIfbhvgL8ot5b4LJG46kzb1EKZwMVtZh0/oXKrjIAx++mzyytKiLf1PZ4\nsvF2XjhtAbLztVhzqHDj0MEN3iMBOamke21Y1NJqIZ56NAEz/K/pmHYm3neiXyRU\nvN37AfqQugZzJ0llhaPDfvajpiqg3Er4OFP1gPPezAEngdorHCEUQ6MMsqC+d+JQ\nOmyr/m43eUA8XizHrl0acKXe8BZ/iqzdv9kNvJ8L729/bBv5tm63YB8GEQ+g15wM\nIrdOBCXOhldB4AYFW6Ws50/kOA26UoKxtjaaAnOx+QKBgQDU+kaurGsS3Cq2cNBT\ndIWXn0j9i3efs28Huu9uWeUUD49KQp70B+qwAMwJUqQ2t2SGBkN8qYCshOp6ooX0\nubU8VODqYojHic6Cud7EvlkHHlZevF04tBiBprfW9qV/9YBj3y4VlC460siNTu5d\nKAK3X2koQKRt3qYfLpiDRPC1KQKBgQDNrBqhhleDSC3L1Iye2a44uZDAjLRJZEW/\nMv+98PNrCtCv2vjyBbzYK6v0Wvsd/KMQsY0jk99nwDNMjc6qAX8LZXTsiNnYnAGZ\naH20tlvJfDbKbXMPiZ255VknflIi5nyJhIUzO0+HklDyFn8F0QpmuHZSpqDDi8jG\ncIp66OKObQKBgGcF4icgtHLdGbRDAiM8nFrp7E7ppiYUkEL3BFcnGQ8JL9FGRMnb\nAoW8/PYNie4F7JSAdyjYfav2Z86Gy7HEG41hqaL3ox6S5NiLvN0DDuHIpRMSny2M\nwMYGtatAiHJLeZ3WGd7KXUqLKARjCB77+cRmXOHh0yhqqYUv7wqg0KdxAoGBAJFj\nsA+u3/417+m+/wjr6HTA+MqkrG2VLJjUfGTRB8ILiypFKOYtmClX9d5u0kWIad1L\nJfKYfbzh6WGcfRNAq4Zq2hS7SQQOhDLl4rb0kj4ESNcgN84sAgt/TV7VtUpmlHLB\n80ccDkRP8liv/msmMqwaicozcEHLdsqQk9P+/OihAoGBAJCQr12jGYfDrF1o5QCv\n0hMC3CUfT5zwDtndHei93vpqBZpHMACjqaUlw7JoMKKSmOW8yAVBiFEUbKluaNCD\nXlm+KcsdyuF8kx3Z/O8XlZwwSHZ9LNUr8iehLBRo88r7//z7XuumJUFMxcHzYkQj\n4jsuxvCGllt46darao4Nh63V\n-----END PRIVATE KEY-----\n",
-  "client_email": "code8-biite-messaging@biite-fc6d7.iam.gserviceaccount.com",
-  "client_id": "105922289528715322438",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url":
-      "https://www.googleapis.com/robot/v1/metadata/x509/code8-biite-messaging%40biite-fc6d7.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-};
-
 final _scopes = [
   'https://www.googleapis.com/auth/cloud-platform',
   'https://www.googleapis.com/auth/firebase.messaging'
@@ -63,7 +48,7 @@ final _scopes = [
 
 Future<String> _getAccessToken() async {
   try {
-    final accountCredentials = ServiceAccountCredentials.fromJson(_serviceAccount);
+    final accountCredentials = ServiceAccountCredentials.fromJson(serviceAccount);
 
     final client = http.Client();
 

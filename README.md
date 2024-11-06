@@ -8,14 +8,10 @@ To use the source code of Biite, create a new Firebase project and configure you
 
 **Features**
 Project Creation and Management.<br>
+![alt text](https://github.com/ad450/biite/blob/main/sample/img4.jpeg?raw=true) <br>
 Chat.<br>
+![alt text](https://github.com/ad450/biite/blob/main/sample/img1.jpeg?raw=true) <br>
+Profile Managament.<br>
+![alt text](https://github.com/ad450/biite/blob/main/sample/img3.jpeg?raw=true) <br>
 Notification.<br>
 Authentication.<br>
-Profile Managament.<br>
-
-**Samples**
-![alt text](https://github.com/ad450/biite/blob/main/sample/img1.jpeg?raw=true)
-
-![alt text](https://github.com/ad450/biite/blob/main/sample/img3.jpeg?raw=true)
-
-![alt text](https://github.com/ad450/biite/blob/main/sample/img4.jpeg?raw=true)

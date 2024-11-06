@@ -6,10 +6,10 @@ Biite is free software; feel free to use it.
 To use the source code of Biite, create a new Firebase project and configure your clone to use your Firebase project.
 
 **Features**
-Project Creation and Management
-Chat
-Notification
-Authentication
-Profile Managament
+Project Creation and Management.
+Chat.
+Notification.
+Authentication.
+Profile Managament.
 
 
